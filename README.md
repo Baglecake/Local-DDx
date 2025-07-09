@@ -20,7 +20,7 @@
 - **Epistemic labor division** - specialists challenge, support, and synthesize across rounds
 - **Intelligent context filtering** - relevant information prioritized by round type and agent specialty
 
-### **Advanced Diagnostic Pipeline**
+### **Diagnostic Pipeline**
 - **7-round diagnostic sequence** following evidence-based medical reasoning
 - **Preferential voting with Borda counts** for consensus building
 - **TempoScore metrics** for round-by-round performance assessment
