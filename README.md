@@ -1,13 +1,10 @@
-# Local-DDx
-A platform for testing and refining differential diagnoses experiments in ASI environments using local models.
-
-# DDx v6: Multi-Agent Collaborative Diagnostic System
+# LDDx v6: Multi-Agent Collaborative Diagnostic System
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Research](https://img.shields.io/badge/Type-Research-brightgreen.svg)](https://github.com)
 
-**A sophisticated multi-agent collaborative AI system for medical differential diagnosis featuring dynamic specialist generation, sliding context windows, and epistemic labor division.**
+**A sophisticated multi-agent collaborative AI system for medical differential diagnosis featuring dynamic specialist generation, sliding context windows, and epistemic labor division using local LLMs.**
 
 ## 🚀 Key Innovations
 
