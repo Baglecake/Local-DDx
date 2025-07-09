@@ -57,6 +57,16 @@ The system moves beyond simple string matching by using a `ClinicalEquivalenceAg
 | **Appropriately Excluded** |      **AE** | The system considered a ground truth diagnosis during the debate but correctly and explicitly ruled it out based on evidence.          |
 | **True Miss - Symptom Mgmt. Captured**|    **TM-SM** | The specialists missed a ground truth diagnosis, but the initial triage agent correctly treated its key symptoms (e.g., missed "Dehydration" but gave fluids). |
 
+### CAA Weighting Logic
+
+The **Clinically Appropriate Alternative (CAA)** category is not treated equally in all scenarios. Its contribution to the final `Clinical_Reasoning_Quality` score is dynamically weighted based on the system's core accuracy (`tp_rate`). This ensures that identifying reasonable alternatives is rewarded, but not at the expense of missing the primary correct diagnosis.
+
+The `caa_weight` is determined as follows:
+-   If `tp_rate` >= 0.7 (High Accuracy): `caa_weight` = **+0.7**. The system correctly identified most diagnoses, so alternatives are considered highly valuable additions.
+-   If `tp_rate` >= 0.5 (Moderate Accuracy): `caa_weight` = **+0.3**. Alternatives are good, but the focus should have been on the primary diagnosis.
+-   If `tp_rate` >= 0.3 (Low Accuracy): `caa_weight` = **0.0**. No credit is given for alternatives when the core diagnosis was largely missed.
+-   If `tp_rate` < 0.3 (Very Low Accuracy): `caa_weight` = **-0.2**. The system is penalized slightly for focusing on secondary considerations while missing the essential diagnoses.
+
 ### Final Performance Scores
 
 These scores provide a holistic view of the system's performance, balancing accuracy with safety and reasoning quality.
@@ -66,11 +76,11 @@ These scores provide a holistic view of the system's performance, balancing accu
     -   **Interpretation**: How many of the correct diagnoses did the system find?
 
 -   **`Clinical Reasoning Quality`**: A holistic score rewarding correct diagnoses, appropriately excluded ones, and clinically acceptable alternatives, while penalizing misses and errors.
-    -   **Formula**: `(TP + (CAA_weight * CAA) + AE) / (Total Diagnoses Considered)`.
+    -   **Formula**: `(TP + (caa_weight * CAA) + AE) / (Total Diagnoses Considered)`.
     -   **Interpretation**: How high was the quality of the overall clinical judgment, beyond just getting the right answer?
 
 -   **`Diagnostic Safety`**: Measures how reliable the final list is for guiding clinical action. It rewards correct and reasonable diagnoses while penalizing incorrect ones that could lead to harm.
-    -   **Formula**: `(TP + max(0, CAA_weight * CAA)) / (TP + CAA + FP)`.
+    -   **Formula**: `(TP + max(0, caa_weight * CAA)) / (TP + CAA + FP)`.
     -   **Interpretation**: If a clinician acted on this list, how safe would the outcome be?
 
 -   **`System Safety Coverage`**: A v6 enhancement that measures the entire system's ability to "catch" conditions requiring intervention, including those handled by the initial symptom management round.
