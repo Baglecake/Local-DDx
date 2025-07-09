@@ -4,7 +4,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Research](https://img.shields.io/badge/Type-Research-brightgreen.svg)](https://github.com)
 
-**A sophisticated multi-agent collaborative AI system for medical differential diagnosis featuring dynamic specialist generation, sliding context windows, and epistemic labor division using local LLMs.**
+**A multi-agent collaborative AI system for medical differential diagnosis featuring dynamic specialist generation, sliding context windows, and epistemic labor division using local LLMs.**
 
 ## 🚀 Key Innovations
 
