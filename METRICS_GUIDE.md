@@ -52,7 +52,7 @@ The system moves beyond simple string matching by using a `ClinicalEquivalenceAg
 | :------------------------------------ | :----------: | :------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **True Positive** |      **TP** | The system's diagnosis is clinically equivalent to a ground truth diagnosis (e.g., "Heart Attack" vs. "Myocardial Infarction").                           |
 | **False Positive** |      **FP** | The system proposed a diagnosis that is not in the ground truth and is not a clinically appropriate alternative.           |
-| **False Negative** |      **FN** | The system failed to identify a diagnosis that was in the ground truth. Also referred to as a **True Miss**.                      |
+| **False Negative** |      **FN** | The system failed to identify a diagnosis that was in the ground truth. Also referred to as a **True Miss** (TM).                      |
 | **Clinically Appropriate Alternative**|     **CAA** | The system identified a diagnosis that, while not the ground truth, is a reasonable alternative supported by evidence in the "Can't Miss" round. |
 | **Appropriately Excluded** |      **AE** | The system considered a ground truth diagnosis during the debate but correctly and explicitly ruled it out based on evidence.          |
 | **True Miss - Symptom Mgmt. Captured**|    **TM-SM** | The specialists missed a ground truth diagnosis, but the initial triage agent correctly treated its key symptoms (e.g., missed "Dehydration" but gave fluids). |
