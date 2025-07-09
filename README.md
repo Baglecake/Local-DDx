@@ -292,10 +292,10 @@ If you use DDx v6 in your research, please cite:
 ```bibtex
 @software{ddx_v6_2025,
   title={DDx v6: Multi-Agent Collaborative Diagnostic System with Sliding Context Windows},
-  author={[Your Name]},
+  author={[SIlver, Daniel; Fosse, Ethan; Griggs, Brandon; Coburn, Del]},
   year={2025},
   url={https://github.com/yourusername/ddx-v6},
-  note={A sophisticated multi-agent AI system for medical differential diagnosis}
+  note={A multi-agent AI system for medical differential diagnosis}
 }
 ```
 
