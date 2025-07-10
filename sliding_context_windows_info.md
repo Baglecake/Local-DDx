@@ -1,6 +1,6 @@
 # LDDx v6: Sliding Context Windows
 
-One of the most significant innovations in the LDDx v6 system is the implementation of **Sliding Context Windows**. This mechanism is what elevates the platform from a series of disconnected agent monologues into a truly collaborative and dynamic diagnostic debate.
+**Sliding Context Windows** elevate the platform from a series of disconnected agent monologues into a collaborative and dynamic diagnostic debate.
 
 This document explains the core concept, the technical implementation, and the impact of this feature on the system's reasoning capabilities.
 
