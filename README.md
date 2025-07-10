@@ -52,7 +52,7 @@ DDx v6 System Architecture
 
 ## 🔬 Research Significance
 
-This system represents **significant advances** in multi-agent AI for healthcare:
+This system proposes a multi-agent AI framework for healthcare:
 
 - **First implementation** of sliding context windows in medical AI collaboration
 - **Novel approach** to dynamic specialist team generation without constraint to predefined specialties  
