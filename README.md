@@ -266,15 +266,12 @@ python benchmark_system.py
 - **Context window optimization** for long-form reasoning
 - **Epistemic labor division** in AI systems
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](CONTRIBUTING.md) for details.
 
 ### Development Setup
 
 ```bash
 # Development installation
-git clone https://github.com/yourusername/ddx-v6.git
+git clone https://github.com/baglecake/ddx-v6.git
 cd ddx-v6
 pip install -e .[dev]
 
@@ -303,20 +300,4 @@ If you use DDx v6 in your research, please cite:
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
 
-- **vLLM Team** for efficient LLM inference
-- **Anthropic** for AI safety research that inspired collaborative agent design
-- **Medical AI Research Community** for foundational work in clinical decision support
-
-## 📞 Contact & Support
-
-- **Issues**: [GitHub Issues](https://github.com/yourusername/ddx-v6/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/ddx-v6/discussions)
-- **Email**: del.coburn@mail.utoronto.ca
-
----
-
-**⭐ Star this repository if DDx v6 helps your research or clinical work!**
-
-*Built with ❤️ for advancing AI in healthcare*
