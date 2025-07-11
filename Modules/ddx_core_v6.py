@@ -1,4 +1,3 @@
-
 # =============================================================================
 # DDx Core v6 - Unified Foundation with PRESERVED Dynamic Generation
 # =============================================================================
@@ -34,13 +33,10 @@ class ModelConfig:
     top_p: float = 0.9
     max_tokens: int = 1024
     max_model_len: int = 2048
+    dtype: str = 'auto'  # ADD THIS LINE FOR GEMMA COMPATIBILITY
     stop_tokens: List[str] = field(default_factory=lambda: ["</s>", "<|im_end|>"])
-
-    # v6 Enhancement: Better Colab stability settings
+    # v6 Enhanced stability settings
     enforce_eager: bool = True
-    disable_custom_all_reduce: bool = True
-    enable_prefix_caching: bool = False
-    max_num_batched_tokens: int = 256
     max_num_seqs: int = 2
 
 def load_system_config():
@@ -80,33 +76,17 @@ def load_system_config():
 # =============================================================================
 
 class ModelManager:
-    """Enhanced model manager with improved stability and error handling"""
+    """SEQUENTIAL model manager - loads ONE model at a time to avoid VRAM conflicts"""
 
     def __init__(self, configs: Dict[str, ModelConfig]):
         self.configs = configs
-        self.models = {}
-        self.sampling_params = {}
-        self.load_status = {}
-        self.conservative_model = None  # Direct reference for evaluation
-        self.innovative_model = None    # Direct reference for generation
-
-    def initialize_models(self) -> bool:
-        """Initialize models with enhanced stability and error handling"""
-        print("🔄 Initializing Enhanced Model Manager v6...")
-
-        if not self._verify_gpu():
-            return False
-
-        success = self._load_models_sequential()
-
-        if success:
-            self._setup_direct_references()
-            self._display_initialization_summary()
-
-        return success
+        self.active_model_id: Optional[str] = None
+        self.active_model: Optional[LLM] = None
+        self.active_sampling_params: Optional[SamplingParams] = None
+        print("✅ Initialized ModelManager for sequential loading.")
 
     def _verify_gpu(self) -> bool:
-        """Enhanced GPU verification with detailed information"""
+        """Enhanced GPU verification with memory reporting"""
         if not torch.cuda.is_available():
             print("❌ No GPU detected - check Colab runtime settings")
             return False
@@ -116,97 +96,172 @@ class ModelManager:
         available_memory = torch.cuda.mem_get_info()[0] / 1e9
 
         print(f"✅ GPU: {gpu_name}")
-        print(f"   Total Memory: {gpu_memory:.1f}GB")
-        print(f"   Available Memory: {available_memory:.1f}GB")
+        print(f"   Total VRAM: {gpu_memory:.1f}GB")
+        print(f"   Available: {available_memory:.1f}GB")
+
+        if available_memory < 8.0:
+            print("⚠️ Low VRAM - sequential loading is essential")
 
         return True
 
-    def _load_models_sequential(self) -> bool:
-        """Load models with enhanced error handling and stability"""
-        torch.cuda.empty_cache()
+    def load_model(self, model_id: str) -> bool:
+        """Load a single model, unloading any existing one first"""
+        if self.active_model_id is not None and self.active_model_id == model_id:
 
-        for model_id, config in self.configs.items():
-            print(f"\n📥 Loading {config.name}...")
+            print(f"✅ Model '{model_id}' is already active.")
+            return True
 
-            try:
-                # Enhanced vLLM settings for Colab stability
-                model = LLM(
-                    model=config.model_path,
-                    tensor_parallel_size=1,
-                    gpu_memory_utilization=config.memory_fraction,
-                    max_model_len=config.max_model_len,
-                    trust_remote_code=True,
-                    dtype="half",
-                    # v6 Enhanced stability settings
-                    enforce_eager=config.enforce_eager,
-                    disable_custom_all_reduce=config.disable_custom_all_reduce,
-                    enable_prefix_caching=config.enable_prefix_caching,
-                    max_num_batched_tokens=config.max_num_batched_tokens,
-                    max_num_seqs=config.max_num_seqs
-                )
+        # Unload existing model first
+        if self.active_model:
+            self.unload_model()
 
-                sampling_params = SamplingParams(
-                    temperature=config.temperature,
-                    top_p=config.top_p,
-                    max_tokens=config.max_tokens,
-                    stop=config.stop_tokens
-                )
+        if not self._verify_gpu():
+            return False
 
-                self.models[model_id] = model
-                self.sampling_params[model_id] = sampling_params
-                self.load_status[model_id] = 'success'
+        config = self.configs.get(model_id)
+        if not config:
+            print(f"❌ Config for model '{model_id}' not found.")
+            return False
 
-                print(f"   ✅ {config.name} loaded successfully")
+        print(f"\n📥 Loading {config.name}...")
+        try:
+            # Clear cache before loading
+            torch.cuda.empty_cache()
 
-            except Exception as e:
-                print(f"   ❌ Failed to load {config.name}: {e}")
-                self.load_status[model_id] = f'failed: {str(e)}'
+            # Load with more aggressive memory usage since only one model
+            model = LLM(
+                model=config.model_path,
+                tensor_parallel_size=1,
+                gpu_memory_utilization=config.memory_fraction,  # Use config value
+                max_model_len=config.max_model_len,
+                trust_remote_code=True,
+                dtype=self._convert_dtype(config.dtype),  # Convert string to torch dtype
+                enforce_eager=config.enforce_eager,
+                max_num_seqs=config.max_num_seqs
+            )
 
-                # Continue if we have at least one model
-                if len([s for s in self.load_status.values() if s == 'success']) > 0:
-                    print(f"   💡 Continuing with available models...")
-                    continue
+            sampling_params = SamplingParams(
+                temperature=config.temperature,
+                top_p=config.top_p,
+                max_tokens=config.max_tokens,
+                stop=config.stop_tokens
+            )
 
-        successful_models = [mid for mid, status in self.load_status.items()
-                           if status == 'success']
+            self.active_model_id = model_id
+            self.active_model = model
+            self.active_sampling_params = sampling_params
 
-        return len(successful_models) > 0
+            print(f"   ✅ {config.name} loaded successfully.")
+            return True
 
-    def _setup_direct_references(self):
-        """Setup direct model references for easier access"""
-        if 'conservative_model' in self.models:
-            self.conservative_model = self.models['conservative_model']
-        if 'innovative_model' in self.models:
-            self.innovative_model = self.models['innovative_model']
+        except Exception as e:
+            print(f"   ❌ Failed to load {config.name}: {e}")
+            self.active_model_id = None
+            self.active_model = None
+            self.active_sampling_params = None
+            return False
 
-    def _display_initialization_summary(self):
-        """Display comprehensive initialization summary"""
-        successful_models = [mid for mid, status in self.load_status.items()
-                           if status == 'success']
-
-        print(f"\n📊 Model Manager v6 Initialization Summary:")
-        print(f"   Successfully loaded: {len(successful_models)}/{len(self.configs)}")
-
-        for model_id, status in self.load_status.items():
-            if status == 'success':
-                print(f"   ✅ {self.configs[model_id].name}")
+    def unload_model(self):
+        """Release the currently active model with PROPER vLLM shutdown"""
+        if self.active_model:
+            # Safe model name access
+            if self.active_model_id and self.active_model_id in self.configs:
+                model_name = self.configs[self.active_model_id].name
             else:
-                print(f"   ❌ {self.configs[model_id].name}: {status}")
+                model_name = "Unknown Model"
+                
+            print(f"\n📤 Unloading {model_name}...")
+            
+            # CRITICAL: Call vLLM's actual shutdown method
+            try:
+                # Try the proper shutdown methods (ignore type warnings)
+                self.active_model.shutdown()  # type: ignore
+                print("   🔧 vLLM shutdown() called successfully")
+            except AttributeError:
+                try:
+                    self.active_model.close()  # type: ignore
+                    print("   🔧 vLLM close() called successfully")
+                except AttributeError:
+                    print("   ⚠️ No shutdown/close method found - partial cleanup only")
+            except Exception as e:
+                print(f"   ⚠️ Shutdown failed: {e}")
+            
+            # Now delete Python objects
+            del self.active_model
+            del self.active_sampling_params
+            self.active_model = None
+            self.active_sampling_params = None
+            self.active_model_id = None
+            
+            # Standard cleanup
+            import gc
+            gc.collect()
+            torch.cuda.empty_cache()
+            torch.cuda.synchronize()
+            
+            # Check ACTUAL memory recovery
+            available_memory = torch.cuda.mem_get_info()[0] / 1e9
+            print(f"   ✅ Model fully unloaded. VRAM free: {available_memory:.1f}GB")
+            
+            # Should see FULL recovery now
+            if available_memory > 40.0:
+                print("   🎉 EXCELLENT - Full VRAM recovery achieved!")
+            else:
+                print(f"   ⚠️ Partial recovery - may need context manager approach")
+        else:
+            print("   ℹ️ No active model to unload")
+
+    def get_active_model(self) -> Tuple[Optional[LLM], Optional[SamplingParams]]:
+        """Get the currently loaded model and its parameters"""
+        return self.active_model, self.active_sampling_params
 
     def get_model(self, model_id: str) -> Tuple[Optional[LLM], Optional[SamplingParams]]:
-        """Get model and sampling parameters with enhanced error handling"""
-        if model_id not in self.models:
-            print(f"⚠️ Model {model_id} not available")
+        """Load and get model - ensures model is loaded before returning"""
+        if not self.load_model(model_id):
             return None, None
-        return self.models[model_id], self.sampling_params[model_id]
+        return self.get_active_model()
 
     def get_available_models(self) -> List[str]:
-        """Get list of successfully loaded models"""
-        return [mid for mid, status in self.load_status.items() if status == 'success']
+        """Get list of configured models (all are 'available' via sequential loading)"""
+        return list(self.configs.keys())
 
-    def get_model_status(self) -> Dict[str, str]:
-        """Get detailed status of all models"""
-        return self.load_status.copy()
+    def initialize_models(self) -> bool:
+        """Initialize system - don't pre-load models, just verify configs"""
+        print("🚀 Initializing Sequential Model Manager...")
+
+        if not self._verify_gpu():
+            return False
+
+        print(f"📋 Configured models: {list(self.configs.keys())}")
+        print("✅ Sequential loading system ready.")
+        return True
+
+    def get_system_status(self) -> Dict[str, Any]:
+        """Get current system status"""
+        available_memory = torch.cuda.mem_get_info()[0] / 1e9 if torch.cuda.is_available() else 0
+
+        return {
+            'gpu_available': torch.cuda.is_available(),
+            'available_memory_gb': available_memory,
+            'active_model': self.active_model_id,
+            'configured_models': list(self.configs.keys()),
+            'loading_mode': 'sequential'
+        }
+
+    def _convert_dtype(self, dtype_str: str):
+        """Convert string dtype to actual torch dtype"""
+        dtype_map = {
+            'auto': 'auto',  # vLLM handles this
+            'float16': torch.float16,
+            'half': torch.float16,
+            'bfloat16': torch.bfloat16,
+            'float32': torch.float32,
+            'float': torch.float32
+        }
+
+        result = dtype_map.get(dtype_str, 'auto')
+        print(f"   🔧 Converting dtype '{dtype_str}' -> {result}")
+        return result
 
 # =============================================================================
 # 3. PRESERVED Dynamic Specialty System
@@ -316,7 +371,7 @@ class DDxAgent:
     def persona(self) -> str:
         return self.config.persona
 
-    def generate_response(self, prompt: str, round_type: str = "general", 
+    def generate_response(self, prompt: str, round_type: str = "general",
                      global_transcript: Optional[Dict] = None) -> AgentResponse:
         """Enhanced response generation with v6 improvements and sliding context"""
         start_time = time.time()
@@ -376,18 +431,18 @@ class DDxAgent:
                 round_type=round_type
             )
 
-    def _format_prompt(self, user_input: str, round_type: str = "general", 
+    def _format_prompt(self, user_input: str, round_type: str = "general",
                   global_transcript: Optional[Dict] = None) -> str:
         """Enhanced prompt formatting with sliding context window support"""
-        
+
         # Import sliding context manager (with fallback)
         try:
             from ddx_sliding_context import SlidingContextManager
-            
+
             # Initialize context manager if not exists
             if not hasattr(self, '_context_manager'):
                 self._context_manager = SlidingContextManager()
-            
+
             # Build contextual information
             prior_context = ""
             if global_transcript and len(global_transcript.get('rounds', {})) > 0:
@@ -400,7 +455,7 @@ class DDxAgent:
         except (ImportError, Exception):
             # Fallback if sliding context not available
             prior_context = ""
-        
+
         # Base system prompt using existing agent properties
         base_system = (
             f"You are {self.name}, an expert in {self.specialty.value} "
@@ -409,7 +464,7 @@ class DDxAgent:
             f"Focus areas: {', '.join(self.config.focus_areas)}\n\n"
             f"Collaboration style: {self.config.collaboration_style}"
         )
-        
+
         # Enhanced round-specific formatting
         if round_type == "team_independent_differentials":
             system_prompt = f"""{base_system}
@@ -644,43 +699,83 @@ class ModelBasedAgentGenerator:
         self.model_manager = model_manager
 
     def generate_specialist_proposals(self, case_description: str) -> List[Dict[str, Any]]:
-        """Generate specialist proposals - COMPLETELY DYNAMIC"""
-        print(f"\n🤖 Generating Dynamic Specialists via Model Analysis...")
-
-        available_models = self.model_manager.get_available_models()
-        if len(available_models) < 2:
-            print(f"⚠️ Only {len(available_models)} models available, duplicating for coverage")
-            available_models = available_models * 2
-
+        """Generate specialist proposals using SEQUENTIAL model loading"""
+        print(f"\n🤖 Generating Dynamic Specialists via Sequential Model Analysis...")
         all_proposals = []
-
-        for i, model_id in enumerate(available_models[:2]):
-            print(f"\n📋 Model {i+1} ({model_id}) analyzing case...")
-
-            model, sampling_params = self.model_manager.get_model(model_id)
-            if not model:
+        
+        # Get all configured models
+        available_models = self.model_manager.get_available_models()
+        print(f"📋 Will analyze with {len(available_models)} models sequentially")
+        
+        # Process each model one at a time
+        for model_num, model_id in enumerate(available_models, 1):
+            print(f"\n🔄 Processing Model {model_num}/{len(available_models)}: {model_id}")
+            
+            # Load this specific model
+            if not self.model_manager.load_model(model_id):
+                print(f"⚠️ Skipping model '{model_id}' due to load failure.")
                 continue
 
-            # PRESERVED dynamic analysis prompt
-            analysis_prompt = self._create_dynamic_analysis_prompt(case_description, i+1)
+            model, sampling_params = self.model_manager.get_active_model()
+            if not model:
+                print(f"⚠️ Model '{model_id}' not available after loading.")
+                continue
 
+            # Generate proposals with this model
             try:
+                print(f"   📝 Model {model_num} analyzing case...")
+                analysis_prompt = self._create_dynamic_analysis_prompt(case_description, model_num)
+                
                 outputs = model.generate([analysis_prompt], sampling_params)
                 response_content = outputs[0].outputs[0].text.strip()
-
-                proposals = self._parse_specialist_proposals(response_content, model_id, i+1)
-                all_proposals.extend(proposals)
-
-                print(f"✅ Model {i+1} proposed {len(proposals)} specialists")
-                for proposal in proposals:
-                    print(f"   • {proposal['name']}: {proposal['specialty']}")
-
+                
+                # Parse proposals from this model
+                model_proposals = self._parse_specialist_proposals(response_content, model_id, model_num)
+                all_proposals.extend(model_proposals)
+                
+                print(f"   ✅ Model {model_num} generated {len(model_proposals)} specialist proposals")
+                
             except Exception as e:
-                print(f"❌ Model {i+1} analysis failed: {e}")
-                fallback_proposals = self._create_fallback_proposals(model_id, i+1)
-                all_proposals.extend(fallback_proposals)
+                print(f"   ❌ Model {model_num} analysis failed: {e}")
+                
+            # Unload model to free VRAM for next one
+            self.model_manager.unload_model()
+            print(f"   🗑️ Model {model_num} unloaded")
 
+        print(f"\n🎯 Total proposals generated: {len(all_proposals)}")
+        
+        # Add fallback if no proposals generated
+        if not all_proposals:
+            print("⚠️ No autonomous proposals generated - creating fallback specialists")
+            all_proposals = self._generate_fallback_specialists()
+        
         return all_proposals
+
+    def _generate_fallback_specialists(self) -> List[Dict[str, Any]]:
+        """Generate fallback specialists when autonomous generation fails"""
+        base_specialties = [
+            "Emergency Medicine", "Internal Medicine", "Cardiology", 
+            "Pulmonology", "Nephrology", "Endocrinology"
+        ]
+        
+        fallback_specialists = []
+        for i, specialty in enumerate(base_specialties):
+            specialist_info = {
+                'name': f'Dr. Fallback {i+1}',
+                'specialty': specialty,
+                'persona': f'Experienced {specialty} specialist',
+                'reasoning_style': 'analytical',
+                'focus_areas': ['general medicine'],
+                'case_rationale': f'General {specialty} expertise',
+                'model_id': 'conservative_model',
+                'model_num': 1,
+                'agent_index': i,
+                'autonomous_generation': False,
+                'team_size_chosen': len(base_specialties)
+            }
+            fallback_specialists.append(specialist_info)
+        
+        return fallback_specialists
 
     def _create_dynamic_analysis_prompt(self, case_description: str, model_num: int) -> str:
         """Create COMPLETELY DYNAMIC analysis prompt"""
@@ -845,8 +940,8 @@ class DynamicAgentGenerator:
         self.proposal_generator = ModelBasedAgentGenerator(model_manager)
 
     def generate_agents_for_case(self, case_description: str,
-                               max_specialists: int = 20) -> List[DDxAgent]:
-        """Generate agents - COMPLETELY DYNAMIC for any case"""
+                           max_specialists: int = 20) -> List[DDxAgent]:
+        """Generate agents - COMPLETELY DYNAMIC for any case + evaluator agent"""
         print(f"\n🎯 Generating Dynamic Specialist Team via Model Analysis...")
 
         specialist_proposals = self.proposal_generator.generate_specialist_proposals(case_description)
@@ -865,7 +960,9 @@ class DynamicAgentGenerator:
         for proposal in specialist_proposals:
             try:
                 agent_config = self._create_agent_config_from_proposal(proposal)
-                model, base_sampling_params = self.model_manager.get_model(proposal['model_id'])
+                if not self.model_manager.load_model(proposal['model_id']):
+                    continue
+                model, base_sampling_params = self.model_manager.get_active_model()
 
                 if not model:
                     print(f"⚠️ Model {proposal['model_id']} not available for {proposal['name']}")
@@ -887,8 +984,58 @@ class DynamicAgentGenerator:
                 print(f"❌ Failed to create agent from proposal {proposal['name']}: {e}")
                 continue
 
-        print(f"\n🏥 Final Team: {len(agents)} specialists generated")
+        # ADD EVALUATOR AGENT to the team
+        print(f"\n🔬 Adding Clinical Evaluator Agent...")
+        evaluator_agent = self._create_evaluator_agent()
+        if evaluator_agent:
+            agents.append(evaluator_agent)
+            print(f"✅ Added: {evaluator_agent.name} (Clinical Evaluator)")
+            print(f"   Specialty: {evaluator_agent.specialty.value}")
+            print(f"   Model: {evaluator_agent.model_id}")
+
+        print(f"\n🏥 Final Team: {len(agents)} agents generated ({len(agents)-1 if evaluator_agent else len(agents)} specialists + {'1 evaluator' if evaluator_agent else '0 evaluator'})")
         return agents
+
+    def _create_evaluator_agent(self) -> Optional[DDxAgent]:
+        """Create dedicated evaluator agent using current loaded model"""
+        try:
+            # Use whatever model is currently active (should be the last loaded model)
+            model, sampling_params = self.model_manager.get_active_model()
+            if not model:
+                print("⚠️ No active model for evaluator agent")
+                return None
+                
+            # Create evaluator-specific sampling params (lower temperature for consistency)
+            evaluator_sampling_params = SamplingParams(
+                temperature=0.2,  # Low temperature for consistent evaluation
+                top_p=sampling_params.top_p,
+                max_tokens=sampling_params.max_tokens,
+                stop=sampling_params.stop
+            )
+                
+            evaluator_config = AgentConfig(
+                name="Dr. Clinical Evaluator",
+                specialty=SpecialtyType.INTERNAL_MEDICINE,
+                persona="Expert clinical evaluator specializing in diagnosis equivalence assessment with extensive knowledge across all medical specialties. Focuses on determining whether different diagnostic terms represent the same underlying medical condition.",
+                reasoning_style="analytical",
+                temperature=0.2,
+                focus_areas=["diagnosis equivalence", "clinical terminology", "medical classification", "differential diagnosis"],
+                case_relevance_score=10.0,
+                model_assignment=self.model_manager.active_model_id or "unknown"
+            )
+            
+            evaluator_agent = DDxAgent(
+                evaluator_config, 
+                model, 
+                evaluator_sampling_params, 
+                self.model_manager.active_model_id or "unknown"
+            )
+            
+            return evaluator_agent
+            
+        except Exception as e:
+            print(f"⚠️ Failed to create evaluator agent: {e}")
+            return None
 
     def _create_agent_config_from_proposal(self, proposal: Dict[str, Any]) -> AgentConfig:
         """Create agent configuration from proposal"""
@@ -1063,7 +1210,7 @@ class DDxSystem:
         # Store case data
         self.case_data = {
             'description': case_description,
-            'case_description': case_description,  
+            'case_description': case_description,
             'name': case_name,
             'timestamp': time.time()
         }
@@ -1107,7 +1254,12 @@ def test_ddx_core():
 
     # Initialize system
     ddx = DDxSystem()
+    if not test_sequential_loading():
+        print("❌ Sequential loading test failed")
+        return False
+
     if not ddx.initialize():
+        print("❌ Failed to initialize DDx system")
         return False
 
     # Test case analysis with PRESERVED dynamic generation
@@ -1135,6 +1287,47 @@ def test_ddx_core():
         print(f"❌ Case analysis failed: {result.get('error', 'Unknown error')}")
         return False
 
+def test_sequential_loading():
+    """Test the sequential loading system"""
+    print("🧪 Testing Sequential Model Loading System...")
+
+    # Load configs
+    configs = load_system_config()
+    model_manager = ModelManager(configs)
+
+    # Initialize system
+    if not model_manager.initialize_models():
+        print("❌ System initialization failed")
+        return False
+
+    # Test loading each model sequentially
+    available_models = model_manager.get_available_models()
+
+    for model_id in available_models:
+        print(f"\n🔄 Testing model: {model_id}")
+
+        # Load model
+        if model_manager.load_model(model_id):
+            print(f"   ✅ {model_id} loaded successfully")
+
+            # Get model reference
+            model, params = model_manager.get_active_model()
+            if model and params:
+                print(f"   ✅ Model reference obtained")
+            else:
+                print(f"   ❌ Failed to get model reference")
+                return False
+
+            # Unload model
+            model_manager.unload_model()
+            print(f"   ✅ {model_id} unloaded successfully")
+        else:
+            print(f"   ❌ Failed to load {model_id}")
+            return False
+
+    print("\n🎉 Sequential loading test PASSED!")
+    return True
+
 if __name__ == "__main__":
     # Test the PRESERVED core system
     system = test_ddx_core()
@@ -1144,5 +1337,7 @@ if __name__ == "__main__":
         print(f"✅ Dynamic agent generation PRESERVED")
         print(f"✅ Can generate ANY specialty for ANY case")
         print(f"✅ Model management stable")
+        print(f"✅ Case analysis functional")
+        print(f"✅ Ready for round system with DDx_Main_Design.md OUTPUT formatting")
         print(f"✅ Case analysis functional")
         print(f"✅ Ready for round system with DDx_Main_Design.md OUTPUT formatting")
