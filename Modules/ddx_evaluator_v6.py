@@ -1,4 +1,3 @@
-
 # =============================================================================
 # DDx Evaluation v6 - AI-Enhanced Clinical Evaluation with v6 Integration
 # =============================================================================
@@ -71,83 +70,41 @@ class EquivalenceResult:
 # =============================================================================
 
 class ClinicalEquivalenceAgent:
-    """AI agent for evaluating clinical equivalence of diagnoses"""
+    """Clinical evaluator that uses pre-generated evaluator agent"""
 
     def __init__(self, model_manager: ModelManager):
         self.model_manager = model_manager
-        # Access conservative model for reliable clinical judgment
-        self.conservative_model = getattr(model_manager, 'conservative_model', None)
-        if self.conservative_model is None:
-            # Try alternative access pattern
-            self.conservative_model = model_manager.models.get('conservative_model')
         self.evaluation_cache = {}
+        self.evaluator_agent = None
+        print("✅ Clinical Equivalence Agent initialized for pre-generated evaluator")
+
+    def set_evaluator_agent(self, evaluator_agent):
+        """Set the pre-generated evaluator agent"""
+        self.evaluator_agent = evaluator_agent
+        print(f"✅ Using pre-generated evaluator: {evaluator_agent.name}")
 
     def evaluate_diagnosis_match(self, system_diagnosis: str, ground_truth_diagnosis: str,
                               transcript: Optional[Dict] = None) -> EquivalenceResult:
-        """Evaluate if two diagnoses are clinically equivalent using AI"""
-
-        # Check cache first
-        cache_key = f"{system_diagnosis.lower()}||{ground_truth_diagnosis.lower()}"
-        if cache_key in self.evaluation_cache:
-            return self.evaluation_cache[cache_key]
-
-        # Check if model is available
-        if self.conservative_model is None:
-            print("⚠️ Conservative model not available, using fallback matching")
+        """Evaluate using the pre-generated evaluator agent"""
+        
+        if not self.evaluator_agent:
+            # Fallback only
             is_equivalent = system_diagnosis.lower().strip() == ground_truth_diagnosis.lower().strip()
-            result = EquivalenceResult(
+            return EquivalenceResult(
                 is_equivalent=is_equivalent,
                 confidence=1.0 if is_equivalent else 0.0,
-                reasoning="Fallback exact match (model unavailable)",
+                reasoning="Fallback exact match (no evaluator agent)",
                 context_evidence=None
             )
-            self.evaluation_cache[cache_key] = result
-            return result
 
-        # Extract transcript context if available
-        context_evidence = self._extract_transcript_context(
-            ground_truth_diagnosis, transcript
-        ) if transcript else None
-
-        prompt = self._create_equivalence_prompt(
-            system_diagnosis, ground_truth_diagnosis, context_evidence
-        )
-
-        try:
-            # Use conservative model for reliable clinical judgment
-            responses = self.conservative_model.generate(
-                [prompt],
-                sampling_params=SamplingParams(
-                    temperature=0.1,
-                    max_tokens=300,
-                    stop=["<|im_end|>"]
-                )
-            )
-
-            # Parse the response
-            content = responses[0].outputs[0].text.strip()
-            result = self._parse_equivalence_response(
-                content, system_diagnosis, ground_truth_diagnosis, context_evidence
-            )
-
-        except Exception as e:
-            print(f"⚠️ Model generation failed: {e}, using fallback")
-            # Fallback to simple matching
-            is_equivalent = system_diagnosis.lower().strip() == ground_truth_diagnosis.lower().strip()
-            result = EquivalenceResult(
-                is_equivalent=is_equivalent,
-                confidence=0.5,
-                reasoning=f"Fallback match due to error: {str(e)}",
-                context_evidence=context_evidence
-            )
-
-        # Cache result
-        self.evaluation_cache[cache_key] = result
-        return result
+        # Use the pre-generated agent - NO MODEL LOADING!
+        prompt = self._create_equivalence_prompt(system_diagnosis, ground_truth_diagnosis)
+        response = self.evaluator_agent.generate_response(prompt, "clinical_evaluation")
+        
+        return self._parse_equivalence_response(response.content, system_diagnosis, ground_truth_diagnosis)
 
     def _extract_transcript_context(self, diagnosis: str, transcript: Dict) -> Optional[str]:
         """Extract relevant context from v6 transcript for diagnosis"""
-
         if not transcript or 'rounds' not in transcript:
             return None
 
@@ -178,7 +135,6 @@ class ClinicalEquivalenceAgent:
 
     def _extract_snippet_around_term(self, text: str, term: str, window: int = 100) -> str:
         """Extract a snippet of text around a term"""
-
         pos = text.find(term)
         if pos == -1:
             return ""
@@ -197,7 +153,6 @@ class ClinicalEquivalenceAgent:
     def _create_equivalence_prompt(self, sys_diag: str, gt_diag: str,
                                  context: Optional[str] = None) -> str:
         """Create prompt for clinical equivalence evaluation"""
-
         context_section = ""
         if context:
             context_section = f"""
@@ -206,20 +161,25 @@ The following discussion occurred during the diagnostic process:
 {context}
 """
 
-        return f"""<|im_start|>system
-You are a clinical evaluation expert. Your task is to determine if two medical diagnoses are clinically equivalent or represent the same medical condition.
+        return f"""You are a clinical evaluation expert. Assess whether these two medical diagnoses are clinically equivalent or represent the same medical condition.
 
 Consider these as EQUIVALENT:
-- Exact matches: "pneumonia" = "pneumonia"
-- Abbreviations: "STI" = "sexually transmitted infection", "PID" = "pelvic inflammatory disease"
-- Synonyms: "heart attack" = "myocardial infarction", "dysmenorrhea" = "menstrual pain"
-- Specificity levels: "dysmenorrhea" = "primary dysmenorrhea", "pneumonia" = "bacterial pneumonia"
-- Alternative terminology: "adnexal mass" may relate to "ovarian cyst"
+- Exact matches
+- Medical abbreviations vs. full terms (e.g., "COPD" = "chronic obstructive pulmonary disease")
+- Synonymous medical terms (e.g., "myocardial infarction" = "heart attack")
+- Specificity variations (e.g., "diabetes" = "diabetes mellitus", "pneumonia" = "bacterial pneumonia")
+- Alternative medical terminology for the same condition
+- Different phrasing of the same underlying pathology
+- Formal vs. colloquial medical terms
+- ICD-10 vs. clinical descriptive terms
 
 Consider these as DIFFERENT:
-- Different body systems: "pneumonia" ≠ "appendicitis"
-- Different pathophysiology: "Type 1 diabetes" ≠ "Type 2 diabetes" (unless general "diabetes")
-- Different severity: "stable angina" ≠ "myocardial infarction"
+- Different organ systems or anatomical locations
+- Different underlying pathophysiology or disease mechanisms  
+- Different stages or severity levels of disease
+- Complications vs. primary conditions
+- Acute vs. chronic versions (unless clearly the same condition)
+- Different etiologies of similar presentations
 
 If transcript context shows the team discussed the ground truth concept using different terminology, consider this as evidence for equivalence.
 
@@ -227,19 +187,15 @@ Respond exactly in this format:
 EQUIVALENT: YES/NO
 CONFIDENCE: [0.0-1.0]
 REASONING: [Brief clinical justification citing any transcript evidence]
-<|im_end|>
-<|im_start|>user
+
 System Diagnosis: "{sys_diag}"
 Ground Truth Diagnosis: "{gt_diag}"
 {context_section}
-Are these clinically equivalent?
-<|im_end|>
-<|im_start|>assistant"""
+Are these clinically equivalent?"""
 
     def _parse_equivalence_response(self, content: str, sys_diag: str, gt_diag: str,
                                   context: Optional[str] = None) -> EquivalenceResult:
         """Parse the agent's equivalence evaluation response"""
-
         is_equivalent = False
         confidence = 0.0
         reasoning = "No reasoning provided"
@@ -764,4 +720,5 @@ def test_evaluation_v6():
     return True
 
 if __name__ == "__main__":
+    test_evaluation_v6()
     test_evaluation_v6()
