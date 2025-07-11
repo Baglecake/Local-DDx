@@ -16,21 +16,3 @@ innovative_model:
   top_p: 0.95
   max_tokens: 1536
   max_model_len: 4096
-
-# Dynamic generation settings
-dynamic_generation:
-  max_specialists_per_case: 3
-  min_relevance_score: 5.0
-  generation_timeout_seconds: 30
-  fallback_to_predefined: true
-  
-# Specialty mappings for dynamic generation
-specialty_mappings:
-  cardiology: ['chest pain', 'heart', 'cardiac', 'ECG', 'angina', 'myocardial']
-  pulmonology: ['shortness of breath', 'cough', 'lung', 'respiratory', 'pneumonia', 'dyspnea']
-  endocrinology: ['diabetes', 'thyroid', 'hormone', 'glucose', 'insulin', 'metabolic']
-  gastroenterology: ['abdominal pain', 'nausea', 'vomiting', 'liver', 'gastro', 'digestive']
-  neurology: ['headache', 'seizure', 'neurological', 'brain', 'nerve', 'cognitive']
-  nephrology: ['kidney', 'renal', 'urine', 'creatinine', 'dialysis', 'proteinuria']
-  hematology: ['blood', 'anemia', 'bleeding', 'clotting', 'hemoglobin', 'platelet']
-  rheumatology: ['joint pain', 'arthritis', 'autoimmune', 'inflammation', 'connective tissue']
