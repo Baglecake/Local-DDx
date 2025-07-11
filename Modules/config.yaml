@@ -24,7 +24,6 @@ innovative_model:
   enforce_eager: true
   max_num_seqs: 2
 
-# Rest unchanged
 system:
   max_specialists: 20
   max_agents_per_round: 15
