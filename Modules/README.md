@@ -55,3 +55,50 @@ This module provides a sophisticated, nuanced evaluation of the final diagnosis 
 -   **`ClinicalEquivalenceAgent`**: Moves beyond simple keyword matching. This AI agent determines if a system diagnosis (e.g., "heart attack") is clinically equivalent to a ground truth diagnosis (e.g., "myocardial infarction"), allowing for a much fairer and more realistic assessment.
 -   **Enhanced Metrics**: The evaluator calculates advanced metrics defined for the project, such as `Clinical_Reasoning_Quality`, `Diagnostic_Safety`, and `System_Safety_Coverage`, which provide a multi-dimensional view of performance.
 -   **Context-Aware Analysis**: The evaluator uses the full transcript to find evidence for its judgments, such as identifying when a diagnosis was **Appropriately Excluded (AE)** or when its symptoms were covered by the **Symptom Management (TM-SM)** round.
+
+
+**Use 'config.yaml' to load models:
+
+
+conservative_model:
+  name: 'Conservative-Model-Phi'
+  model_path: 'microsoft/Phi-3-mini-4k-instruct'  
+  memory_fraction: 0.35 
+  temperature: 0.1
+  top_p: 0.7
+  max_tokens: 1536
+  max_model_len: 4096
+  dtype: 'auto'
+  enforce_eager: true
+  max_num_seqs: 2
+
+innovative_model:
+  name: 'Innovative-Model-TinyLlama'
+  model_path: 'NousResearch/Hermes-2-Pro-Mistral-7B'
+  memory_fraction: 0.40  
+  temperature: 0.9
+  top_p: 0.95
+  max_tokens: 1536
+  max_model_len: 4096
+  dtype: 'auto'
+  enforce_eager: true
+  max_num_seqs: 2
+
+# Rest unchanged
+system:
+  max_specialists: 20
+  max_agents_per_round: 15
+  collaboration_depth: 3
+  
+rounds:
+  enable_subspecialist_consultation: true
+  enable_preferential_voting: true
+  enable_symptom_management: true
+  
+evaluation:
+  clinical_recall_threshold: 0.85
+  precision_threshold: 0.80
+  
+synthesis:
+  enable_credibility_weighting: true
+  enable_tempo_scoring: true
