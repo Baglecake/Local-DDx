@@ -1,4 +1,4 @@
-# Updated config.yaml for Dynamic Agent Generation
+
 conservative_model:
   name: 'Conservative-Model'
   model_path: 'NousResearch/Nous-Hermes-2-Mistral-7B-DPO'
