@@ -8,6 +8,8 @@ generation features. DDx_Main_Design.md integration happens in ROUNDS and
 OUTPUT FORMATTING, not in constraining what specialties can be generated.
 """
 
+import os
+os.environ['VLLM_WORKER_MULTIPROC_METHOD'] = 'spawn'
 import yaml
 import torch
 import time
