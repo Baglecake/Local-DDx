@@ -1,8 +1,8 @@
 
 conservative_model:
   name: 'Conservative-Model-HFTB/SmolLM3-3B'
-  model_path: 'HuggingFaceTB/SmolLM3-3B'  #<-- The new model path
-  memory_fraction: 0.35  # May need to adjust based on VRAM
+  model_path: 'HuggingFaceTB/SmolLM3-3B'  #<-- model path/name
+  memory_fraction: 0.35  # Adjust based on VRAM
   temperature: 0.1
   top_p: 0.7
   max_tokens: 1536
@@ -23,8 +23,6 @@ innovative_model:
   enforce_eager: true
   max_num_seqs: 2
 
-
-# Rest unchanged
 system:
   max_specialists: 20
   max_agents_per_round: 15
