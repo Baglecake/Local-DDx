@@ -8,7 +8,7 @@
 
 **VERSION OVERVIEW:**
 
-**v6:** Developmental Version - Eager: "true"; initial dual model scaffolding with agent generation capabilities and early insights using dual NousResearch/Hermes-2-Pro-Mistral-7B models. Partially compatable with vllm library (missing quantized loading).
+**v6:** Developmental Version - Eager: "true"; enforced stability for GPU development purposes.Initial dual model scaffolding with agent generation capabilities and early insights using dual NousResearch/Hermes-2-Pro-Mistral-7B models. Partially compatable with vllm library (missing quantized loading).
 
 **v7:** Fixed metrics and parsing. Multiple operational versions with a variety of configs:
 
