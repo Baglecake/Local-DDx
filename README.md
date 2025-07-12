@@ -1,10 +1,22 @@
-# LDDx v6: Multi-Agent Collaborative Diagnostic System
+# LDDx: Multi-Agent Collaborative Diagnostic System
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Research](https://img.shields.io/badge/Type-Research-brightgreen.svg)](https://github.com)
 
 **A multi-agent collaborative AI system for medical differential diagnosis featuring dynamic specialist generation, sliding context windows, and epistemic labor division using local LLMs.**
+
+**VERSION OVERVIEW:**
+
+-> **v6:** Initial dual model scaffolding with generative capabilities and early insights.
+
+-> **v7:** Production model. Fixed metrics and parsing. Multiple operational versions with a variety of configs:
+
+-> **v7.1:** Developmental version - Eager: "true"; enforced stability for GPU development purposes. stable with Hugging Face FSmolLM3 and Microsoft Phi3mini, dual Mistral (v6 config).
+
+-> **v7.2:** Production version - eager: "false"; production ready platform for optimized Hugging Face FSmolLM3 and Microsoft Phi3mini experiments.
+
+-> **v7.3:** Production version - Dual Lamma3 models loaded with v7.2 architecture.
 
 ## 🚀 Key Innovations
 
