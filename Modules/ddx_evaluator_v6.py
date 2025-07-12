@@ -247,7 +247,7 @@ class EnhancedClinicalEvaluator:
         self.transcript = transcript
 
     def evaluate_diagnosis(self, synthesis_result, ground_truth: Dict[str, List[str]],
-                          round_results: Optional[Dict] = None) -> EvaluationResult:
+                      round_results: Optional[Dict] = None) -> EvaluationResult:
         """Comprehensive evaluation with v6 enhancements"""
 
         print(f"\n📊 CLINICAL EVALUATION v6 (AI-Enhanced)")
@@ -290,7 +290,7 @@ class EnhancedClinicalEvaluator:
                 else:
                     print(f"      ❌ Different ({eval_result.confidence:.2f}): {eval_result.reasoning}")
 
-            if best_match:
+            if best_match and best_result:
                 matched_pairs.append((best_match, sys_diag))
                 matched_system.add(sys_diag)
                 matched_gt.add(best_match)
@@ -303,7 +303,7 @@ class EnhancedClinicalEvaluator:
                         'context': best_result.context_evidence
                     })
 
-        # Step 2: Can't Miss Analysis for CAA
+        # Step 2: Can't Miss Analysis with Frequency-Based Promotion
         caa_diagnoses = []
         cant_miss_matches = []
 
@@ -311,13 +311,28 @@ class EnhancedClinicalEvaluator:
             cant_miss_diagnoses = self._extract_cant_miss_diagnoses(round_results)
 
             if cant_miss_diagnoses:
-                print(f"\n🚨 Checking Can't Miss diagnoses for CAA classification:")
+                print(f"\n🚨 Checking Can't Miss diagnoses for promotion/CAA classification:")
+                
+                # Extract mention counts from the specialist string (already calculated in rounds)
+                processed_diagnoses = set()
 
                 for cant_miss_diag in cant_miss_diagnoses:
                     diag_name = cant_miss_diag['diagnosis']
                     specialist = cant_miss_diag.get('specialist', 'Unknown')
+                    
+                    # Extract mention count from specialist string like "Critical Care Team (6 mentions)"
+                    mention_match = re.search(r'\((\d+) mentions?\)', specialist)
+                    frequency = int(mention_match.group(1)) if mention_match else 1
+                    
+                    # Normalize for deduplication
+                    normalized_name = diag_name.strip('*').strip().lower()
+                    
+                    # Skip duplicates
+                    if normalized_name in processed_diagnoses:
+                        continue
+                    processed_diagnoses.add(normalized_name)
 
-                    print(f"   🔍 Can't Miss: '{diag_name}' by {specialist}")
+                    print(f"   🔍 Can't Miss: '{diag_name}' by {specialist} (extracted: {frequency} mentions)")
 
                     # Check if this Can't Miss diagnosis matches any unmatched ground truth
                     for gt_diag in gt_diagnoses:
@@ -330,16 +345,25 @@ class EnhancedClinicalEvaluator:
                         )
 
                         if eval_result.is_equivalent:
-                            caa_diagnoses.append(diag_name)
-                            cant_miss_matches.append({
-                                'cant_miss_diagnosis': diag_name,
-                                'ground_truth': gt_diag,
-                                'specialist': specialist,
-                                'reasoning': eval_result.reasoning
-                            })
-                            matched_gt.add(gt_diag)  # Mark as handled
-                            print(f"      ✅ CAA MATCH: {diag_name} ↔ {gt_diag}")
-                            print(f"         Reasoning: {eval_result.reasoning}")
+                            # Check frequency for promotion to TP
+                            if frequency >= 3:  # Threshold: 3+ mentions → promote to TP
+                                matched_pairs.append((gt_diag, diag_name))
+                                matched_system.add(diag_name)
+                                matched_gt.add(gt_diag)
+                                print(f"      🎯 PROMOTED TO TP: {diag_name} ↔ {gt_diag} (safety net capture)")
+                                print(f"         Frequency: {frequency} mentions, promoted to True Positive")
+                            else:
+                                # Still treat as CAA if mentioned but not frequently enough
+                                caa_diagnoses.append(diag_name)
+                                cant_miss_matches.append({
+                                    'cant_miss_diagnosis': diag_name,
+                                    'ground_truth': gt_diag,
+                                    'specialist': specialist,
+                                    'reasoning': eval_result.reasoning
+                                })
+                                matched_gt.add(gt_diag)
+                                print(f"      ✅ CAA MATCH: {diag_name} ↔ {gt_diag}")
+                                print(f"         Reasoning: {eval_result.reasoning}")
                             break
                     else:
                         print(f"      ℹ️ No GT match for Can't Miss diagnosis")
@@ -372,7 +396,10 @@ class EnhancedClinicalEvaluator:
         true_misses = []
 
         for gt_diag in (gt_diagnoses - matched_gt):
-            exclusion_evidence = self._search_for_exclusion_evidence(gt_diag, round_results)
+            if round_results:  # ✅ FIXED: Check if round_results exists
+                exclusion_evidence = self._search_for_exclusion_evidence(gt_diag, round_results)
+            else:
+                exclusion_evidence = None
 
             if exclusion_evidence:
                 appropriately_excluded.append(gt_diag)
@@ -720,5 +747,4 @@ def test_evaluation_v6():
     return True
 
 if __name__ == "__main__":
-    test_evaluation_v6()
     test_evaluation_v6()
