@@ -663,6 +663,19 @@ class SynthesisEvaluationManager:
                 from ddx_evaluator_v6 import EnhancedClinicalEvaluator
                 evaluator = EnhancedClinicalEvaluator(self.ddx_system.model_manager)
 
+                # CONNECT THE EVALUATOR AGENT TO THE EQUIVALENCE AGENT
+                evaluator_agent = None
+                for agent in self.ddx_system.current_agents:
+                    if "Clinical Evaluator" in agent.name or "Evaluator" in agent.name:
+                        evaluator_agent = agent
+                        break
+                
+                if evaluator_agent:
+                    evaluator.equivalence_agent.set_evaluator_agent(evaluator_agent)
+                    print(f"✅ Connected evaluator: {evaluator_agent.name}")
+                else:
+                    print("⚠️ No evaluator agent found in team")
+
                 # Set transcript for context-aware evaluation
                 try:
                     orchestrator = getattr(self.ddx_system, 'round_orchestrator', None)
