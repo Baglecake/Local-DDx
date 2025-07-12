@@ -8,7 +8,7 @@
 
 **VERSION OVERVIEW:**
 
--> **v6:** Initial dual model scaffolding with generative capabilities and early insights.
+-> **v6:** Initial dual model scaffolding with generative capabilities and early insights using dual NousResearch/Hermes-2-Pro-Mistral-7B models.
 
 -> **v7:** Fixed metrics and parsing. Multiple operational versions with a variety of configs:
 
@@ -16,7 +16,10 @@
 
 -> **v7.2:** Production version - eager: "false"; production ready platform for optimized Hugging Face FSmolLM3 and Microsoft Phi3mini experiments.
 
--> **v7.3:** Production version - Dual Lamma3 models loaded with v7.2 architecture.
+-> **v7.3:** Production version - Dual Lamma3 models loaded with v7.2 architecture. This version demonstrates functionality with quantized models.
+
+**VERSIONS 7.2 and 7.3 both support various models which can loaded in the config.yaml. 
+
 
 ## 🚀 Key Innovations
 
