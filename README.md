@@ -8,9 +8,9 @@
 
 **VERSION OVERVIEW:**
 
--> **v6:** Initial dual model scaffolding with agent generation capabilities and early insights using dual NousResearch/Hermes-2-Pro-Mistral-7B models.
+**v6:** Initial dual model scaffolding with agent generation capabilities and early insights using dual NousResearch/Hermes-2-Pro-Mistral-7B models.
 
--> **v7:** Fixed metrics and parsing. Multiple operational versions with a variety of configs:
+**v7:** Fixed metrics and parsing. Multiple operational versions with a variety of configs:
 
 -> **v7.1:** Developmental version - Eager: "true"; enforced stability for GPU development purposes. stable with Hugging Face FSmolLM3 and Microsoft Phi3mini, dual Mistral (v6 config).
 
