@@ -4,7 +4,8 @@ This directory contains the modules anf transcripts for the local DDx v7.2
 
 **Specs:**
 
->conservative_model:
+>**conservative_model:**
+>
 >>name: 'Conservative-Model-HFTB/SmolLM3-3B'
 >>
 >>model_path: 'HuggingFaceTB/SmolLM3-3B'
@@ -25,7 +26,8 @@ This directory contains the modules anf transcripts for the local DDx v7.2
 >>
 >>max_num_seqs: 2
 
->innovative_model:
+
+>**innovative_model:**
 >
 >>name: 'Innovative-Model-Phi'
 >>
