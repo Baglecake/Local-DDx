@@ -8,15 +8,15 @@
 
 **VERSION OVERVIEW:**
 
-**v6:** Initial dual model scaffolding with agent generation capabilities and early insights using dual NousResearch/Hermes-2-Pro-Mistral-7B models.
+**v6:** Developmental Version - Eager: "true"; initial dual model scaffolding with agent generation capabilities and early insights using dual NousResearch/Hermes-2-Pro-Mistral-7B models. Partially compatable with vllm library (missing quantized loading).
 
 **v7:** Fixed metrics and parsing. Multiple operational versions with a variety of configs:
 
--> **v7.1:** Developmental version - Eager: "true"; enforced stability for GPU development purposes. stable with Hugging Face FSmolLM3 and Microsoft Phi3mini, dual Mistral (v6 config).
+-> **v7.1:** Developmental version - Eager: "true"; enforced stability for GPU development purposes. stable with Hugging Face FSmolLM3 and Microsoft Phi3mini, dual Mistral (v6 config). Partially compatable with vllm library (missing quantized loading).
 
--> **v7.2:** Production version - eager: "false"; production ready platform for optimized Hugging Face FSmolLM3 and Microsoft Phi3mini experiments.
+-> **v7.2:** Production version - Eager: "false"; production ready platform for optimized Hugging Face FSmolLM3 and Microsoft Phi3mini experiments. Compatable with full vllm model library.
 
--> **v7.3:** Production version - Dual Lamma3 models loaded with v7.2 architecture. This version demonstrates functionality with quantized models.
+-> **v7.3:** Production version - Eager: "false"; dual Lamma3 models loaded with v7.2 architecture. This version demonstrates functionality with quantized models. Compatable with full vllm model library.
 
 **VERSIONS 7.2 and 7.3 both support various models which can loaded in the config.yaml.
 
@@ -26,10 +26,11 @@
 2. Nous-Hermes-2-Mistral-7B-DPO*
 3. Hugging Face SmolLM3-3B
 4. Microsoft Phi-3-mini-4k-instruct
-5. Meta-Llama-3-8B-Instruct-GPTQ*
+5. Meta-Llama-3-8B-Instruct-GPTQ* **
 6. Microsoft Diablo-GPT
-   
-*Larger models limited to dual instance approach due to memory constraints.
+
+*Larger models limited to dual instance approach (v7.3) due to memory constraints.
+**Quantized model
 
 ## 🚀 Key Innovations
 
