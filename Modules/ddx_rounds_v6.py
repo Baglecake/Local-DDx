@@ -1,4 +1,3 @@
-
 # =============================================================================
 # DDx Rounds - Complete Working Rounds Module
 # =============================================================================
@@ -165,14 +164,14 @@ Rank ALL available specialists and provide clear justifications.
             )
 
     def _parse_ranking_response(self, content: str) -> Dict[str, Any]:
-        """Parse ranking response - flexible for any specialists"""
+        """FIXED: Flexible ranking response parsing that handles multiple output formats"""
         data = {
             'rankings': [],
             'cant_miss': [],
             'total_ranked': 0
         }
 
-        # Extract rankings
+        # Method 1: Try structured XML tags (original format)
         rank_match = re.search(r'<RANK>(.*?)</RANK>', content, re.DOTALL)
         if rank_match:
             rank_text = rank_match.group(1).strip()
@@ -181,17 +180,77 @@ Rank ALL available specialists and provide clear justifications.
                 line = line.strip()
                 if line and re.match(r'^\d+\.', line):
                     data['rankings'].append(line)
-            data['total_ranked'] = len(data['rankings'])
-
-        # Extract can't miss
-        cantmiss_match = re.search(r'<CAN\'T MISS>(.*?)</CAN\'T MISS>', content, re.DOTALL)
-        if cantmiss_match:
-            cantmiss_text = cantmiss_match.group(1).strip()
-            lines = cantmiss_text.split('\n')
+        
+        # Method 2: If no XML tags, look for numbered lists (FLEXIBLE FALLBACK)
+        if not data['rankings']:
+            # Look for any numbered ranking patterns
+            numbered_pattern = r'^\s*(\d+[\.\)\-\s]+.+(?:cardiology|nephrology|surgery|medicine|emergency|pulmonology|endocrinology|dermatology|neurology|psychiatry|oncology|radiology).*)$'
+            lines = content.split('\n')
             for line in lines:
                 line = line.strip()
-                if line and line.startswith('-'):
-                    data['cant_miss'].append(line[1:].strip())
+                # Look for lines that contain medical specialties and are numbered
+                if re.search(numbered_pattern, line, re.IGNORECASE) and len(line) > 10:
+                    data['rankings'].append(line.strip())
+
+        # Method 3: If still empty, extract specialties mentioned with ranking words
+        if not data['rankings']:
+            # Look for ranking language with specialties
+            specialty_ranking_patterns = [
+                r'(?:first|primary|most|top|1st).*?(cardiology|nephrology|surgery|emergency|medicine|pulmonology|endocrinology|dermatology|neurology|psychiatry|oncology|radiology)',
+                r'(?:second|next|2nd).*?(cardiology|nephrology|surgery|emergency|medicine|pulmonology|endocrinology|dermatology|neurology|psychiatry|oncology|radiology)',
+                r'(?:third|3rd).*?(cardiology|nephrology|surgery|emergency|medicine|pulmonology|endocrinology|dermatology|neurology|psychiatry|oncology|radiology)'
+            ]
+            
+            for i, pattern in enumerate(specialty_ranking_patterns, 1):
+                matches = re.findall(pattern, content, re.IGNORECASE)
+                for match in matches:
+                    formatted_ranking = f"{i}. {match.title()} - relevant to case"
+                    if formatted_ranking not in data['rankings']:
+                        data['rankings'].append(formatted_ranking)
+
+        # Set total count
+        data['total_ranked'] = len(data['rankings'])
+
+        # Extract can't miss diagnoses (flexible patterns)
+        cantmiss_patterns = [
+            r'<CAN\'T MISS>(.*?)</CAN\'T MISS>',
+            r'(?:can\'t miss|cannot miss|critical|emergency|urgent):\s*(.*?)(?:\n\n|\n[A-Z]|$)',
+            r'(?:must rule out|rule out|exclude):\s*(.*?)(?:\n\n|\n[A-Z]|$)'
+        ]
+        
+        for pattern in cantmiss_patterns:
+            cantmiss_match = re.search(pattern, content, re.DOTALL | re.IGNORECASE)
+            if cantmiss_match:
+                cantmiss_text = cantmiss_match.group(1).strip()
+                lines = cantmiss_text.split('\n')
+                for line in lines:
+                    line = line.strip()
+                    if line and (line.startswith('-') or len(line.split()) >= 2):
+                        clean_line = line.lstrip('-').strip()
+                        if clean_line and clean_line not in data['cant_miss']:
+                            data['cant_miss'].append(clean_line)
+                break  # Use first pattern that matches
+
+        # If still no cant_miss, look for medical conditions in the text
+        if not data['cant_miss']:
+            medical_urgency_patterns = [
+                r'\b(myocardial infarction|heart attack|stroke|sepsis|pulmonary embolism|pneumonia|acute kidney injury)\b',
+                r'\b(diabetic ketoacidosis|hypoglycemia|anaphylaxis|cardiac arrest|respiratory failure)\b'
+            ]
+            
+            for pattern in medical_urgency_patterns:
+                matches = re.findall(pattern, content, re.IGNORECASE)
+                for match in matches:
+                    if match.lower() not in [item.lower() for item in data['cant_miss']]:
+                        data['cant_miss'].append(match.title())
+
+        # Debug output
+        if not data['rankings'] and not data['cant_miss']:
+            print(f"⚠️ Ranking parsing failed. Content preview:")
+            print(f"   First 200 chars: {content[:200]}...")
+            print(f"   Looking for medical specialties and ranking language...")
+        else:
+            print(f"✅ Extracted {len(data['rankings'])} rankings and {len(data['cant_miss'])} critical items")
 
         return data
 
@@ -535,7 +594,7 @@ Remove duplicates, group similar diagnoses, and rank by likelihood.
         return '\n'.join(formatted)
 
     def _parse_master_list(self, content: str, original_diagnoses: List[Dict[str, Any]]) -> Dict[str, Any]:
-        """Parse master list response"""
+        """FIXED: Robust master list response parsing that handles multiple output formats"""
         data = {
             'master_diagnoses': [],
             'consolidation_notes': '',
@@ -543,7 +602,7 @@ Remove duplicates, group similar diagnoses, and rank by likelihood.
             'deduplicated_count': 0
         }
 
-        # Extract master list
+        # Method 1: Try structured XML tags (original format)
         master_match = re.search(r'<MASTER DDX LIST>(.*?)</MASTER DDX LIST>', content, re.DOTALL)
         if master_match:
             master_text = master_match.group(1).strip()
@@ -552,12 +611,83 @@ Remove duplicates, group similar diagnoses, and rank by likelihood.
                 line = line.strip()
                 if line and re.match(r'^\d+\.', line):
                     data['master_diagnoses'].append(line)
-            data['deduplicated_count'] = len(data['master_diagnoses'])
+        
+        # Method 2: If no XML tags, use ddx_utils extract_diagnoses (ROBUST FALLBACK)
+        if not data['master_diagnoses']:
+            from ddx_utils import extract_diagnoses
+            extracted_diagnoses = extract_diagnoses(content)
+            
+            # Convert to numbered format for consistency
+            for i, diagnosis in enumerate(extracted_diagnoses, 1):
+                formatted_diagnosis = f"{i}. {diagnosis.strip()}"
+                data['master_diagnoses'].append(formatted_diagnosis)
+        
+        # Method 3: If still empty, try manual numbered list extraction (ANY format)
+        if not data['master_diagnoses']:
+            # Look for any numbered lists in the content
+            numbered_pattern = r'^\s*(\d+[\.\)\-\s]+.+)$'
+            lines = content.split('\n')
+            for line in lines:
+                line = line.strip()
+                if re.match(numbered_pattern, line) and len(line) > 5:  # Reasonable length
+                    # Clean up the line but keep original if it looks good
+                    if re.match(r'^\d+\.\s*.+', line):
+                        data['master_diagnoses'].append(line.strip())
+                    else:
+                        # Extract just the diagnosis part
+                        cleaned_line = re.sub(r'^\s*\d+[\.\)\-\s]+', '', line).strip()
+                        if cleaned_line and len(cleaned_line) > 3:  # Valid diagnosis
+                            formatted_diagnosis = f"{len(data['master_diagnoses']) + 1}. {cleaned_line}"
+                            data['master_diagnoses'].append(formatted_diagnosis)
+        
+        # Method 4: Last resort - extract from JSON-like structures
+        if not data['master_diagnoses']:
+            # Look for JSON-like structures that might contain diagnoses
+            json_pattern = r'\{[^{}]*\}'
+            json_matches = re.findall(json_pattern, content)
+            for match in json_matches:
+                try:
+                    import json
+                    data_obj = json.loads(match)
+                    if isinstance(data_obj, dict):
+                        for i, diagnosis in enumerate(data_obj.keys(), 1):
+                            formatted_diagnosis = f"{i}. {diagnosis.strip()}"
+                            data['master_diagnoses'].append(formatted_diagnosis)
+                        break  # Use first valid JSON found
+                except:
+                    continue
 
-        # Extract consolidation notes
-        notes_match = re.search(r'<CONSOLIDATION_NOTES>(.*?)</CONSOLIDATION_NOTES>', content, re.DOTALL)
-        if notes_match:
-            data['consolidation_notes'] = notes_match.group(1).strip()
+        # Set final count
+        data['deduplicated_count'] = len(data['master_diagnoses'])
+        
+        # Extract consolidation notes (flexible patterns)
+        notes_patterns = [
+            r'<CONSOLIDATION_NOTES>(.*?)</CONSOLIDATION_NOTES>',
+            r'(?:consolidation|notes?|reasoning):\s*(.*?)(?:\n\n|\n[A-Z]|$)',
+            r'(?:summary|conclusion):\s*(.*?)(?:\n\n|\n[A-Z]|$)'
+        ]
+        
+        for pattern in notes_patterns:
+            notes_match = re.search(pattern, content, re.DOTALL | re.IGNORECASE)
+            if notes_match:
+                data['consolidation_notes'] = notes_match.group(1).strip()
+                break
+
+        # Debug output to help diagnose issues
+        if not data['master_diagnoses']:
+            print(f"⚠️ Master list parsing failed. Content preview:")
+            print(f"   First 200 chars: {content[:200]}...")
+            print(f"   Content length: {len(content)} characters")
+            # Try one more extraction using basic text patterns
+            words = content.split()
+            medical_terms = [w for w in words if any(term in w.lower() 
+                            for term in ['syndrome', 'disease', 'injury', 'itis', 'osis', 'pathy'])]
+            if medical_terms:
+                print(f"   Found medical terms: {medical_terms[:5]}")
+        else:
+            print(f"✅ Extracted {len(data['master_diagnoses'])} diagnoses from master list")
+            for i, diag in enumerate(data['master_diagnoses'][:3], 1):  # Show first 3
+                print(f"   {i}. {diag[:50]}{'...' if len(diag) > 50 else ''}")
 
         return data
 
@@ -675,13 +805,36 @@ Focus on evidence quality and diagnostic confidence.
         return refinements
 
     def _analyze_refinements(self, refinements: List[Dict[str, Any]], responses: Dict[str, AgentResponse]) -> Dict[str, Any]:
-        """Analyze refinement quality and interactions"""
+        """FIXED: Analyze refinement quality and interactions with flexible parsing"""
+        
+        # Extract from actual response content instead of requiring XML
+        high_value_interactions = 0
+        tier_1_count = 0
+        
+        for response in responses.values():
+            content = response.content.lower()
+            
+            # Count high-value interaction indicators
+            high_value_patterns = [
+                'evidence', 'support', 'challenge', 'disagree', 'alternative',
+                'clinical reasoning', 'risk factor', 'contradict', 'tier',
+                'recommend', 'differential', 'assessment', 'analysis'
+            ]
+            pattern_count = sum(1 for pattern in high_value_patterns if pattern in content)
+            if pattern_count >= 3:  # Multiple reasoning terms = high value
+                high_value_interactions += 1
+                
+            # Count tier 1 mentions (more flexible)
+            tier_1_indicators = ['tier 1', 'tier one', 'first tier', 'top diagnosis', 'primary diagnosis']
+            if any(indicator in content for indicator in tier_1_indicators):
+                tier_1_count += 1
+        
         return {
             'total_refinements': len(refinements),
-            'high_value_interactions': len([r for r in refinements if len(r.get('recommendation', '')) > 100]),
-            'tier_1_count': len([r for r in refinements if '1.' in r.get('recommendation', '')]),
-            'agent_contributions': {name: len(self._extract_refinements(resp.content))
-                                  for name, resp in responses.items()},
+            'high_value_interactions': high_value_interactions,
+            'tier_1_count': tier_1_count,
+            'agent_contributions': {name: len(response.content.split()) 
+                                  for name, response in responses.items()},
             'all_refinements': refinements
         }
 
