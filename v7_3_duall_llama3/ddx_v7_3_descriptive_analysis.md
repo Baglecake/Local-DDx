@@ -1,29 +1,4 @@
 ```text
-Searching for JSON files in: /content/dual_llama3_transcripts
-Successfully loaded and parsed: v7_3_duall_llama3_case_22_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_15_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_7_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_3_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_18_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_1_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_13_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_17_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_6_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_11_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_14_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_4_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_8_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_21_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_9_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_12_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_16_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_19_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_5_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_2_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_23_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_10_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_20_transcript.json
-
 ============================================================
       Overall Performance: Descriptive Statistics
 ============================================================
@@ -77,3 +52,10 @@ Overall Mean Clinical Coverage: 79.71%
 Top-performing agent was a 'Fallback' in 0 out of 23 runs (0.00%).
 Not enough data to compare fallback vs. custom top performers.
 ```
+<img width="1184" height="684" alt="image" src="https://github.com/user-attachments/assets/88925e8e-a400-41f2-99c4-36da21fb64ba" />
+
+<img width="1584" height="784" alt="image" src="https://github.com/user-attachments/assets/dce31cd9-977f-482d-89b5-a170e54d6cc1" />
+
+<img width="984" height="584" alt="image" src="https://github.com/user-attachments/assets/55590bea-8efd-4871-84ab-1be7c7ed93ee" />
+
+
