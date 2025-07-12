@@ -6,3 +6,5 @@ This directory contains the **LDDx v7.1** modules
 2. Fixed CAA and Can't Miss Scoring.
 3. More robust model loader to handle a wider range of models.
 4. Model loader enhanced to accept quantized args in the config.yaml - framework ready to accept quantized LLMs
+
+**Module names use v6 for import consistency, will be updated in later versions**
