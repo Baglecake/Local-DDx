@@ -108,7 +108,7 @@ pip install vllm torch transformers pyyaml
 python run_example.py
 ```
 
-### Configuration
+### Configuration (v6)
 
 Create `config.yaml`:
 
@@ -250,6 +250,8 @@ print(f"Collaboration score: {results['collaboration_metrics']['context_usage']:
 - **ContextEntry**: Structured discourse representation
 - **Collaboration Filters**: Specialty and round-aware context selection
 - **Attention Guidance**: Round-specific collaboration prompting
+
+**v7 repos are backwards compatable. v6 repos are outdated but functional.
 
 ## 🧪 Testing & Validation
 
