@@ -18,8 +18,18 @@
 
 -> **v7.3:** Production version - Dual Lamma3 models loaded with v7.2 architecture. This version demonstrates functionality with quantized models.
 
-**VERSIONS 7.2 and 7.3 both support various models which can loaded in the config.yaml. 
+**VERSIONS 7.2 and 7.3 both support various models which can loaded in the config.yaml.
 
+**KNOWN COMPATABLE MODELS:**
+
+1. Hermes-2-Pro-Mistral-7B* 
+2. Nous-Hermes-2-Mistral-7B-DPO*
+3. Hugging Face SmolLM3-3B
+4. Microsoft Phi-3-mini-4k-instruct
+5. Meta-Llama-3-8B-Instruct-GPTQ*
+6. Microsoft Diablo-GPT
+   
+*Larger models limited to dual instance approach due to memory constraints.
 
 ## 🚀 Key Innovations
 
