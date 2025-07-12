@@ -14,9 +14,11 @@
 
 -> **v7.1:** Developmental version - Eager: "true"; enforced stability for GPU development purposes. stable with Hugging Face FSmolLM3 and Microsoft Phi3mini, dual Mistral (v6 config). Partially compatable with vllm library (missing quantized loading).
 
--> **v7.2:** Production version - Eager: "false"; production ready platform for optimized Hugging Face FSmolLM3 and Microsoft Phi3mini experiments. Compatable with full vllm model library.
+-> **v7.2:** Production version - Eager: "false"; production ready platform for optimized Hugging Face FSmolLM3 and Microsoft Phi3mini experiments. Compatable with full vllm library.
 
--> **v7.3:** Production version - Eager: "false"; dual Lamma3 models loaded with v7.2 architecture. This version demonstrates functionality with quantized models. Compatable with full vllm model library.
+-> **v7.3:** Production version - Eager: "false"; dual Lamma3 models loaded with v7.2 architecture. This version demonstrates functionality with quantized models. Compatable with full vllm library.
+
+-> **v7.4:** Production version - Eager: "false"; v7.4 architecture with flexible parsing methods for various output formats. This version supports quantized models. Compatable with full vllm library.
 
 **VERSIONS 7.2 and 7.3 both support various models which can loaded in the config.yaml.
 
