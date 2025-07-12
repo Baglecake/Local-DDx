@@ -1,23 +1,4 @@
 ```text
-Searching for JSON files in: /content/dual_llama3_transcripts
-Successfully loaded and parsed: v7_3_duall_llama3_case_15_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_7_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_3_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_1_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_13_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_17_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_6_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_11_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_14_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_4_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_8_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_9_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_12_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_16_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_5_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_2_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_10_transcript.json
-
 ============================================================
       Overall Performance: Descriptive Statistics
 ============================================================
