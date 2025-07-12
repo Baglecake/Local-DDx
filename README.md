@@ -10,7 +10,7 @@
 
 -> **v6:** Initial dual model scaffolding with generative capabilities and early insights.
 
--> **v7:** Production model. Fixed metrics and parsing. Multiple operational versions with a variety of configs:
+-> **v7:** Fixed metrics and parsing. Multiple operational versions with a variety of configs:
 
 -> **v7.1:** Developmental version - Eager: "true"; enforced stability for GPU development purposes. stable with Hugging Face FSmolLM3 and Microsoft Phi3mini, dual Mistral (v6 config).
 
