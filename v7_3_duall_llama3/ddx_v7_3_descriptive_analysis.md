@@ -1,27 +1,4 @@
 ```text
-Searching for JSON files in: /content/dual_llama3_transcripts
-Successfully loaded and parsed: v7_3_duall_llama3_case_15_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_7_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_3_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_18_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_1_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_13_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_17_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_6_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_11_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_14_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_4_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_8_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_21_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_9_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_12_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_16_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_19_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_5_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_2_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_10_transcript.json
-Successfully loaded and parsed: v7_3_duall_llama3_case_20_transcript.json
-
 ============================================================
       Overall Performance: Descriptive Statistics
 ============================================================
@@ -73,3 +50,6 @@ Overall Mean Clinical Coverage: 77.78%
 Top-performing agent was a 'Fallback' in 0 out of 21 runs (0.00%).
 Not enough data to compare fallback vs. custom top performers.
 ```
+<img width="1184" height="684" alt="image" src="https://github.com/user-attachments/assets/bf0ffe6f-ee24-4bfd-bb72-ae2c25d2f6d9" />
+
+<img width="1584" height="784" alt="image" src="https://github.com/user-attachments/assets/fd9066fc-b1a7-42ca-b6fc-79d6aa393d61" />
