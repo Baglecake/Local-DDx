@@ -1,32 +1,4 @@
 ```text
-Searching for JSON files in: /content/transcripts
-Successfully loaded and parsed: ddx_v7_2_case_16_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_25_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_26_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_21_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_17_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_11_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_8_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_19_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_24_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_22_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_9_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_3_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_15_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_23_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_13_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_1_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_2_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_20_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_5_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_18_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_10_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_14_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_4_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_7_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_6_transcript.json
-Successfully loaded and parsed: ddx_v7_2_case_12_transcript.json
-
 ============================================================
       Overall Performance: Descriptive Statistics
 ============================================================
@@ -90,3 +62,8 @@ clinical_reasoning               0.510             0.359
 diagnostic_safety                0.636             0.363
 clinical_coverage                0.782             0.812
 ```
+<img width="1184" height="684" alt="image" src="https://github.com/user-attachments/assets/39a4703f-c795-4ca4-b534-0e5a19a861b6" />
+
+<img width="1584" height="784" alt="image" src="https://github.com/user-attachments/assets/11a4cf99-4467-4c39-aa68-4c709a73b8b6" />
+
+<img width="984" height="584" alt="image" src="https://github.com/user-attachments/assets/39452279-36fd-47f0-81d0-d45d0bf1370f" />
