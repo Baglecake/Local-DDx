@@ -1,4 +1,4 @@
-
+# save as "config.yaml"
 conservative_model:
   name: 'Conservative-Model-Llama3-GPTQ'
   model_path: 'MaziyarPanahi/Meta-Llama-3-8B-Instruct-GPTQ'
