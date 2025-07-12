@@ -20,7 +20,7 @@
 
 -> **v7.4:** Production version - Eager: "false"; v7.4 architecture with flexible parsing methods for various output formats. This version supports quantized models. Compatable with full vllm library.
 
-**VERSIONS 7.2 and 7.3 both support various models which can loaded in the config.yaml.
+**VERSIONS 7.2 onwards support interchangeable models from the vllm libray which are loaded in the config.yaml.
 
 **KNOWN COMPATABLE MODELS:**
 
