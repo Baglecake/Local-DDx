@@ -29,8 +29,9 @@
 5. Meta-Llama-3-8B-Instruct-GPTQ* **
 6. Microsoft Diablo-GPT
 
-*Larger models limited to dual instance approach (v7.3) due to memory constraints.
-**Quantized model
+>*Larger models limited to dual instance approach (v7.3) due to memory constraints.
+
+>**Quantized model
 
 ## 🚀 Key Innovations
 
