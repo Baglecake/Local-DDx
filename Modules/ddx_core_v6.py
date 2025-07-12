@@ -7,7 +7,6 @@ DDx Core v6: Clean, unified foundation that preserves ALL sophisticated dynamic
 generation features. DDx_Main_Design.md integration happens in ROUNDS and
 OUTPUT FORMATTING, not in constraining what specialties can be generated.
 """
-
 import os
 os.environ['VLLM_WORKER_MULTIPROC_METHOD'] = 'spawn'
 import yaml
@@ -35,11 +34,11 @@ class ModelConfig:
     top_p: float = 0.9
     max_tokens: int = 1024
     max_model_len: int = 2048
-    dtype: str = 'auto'  # ADD THIS LINE FOR GEMMA COMPATIBILITY
+    dtype: str = 'auto'
     stop_tokens: List[str] = field(default_factory=lambda: ["</s>", "<|im_end|>"])
-    # v6 Enhanced stability settings
     enforce_eager: bool = True
     max_num_seqs: int = 2
+    quantization: Optional[str] = None 
 
 def load_system_config():
     """Load system configuration with enhanced fallbacks"""
@@ -108,12 +107,11 @@ class ModelManager:
 
     def load_model(self, model_id: str) -> bool:
         """Load a single model, unloading any existing one first"""
+        
         if self.active_model_id is not None and self.active_model_id == model_id:
-
             print(f"✅ Model '{model_id}' is already active.")
             return True
 
-        # Unload existing model first
         if self.active_model:
             self.unload_model()
 
@@ -127,21 +125,31 @@ class ModelManager:
 
         print(f"\n📥 Loading {config.name}...")
         try:
-            # Clear cache before loading
             torch.cuda.empty_cache()
 
-            # Load with more aggressive memory usage since only one model
-            model = LLM(
-                model=config.model_path,
-                tensor_parallel_size=1,
-                gpu_memory_utilization=config.memory_fraction,  # Use config value
-                max_model_len=config.max_model_len,
-                trust_remote_code=True,
-                dtype=self._convert_dtype(config.dtype),  # Convert string to torch dtype
-                enforce_eager=config.enforce_eager,
-                max_num_seqs=config.max_num_seqs
-            )
+            
+            # Build the arguments for the LLM class dynamically
+            llm_args = {
+                "model": config.model_path,
+                "tensor_parallel_size": 1,
+                "gpu_memory_utilization": config.memory_fraction,
+                "max_model_len": config.max_model_len,
+                "trust_remote_code": True,
+                "dtype": config.dtype,
+                "enforce_eager": config.enforce_eager,
+                "max_num_seqs": config.max_num_seqs
+            }
 
+            # Only add the quantization parameter if it's specified in the config
+            if config.quantization:
+                llm_args["quantization"] = config.quantization
+                print(f"   ⚙️ Applying quantization: {config.quantization}")
+
+            # Load the model with the dynamic arguments
+            model = LLM(**llm_args)
+            
+
+            
             sampling_params = SamplingParams(
                 temperature=config.temperature,
                 top_p=config.top_p,
@@ -1339,7 +1347,5 @@ if __name__ == "__main__":
         print(f"✅ Dynamic agent generation PRESERVED")
         print(f"✅ Can generate ANY specialty for ANY case")
         print(f"✅ Model management stable")
-        print(f"✅ Case analysis functional")
-        print(f"✅ Ready for round system with DDx_Main_Design.md OUTPUT formatting")
         print(f"✅ Case analysis functional")
         print(f"✅ Ready for round system with DDx_Main_Design.md OUTPUT formatting")
