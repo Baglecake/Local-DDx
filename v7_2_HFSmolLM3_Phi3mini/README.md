@@ -40,7 +40,10 @@ This directory contains the modules anf transcripts for the local DDx v7.2
 >>max_tokens: 1536
 >>
 >>max_model_len: 4096
+>>
 >>dtype: 'auto'
+>>
 >>enforce_eager: false
+>>
 >>max_num_seqs: 2
 
