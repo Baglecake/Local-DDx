@@ -8,7 +8,7 @@
 
 **VERSION OVERVIEW:**
 
--> **v6:** Initial dual model scaffolding with generative capabilities and early insights using dual NousResearch/Hermes-2-Pro-Mistral-7B models.
+-> **v6:** Initial dual model scaffolding with agent generation capabilities and early insights using dual NousResearch/Hermes-2-Pro-Mistral-7B models.
 
 -> **v7:** Fixed metrics and parsing. Multiple operational versions with a variety of configs:
 
