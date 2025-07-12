@@ -49,3 +49,7 @@ Overall Mean Clinical Coverage: 80.83%
 Top-performing agent was a 'Fallback' in 0 out of 20 runs (0.00%).
 Not enough data to compare fallback vs. custom top performers.
 ```
+<img width="1184" height="684" alt="image" src="https://github.com/user-attachments/assets/4789d7a3-3366-4ef2-90d1-4ccde8ded21d" />
+
+<img width="1584" height="784" alt="image" src="https://github.com/user-attachments/assets/110add22-3558-4123-9d22-074d9d57659c" />
+
