@@ -25,12 +25,12 @@ This reports on the performance of the LDDx v7 multi-agent collaborative diagnos
 **Conservative-Model-Llama3-GPTQ loaded successfully.**
 Generating agents...
 
-🌡️ Dr. Rachel Patel: 0.2 + -0.1 + 0.0 = 0.1 (bounded to 0.1) # -> Temperature & reasoning settings
+🌡️ Dr. Rachel Patel: 0.2 + -0.1 + 0.0 = 0.1 (bounded to 0.1)  -> Temperature & reasoning specs
 
 ✅ Generated: Dr. Rachel Patel
 
    Specialty: Nephrology
-   
+  
    Persona: Dr. Patel is a meticulous and detail-oriented nephrologist with a strong backgro...
    
    Model: conservative_model
