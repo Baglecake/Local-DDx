@@ -45,7 +45,7 @@ Generating agents...
    
 -   Model: conservative_model
 
-+ 2 more
+> + 2 additional agents
 ...
 
 **Innovative-Model-Llama3-GPTQ loaded successfully.**
@@ -71,7 +71,7 @@ Generating agents...
    
  -  Model: innovative_model
 
-+ 3 more
+> + 3 additional agents
 ...
   
 ## 1. Core Performance Metrics
