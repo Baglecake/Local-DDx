@@ -1,6 +1,6 @@
 # LDDx v7 Performance Analysis Report
 
-**Generated:** 2025-07-13 06:05:45  
+2025-07-13 06:05:45  
 **System:** Dual Llama3 Multi-Agent Collaborative Diagnostic System  
 **Dataset:** Open-XDDx
 
