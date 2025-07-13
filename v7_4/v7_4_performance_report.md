@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-This reports on the performance of the LDDx v7 multi-agent collaborative diagnostic system performance across 30 clinical cases using dual Llama3-GPTQ models.
+This reports on the performance of the LDDx v7 multi-agent collaborative diagnostic system performance across 30 clinical cases using dual Meta-Llama-3-8B-Instruct-GPTQ large language models.
 
 ### Key Findings
 
@@ -249,7 +249,7 @@ The system successfully generated diverse medical specialists across cases, demo
 ### System Architecture
 
 - **GPU**: GPU: NVIDIA A100-SXM4-40GB
-- **Base Models**: Dual Instance Meta-Llama3-GPTQ (Conservative = temp: 0.1; Innovative = temp: 0.9)
+- **Base Models**: 2x Meta-Llama-3-8B-Instruct-GPTQ (Conservative = temp: 0.1; Innovative = temp: 0.9)
 - **Dynamic Generation**: AI-driven specialist team creation
 - **Rounds**: 7-stage collaborative diagnostic sequence
 - **Context Management**: Sliding context windows for collaboration
