@@ -36,49 +36,39 @@ Generating agents...
    Model: conservative_model
 
 🌡️ Dr. Liam Chen: 0.2 + -0.1 + 0.05 = 0.15000000000000002 (bounded to 0.15000000000000002)
-✅ Generated: Dr. Liam Chen
-   Specialty: Cardiology
-   Persona: Dr. Chen is a seasoned cardiologist with a strong focus on cardiovascular imagin...
-   Model: conservative_model
 
-🌡️ Dr. Sophia Jensen: 0.2 + 0.1 + 0.1 = 0.4 (bounded to 0.4)
-✅ Generated: Dr. Sophia Jensen
-   Specialty: Dermatology
-   Persona: Dr. Jensen is a compassionate and astute dermatologist with a strong focus on sk...
-   Model: conservative_model
+✅ Generated: Dr. Liam Chen
+
+   Specialty: Cardiology
    
-🌡️ Dr. Michael Lee: 0.2 + -0.1 + 0.15000000000000002 = 0.25 (bounded to 0.25)
-✅ Generated: Dr. Michael Lee
-   Specialty: Infectious Disease
-   Persona: Dr. Lee is a meticulous and analytical infectious disease specialist with a stro...
+   Persona: Dr. Chen is a seasoned cardiologist with a strong focus on cardiovascular imagin...
+   
    Model: conservative_model
+...
 
 **Innovative-Model-Llama3-GPTQ loaded successfully.**
 Generating agents...
 
 🌡️ Dr. Sophia Patel: 0.6 + -0.1 + 0.0 = 0.5 (bounded to 0.5)
+
 ✅ Generated: Dr. Sophia Patel
+
    Specialty: Cardiology
+   
    Persona: Dr. Patel is a meticulous and detail-oriented cardiologist with a focus on coron...
+   
    Model: innovative_model
    
 🌡️ Dr. Rachel Lee: 0.6 + -0.1 + 0.05 = 0.55 (bounded to 0.55)
+
 ✅ Generated: Dr. Rachel Lee
+
    Specialty: Nephrology
+   
    Persona: Dr. Lee is a compassionate and empathetic nephrologist with a strong background ...
+   
    Model: innovative_model
 
-🌡️ Dr. Liam Chen: 0.6 + -0.1 + 0.1 = 0.6 (bounded to 0.6)
-✅ Generated: Dr. Liam Chen
-   Specialty: Infectious Disease
-   Persona: Dr. Chen is a thorough and meticulous infectious disease specialist with a stron...
-   Model: innovative_model
-
-🌡️ Dr. Maya Jensen: 0.6 + 0.1 + 0.15000000000000002 = 0.85 (bounded to 0.85)
-✅ Generated: Dr. Maya Jensen
-   Specialty: Dermatology
-   Persona: Dr. Jensen is a warm and empathetic dermatologist with a strong background in sk...
-   Model: innovative_model
 
 ## 1. Core Performance Metrics
 
