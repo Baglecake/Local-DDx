@@ -233,7 +233,7 @@ The system successfully generated diverse medical specialists across cases, demo
 ### Competitive Analysis
 
 - **Performance**: Competative recall - 53.3% (Zhou et al., 2025) vs 63.0% (LDDx v7.4)
-- **Innovation**: Novel multi-agent architecture vs single-agent dual inference
+- **Innovation**: Novel multi-agent architecture vs single-agent dual inference = "Dual Instance" approach.
 - **Clinical Focus**: Emphasizes safety and real-world deployment considerations
 
 ### Future Research Directions
@@ -249,7 +249,7 @@ The system successfully generated diverse medical specialists across cases, demo
 ### System Architecture
 
 - **GPU**: GPU: NVIDIA A100-SXM4-40GB
-- **Base Models**: Dual Meta-Llama3-GPTQ (Conservative + Innovative)
+- **Base Models**: Dual Instance Meta-Llama3-GPTQ (Conservative = temp: 0.1; Innovative = temp: 0.9)
 - **Dynamic Generation**: AI-driven specialist team creation
 - **Rounds**: 7-stage collaborative diagnostic sequence
 - **Context Management**: Sliding context windows for collaboration
