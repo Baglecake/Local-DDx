@@ -186,7 +186,7 @@ The system successfully generated diverse medical specialists across cases, demo
 
 ### Evaluation Dataset
 
-- **Source**: Open-XDDx dataset (same as published Nature research)
+- **Source**: Open-XDDx dataset
 - **Cases Analyzed**: 27
 - **Specialties**: 9 clinical domains
 - **Ground Truth**: Expert-annotated differential diagnoses
