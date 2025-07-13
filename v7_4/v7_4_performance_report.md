@@ -9,7 +9,7 @@
 
 ## Executive Summary
 
-This reports on the performance of the LDDx v7 multi-agent collaborative diagnostic system performance across 30 clinical cases using dual Meta-Llama-3-8B-Instruct-GPTQ large language models.
+This report details the performance of the LDDx v7 multi-agent collaborative diagnostic system performance across 30 clinical cases using dual instances of the Meta-Llama-3-8B-Instruct-GPTQ large language model.
 
 ### Key Findings
 
