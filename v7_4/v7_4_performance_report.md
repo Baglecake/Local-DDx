@@ -2,7 +2,7 @@
 
 >2025-07-13 07:13:40
 > 
->Dual Llama3 Multi-Agent Collaborative Diagnostic System  
+>Dual Instance LLM Multi-Agent Collaborative Diagnostic System  
 
 
 ---
