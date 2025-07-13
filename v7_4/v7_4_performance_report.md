@@ -166,12 +166,6 @@ The system successfully generated diverse medical specialists across cases, demo
 - **Paired t-test p-value**: 0.087645
 - **Statistically significant difference**: APPROACHING
 
-### Safety-Reasoning Correlation
-
-- **Correlation coefficient**: 0.888
-- **P-value**: 0.000000
-- **Significant correlation**: ✅ YES
-
 ---
 
 ## 8. Research Implications
