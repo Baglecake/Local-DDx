@@ -181,6 +181,7 @@ The system successfully generated diverse medical specialists across cases, demo
 
 ### System Architecture
 
+- **GPU**: NVIDIA A100-SXM4-40GB
 - **Base Models**: Dual Meta-Llama3-GPTQ (Conservative + Innovative)
 - **Dynamic Generation**: AI-driven specialist team creation
 - **Rounds**: 7-stage collaborative diagnostic sequence
