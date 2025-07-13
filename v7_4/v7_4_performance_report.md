@@ -1,4 +1,4 @@
-# LDDx v7 Performance Analysis Report
+# LDDx v7.4 Performance Report
 
 >2025-07-13 07:13:40
 > 
