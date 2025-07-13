@@ -29,21 +29,21 @@ Generating agents...
 
 ✅ Generated: Dr. Rachel Patel
 
-   Specialty: Nephrology
+-   Specialty: Nephrology
   
-   Persona: Dr. Patel is a meticulous and detail-oriented nephrologist with a strong backgro...
+-   Persona: Dr. Patel is a meticulous and detail-oriented nephrologist with a strong backgro...
    
-   Model: conservative_model
+-   Model: conservative_model
 
 🌡️ Dr. Liam Chen: 0.2 + -0.1 + 0.05 = 0.15000000000000002 (bounded to 0.15000000000000002)
 
 ✅ Generated: Dr. Liam Chen
 
-   Specialty: Cardiology
+-   Specialty: Cardiology
    
-   Persona: Dr. Chen is a seasoned cardiologist with a strong focus on cardiovascular imagin...
+-   Persona: Dr. Chen is a seasoned cardiologist with a strong focus on cardiovascular imagin...
    
-   Model: conservative_model
+-   Model: conservative_model
 ...
 
 **Innovative-Model-Llama3-GPTQ loaded successfully.**
@@ -53,21 +53,21 @@ Generating agents...
 
 ✅ Generated: Dr. Sophia Patel
 
-   Specialty: Cardiology
+-   Specialty: Cardiology
    
-   Persona: Dr. Patel is a meticulous and detail-oriented cardiologist with a focus on coron...
+-   Persona: Dr. Patel is a meticulous and detail-oriented cardiologist with a focus on coron...
    
-   Model: innovative_model
+-   Model: innovative_model
    
 🌡️ Dr. Rachel Lee: 0.6 + -0.1 + 0.05 = 0.55 (bounded to 0.55)
 
 ✅ Generated: Dr. Rachel Lee
 
-   Specialty: Nephrology
+ -  Specialty: Nephrology
    
-   Persona: Dr. Lee is a compassionate and empathetic nephrologist with a strong background ...
+ -  Persona: Dr. Lee is a compassionate and empathetic nephrologist with a strong background ...
    
-   Model: innovative_model
+ -  Model: innovative_model
 
 
 ## 1. Core Performance Metrics
