@@ -313,6 +313,13 @@ pytest tests/
 black ddx_*.py
 ```
 
+### 📚 References
+Nori, H., Lee, Y. T., Zhang, S., Carignan, D., Edgar, R., Fusi, N., ... & Horvitz, E. (2023). Can generalist foundation models outcompete special-purpose tuning? A case study in medicine. arXiv. https://arxiv.org/abs/2311.16452
+
+Zhou, S., Lin, M., Ding, S., Zhang, Y., Chen, H., Wang, J., & Liu, Q. (2025). Explainable differential diagnosis with dual-inference large language models. npj Health Systems, 2(1), 12. https://doi.org/10.1038/s44401-025-00015-6
+
+Santoro, A., Lampinen, A., Mathewson, K. W., Lillicrap, T., & Raposo, D. (2022). Symbolic behaviour in artificial intelligence (arXiv Version 2). arXiv. https://doi.org/10.48550/arXiv.2102.03406
+
 ## 📚 Citation
 
 If you use DDx v6 in your research, please cite:
