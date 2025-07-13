@@ -232,7 +232,7 @@ The system successfully generated diverse medical specialists across cases, demo
 
 ### Competitive Analysis
 
-- **Performance**: Competative - 53.3% (Zhou et al. (2025)) vs 63.0% (LDDx v7.4) recall
+- **Performance**: Competative recall - 53.3% (Zhou et al., 2025) vs 63.0% (LDDx v7.4)
 - **Innovation**: Novel multi-agent architecture vs single-agent dual inference
 - **Clinical Focus**: Emphasizes safety and real-world deployment considerations
 
