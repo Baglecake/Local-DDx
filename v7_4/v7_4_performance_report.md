@@ -44,6 +44,8 @@ Generating agents...
 -   Persona: Dr. Chen is a seasoned cardiologist with a strong focus on cardiovascular imagin...
    
 -   Model: conservative_model
+
++ 2 more
 ...
 
 **Innovative-Model-Llama3-GPTQ loaded successfully.**
@@ -69,7 +71,9 @@ Generating agents...
    
  -  Model: innovative_model
 
-
++ 3 more
+...
+  
 ## 1. Core Performance Metrics
 
 ### Overall Statistics
