@@ -26,9 +26,13 @@ This reports on the performance of the LDDx v7 multi-agent collaborative diagnos
 Generating agents...
 
 🌡️ Dr. Rachel Patel: 0.2 + -0.1 + 0.0 = 0.1 (bounded to 0.1) # -> Temperature & reasoning settings
+
 ✅ Generated: Dr. Rachel Patel
+
    Specialty: Nephrology
+   
    Persona: Dr. Patel is a meticulous and detail-oriented nephrologist with a strong backgro...
+   
    Model: conservative_model
 
 🌡️ Dr. Liam Chen: 0.2 + -0.1 + 0.05 = 0.15000000000000002 (bounded to 0.15000000000000002)
