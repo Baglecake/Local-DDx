@@ -1,7 +1,7 @@
 # LDDx v7 Performance Analysis Report
 
 >2025-07-13 06:05:45  
->Dual Llama3 Multi-Agent Collaborative Diagnostic System
+>**Dual Llama3-GPTQ Multi-Agent Diagnostic System**
 >
 >**GPU:** NVIDIA A100-SXM4-40GB
 >
