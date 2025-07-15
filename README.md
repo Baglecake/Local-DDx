@@ -128,7 +128,7 @@ pip install vllm torch transformers pyyaml
 python run_example.py
 ```
 
-### Configuration (v6)
+### Configuration (v6) - ***See version READMEs for iteration specs***
 
 Create `config.yaml`:
 
@@ -146,7 +146,7 @@ innovative_model:
   temperature: 0.9
 ```
 
-## 🚀 Usage (v6) - ***See version READMEs for pipeline execution***
+## 🚀 Usage
 
 ### Basic Case Analysis
 
