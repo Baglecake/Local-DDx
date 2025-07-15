@@ -27,7 +27,7 @@
 **VERSIONS 7.2 onwards support interchangeable models from the vllm libray which are loaded in the config.yaml.
 
 
-**KNOWN COMPATABLE MODELS:**
+**TESTED COMPATABLE MODELS:**
 
 1. Hermes-2-Pro-Mistral-7B* 
 2. Nous-Hermes-2-Mistral-7B-DPO*
