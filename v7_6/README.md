@@ -8,7 +8,7 @@ conservative_model:
   model_path: 'Qwen/Qwen2-7B-Instruct'
   quantization: null # This is a full-precision model
   dtype: 'bfloat16'  # Recommended for modern models on A100
-  memory_fraction: 0.43 # Allocating 43% of 42GB (~18GB) to each instance
+  memory_fraction: 0.43 # Allocating 43% of 42GB
   temperature: 0.2
   top_p: 0.7
   max_tokens: 1536
