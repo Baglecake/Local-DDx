@@ -2,7 +2,7 @@ This directory contains the .py modules for the LDDx_v6_2_HFSmolLM3_Phi3mini ite
 
 Pipeline execution example script (Case 1):
 
-"""
+```python
 from ddx_runner_v6 import DDxRunner
 
 # 1. Define your case name, description, and ground truth
@@ -26,4 +26,6 @@ if runner.is_initialized:
         case_description=case_description,
         ground_truth=ground_truth
     )
-"""
+```
+
+This will execute all 7 rounds of the DDx pipeline and generate a JSON output of the transcript and metrics.
