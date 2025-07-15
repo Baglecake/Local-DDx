@@ -24,7 +24,7 @@
 
 -> **v7.5** Production version - Eager: "false"; NEW v7.5 architecture with enhanced parsing, prompt control, and "chattyness" reduction. Supports quantized models with full vllm compatability.
 
--> **v7.6** Production version - Easger "false"; Loaded on v7.5 architecture. This version represents the first iteration mixing quantized and full precision models (Meta-Llama-3-8B-Instruct-GPTQ & Qwen/Qwen2-7B-Instruct). Full vllm compatability.
+-> **v7.6** Production version - Easger "false"; loaded on v7.5 architecture. This version represents the first iteration mixing quantized and full precision models (Meta-Llama-3-8B-Instruct-GPTQ & Qwen/Qwen2-7B-Instruct). Full vllm compatability.
 
 **VERSIONS 7.2 onwards support interchangeable models from the vllm libray which are loaded in the config.yaml.
 
