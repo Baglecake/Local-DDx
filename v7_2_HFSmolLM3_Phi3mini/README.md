@@ -50,8 +50,6 @@ synthesis:
   enable_tempo_scoring: true
 ```
 
->This directory contains the .py modules for the LDDx_v6_2_HFSmolLM3_Phi3mini iteration.
-
 **Example Pipeline Execution (Case 1)**:
 
 ```python
