@@ -146,7 +146,7 @@ innovative_model:
   temperature: 0.9
 ```
 
-## 🚀 Usage
+## 🚀 Usage (v6) - ***See version READMEs for pipeline execution***
 
 ### Basic Case Analysis
 
