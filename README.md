@@ -20,6 +20,8 @@
 
 -> **v7.4:** Production version - Eager: "false"; v7.4 architecture with flexible parsing methods for various output formats. This version supports quantized models. Compatable with full vllm library.
 
+-> **v7.5** Production version - Eager: "false"; NEW v7.5 architecture with enhanced parsing, prompt control, and "chattyness" reduction. Supports quantized models and full vllm compatability.
+
 **VERSIONS 7.2 onwards support interchangeable models from the vllm libray which are loaded in the config.yaml.
 
 **KNOWN COMPATABLE MODELS:**
@@ -28,8 +30,9 @@
 2. Nous-Hermes-2-Mistral-7B-DPO*
 3. Hugging Face SmolLM3-3B
 4. Microsoft Phi-3-mini-4k-instruct
-5. Meta-Llama-3-8B-Instruct-GPTQ* **
-6. Microsoft Diablo-GPT
+5. Microsoft Phi-4-mini-reasoning
+6. Meta-Llama-3-8B-Instruct-GPTQ* **
+7. Microsoft Diablo-GPT
 
 >*Larger models limited to dual instance approach (v7.3) due to memory constraints.
 
