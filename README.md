@@ -128,7 +128,7 @@ pip install vllm torch transformers pyyaml
 python run_example.py
 ```
 
-### Configuration (v6) - ***See version READMEs for iteration specs***
+### Configuration (v6) - ***See module READMEs for version specs***
 
 Create `config.yaml`:
 
