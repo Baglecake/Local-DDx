@@ -1,6 +1,6 @@
-This directory contains the .py modules for the LDDx_v6_2_HFSmolLM3_Phi3mini iteration.
+>This directory contains the .py modules for the LDDx_v6_2_HFSmolLM3_Phi3mini iteration.
 
-Pipeline execution example script (Case 1):
+**Example Pipeline Execution (Case 1)**:
 
 ```python
 from ddx_runner_v6 import DDxRunner
