@@ -24,19 +24,21 @@
 
 -> **v7.5** Production version - Eager: "false"; NEW v7.5 architecture with enhanced parsing, prompt control, and "chattyness" reduction. Supports quantized models with full vllm compatability.
 
+-> **v7.6** Production version - Easger "false"; Loaded on v7.5 architecture. This version represents the first iteration mixing quantized and full precision models (Meta-Llama-3-8B-Instruct-GPTQ & Qwen/Qwen2-7B-Instruct). Full vllm compatability.
+
 **VERSIONS 7.2 onwards support interchangeable models from the vllm libray which are loaded in the config.yaml.
 
 
 **TESTED COMPATABLE MODELS:**
 
-1. Hermes-2-Pro-Mistral-7B* 
-2. Nous-Hermes-2-Mistral-7B-DPO*
+1. Hermes-2-Pro-Mistral-7B * 
+2. Nous-Hermes-2-Mistral-7B-DPO *
 3. Hugging Face SmolLM3-3B
 4. Microsoft Phi-3-mini-4k-instruct
 5. Microsoft Phi-4-mini-reasoning
-6. Meta-Llama-3-8B-Instruct-GPTQ* **
+6. Meta-Llama-3-8B-Instruct-GPTQ **
 7. Microsoft Diablo-GPT
->8. Qwen/Qwen2-7B-Instruct* (Soon, v7.6)
+8. Qwen/Qwen2-7B-Instruct
 
 >*Testing on larger models has been limited to dual instance approach (v7.3 onwards) due to memory constraints.
 
