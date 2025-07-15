@@ -7,7 +7,8 @@
 **A multi-agent collaborative AI system for medical differential diagnosis featuring dynamic specialist generation, sliding context windows, and epistemic labor division using local LLMs.**
 
 **VERSION OVERVIEW:**
-**Each version directory contains version transcripts and modules. "Transcripts" and "Modules" directories in the main repo contain modules and transcripts from the initial conceptual design (v6.0) only.
+
+- Each version directory contains version transcripts and modules. "Transcripts" and "Modules" directories in the main repo contain modules and transcripts from the initial conceptual design (v6.0) only.
 
 **v6:** Developmental Version - Eager: "true"; enforced stability for GPU development purposes. Initial dual model scaffolding with agent generation capabilities and early insights using dual NousResearch/Hermes-2-Pro-Mistral-7B models. Partially compatable with vllm library (missing quantized loading).
 
