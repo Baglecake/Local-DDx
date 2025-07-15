@@ -334,7 +334,7 @@ Santoro, A., Lampinen, A., Mathewson, K. W., Lillicrap, T., & Raposo, D. (2022).
 
 ## 📚 Citation
 
-If you use DDx v6 in your research, please cite:
+If you use LDDx in your research, please cite:
 
 ```bibtex
 @software{ddx_v6_2025,
