@@ -148,6 +148,7 @@ innovative_model:
   memory_fraction: 0.4
   temperature: 0.9
 ```
+*Adjust config parameters for different reasoning outcomes. Allows for direct insight into the effects of architectural parameter tuning.
 
 ## 🚀 Usage
 
