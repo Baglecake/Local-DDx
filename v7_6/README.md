@@ -1,4 +1,5 @@
 **v7.6**
+
 Leveraging the precision of the Qwen2-7B-Instruct with the larger parameter set of the Innovative-Model-Llama3-GPTQ, version 7.6 introduces a refined evaluation pipeline with tightened parsing and a narrower temperature gap between the two models. These refinements address evaluation leniency in previous iterations while maintaining creative reasoning capacity.
 
 **Specs**:
