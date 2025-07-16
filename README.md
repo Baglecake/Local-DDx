@@ -26,6 +26,8 @@
 
 -> **v7.6** Production version - Easger "false"; loaded on v7.5 architecture. This version represents the first iteration mixing quantized and full precision models (Meta-Llama-3-8B-Instruct-GPTQ & Qwen/Qwen2-7B-Instruct). Full vllm compatability.
 
+-> **v7.7** Production version - Easger "false"; NEW v7.7 architecture with a refined evaluation pipeline for precise ground truth matching. Tested on dual instance Qwen2.5-7B-Instruct-GPTQ-Int4. Maintains full vllm compatability.
+
 **VERSIONS 7.2 onwards support interchangeable models from the vllm libray which are loaded in the config.yaml.
 
 
@@ -39,8 +41,9 @@
 6. Meta-Llama-3-8B-Instruct-GPTQ **
 7. Microsoft Diablo-GPT
 8. Qwen/Qwen2-7B-Instruct
+9. Qwen2.5-7B-Instruct-GPTQ-Int4 * **
 
->*Testing on larger models has been limited to dual instance approach (v7.3 onwards) due to memory constraints.
+>*Testing on larger models limited to dual instance approach (v7.3 onwards).
 
 >**Quantized model
 
