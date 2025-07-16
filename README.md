@@ -16,10 +16,9 @@
 
 -> **v8.2:** Building on v8.1, this version represents the first production ready iteration of v8. Additionally, version tests have been powered by Llama3 and Qwen2.5 models paired together synchronously.
 
--> Included in this version is a ddx performance analysis script. The ddx_results_analyzer.py translates experiment results in direct relation to industry and academy metrics and benchmarks. This allows for direct comparison as the novel metrics of the ddx are compressed into standard assessment frameworks. See 
+-> Included in this version is a ddx performance analysis script. The ddx_results_analyzer.py translates experiment results in direct relation to industry and academy metrics and benchmarks. This allows for direct comparison as the novel metrics of the ddx are compressed into standard assessment frameworks. See "v8_2_dual_qwen_performance_brief.md" in the v8 "Reports" directory for early insights.
 
 **See the version 8 README for further details.** 
-
 
 --------------------------------------------------------------------------------------
 
