@@ -6,7 +6,7 @@
 
 **A multi-agent collaborative AI system for medical differential diagnosis featuring dynamic specialist generation, sliding context windows, and epistemic labor division using local LLMs.**
 
-**v8:** This directory contains the latest version of the DDx. Primary refactor advances from sequential model management, implementing simultaneous model loading for persistent dual instance architecture. Features include precise string matching and backwards compatability for agent enahced evaluation. 
+**v8:** This directory contains the latest version of the DDx. Primary refactor advances from sequential model management, implementing simultaneous model loading for persistent dual instance architecture. Features include precise string matching and backwards compatability for agent enhanced evaluation. 
 
 - In addition to the features above, Version 8 offers a standardized benchmark to test against the AI enhanced evaluation in the previous iterations using the OPEN-DDx Data set. While a rigorous diagnostic rubric captures the structure of an academic test, the LDDx demonstrates the social dynamics at play in real, complex situations. As a side by side experiment, the LDDx offers a glimpse into the benefits and risks of artificial social intelligence as they apply to the sensitive context of clinical reasoning and diagnostics. See the version 8 README for further details.
 
