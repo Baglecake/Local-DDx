@@ -345,6 +345,8 @@ Zhou, S., Lin, M., Ding, S., Zhang, Y., Chen, H., Wang, J., & Liu, Q. (2025). Ex
 
 Santoro, A., Lampinen, A., Mathewson, K. W., Lillicrap, T., & Raposo, D. (2022). Symbolic behaviour in artificial intelligence (arXiv Version 2). arXiv. https://doi.org/10.48550/arXiv.2102.03406
 
+Zhao, Y., Liu, H., Yu, D., Kung, S. Y., Mi, H., & Yu, D. (2025). *One token to fool LLM-as-a-judge*. arXiv. https://arxiv.org/abs/2507.08794
+
 ## 📚 Citation
 
 If you use LDDx in your research, please cite:
