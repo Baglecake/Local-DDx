@@ -40,6 +40,7 @@
 
 **VERSIONS 7.2 onwards support interchangeable models from the vllm libray which are loaded in the config.yaml.
 
+--------------------------------------------------------------------------------------
 
 **TESTED COMPATABLE MODELS:**
 
@@ -56,6 +57,8 @@
 >*Testing on larger models limited to dual instance approach (v7.3 onwards).
 
 >**Quantized model
+
+--------------------------------------------------------------------------------------
 
 ## 🚀 Key Innovations
 
@@ -76,6 +79,8 @@
 - **Preferential voting with Borda counts** for consensus building
 - **TempoScore metrics** for round-by-round performance assessment
 - **AI-enhanced clinical evaluation** with equivalence agents
+
+--------------------------------------------------------------------------------------
 
 ## 🏗️ Architecture
 
@@ -101,6 +106,8 @@ DDx System Architecture
                     └─────────────────┘    └─────────────────┘
 ```
 
+--------------------------------------------------------------------------------------
+
 ## 🔬 Research Significance
 
 This system proposes a multi-agent AI framework for healthcare:
@@ -109,6 +116,8 @@ This system proposes a multi-agent AI framework for healthcare:
 - **Novel approach** to dynamic specialist team generation without constraint to predefined specialties  
 - **Advanced consensus mechanisms** using preferential voting and credibility weighting
 - **Comprehensive evaluation framework** with AI-enhanced clinical assessment
+
+--------------------------------------------------------------------------------------
 
 ## 📋 The 7-Round Diagnostic Process
 
@@ -121,6 +130,8 @@ This system proposes a multi-agent AI framework for healthcare:
 | **5. Refinement & Debate** | Evidence-based collaborative discourse | **Fully Collaborative** |
 | **6. Preferential Voting** | Consensus via Borda count voting | **Fully Collaborative** |
 | **7. Can't Miss** | Critical diagnosis identification | **Context-Aware** |
+
+--------------------------------------------------------------------------------------
 
 ## 🛠️ Installation & Setup
 
@@ -162,6 +173,8 @@ innovative_model:
   temperature: 0.9
 ```
 *Adjust config parameters for different reasoning outcomes. Allows for direct insight into the effects of architectural parameter tuning.
+
+--------------------------------------------------------------------------------------
 
 ## 🚀 Usage
 
@@ -262,6 +275,8 @@ if runner.is_initialized:
 - **Collaboration Index**: Measure of inter-agent discourse quality
 - **Context Utilization**: Effectiveness of sliding context window usage
 
+--------------------------------------------------------------------------------------
+
 ## 🔧 Core Modules
 
 ### `ddx_core_v6.py`
@@ -296,6 +311,8 @@ if runner.is_initialized:
 
 **v7 repos are backwards compatable. v6 repos are outdated but functional.
 
+--------------------------------------------------------------------------------------
+
 ## 🧪 Testing & Validation
 
 ```bash
@@ -308,6 +325,8 @@ python validate_pipeline.py
 # Performance benchmarking
 python benchmark_system.py
 ```
+
+--------------------------------------------------------------------------------------
 
 ## 📈 Research Applications
 
@@ -342,7 +361,9 @@ pytest tests/
 black ddx_*.py
 ```
 
-### 📚 References
+--------------------------------------------------------------------------------------
+
+## 📚 References
 Nori, H., Lee, Y. T., Zhang, S., Carignan, D., Edgar, R., Fusi, N., ... & Horvitz, E. (2023). Can generalist foundation models outcompete special-purpose tuning? A case study in medicine. arXiv. https://arxiv.org/abs/2311.16452
 
 Zhou, S., Lin, M., Ding, S., Zhang, Y., Chen, H., Wang, J., & Liu, Q. (2025). Explainable differential diagnosis with dual-inference large language models. npj Health Systems, 2(1), 12. https://doi.org/10.1038/s44401-025-00015-6
@@ -350,6 +371,8 @@ Zhou, S., Lin, M., Ding, S., Zhang, Y., Chen, H., Wang, J., & Liu, Q. (2025). Ex
 Santoro, A., Lampinen, A., Mathewson, K. W., Lillicrap, T., & Raposo, D. (2022). Symbolic behaviour in artificial intelligence (arXiv Version 2). arXiv. https://doi.org/10.48550/arXiv.2102.03406
 
 Zhao, Y., Liu, H., Yu, D., Kung, S. Y., Mi, H., & Yu, D. (2025). *One token to fool LLM-as-a-judge*. arXiv. https://arxiv.org/abs/2507.08794
+
+--------------------------------------------------------------------------------------
 
 ## 📚 Citation
 
@@ -364,6 +387,8 @@ If you use LDDx in your research, please cite:
   note={A multi-agent AI system for medical differential diagnosis}
 }
 ```
+
+--------------------------------------------------------------------------------------
 
 ## 📄 License
 
