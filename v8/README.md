@@ -1,18 +1,23 @@
 # DDx Experiment v8 - Multi-Model Diagnostic Reasoning System
 
+**v8**
 ## Overview
 
 This version implements a deterministic clinical evaluation engine that provides reproducible, research-grade assessment of diagnostic performance using rule-based clinical equivalence matching and evidence-based transcript analysis.
 
 Additionally, this version implements a unified dual instance approach, loading each llm simultaneously. This refinement significantly improves speed of execution, while also enabling batched execution (See below).
 
-**v8**
+---------------------------------------------------------------------
+
+## Version History
 
 -> v8_2_dual_qwen: This setup deploys synchronous dual Qwen2.5 models to power its agents.
 
 -> v8_2_llama_qwen: This setup deploys synchronus llama3 and Qwen2.5 models to power its agents.
 
 -> ddx_results_analyzer.py: This script contains metric normalization analysis to interpret the outputs of the LDDx in comparison to industry and academic benchamrks. It serves as a translator between novel and traditional metrics. Use to interpret results. See the "Reports" directory for batched analyses and individual case reports.
+
+---------------------------------------------------------------------
 
 ## Core Framework Review
 
@@ -21,6 +26,8 @@ Additionally, this version implements a unified dual instance approach, loading 
 - **Innovative Model**: Higher temperature (0.6-0.9) for creative, exploratory thinking
 
 This approach enables novel epistemic labor division and collaborative diagnostic emergence.
+
+---------------------------------------------------------------------
 
 ## System Architecture
 
@@ -43,8 +50,11 @@ This approach enables novel epistemic labor division and collaborative diagnosti
 │  Dr. Reed)      │    │                  │    │                 │
 └─────────────────┘    └──────────────────┘    └─────────────────┘
 ```
+---------------------------------------------------------------------
 
 ## Module Documentation
+
+---------------------------------------------------------------------
 
 ### 1. `ddx_core_v6.py` - System Foundation
 **Purpose**: Core system architecture with multi-model management and dynamic agent generation.
@@ -146,6 +156,8 @@ This approach enables novel epistemic labor division and collaborative diagnosti
 - Evaluation thresholds
 - Synthesis configuration options
 
+---------------------------------------------------------------------
+
 ## Setup Instructions
 
 ### Prerequisites
@@ -174,10 +186,12 @@ pip install vllm torch transformers
      temperature: 0.8
    ```
 
-2. **Memory Allocation**: Adjust `memory_fraction` based on your GPU:
+2. **Memory Allocation**: Adjust `memory_fraction` based on GPU:
    - 40GB A100: `0.48` (recommended)
    - 24GB RTX: `0.45`
    - 16GB cards: `0.40`
+
+---------------------------------------------------------------------
 
 ## Usage Examples
 
@@ -205,6 +219,8 @@ ground_truth = {
 result = runner.run_case("Test Case", case_description, ground_truth)
 ```
 
+---------------------------------------------------------------------
+
 ### Batch Processing
 ```python
 # Process multiple cases
@@ -219,6 +235,8 @@ cases = [
 
 results = run_case_batch(cases)
 ```
+
+---------------------------------------------------------------------
 
 ## Performance Metrics
 
@@ -260,6 +278,8 @@ Results are exported in multiple formats:
 - Dynamic weighting to prevent gaming
 - Comprehensive audit trails
 
+---------------------------------------------------------------------
+
 ## Known Limitations
 
 1. **Model Dependency**: Performance varies with underlying LLM capabilities
@@ -267,15 +287,7 @@ Results are exported in multiple formats:
 3. **Processing Time**: Complex cases may take 5-10 minutes per analysis
 4. **Medical Knowledge**: Limited by training data cutoffs and model medical knowledge
 
-## Future Enhancements
-
-- **Specialist Memory**: Persistent learning across cases
-- **Dynamic Team Sizing**: Adaptive specialist count based on case complexity
-- **Real-time Collaboration**: Live agent-to-agent interaction
-- **Medical Knowledge Integration**: External medical database connections
-
-
----
+---------------------------------------------------------------------
 
 **Version**: v8  
 **Last Updated**: 2025-01-16  
