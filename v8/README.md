@@ -96,11 +96,11 @@ This approach enables novel epistemic labor division and collaborative diagnosti
 - **Audit Trails**: Complete transparency for research validation
 
 **Classification Types**:
-- **TP (True Positive)**: Exact clinical matches
-- **FP (False Positive)**: Unjustified diagnoses  
-- **AE (Appropriately Excluded)**: Considered but reasonably ruled out
-- **TM (True Miss)**: Never adequately considered
-- **CAA (Clinically Appropriate Alternative)**: Defensible alternatives
+- **TP (True Positive)**: Exact clinical matches (Ground truth semantic match)
+- **FP (False Positive)**: Unjustified diagnoses (Ungrounded diagnoses promoted through borda scoring)
+- **AE (Appropriately Excluded)**: Considered but reasonably ruled out (Considered but not included in borda counts)
+- **TM (True Miss)**: Never adequately considered (Absent from pipeline)
+- **CAA (Clinically Appropriate Alternative)**: Defensible alternatives (TP that were not promoted through borda counts)
 
 ### 5. `ddx_runner_v6.py` - Pipeline Orchestrator
 **Purpose**: Complete end-to-end pipeline for processing diagnostic cases.
