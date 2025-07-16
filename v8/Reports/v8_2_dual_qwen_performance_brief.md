@@ -1,3 +1,4 @@
+```markdown
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                        DDx BATCH ANALYSIS SUMMARY                           ║
 ║                            14 Cases Analyzed                                ║
@@ -55,3 +56,4 @@ clinically than traditional metrics suggest - clinical reasoning includes
 both correct inclusions AND appropriate exclusions with evidence.
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+```
