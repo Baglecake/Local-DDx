@@ -14,6 +14,8 @@
 
 -> **v8.1:** Implements master key vulnerability checks in line with methods detailed by Zhao et al. (2025). This version hardens AI enhanced evaluation to prevent "hacking" and lenient assessment. Maintains compatability with earlier configs and robust synchronous operation.
 
+-> **v8.2:** Building on v8.1, this version represents the first production ready iteration of v8. Additionally, version tests have been powered by Llama3 and Qwen2.5 models paired together synchronously. To be released imminently.
+
 --------------------------------------------------------------------------------------
 
 **LEGACY VERSION OVERVIEW:**
