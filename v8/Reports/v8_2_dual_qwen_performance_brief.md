@@ -1,7 +1,7 @@
-
-DDx v8.2  BATCH ANALYSIS SUMMARY                           
-14 Cases Analyzed                                 
-══════════════════════════════════════════════════════════════════════════════
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                        DDx BATCH ANALYSIS SUMMARY                           ║
+║                            14 Cases Analyzed                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
 
 📊 AGGREGATE PERFORMANCE (Primary Clinical Metrics)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -49,6 +49,7 @@ CLINICAL INSIGHT: The normalized binary approach shows that systems perform bett
 clinically than traditional metrics suggest, because good clinical reasoning includes 
 both correct inclusions AND appropriate exclusions with evidence.
 
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 clinically than traditional metrics suggest - clinical reasoning includes 
 both correct inclusions AND appropriate exclusions with evidence.
