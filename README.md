@@ -6,7 +6,11 @@
 
 **A multi-agent collaborative AI system for medical differential diagnosis featuring dynamic specialist generation, sliding context windows, and epistemic labor division using local LLMs.**
 
-**VERSION OVERVIEW:**
+**v8:** This directory contains the latest version of the DDx. Primary refactor advances from sequential model management, implementing simultaneous model loading for persistent dual instance architecture. Features include precise string matching and backwards compatability for agent enahced evaluation. 
+
+- In addition to the features above, Version 8 offers a standardized benchmark to test against the AI enhanced evaluation in the previous iterations using the OPEN-DDx Data set. While a rigorous diagnostic rubric captures the structure of an academic test, the LDDx demonstrates the social dynamics at play in real, complex situations. As a side by side experiment, the LDDx offers a glimpse into the benefits and risks of artificial social intelligence as they apply to the sensitive context of clinical reasoning and diagnostics. See the version 8 README for further details.
+
+**LEGACY VERSION OVERVIEW:**
 
 - Each version directory contains version transcripts and modules. "Transcripts" and "Modules" directories in the main repo contain modules and transcripts from the initial conceptual design (v6.0) only.
 
@@ -41,7 +45,7 @@
 6. Meta-Llama-3-8B-Instruct-GPTQ **
 7. Microsoft Diablo-GPT
 8. Qwen/Qwen2-7B-Instruct
-9. Qwen2.5-7B-Instruct-GPTQ-Int4 * **
+9. Qwen2.5-7B-Instruct-GPTQ-Int4 **
 
 >*Testing on larger models limited to dual instance approach (v7.3 onwards).
 
