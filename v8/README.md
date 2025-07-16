@@ -6,6 +6,14 @@ This version implements a deterministic clinical evaluation engine that provides
 
 Additionally, this version implements a unified dual instance approach, loading each llm simultaneously. This refinement significantly improves speed of execution, while also enabling batched execution (See below).
 
+**v8**
+
+-> v8_2_dual_qwen: This setup deploys synchronous dual Qwen2.5 models to power its agents.
+
+-> v8_2_llama_qwen: This setup deploys synchronus llama3 and Qwen2.5 models to power its agents.
+
+-> ddx_results_analyzer.py: This script contains metric normalization analysis to interpret the outputs of the LDDx in comparison to industry and academic benchamrks. It serves as a translator between novel and traditional metrics. Use to interpret results. See the "Reports" directory for batched analyses and individual case reports.
+
 ## Core Framework Review
 
 **Multi-Model Conservative vs Innovative Reasoning**: The system employs two different LLMs with distinct temperature settings to create specialists with fundamentally different cognitive approaches:
@@ -98,9 +106,9 @@ This approach enables novel epistemic labor division and collaborative diagnosti
 **Classification Types**:
 - **TP (True Positive)**: Exact clinical matches (Ground truth semantic match)
 - **FP (False Positive)**: Unjustified diagnoses (Ungrounded diagnoses promoted through borda scoring)
-- **AE (Appropriately Excluded)**: Considered but reasonably ruled out (Considered but not included in borda counts)
+- **AE (Appropriately Excluded)**: Considered but reasonably ruled out (TP considered but not promoted in borda counts)
 - **TM (True Miss)**: Never adequately considered (Absent from pipeline)
-- **CAA (Clinically Appropriate Alternative)**: Defensible alternatives (TP that were not promoted through borda counts)
+- **CAA (Clinically Appropriate Alternative)**: Defensible alternatives (Clinical equivalences not promoted through borda counts - uses AI enhanced evaluation)
 
 ### 5. `ddx_runner_v6.py` - Pipeline Orchestrator
 **Purpose**: Complete end-to-end pipeline for processing diagnostic cases.
