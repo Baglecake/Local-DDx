@@ -56,9 +56,11 @@
 4. Microsoft Phi-3-mini-4k-instruct
 5. Microsoft Phi-4-mini-reasoning
 6. Meta-Llama-3-8B-Instruct-GPTQ **
-7. Microsoft Diablo-GPT
-8. Qwen/Qwen2-7B-Instruct
-9. Qwen2.5-7B-Instruct-GPTQ-Int4 **
+7. Meta-Llama-3.1-8B-Instruct-GPTQ-INT4 **
+8. Microsoft Diablo-GPT
+9. Qwen/Qwen2-7B-Instruct
+10. Qwen2.5-7B-Instruct-GPTQ-Int4 **
+11. Gemma-2-9b-it-AWQ-INT4 **
 
 >*Testing on larger models limited to dual instance approach (v7.3 onwards).
 
