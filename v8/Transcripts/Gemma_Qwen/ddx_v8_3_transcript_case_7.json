@@ -1,0 +1,1743 @@
+{
+  "case_id": "Case 7",
+  "timestamp": "2025-07-17T14:04:46.175589",
+  "evaluation_method": "Enhanced_DD_Evaluator_v6",
+  "tp_count": 1,
+  "fp_count": 5,
+  "fn_count": 2,
+  "caa_count": 0,
+  "ae_count": 2,
+  "total_gt_diagnoses": 5,
+  "total_team_diagnoses": 6,
+  "tp_rate": 0.2,
+  "caa_weight_applied": -0.2,
+  "traditional_precision": 0.16666666666666666,
+  "traditional_recall": 0.3333333333333333,
+  "clinical_reasoning_quality": 0.3,
+  "diagnostic_safety": 0.16666666666666666,
+  "final_diagnoses": [
+    "Chorea",
+    "Chorea: While Less Likely Than Tardive Dyskinesia",
+    "Tardive Dyskinesia",
+    "Facial Dyskinesia",
+    "Drug",
+    "Tardive Dyskinesia:"
+  ],
+  "ground_truth_diagnoses": [
+    "tardive dyskinesia",
+    "acute dystonic reaction",
+    "pseudoparkinsonism",
+    "akathisia",
+    "neuroleptic malignant syndrome"
+  ],
+  "true_positives": [
+    {
+      "ground_truth": "tardive dyskinesia",
+      "system": "Chorea: While Less Likely Than Tardive Dyskinesia"
+    }
+  ],
+  "false_positives": [
+    "Chorea",
+    "Tardive Dyskinesia",
+    "Facial Dyskinesia",
+    "Drug",
+    "Tardive Dyskinesia:"
+  ],
+  "false_negatives": [
+    "acute dystonic reaction",
+    "pseudoparkinsonism"
+  ],
+  "ai_enhanced_matching": true,
+  "context_informed_matches": 0,
+  "credibility_scores": {
+    "Dr. Anya Sharma": 25.000000000000004,
+    "Dr. Liam O'Connell": 29.5,
+    "Dr. Elena Ramirez": 31.825,
+    "Dr. Sarah M. Patel": 39.458333333333336,
+    "Dr. Michael J. O'Connor": 29.6,
+    "Dr. Emily R. Thompson": 35.208333333333336,
+    "Dr. James H. Lee": 34.79166666666667,
+    "Dr. Clinical Evaluator": 30.0
+  },
+  "weighting_tier": "Needs Improvement",
+  "specialist_performance": {
+    "top_performer": "Dr. Sarah M. Patel",
+    "top_score": 39.458333333333336,
+    "average_score": 31.922916666666666,
+    "specialist_rankings": [
+      {
+        "name": "Dr. Sarah M. Patel",
+        "specialty": "Psychiatry",
+        "final_score": 39.458333333333336,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Emily R. Thompson",
+        "specialty": "Neurology",
+        "final_score": 35.208333333333336,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. James H. Lee",
+        "specialty": "Psychiatry",
+        "final_score": 34.79166666666667,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Elena Ramirez",
+        "specialty": "General Medicine",
+        "final_score": 31.825,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Clinical Evaluator",
+        "specialty": "Internal Medicine",
+        "final_score": 30.0,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Michael J. O'Connor",
+        "specialty": "Neurology",
+        "final_score": 29.6,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Liam O'Connell",
+        "specialty": "Neurology",
+        "final_score": 29.5,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Anya Sharma",
+        "specialty": "Psychiatry",
+        "final_score": 25.000000000000004,
+        "relevance_weight": 0.6666666666666666
+      }
+    ]
+  },
+  "round_completion": {
+    "rounds_completed": 7,
+    "tempo_scores": {
+      "specialized_ranking": 1.0,
+      "symptom_management": 1.0,
+      "team_independent_differentials": 3.4000000000000004,
+      "master_list_generation": 1.0,
+      "refinement_and_justification": 1.25,
+      "post_debate_voting": 1.0,
+      "cant_miss": 1.0
+    },
+    "debate_quality": 1.25
+  },
+  "full_transcript": {
+    "case_description": "\nA 61-year-old man with schizophrenia in a locked inpatient psychiatry unit was observed making an unusual smacking motion with his lips, pursing his mouth, and blinking excessively. These symptoms started slowly about 2 weeks ago and have become more pronounced, but they do not seem to bother the patient. He resides in an inpatient psychiatric facility where he has been successfully treated with haloperidol for the past several months. His physical exam and vitals are within normal limits. What accurately describes his symptoms?\n",
+    "agents": [
+      {
+        "name": "Dr. Anya Sharma",
+        "specialty": "Psychiatry",
+        "persona": "Dr. Sharma is a neuropsychiatrist specializing in the intersection of movement disorders and psychiatric conditions. She has extensive experience diagnosing and managing atypical movement disorders, particularly those with a neuropsychiatric basis. She believes in a holistic approach, considering both the neurological and psychological aspects of the patient's presentation.",
+        "model_id": "conservative_model"
+      },
+      {
+        "name": "Dr. Liam O'Connell",
+        "specialty": "Neurology",
+        "persona": "Dr. O'Connell is a behavioral neurologist with a focus on the neurological basis of complex behaviors. He is skilled in evaluating patients with unusual movements, tics, and other behavioral manifestations of neurological conditions. He utilizes a combination of clinical observation, neuropsychological testing, and neuroimaging to reach a diagnosis.",
+        "model_id": "conservative_model"
+      },
+      {
+        "name": "Dr. Elena Ramirez",
+        "specialty": "General Medicine",
+        "persona": "Dr. Ramirez is a psychiatrist specializing in the genetic basis of drug response. She focuses on tailoring medication regimens based on individual genetic profiles to optimize treatment efficacy and minimize adverse effects. She believes in a personalized approach to psychiatric care.",
+        "model_id": "conservative_model"
+      },
+      {
+        "name": "Dr. Sarah M. Patel",
+        "specialty": "Psychiatry",
+        "persona": "Dr. Patel is a seasoned psychiatrist with a particular interest in neurodevelopmental disorders and their impact on psychiatric presentations. She is known for her meticulous approach to patient care and her ability to integrate psychological and neurological assessments to provide a comprehensive diagnosis. Dr. Patel has a keen eye for subtle neuropsychiatric symptoms and is adept at identifying and managing complex cases.",
+        "model_id": "innovative_model"
+      },
+      {
+        "name": "Dr. Michael J. O'Connor",
+        "specialty": "Neurology",
+        "persona": "Dr. O'Connor is a highly specialized neurologist with a focus on movement disorders. He is known for his innovative diagnostic techniques and his ability to integrate advanced imaging and electrophysiological studies to identify subtle neurological abnormalities. Dr. O'Connor is particularly adept at diagnosing and managing conditions such as tardive dyskinesia and other movement disorders that can present with psychiatric symptoms.",
+        "model_id": "innovative_model"
+      },
+      {
+        "name": "Dr. Emily R. Thompson",
+        "specialty": "Neurology",
+        "persona": "Dr. Thompson is a neuropsychologist with extensive experience in evaluating cognitive and behavioral functions. She is known for her ability to interpret complex neuropsychological tests and to provide detailed reports that guide clinical decision-making. Dr. Thompson is particularly skilled in identifying subtle cognitive deficits that may be contributing to the patient's symptoms.",
+        "model_id": "innovative_model"
+      },
+      {
+        "name": "Dr. James H. Lee",
+        "specialty": "Psychiatry",
+        "persona": "Dr. Lee is a board-certified psychiatrist with a focus on electroconvulsive therapy (ECT) and psychopharmacology. He is known for his expertise in managing complex psychiatric cases and his ability to optimize medication regimens. Dr. Lee is particularly skilled in treating patients with schizophrenia and other severe psychiatric conditions.",
+        "model_id": "innovative_model"
+      },
+      {
+        "name": "Dr. Clinical Evaluator",
+        "specialty": "Internal Medicine",
+        "persona": "Expert clinical evaluator specializing in diagnosis equivalence assessment.",
+        "model_id": "innovative_model"
+      }
+    ],
+    "rounds": {
+      "specialized_ranking": {
+        "round_type": "specialized_ranking",
+        "participants": [
+          "Dr. Anya Sharma"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"Akathisia\": [\"Presence of involuntary movements, especially restlessness\", \"Onset of symptoms after starting haloperidol\"], \"Tardive Dyskinesia\": [\"Involuntary, repetitive movements, especially those involving the face and mouth\", \"Long-term use of antipsychotics like haloperidol\"], \"Drug-Induced Movement Disorder\": [\"Symptoms consistent with movement disorders\", \"Association with medication use\"]}\n```\n\n**Clinical Reasoning:**\n\nThis 61-year-old man with schizophrenia presents with new-onset, progressive smacking, pursing, and blinking. These symptoms are concerning for a movement disorder, particularly given his history of haloperidol use. \n\nHere's a breakdown of the potential diagnoses:\n\n* **Akathisia:** This is characterized by inner restlessness and an inability to sit still. While the patient's description doesn't explicitly mention restlessness, the smacking and pursing could be manifestations of this. \n* **Tardive Dyskinesia:** This is a serious side effect of long-term antipsychotic use, characterized by involuntary, repetitive movements. The patient's symptoms align with this, especially the smacking and pursing.\n* **Drug-Induced Movement Disorder:** This is a broad category encompassing various movement disorders caused by medications. Given the patient's history of haloperidol, this is a strong possibility.\n\n**Ranking of Specialists:**\n\n<RANK>\n1. **Dr. Anya Sharma (Psychiatry):**  Her expertise in atypical movement disorders and neuropsychiatric overlap makes her the most relevant specialist. She can assess the patient's psychiatric history, medication use, and movement symptoms to determine the underlying cause.\n2. **Dr. Liam O'Connell (Neurology) and Dr. Michael J. O'Connor (Neurology):**  Neurologists are also crucial in evaluating movement disorders. They can perform a neurological examination and potentially order imaging studies to rule out other neurological causes.\n3. **Dr. Elena Ramirez (General Medicine):**  While less specialized, a general physician can provide a comprehensive medical evaluation and rule out any underlying medical conditions contributing to the symptoms.\n4. **Dr. Sarah M. Patel (Psychiatry), Dr. Emily R. Thompson (Neurology), Dr. James H. Lee (Psychiatry), Dr. Clinical Evaluator (Internal Medicine):** These specialists, while potentially helpful, have less direct expertise in movement disorders compared to the top three.\n\n</RANK>\n\n**CAN'T MISS:**\n\n* **Tardive Dyskinesia:** This is a serious side effect of antipsychotics that requires prompt management.\n* **Akathisia:** This can significantly impact the patient's quality of life and may require medication adjustments.",
+            "structured_data": {
+              "Akathisia": [
+                "Presence of involuntary movements, especially restlessness",
+                "Onset of symptoms after starting haloperidol"
+              ],
+              "Tardive Dyskinesia": [
+                "Involuntary, repetitive movements, especially those involving the face and mouth",
+                "Long-term use of antipsychotics like haloperidol"
+              ],
+              "Drug-Induced Movement Disorder": [
+                "Symptoms consistent with movement disorders",
+                "Association with medication use"
+              ]
+            },
+            "response_time": 6.208301782608032,
+            "confidence_score": 0.7799999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752760923.0623841
+          }
+        },
+        "metadata": {
+          "rankings": [
+            "1. **Dr. Anya Sharma (Psychiatry):**  Her expertise in atypical movement disorders and neuropsychiatric overlap makes her the most relevant specialist. She can assess the patient's psychiatric history, medication use, and movement symptoms to determine the underlying cause.",
+            "2. **Dr. Liam O'Connell (Neurology) and Dr. Michael J. O'Connor (Neurology):**  Neurologists are also crucial in evaluating movement disorders. They can perform a neurological examination and potentially order imaging studies to rule out other neurological causes.",
+            "3. **Dr. Elena Ramirez (General Medicine):**  While less specialized, a general physician can provide a comprehensive medical evaluation and rule out any underlying medical conditions contributing to the symptoms.",
+            "4. **Dr. Sarah M. Patel (Psychiatry), Dr. Emily R. Thompson (Neurology), Dr. James H. Lee (Psychiatry), Dr. Clinical Evaluator (Internal Medicine):** These specialists, while potentially helpful, have less direct expertise in movement disorders compared to the top three."
+          ],
+          "cant_miss": [],
+          "total_ranked": 4
+        },
+        "success": true,
+        "execution_time": 6.218714475631714,
+        "formatted_output": "```json\n{\"Akathisia\": [\"Presence of involuntary movements, especially restlessness\", \"Onset of symptoms after starting haloperidol\"], \"Tardive Dyskinesia\": [\"Involuntary, repetitive movements, especially those involving the face and mouth\", \"Long-term use of antipsychotics like haloperidol\"], \"Drug-Induced Movement Disorder\": [\"Symptoms consistent with movement disorders\", \"Association with medication use\"]}\n```\n\n**Clinical Reasoning:**\n\nThis 61-year-old man with schizophrenia presents with new-onset, progressive smacking, pursing, and blinking. These symptoms are concerning for a movement disorder, particularly given his history of haloperidol use. \n\nHere's a breakdown of the potential diagnoses:\n\n* **Akathisia:** This is characterized by inner restlessness and an inability to sit still. While the patient's description doesn't explicitly mention restlessness, the smacking and pursing could be manifestations of this. \n* **Tardive Dyskinesia:** This is a serious side effect of long-term antipsychotic use, characterized by involuntary, repetitive movements. The patient's symptoms align with this, especially the smacking and pursing.\n* **Drug-Induced Movement Disorder:** This is a broad category encompassing various movement disorders caused by medications. Given the patient's history of haloperidol, this is a strong possibility.\n\n**Ranking of Specialists:**\n\n<RANK>\n1. **Dr. Anya Sharma (Psychiatry):**  Her expertise in atypical movement disorders and neuropsychiatric overlap makes her the most relevant specialist. She can assess the patient's psychiatric history, medication use, and movement symptoms to determine the underlying cause.\n2. **Dr. Liam O'Connell (Neurology) and Dr. Michael J. O'Connor (Neurology):**  Neurologists are also crucial in evaluating movement disorders. They can perform a neurological examination and potentially order imaging studies to rule out other neurological causes.\n3. **Dr. Elena Ramirez (General Medicine):**  While less specialized, a general physician can provide a comprehensive medical evaluation and rule out any underlying medical conditions contributing to the symptoms.\n4. **Dr. Sarah M. Patel (Psychiatry), Dr. Emily R. Thompson (Neurology), Dr. James H. Lee (Psychiatry), Dr. Clinical Evaluator (Internal Medicine):** These specialists, while potentially helpful, have less direct expertise in movement disorders compared to the top three.\n\n</RANK>\n\n**CAN'T MISS:**\n\n* **Tardive Dyskinesia:** This is a serious side effect of antipsychotics that requires prompt management.\n* **Akathisia:** This can significantly impact the patient's quality of life and may require medication adjustments."
+      },
+      "symptom_management": {
+        "round_type": "symptom_management",
+        "participants": [
+          "Dr. Anya Sharma"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"Tardive Dyskinesia\": [\"Onset after prolonged antipsychotic use\", \"Involuntary, repetitive movements\"], \"Akathisia\": [\"Onset with antipsychotic use\", \"Inner restlessness, inability to sit still\"], \"Drug-Induced Movement Disorder\": [\"Recent medication change\", \"Symptoms consistent with movement disorder\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with a constellation of symptoms suggestive of an atypical movement disorder, particularly given his history of antipsychotic medication use. \n\n* **Tardive Dyskinesia:** This is a serious side effect of long-term antipsychotic use, characterized by involuntary, repetitive movements, often involving the face, mouth, and tongue. The patient's smacking, pursing, and blinking align with this presentation. The fact that he's been on haloperidol for several months increases the likelihood.\n\n* **Akathisia:** This is another common side effect of antipsychotics, presenting as inner restlessness and an inability to sit still. While the patient's description doesn't explicitly mention this, it's worth considering as it can sometimes manifest as fidgeting or pacing.\n\n* **Drug-Induced Movement Disorder:**  This is a broader category encompassing various movement disorders potentially triggered by medications. Given the recent onset of symptoms, this is a possibility.\n\n**Immediate Management Plan:**\n\n<SYMPTOM_MITIGATION>\n[Smacking/Pursing/Blinking]:  Close monitoring and documentation of symptoms.\n</SYMPTOM_MITIGATION>\n\n<IMMEDIATE_ACTIONS>\n- **Consult with the prescribing physician:**  Discuss the possibility of medication-induced movement disorder and explore options for adjusting or switching antipsychotics.\n- **Review medication history:**  Ensure there are no other medications that could be contributing to the symptoms.\n- **Monitor for worsening symptoms:**  Observe for any changes in the frequency, intensity, or nature of the movements.\n- **Provide patient education:**  Explain the potential causes of the symptoms and reassure the patient that these are treatable.\n- **Document findings thoroughly:**  Maintain detailed records of the patient's symptoms, interventions, and response to treatment.\n</IMMEDIATE_ACTIONS>\n\n\n\nIt's crucial to prioritize a thorough assessment and collaboration with the prescribing physician to determine the underlying cause and implement the most appropriate management plan.",
+            "structured_data": {
+              "Tardive Dyskinesia": [
+                "Onset after prolonged antipsychotic use",
+                "Involuntary, repetitive movements"
+              ],
+              "Akathisia": [
+                "Onset with antipsychotic use",
+                "Inner restlessness, inability to sit still"
+              ],
+              "Drug-Induced Movement Disorder": [
+                "Recent medication change",
+                "Symptoms consistent with movement disorder"
+              ]
+            },
+            "response_time": 5.22859263420105,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752760928.2974555
+          }
+        },
+        "metadata": {
+          "interventions": [
+            "[Smacking/Pursing/Blinking]:  Close monitoring and documentation of symptoms."
+          ],
+          "immediate_actions": [
+            "**Consult with the prescribing physician:**  Discuss the possibility of medication-induced movement disorder and explore options for adjusting or switching antipsychotics.",
+            "**Review medication history:**  Ensure there are no other medications that could be contributing to the symptoms.",
+            "**Monitor for worsening symptoms:**  Observe for any changes in the frequency, intensity, or nature of the movements.",
+            "**Provide patient education:**  Explain the potential causes of the symptoms and reassure the patient that these are treatable.",
+            "**Document findings thoroughly:**  Maintain detailed records of the patient's symptoms, interventions, and response to treatment."
+          ],
+          "immediate_interventions_count": 6
+        },
+        "success": true,
+        "execution_time": 5.235044002532959,
+        "formatted_output": "```json\n{\"Tardive Dyskinesia\": [\"Onset after prolonged antipsychotic use\", \"Involuntary, repetitive movements\"], \"Akathisia\": [\"Onset with antipsychotic use\", \"Inner restlessness, inability to sit still\"], \"Drug-Induced Movement Disorder\": [\"Recent medication change\", \"Symptoms consistent with movement disorder\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with a constellation of symptoms suggestive of an atypical movement disorder, particularly given his history of antipsychotic medication use. \n\n* **Tardive Dyskinesia:** This is a serious side effect of long-term antipsychotic use, characterized by involuntary, repetitive movements, often involving the face, mouth, and tongue. The patient's smacking, pursing, and blinking align with this presentation. The fact that he's been on haloperidol for several months increases the likelihood.\n\n* **Akathisia:** This is another common side effect of antipsychotics, presenting as inner restlessness and an inability to sit still. While the patient's description doesn't explicitly mention this, it's worth considering as it can sometimes manifest as fidgeting or pacing.\n\n* **Drug-Induced Movement Disorder:**  This is a broader category encompassing various movement disorders potentially triggered by medications. Given the recent onset of symptoms, this is a possibility.\n\n**Immediate Management Plan:**\n\n<SYMPTOM_MITIGATION>\n[Smacking/Pursing/Blinking]:  Close monitoring and documentation of symptoms.\n</SYMPTOM_MITIGATION>\n\n<IMMEDIATE_ACTIONS>\n- **Consult with the prescribing physician:**  Discuss the possibility of medication-induced movement disorder and explore options for adjusting or switching antipsychotics.\n- **Review medication history:**  Ensure there are no other medications that could be contributing to the symptoms.\n- **Monitor for worsening symptoms:**  Observe for any changes in the frequency, intensity, or nature of the movements.\n- **Provide patient education:**  Explain the potential causes of the symptoms and reassure the patient that these are treatable.\n- **Document findings thoroughly:**  Maintain detailed records of the patient's symptoms, interventions, and response to treatment.\n</IMMEDIATE_ACTIONS>\n\n\n\nIt's crucial to prioritize a thorough assessment and collaboration with the prescribing physician to determine the underlying cause and implement the most appropriate management plan."
+      },
+      "team_independent_differentials": {
+        "round_type": "team_independent_differentials",
+        "participants": [
+          "Dr. Anya Sharma",
+          "Dr. Liam O'Connell",
+          "Dr. Elena Ramirez",
+          "Dr. Sarah M. Patel",
+          "Dr. Michael J. O'Connor",
+          "Dr. Emily R. Thompson",
+          "Dr. James H. Lee",
+          "Dr. Clinical Evaluator"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"Tardive Dyskinesia\": [\"Onset after prolonged antipsychotic use\", \"Involuntary, repetitive movements\"], \"Akathisia\": [\"Onset with antipsychotic use\", \"Inner restlessness, inability to stay still\"], \"Chorea\": [\"Can be associated with psychiatric conditions\", \"Involuntary, jerky movements\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Tardive Dyskinesia (Confidence: 70%)**: This is the most likely diagnosis given the patient's history of long-term antipsychotic treatment (haloperidol) and the presence of involuntary, repetitive movements (smacking lips, pursing mouth, blinking). Tardive dyskinesia is a well-known side effect of antipsychotics, particularly those with high dopamine-blocking activity like haloperidol. The gradual onset over several weeks also aligns with the typical course of tardive dyskinesia.\n\n2. **Akathisia (Confidence: 25%)**: While less likely than tardive dyskinesia, akathisia is another potential side effect of antipsychotics. It presents as inner restlessness and an inability to stay still. However, the patient's description focuses on specific repetitive movements rather than generalized restlessness.\n\n3. **Chorea (Confidence: 15%)**: Chorea is a movement disorder characterized by involuntary, jerky, and unpredictable movements. While it can be associated with psychiatric conditions, it's less common than tardive dyskinesia in this context.\n\n**Specialty Focus:**\n\nAs a neuropsychiatrist, I would prioritize a thorough neurological evaluation to rule out other potential causes of the movement disorder. This would include a detailed history of medication use, family history of movement disorders, and a comprehensive neurological examination.  \n\nIt's crucial to differentiate between medication-induced movement disorders and other underlying neurological conditions.  \n\nI would also discuss the patient's symptoms with the treating psychiatrist to assess the potential for adjusting or switching antipsychotic medications.",
+            "structured_data": {
+              "Tardive Dyskinesia": [
+                "Onset after prolonged antipsychotic use",
+                "Involuntary, repetitive movements"
+              ],
+              "Akathisia": [
+                "Onset with antipsychotic use",
+                "Inner restlessness, inability to stay still"
+              ],
+              "Chorea": [
+                "Can be associated with psychiatric conditions",
+                "Involuntary, jerky movements"
+              ]
+            },
+            "response_time": 4.453404426574707,
+            "confidence_score": 0.66,
+            "reasoning_quality": "standard",
+            "timestamp": 1752760963.933331
+          },
+          "Dr. Liam O'Connell": {
+            "content": "```json\n{\"Tardive Dyskinesia\": [\"Onset after prolonged antipsychotic use\", \"Involuntary, repetitive movements\"], \"Chorea\": [\"Variable, unpredictable movements\", \"Can be associated with underlying metabolic or autoimmune conditions\"], \"Psychogenic Movement Disorder\": [\"Symptoms not explained by neurological findings\", \"Can be triggered by stress or emotional distress\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Tardive Dyskinesia (Confidence: 60%)**: This is the most likely diagnosis given the patient's history of long-term antipsychotic use (haloperidol) and the nature of his symptoms (involuntary, repetitive movements). Tardive dyskinesia is a well-known side effect of antipsychotic medications, particularly those that block dopamine receptors. The smacking, pursing, and blinking movements are consistent with the typical presentation of tardive dyskinesia.\n\n2. **Chorea (Confidence: 25%)**: Chorea is characterized by irregular, jerky, and unpredictable movements. While less likely than tardive dyskinesia, it's important to consider as a possibility, especially given the patient's age and the potential for underlying metabolic or autoimmune conditions.\n\n3. **Psychogenic Movement Disorder (Confidence: 15%)**: This diagnosis is less likely given the patient's established history of schizophrenia and the presence of physical symptoms. However, it's important to rule out a psychological component, as stress or emotional distress within the inpatient setting could potentially contribute to or exacerbate movement symptoms.\n\n**Specialty Focus:**\n\nAs a behavioral neurologist, I would focus on a thorough neurological examination, including assessing the patient's motor function, coordination, and reflexes. I would also review his medication history in detail, paying close attention to the duration and dosage of antipsychotic medications. Neuroimaging (MRI) might be considered to rule out structural abnormalities or other neurological conditions.  \n\nIt's crucial to collaborate with the patient's psychiatrist to ensure that any potential treatment adjustments for his schizophrenia do not worsen his movement symptoms.",
+            "structured_data": {
+              "Tardive Dyskinesia": [
+                "Onset after prolonged antipsychotic use",
+                "Involuntary, repetitive movements"
+              ],
+              "Chorea": [
+                "Variable, unpredictable movements",
+                "Can be associated with underlying metabolic or autoimmune conditions"
+              ],
+              "Psychogenic Movement Disorder": [
+                "Symptoms not explained by neurological findings",
+                "Can be triggered by stress or emotional distress"
+              ]
+            },
+            "response_time": 4.6131041049957275,
+            "confidence_score": 0.7799999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752760963.9333327
+          },
+          "Dr. Elena Ramirez": {
+            "content": "```json\n{\"Tardive Dyskinesia\": [\"Onset after prolonged antipsychotic use\", \"Involuntary, repetitive movements\"], \"Drug-Induced Movement Disorder\": [\"Symptoms consistent with antipsychotic-induced movement disorders\", \"Patient's history of haloperidol use\"], \"Psychogenic Movement Disorder\": [\"Symptoms not causing distress to the patient\", \"Presence of underlying psychiatric condition\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Tardive Dyskinesia (Confidence: 70%)**: This is the most likely diagnosis given the patient's history of long-term antipsychotic use (haloperidol) and the presence of involuntary, repetitive movements (smacking, pursing, blinking). Tardive dyskinesia is a well-known side effect of typical antipsychotics like haloperidol, and the gradual onset over several weeks is consistent with this condition.\n\n2. **Drug-Induced Movement Disorder (Confidence: 60%)**: This is a broader category that encompasses various movement disorders potentially caused by medications. Given the patient's history of haloperidol use, it's a plausible diagnosis.\n\n3. **Psychogenic Movement Disorder (Confidence: 30%)**: While the patient's symptoms are not causing him distress, it's important to consider a psychogenic component.  The presence of an underlying psychiatric condition (schizophrenia) could potentially contribute to the development of movement symptoms. \n\n**Specialty Focus:**\n\nAs a psychiatrist specializing in pharmacogenomics, I would recommend the following:\n\n* **Genetic Testing:**  Explore the patient's genetic predisposition to movement disorders, particularly those related to drug metabolism and response to antipsychotics. This information could help tailor future treatment strategies and potentially identify alternative medications with a lower risk of movement side effects.\n* **Medication Review:**  Discuss the potential benefits and risks of continuing haloperidol with the patient's psychiatrist.  Consider alternative antipsychotics with a lower risk of tardive dyskinesia, especially if the patient's symptoms worsen or become distressing.\n* **Close Monitoring:**  Regularly monitor the patient for any changes in movement symptoms and adjust treatment accordingly.",
+            "structured_data": {
+              "Tardive Dyskinesia": [
+                "Onset after prolonged antipsychotic use",
+                "Involuntary, repetitive movements"
+              ],
+              "Drug-Induced Movement Disorder": [
+                "Symptoms consistent with antipsychotic-induced movement disorders",
+                "Patient's history of haloperidol use"
+              ],
+              "Psychogenic Movement Disorder": [
+                "Symptoms not causing distress to the patient",
+                "Presence of underlying psychiatric condition"
+              ]
+            },
+            "response_time": 4.851337432861328,
+            "confidence_score": 0.7799999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752760963.9333339
+          },
+          "Dr. Sarah M. Patel": {
+            "content": "{\"facial dyskinesia\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"], \"tardive dyskinesia\": [\"history of long-term haloperidol use\", \"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"], \"schizophrenia with secondary motor symptoms\": [\"history of schizophrenia\", \"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"]}\n\n<DIFFERENTIAL_DIAGNOSIS>\n1. Facial dyskinesia - Confidence: 60% - The patient's symptoms of unusual smacking motion with lips, pursing of mouth, and excessive blinking are consistent with facial dyskinesia. This condition can present as involuntary movements of the face and mouth, which can occur as a side effect of antipsychotic medications.\n2. Tardive dyskinesia - Confidence: 40% - Tardive dyskinesia is another movement disorder that can develop as a result of long-term use of antipsychotic medications, such as haloperidol. The patient's history of successful treatment with haloperidol for schizophrenia makes this a plausible diagnosis.\n3. Schizophrenia with secondary motor symptoms - Confidence: 30% - While the patient's primary diagnosis is schizophrenia, the presence of these unusual movements could be secondary to the disease process itself or as a side effect of the antipsychotic medication. However, the primary focus should be on the movement disorder.\n</DIFFERENTIAL_DIAGNOSIS>\n\n<SPECIALTY_FOCUS>\n[Your specialty-specific insights and considerations]\n- The patient's symptoms are consistent with movement disorders, which are a known side effect of antipsychotic medications, particularly haloperidol. It is important to consider the timing and progression of the symptoms in relation to the patient's medication regimen.\n- The patient's history of schizophrenia and the successful treatment with haloperidol suggest that the primary psychiatric condition is well-managed, but the new-onset movement disorder may require a reevaluation of the antipsychotic regimen.\n- Given the patient's residence in a locked inpatient psychiatry unit, it is crucial to ensure that the new symptoms are not being exacerbated by the environment or any other underlying medical conditions.\n- The patient's lack of distress or discomfort with the symptoms may indicate that these are not causing significant functional impairment, but it is still important to rule out other causes of the movement disorder.\n- It is essential to consider the potential for medication-induced movement disorders and to discuss the risks and benefits of continuing the current antipsychotic regimen with the patient and his care team.\n- Close monitoring of the patient's symptoms and a multidisciplinary approach involving neurology and psychiatry may be necessary to manage this complex case effectively.\n- If the symptoms are determined to be tardive dyskinesia, alternative antipsychotic medications with a lower risk of movement disorders may be considered, but this decision should be made with caution to avoid potential exacerbation of psychiatric symptoms.\n- Psychological and neurological assessments should be conducted to rule out other causes of the symptoms, such as neurological disorders or psychiatric conditions that may present with similar motor symptoms.\n- The patient's history of schizophrenia and the presence of these unusual movements may warrant a thorough review of his overall treatment plan, including the potential for augmentation strategies or the addition of other medications to manage both his psychiatric and movement disorder symptoms.\n- It is important to communicate the differential diagnoses and the potential management strategies to the patient and his care team, ensuring that all parties are informed and involved in the decision-making process.",
+            "structured_data": {
+              "facial dyskinesia": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ],
+              "tardive dyskinesia": [
+                "history of long-term haloperidol use",
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ],
+              "schizophrenia with secondary motor symptoms": [
+                "history of schizophrenia",
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            },
+            "response_time": 5.43058705329895,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752760963.93334
+          },
+          "Dr. Michael J. O'Connor": {
+            "content": "{\"tardive dyskinesia\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"], \"glossitis\": [\"unusual smacking motion with lips\", \"pursing of mouth\"], \"neuroleptic malignant syndrome\": [\"excessive blinking\"]}\n\n<DIFFERENTIAL_DIAGNOSIS>\n1. Tardive dyskinesia - [Confidence: 65%] - The patient's symptoms, including smacking motions and pursing of the mouth, are consistent with the movement disorder tardive dyskinesia. The patient has been on haloperidol for several months, which is a common cause of tardive dyskinesia. However, the lack of psychiatric distress and the fact that the symptoms have been present for 2 weeks without progression makes this diagnosis slightly less likely.\n2. Glossitis - [Confidence: 20%] - The unusual smacking motion and pursing of the mouth could be due to discomfort or pain in the mouth, which could be related to glossitis or another oral condition. This is less likely given the lack of other systemic symptoms and the absence of any reported pain or discomfort.\n3. Neuroleptic Malignant Syndrome (NMS) - [Confidence: 15%] - Excessive blinking and other symptoms could be a sign of NMS, a potentially life-threatening condition that can occur in patients taking antipsychotics. However, NMS is typically associated with more severe systemic symptoms such as muscle rigidity, altered mental status, and autonomic instability. The patient's lack of these symptoms makes this diagnosis less likely.\n</DIFFERENTIAL_DIAGNOSIS>\n\n<SPECIALTY_FOCUS>\n[Your specialty-specific insights and considerations]\nAs a neurologist specializing in movement disorders, tardive dyskinesia is a primary consideration in this case. Tardive dyskinesia is a well-known side effect of antipsychotic medications, particularly haloperidol. The symptoms described are classic for this condition, and the patient's history of long-term haloperidol use makes this the most probable diagnosis. It's important to differentiate between tardive dyskinesia and other movement disorders that can present with similar symptoms, such as Huntington's disease or Wilson's disease. Additionally, given the patient's residence in a locked inpatient unit, it's crucial to ensure that the symptoms are not being influenced by the environment or psychological factors. A careful review of the patient's medication regimen, including the dose and duration of haloperidol, is essential in managing this condition.\n</SPECIALTY_FOCUS>",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ],
+              "glossitis": [
+                "unusual smacking motion with lips",
+                "pursing of mouth"
+              ],
+              "neuroleptic malignant syndrome": [
+                "excessive blinking"
+              ]
+            },
+            "response_time": 3.9545273780822754,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752760963.9333415
+          },
+          "Dr. Emily R. Thompson": {
+            "content": "{\"tics\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"], \"dystonia\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"], \"schizophrenia-related motor symptoms\": [\"history of schizophrenia\", \"no physical exam findings\"]}\n\n<DIFFERENTIAL_DIAGNOSIS>\n1. Tics - [Confidence: 40%] - The patient's symptoms of smacking lips, pursing mouth, and excessive blinking are consistent with motor tics, which are often seen in Tourette's syndrome or other tic disorders. These movements are often involuntary and can be exacerbated by stress or anxiety, which might be present in a psychiatric setting.\n2. Dystonia - [Confidence: 35%] - The patient's symptoms could also be indicative of dystonia, a movement disorder characterized by involuntary muscle contractions that cause twisting and repetitive movements or abnormal postures. The presence of multiple, seemingly purposeful movements supports this diagnosis.\n3. Schizophrenia-related motor symptoms - [Confidence: 25%] - The patient's history of schizophrenia and the fact that these symptoms started after a period of relative stability could suggest that these are secondary motor symptoms related to his schizophrenia. However, the nature of the symptoms is more consistent with a primary movement disorder.\n</DIFFERENTIAL_DIAGNOSIS>\n\n<SPECIALTY_FOCUS>\n[Your specialty-specific insights and considerations]\nAs a neuropsychologist, I would consider the possibility of secondary motor symptoms related to the patient's schizophrenia, but the primary evidence points towards a primary movement disorder such as tics or dystonia. The patient's history of successful treatment with haloperidol for schizophrenia does not preclude the development of secondary motor symptoms, but it is less likely given the nature of the symptoms described.\n\nIt is important to note that the patient's symptoms could also be related to medication side effects, particularly if he has been on a stable dose of haloperidol. However, given the recent onset and the specific nature of the symptoms, a primary movement disorder is more likely.\n\nFurther evaluation would include a detailed neurological examination, possibly including a movement disorder specialist's consultation, and a review of the patient's medication regimen. If the symptoms persist or worsen, further diagnostic testing such as brain imaging or electromyography might be warranted to rule out other causes.\n</SPECIALTY_FOCUS>",
+            "structured_data": {
+              "tics": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ],
+              "dystonia": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ],
+              "schizophrenia-related motor symptoms": [
+                "history of schizophrenia",
+                "no physical exam findings"
+              ]
+            },
+            "response_time": 3.6272101402282715,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752760963.9333422
+          },
+          "Dr. James H. Lee": {
+            "content": "```json\n{\"tardive dyskinesia\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"], \"schizophrenia with secondary symptoms\": [\"long-standing psychiatric history\", \"recent exacerbation of symptoms\"], \"neuroleptic malignant syndrome\": [\"recent use of antipsychotics\", \"slow onset of symptoms\"]}\n```\n\n### Differential Diagnosis\n1. **Tardive Dyskinesia** - [Confidence: 70%] - The patient's symptoms, including the unusual smacking motion with lips, pursing of mouth, and excessive blinking, are characteristic of tardive dyskinesia. This condition can occur as a side effect of long-term antipsychotic use, such as haloperidol, which the patient has been on for several months. The symptoms started slowly and have become more pronounced, which aligns with the presentation of tardive dyskinesia.\n2. **Schizophrenia with Secondary Symptoms** - [Confidence: 60%] - Given the patient's history of schizophrenia and the fact that these symptoms do not seem to bother him, it is possible that these movements are secondary to his underlying psychiatric condition. Schizophrenia can sometimes present with motor symptoms that are not primary to the condition but are related to the disease state.\n3. **Neuroleptic Malignant Syndrome (NMS)** - [Confidence: 30%] - While NMS is a rare but serious condition that can occur with the use of antipsychotics, the patient's symptoms are more suggestive of a movement disorder rather than a life-threatening condition like NMS. However, the recent use of antipsychotics and the slow onset of symptoms make NMS a possible consideration, albeit less likely.\n\n### Specialty Focus\n[Tardive dyskinesia] is a well-known side effect of long-term antipsychotic use, particularly with older antipsychotics like haloperidol. It is important to monitor patients on such medications for signs of tardive dyskinesia, especially if they have been on these medications for an extended period. The management of tardive dyskinesia can involve dose reduction, switching to a different class of antipsychotics, or the use of specific medications like benzhexol or benztropine to manage the symptoms. \n\nGiven the patient's history and the nature of the symptoms, it is crucial to monitor him closely and consider adjusting his medication regimen if tardive dyskinesia is confirmed. Additionally, ensuring that the patient is not at risk for other serious conditions like NMS is important, although the evidence for NMS in this case is less compelling. \n\nMonitoring and managing the patient's antipsychotic treatment is a key aspect of his care, and regular assessments for side effects and symptoms are essential to ensure the best possible outcome.",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ],
+              "schizophrenia with secondary symptoms": [
+                "long-standing psychiatric history",
+                "recent exacerbation of symptoms"
+              ],
+              "neuroleptic malignant syndrome": [
+                "recent use of antipsychotics",
+                "slow onset of symptoms"
+              ]
+            },
+            "response_time": 4.305570602416992,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752760963.9333432
+          },
+          "Dr. Clinical Evaluator": {
+            "content": "```json\n{\"tardive dyskinesia\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"], \"neuroleptic malignant syndrome\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"], \"benign essential tremor\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"]}\n```\n\n### Differential Diagnosis\n1. **Tardive Dyskinesia** - [Confidence: 60%] - The patient's symptoms of unusual smacking motion with lips, pursing of mouth, and excessive blinking are consistent with tardive dyskinesia, which is a recognized side effect of long-term use of antipsychotic medications like haloperidol. The onset of these symptoms 2 weeks after starting the medication and their gradual progression are also characteristic.\n2. **Neuroleptic Malignant Syndrome (NMS)** - [Confidence: 30%] - While the patient's symptoms are similar to those seen in NMS, the absence of other classic features such as hyperthermia, muscle rigidity, and altered mental status makes this diagnosis less likely. However, NMS is a serious condition that requires immediate evaluation.\n3. **Benign Essential Tremor** - [Confidence: 10%] - The patient's symptoms could also be attributed to benign essential tremor, which is a common cause of tremor in the general population. However, the context of antipsychotic use and the specific nature of the symptoms make tardive dyskinesia and NMS more likely.\n\n### Specialty Focus\n[Your specialty-specific insights and considerations]\n\n- **Tardive Dyskinesia**: This diagnosis is particularly relevant in the context of long-term antipsychotic use. It is important to consider the timing of the symptoms relative to the initiation of haloperidol and to monitor for any worsening or new symptoms.\n- **Neuroleptic Malignant Syndrome (NMS)**: Given the patient's history of antipsychotic use, it is crucial to rule out NMS, especially if the patient develops any additional symptoms such as fever, muscle rigidity, or altered mental status. NMS is a medical emergency and requires prompt intervention.\n- **Benign Essential Tremor**: While this is a possible diagnosis, it is less likely given the specific nature of the symptoms and the patient's psychiatric history. However, it is still important to consider and rule out other causes of tremor in the context of psychiatric treatment.\n\nThe patient's symptoms are concerning and warrant a thorough evaluation, including a detailed history of his antipsychotic use, a physical examination, and possibly laboratory tests to rule out other causes of the symptoms. Given the potential for serious complications, it is important to address these symptoms promptly.",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ],
+              "neuroleptic malignant syndrome": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ],
+              "benign essential tremor": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            },
+            "response_time": 4.354048490524292,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752760963.933344
+          }
+        },
+        "metadata": {
+          "total_diagnoses": 24,
+          "agent_count": 8,
+          "all_diagnoses": [
+            {
+              "diagnosis": "Tardive Dyskinesia",
+              "evidence": [
+                "Onset after prolonged antipsychotic use",
+                "Involuntary, repetitive movements"
+              ]
+            },
+            {
+              "diagnosis": "Akathisia",
+              "evidence": [
+                "Onset with antipsychotic use",
+                "Inner restlessness, inability to stay still"
+              ]
+            },
+            {
+              "diagnosis": "Chorea",
+              "evidence": [
+                "Can be associated with psychiatric conditions",
+                "Involuntary, jerky movements"
+              ]
+            },
+            {
+              "diagnosis": "Tardive Dyskinesia",
+              "evidence": [
+                "Onset after prolonged antipsychotic use",
+                "Involuntary, repetitive movements"
+              ]
+            },
+            {
+              "diagnosis": "Chorea",
+              "evidence": [
+                "Variable, unpredictable movements",
+                "Can be associated with underlying metabolic or autoimmune conditions"
+              ]
+            },
+            {
+              "diagnosis": "Psychogenic Movement Disorder",
+              "evidence": [
+                "Symptoms not explained by neurological findings",
+                "Can be triggered by stress or emotional distress"
+              ]
+            },
+            {
+              "diagnosis": "Tardive Dyskinesia",
+              "evidence": [
+                "Onset after prolonged antipsychotic use",
+                "Involuntary, repetitive movements"
+              ]
+            },
+            {
+              "diagnosis": "Drug-Induced Movement Disorder",
+              "evidence": [
+                "Symptoms consistent with antipsychotic-induced movement disorders",
+                "Patient's history of haloperidol use"
+              ]
+            },
+            {
+              "diagnosis": "Psychogenic Movement Disorder",
+              "evidence": [
+                "Symptoms not causing distress to the patient",
+                "Presence of underlying psychiatric condition"
+              ]
+            },
+            {
+              "diagnosis": "facial dyskinesia",
+              "evidence": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            },
+            {
+              "diagnosis": "tardive dyskinesia",
+              "evidence": [
+                "history of long-term haloperidol use",
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            },
+            {
+              "diagnosis": "schizophrenia with secondary motor symptoms",
+              "evidence": [
+                "history of schizophrenia",
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            },
+            {
+              "diagnosis": "tardive dyskinesia",
+              "evidence": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            },
+            {
+              "diagnosis": "glossitis",
+              "evidence": [
+                "unusual smacking motion with lips",
+                "pursing of mouth"
+              ]
+            },
+            {
+              "diagnosis": "neuroleptic malignant syndrome",
+              "evidence": [
+                "excessive blinking"
+              ]
+            },
+            {
+              "diagnosis": "tics",
+              "evidence": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            },
+            {
+              "diagnosis": "dystonia",
+              "evidence": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            },
+            {
+              "diagnosis": "schizophrenia-related motor symptoms",
+              "evidence": [
+                "history of schizophrenia",
+                "no physical exam findings"
+              ]
+            },
+            {
+              "diagnosis": "tardive dyskinesia",
+              "evidence": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            },
+            {
+              "diagnosis": "schizophrenia with secondary symptoms",
+              "evidence": [
+                "long-standing psychiatric history",
+                "recent exacerbation of symptoms"
+              ]
+            },
+            {
+              "diagnosis": "neuroleptic malignant syndrome",
+              "evidence": [
+                "recent use of antipsychotics",
+                "slow onset of symptoms"
+              ]
+            },
+            {
+              "diagnosis": "tardive dyskinesia",
+              "evidence": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            },
+            {
+              "diagnosis": "neuroleptic malignant syndrome",
+              "evidence": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            },
+            {
+              "diagnosis": "benign essential tremor",
+              "evidence": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            }
+          ],
+          "diagnoses_by_agent": {
+            "Dr. Anya Sharma": [],
+            "Dr. Liam O'Connell": [],
+            "Dr. Elena Ramirez": [],
+            "Dr. Sarah M. Patel": [
+              {
+                "diagnosis": "Facial dyskinesia",
+                "confidence": 60,
+                "reasoning": "Confidence: 60% - The patient's symptoms of unusual smacking motion with lips, pursing of mouth, and excessive blinking are consistent with facial dyskinesia. This condition can present as involuntary movements of the face and mouth, which can occur as a side effect of antipsychotic medications.",
+                "raw_line": "1. Facial dyskinesia - Confidence: 60% - The patient's symptoms of unusual smacking motion with lips, pursing of mouth, and excessive blinking are consistent with facial dyskinesia. This condition can present as involuntary movements of the face and mouth, which can occur as a side effect of antipsychotic medications."
+              },
+              {
+                "diagnosis": "Tardive dyskinesia",
+                "confidence": 40,
+                "reasoning": "Confidence: 40% - Tardive dyskinesia is another movement disorder that can develop as a result of long-term use of antipsychotic medications, such as haloperidol. The patient's history of successful treatment with haloperidol for schizophrenia makes this a plausible diagnosis.",
+                "raw_line": "2. Tardive dyskinesia - Confidence: 40% - Tardive dyskinesia is another movement disorder that can develop as a result of long-term use of antipsychotic medications, such as haloperidol. The patient's history of successful treatment with haloperidol for schizophrenia makes this a plausible diagnosis."
+              },
+              {
+                "diagnosis": "Schizophrenia with secondary motor symptoms",
+                "confidence": 30,
+                "reasoning": "Confidence: 30% - While the patient's primary diagnosis is schizophrenia, the presence of these unusual movements could be secondary to the disease process itself or as a side effect of the antipsychotic medication. However, the primary focus should be on the movement disorder.",
+                "raw_line": "3. Schizophrenia with secondary motor symptoms - Confidence: 30% - While the patient's primary diagnosis is schizophrenia, the presence of these unusual movements could be secondary to the disease process itself or as a side effect of the antipsychotic medication. However, the primary focus should be on the movement disorder."
+              }
+            ],
+            "Dr. Michael J. O'Connor": [
+              {
+                "diagnosis": "Tardive dyskinesia",
+                "confidence": 65,
+                "reasoning": "[Confidence: 65%] - The patient's symptoms, including smacking motions and pursing of the mouth, are consistent with the movement disorder tardive dyskinesia. The patient has been on haloperidol for several months, which is a common cause of tardive dyskinesia. However, the lack of psychiatric distress and the fact that the symptoms have been present for 2 weeks without progression makes this diagnosis slightly less likely.",
+                "raw_line": "1. Tardive dyskinesia - [Confidence: 65%] - The patient's symptoms, including smacking motions and pursing of the mouth, are consistent with the movement disorder tardive dyskinesia. The patient has been on haloperidol for several months, which is a common cause of tardive dyskinesia. However, the lack of psychiatric distress and the fact that the symptoms have been present for 2 weeks without progression makes this diagnosis slightly less likely."
+              },
+              {
+                "diagnosis": "Glossitis",
+                "confidence": 20,
+                "reasoning": "[Confidence: 20%] - The unusual smacking motion and pursing of the mouth could be due to discomfort or pain in the mouth, which could be related to glossitis or another oral condition. This is less likely given the lack of other systemic symptoms and the absence of any reported pain or discomfort.",
+                "raw_line": "2. Glossitis - [Confidence: 20%] - The unusual smacking motion and pursing of the mouth could be due to discomfort or pain in the mouth, which could be related to glossitis or another oral condition. This is less likely given the lack of other systemic symptoms and the absence of any reported pain or discomfort."
+              },
+              {
+                "diagnosis": "Neuroleptic Malignant Syndrome (NMS)",
+                "confidence": 15,
+                "reasoning": "[Confidence: 15%] - Excessive blinking and other symptoms could be a sign of NMS, a potentially life-threatening condition that can occur in patients taking antipsychotics. However, NMS is typically associated with more severe systemic symptoms such as muscle rigidity, altered mental status, and autonomic instability. The patient's lack of these symptoms makes this diagnosis less likely.",
+                "raw_line": "3. Neuroleptic Malignant Syndrome (NMS) - [Confidence: 15%] - Excessive blinking and other symptoms could be a sign of NMS, a potentially life-threatening condition that can occur in patients taking antipsychotics. However, NMS is typically associated with more severe systemic symptoms such as muscle rigidity, altered mental status, and autonomic instability. The patient's lack of these symptoms makes this diagnosis less likely."
+              }
+            ],
+            "Dr. Emily R. Thompson": [
+              {
+                "diagnosis": "Tics",
+                "confidence": 40,
+                "reasoning": "[Confidence: 40%] - The patient's symptoms of smacking lips, pursing mouth, and excessive blinking are consistent with motor tics, which are often seen in Tourette's syndrome or other tic disorders. These movements are often involuntary and can be exacerbated by stress or anxiety, which might be present in a psychiatric setting.",
+                "raw_line": "1. Tics - [Confidence: 40%] - The patient's symptoms of smacking lips, pursing mouth, and excessive blinking are consistent with motor tics, which are often seen in Tourette's syndrome or other tic disorders. These movements are often involuntary and can be exacerbated by stress or anxiety, which might be present in a psychiatric setting."
+              },
+              {
+                "diagnosis": "Dystonia",
+                "confidence": 35,
+                "reasoning": "[Confidence: 35%] - The patient's symptoms could also be indicative of dystonia, a movement disorder characterized by involuntary muscle contractions that cause twisting and repetitive movements or abnormal postures. The presence of multiple, seemingly purposeful movements supports this diagnosis.",
+                "raw_line": "2. Dystonia - [Confidence: 35%] - The patient's symptoms could also be indicative of dystonia, a movement disorder characterized by involuntary muscle contractions that cause twisting and repetitive movements or abnormal postures. The presence of multiple, seemingly purposeful movements supports this diagnosis."
+              },
+              {
+                "diagnosis": "Schizophrenia-related motor symptoms",
+                "confidence": 25,
+                "reasoning": "[Confidence: 25%] - The patient's history of schizophrenia and the fact that these symptoms started after a period of relative stability could suggest that these are secondary motor symptoms related to his schizophrenia. However, the nature of the symptoms is more consistent with a primary movement disorder.",
+                "raw_line": "3. Schizophrenia-related motor symptoms - [Confidence: 25%] - The patient's history of schizophrenia and the fact that these symptoms started after a period of relative stability could suggest that these are secondary motor symptoms related to his schizophrenia. However, the nature of the symptoms is more consistent with a primary movement disorder."
+              }
+            ],
+            "Dr. James H. Lee": [],
+            "Dr. Clinical Evaluator": []
+          }
+        },
+        "success": true,
+        "execution_time": 35.635844707489014,
+        "formatted_output": ""
+      },
+      "master_list_generation": {
+        "round_type": "master_list_generation",
+        "participants": [
+          "Dr. Anya Sharma"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "<MASTER DDX LIST>\n1. Tardive Dyskinesia - High -  Onset after prolonged antipsychotic use (haloperidol), involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)\n2. Schizophrenia with Secondary Motor Symptoms - Moderate -  Patient's schizophrenia could be manifesting with secondary motor symptoms, though the specific movements are more suggestive of medication side effects.\n3. Drug-Induced Movement Disorder - Low -  While the symptoms are consistent with antipsychotic-induced movement disorders, the strong association with haloperidol use points more directly to tardive dyskinesia.\n\n</CONSOLIDATION_NOTES>",
+            "structured_data": null,
+            "response_time": 2.398292064666748,
+            "confidence_score": 0.66,
+            "reasoning_quality": "basic",
+            "timestamp": 1752760966.3366535
+          }
+        },
+        "metadata": {
+          "master_diagnoses": [
+            "1. Tardive Dyskinesia - High -  Onset after prolonged antipsychotic use (haloperidol), involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)",
+            "2. Schizophrenia with Secondary Motor Symptoms - Moderate -  Patient's schizophrenia could be manifesting with secondary motor symptoms, though the specific movements are more suggestive of medication side effects.",
+            "3. Drug-Induced Movement Disorder - Low -  While the symptoms are consistent with antipsychotic-induced movement disorders, the strong association with haloperidol use points more directly to tardive dyskinesia."
+          ],
+          "consolidation_notes": "",
+          "original_diagnosis_count": 24,
+          "deduplicated_count": 3
+        },
+        "success": true,
+        "execution_time": 2.403280258178711,
+        "formatted_output": "<MASTER DDX LIST>\n1. Tardive Dyskinesia - High -  Onset after prolonged antipsychotic use (haloperidol), involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)\n2. Schizophrenia with Secondary Motor Symptoms - Moderate -  Patient's schizophrenia could be manifesting with secondary motor symptoms, though the specific movements are more suggestive of medication side effects.\n3. Drug-Induced Movement Disorder - Low -  While the symptoms are consistent with antipsychotic-induced movement disorders, the strong association with haloperidol use points more directly to tardive dyskinesia.\n\n</CONSOLIDATION_NOTES>"
+      },
+      "refinement_and_justification": {
+        "round_type": "refinement_and_justification",
+        "participants": [
+          "Dr. Anya Sharma",
+          "Dr. Liam O'Connell",
+          "Dr. Elena Ramirez",
+          "Dr. Sarah M. Patel",
+          "Dr. Michael J. O'Connor",
+          "Dr. Emily R. Thompson",
+          "Dr. James H. Lee",
+          "Dr. Clinical Evaluator"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"Tardive Dyskinesia\": [\"Onset after prolonged antipsychotic use (haloperidol)\", \"Involuntary, repetitive movements (smacking lips, pursing mouth, excessive blinking)\"], \"Schizophrenia with Secondary Motor Symptoms\": [\"Patient's schizophrenia could be manifesting with secondary motor symptoms\", \"However, the specific movements are more suggestive of medication side effects\"], \"Drug-Induced Movement Disorder\": [\"Symptoms consistent with antipsychotic-induced movement disorders\", \"Stronger association with haloperidol use points more directly to tardive dyskinesia\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Tardive Dyskinesia:** This diagnosis is highly probable given the patient's history of long-term haloperidol use and the characteristic involuntary, repetitive movements described. Tardive dyskinesia is a well-known side effect of antipsychotic medications, particularly those with a high affinity for dopamine D2 receptors like haloperidol. The gradual onset and progression of symptoms over two weeks further support this diagnosis.\n\n2. **Schizophrenia with Secondary Motor Symptoms:** While schizophrenia can manifest with various motor symptoms, the specific movements described are more consistent with medication side effects. It's possible that the patient's schizophrenia could be contributing to the overall presentation, but the strong association with haloperidol use makes tardive dyskinesia the more likely primary diagnosis.\n\n3. **Drug-Induced Movement Disorder:** This diagnosis is less likely than tardive dyskinesia because the symptoms are highly specific to haloperidol use. While other antipsychotics can also cause movement disorders, the patient's history and the nature of the movements strongly suggest a direct link to haloperidol.",
+            "structured_data": {
+              "Tardive Dyskinesia": [
+                "Onset after prolonged antipsychotic use (haloperidol)",
+                "Involuntary, repetitive movements (smacking lips, pursing mouth, excessive blinking)"
+              ],
+              "Schizophrenia with Secondary Motor Symptoms": [
+                "Patient's schizophrenia could be manifesting with secondary motor symptoms",
+                "However, the specific movements are more suggestive of medication side effects"
+              ],
+              "Drug-Induced Movement Disorder": [
+                "Symptoms consistent with antipsychotic-induced movement disorders",
+                "Stronger association with haloperidol use points more directly to tardive dyskinesia"
+              ]
+            },
+            "response_time": 4.211455821990967,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761009.3159087
+          },
+          "Dr. Liam O'Connell": {
+            "content": "```json\n{\"Tardive Dyskinesia\": [\"History of haloperidol use\", \"Onset of symptoms after prolonged antipsychotic use\", \"Involuntary, repetitive movements\"], \"Drug-Induced Movement Disorder\": [\"Symptoms consistent with antipsychotic-induced movement disorders\"], \"Schizophrenia with Secondary Motor Symptoms\": [\"Patient's schizophrenia could be manifesting with secondary motor symptoms\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Tardive Dyskinesia:** This is my top diagnosis. The patient's history of long-term haloperidol use, a known risk factor for tardive dyskinesia, coupled with the onset of involuntary, repetitive movements (smacking lips, pursing mouth, excessive blinking) strongly supports this diagnosis. The gradual progression of symptoms over two weeks is also consistent with the typical course of tardive dyskinesia.\n\n2. **Drug-Induced Movement Disorder:** While this diagnosis is less specific than tardive dyskinesia, it's still a possibility. The symptoms align with those seen in various antipsychotic-induced movement disorders. However, the strong association with haloperidol use makes tardive dyskinesia a more likely culprit.\n\n3. **Schizophrenia with Secondary Motor Symptoms:**  It's possible that the patient's schizophrenia could be manifesting with secondary motor symptoms. However, the specific movements described are more characteristic of medication side effects, particularly tardive dyskinesia.  \n\n**Important Considerations:**\n\n* **Neuroimaging:**  While not immediately necessary, neuroimaging (e.g., MRI) could be helpful to rule out other neurological conditions that might mimic these movements.\n* **Treatment:**  If tardive dyskinesia is confirmed, treatment options include reducing or discontinuing haloperidol, switching to a different antipsychotic, or using medications specifically designed to manage tardive dyskinesia.",
+            "structured_data": {
+              "Tardive Dyskinesia": [
+                "History of haloperidol use",
+                "Onset of symptoms after prolonged antipsychotic use",
+                "Involuntary, repetitive movements"
+              ],
+              "Drug-Induced Movement Disorder": [
+                "Symptoms consistent with antipsychotic-induced movement disorders"
+              ],
+              "Schizophrenia with Secondary Motor Symptoms": [
+                "Patient's schizophrenia could be manifesting with secondary motor symptoms"
+              ]
+            },
+            "response_time": 4.807074785232544,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752761009.3159094
+          },
+          "Dr. Elena Ramirez": {
+            "content": "```json\n{\"Tardive Dyskinesia\": [\"Onset after prolonged antipsychotic use (haloperidol)\", \"Involuntary, repetitive movements (smacking lips, pursing mouth, excessive blinking)\"], \"Drug-Induced Movement Disorder\": [\"Symptoms consistent with antipsychotic-induced movement disorders\"], \"Schizophrenia with Secondary Motor Symptoms\": [\"Patient's schizophrenia could be manifesting with secondary motor symptoms\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Tardive Dyskinesia:** This diagnosis is highly likely given the patient's history of long-term haloperidol use and the onset of involuntary, repetitive movements consistent with tardive dyskinesia. The specific movements described (smacking lips, pursing mouth, excessive blinking) are characteristic of this condition.\n\n2. **Drug-Induced Movement Disorder:** This diagnosis is also plausible as the symptoms align with antipsychotic-induced movement disorders. However, the strong association with haloperidol use and the specific presentation point more strongly towards tardive dyskinesia, which is a specific type of drug-induced movement disorder.\n\n3. **Schizophrenia with Secondary Motor Symptoms:** While schizophrenia can manifest with secondary motor symptoms, the specific movements described are more suggestive of medication side effects. The patient's history of successful treatment with haloperidol further supports the likelihood of a medication-induced cause.\n\n\n\nLet me know if you'd like me to elaborate on any of these diagnoses or explore other aspects of the case.",
+            "structured_data": {
+              "Tardive Dyskinesia": [
+                "Onset after prolonged antipsychotic use (haloperidol)",
+                "Involuntary, repetitive movements (smacking lips, pursing mouth, excessive blinking)"
+              ],
+              "Drug-Induced Movement Disorder": [
+                "Symptoms consistent with antipsychotic-induced movement disorders"
+              ],
+              "Schizophrenia with Secondary Motor Symptoms": [
+                "Patient's schizophrenia could be manifesting with secondary motor symptoms"
+              ]
+            },
+            "response_time": 3.8264520168304443,
+            "confidence_score": 0.7799999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761009.3159099
+          },
+          "Dr. Sarah M. Patel": {
+            "content": "```json\n{\"tardive dyskinesia\": [\"Onset after prolonged antipsychotic use (haloperidol)\", \"Involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)\"], \"schizophrenia with secondary motor symptoms\": [\"Patient's schizophrenia could be manifesting with secondary motor symptoms\", \"Specific movements are more suggestive of medication side effects\"], \"dystonia\": [\"Unusual smacking motion with lips\", \"Pursing of mouth\", \"Excessive blinking\"]}\n```\n\nNow, I will provide a detailed clinical reasoning for the top three diagnoses:\n\n### SYSTEMATIC_REVIEW\n1. **Tardive Dyskinesia - High**\n   - **Onset after prolonged antipsychotic use (haloperidol)**: The patient has been on haloperidol for several months, which is a known risk factor for tardive dyskinesia.\n   - **Involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)**: The patient is exhibiting these specific movements, which are characteristic of tardive dyskinesia.\n\n2. **Schizophrenia with Secondary Motor Symptoms - Moderate**\n   - **Patient's schizophrenia could be manifesting with secondary motor symptoms**: While the patient has schizophrenia, the specific movements observed are more consistent with a side effect of antipsychotic medication rather than a primary symptom of schizophrenia.\n   - **Specific movements are more suggestive of medication side effects**: The nature and pattern of the movements are more indicative of a side effect of antipsychotic medication than a primary psychiatric symptom.\n\n3. **Dystonia - Low**\n   - **Unusual smacking motion with lips, Pursing of mouth, Excessive blinking**: These symptoms could be consistent with dystonia, but the patient's history of prolonged antipsychotic use and the specific nature of the movements make tardive dyskinesia a more likely diagnosis.\n\n### DETAILED_ANALYSIS\n1. **Tardive Dyskinesia - High**\n   - **Full evidence-based reasoning**: The patient's history of prolonged use of haloperidol, combined with the specific involuntary and repetitive movements observed (smacking lips, pursing mouth, excessive blinking), strongly supports a diagnosis of tardive dyskinesia. Tardive dyskinesia is a well-documented side effect of long-term antipsychotic use, particularly with high-potency antipsychotics like haloperidol. The onset of symptoms about 2 weeks ago and their gradual progression are also consistent with the development of tardive dyskinesia.\n\n2. **Schizophrenia with Secondary Motor Symptoms - Moderate**\n   - **Full evidence-based reasoning**: While the patient's schizophrenia could potentially manifest with secondary motor symptoms, the specific nature of the movements (smacking lips, pursing mouth, excessive blinking) are more consistent with a side effect of antipsychotic medication. The patient's history of prolonged antipsychotic use and the gradual onset of symptoms make it more likely that these movements are a secondary effect rather than a primary symptom of schizophrenia. However, it is still possible that there could be a secondary motor symptom related to the patient's schizophrenia, but the evidence is less compelling.\n\n3. **Dystonia - Low**\n   - **Full evidence-based reasoning**: The patient's symptoms could be consistent with dystonia, a movement disorder characterized by sustained muscle contractions causing twisting and repetitive movements or abnormal postures. However, the specific nature of the movements (smacking lips, pursing mouth, excessive blinking) and the patient's history of prolonged antipsychotic use make tardive dyskinesia a more likely diagnosis. Dystonia is less commonly associated with antipsychotic use and the specific movements observed are more characteristic of tardive dyskinesia.\n\nIn conclusion, the evidence strongly supports a diagnosis of tardive dyskinesia, with the patient's history of prolonged antipsychotic use and the specific involuntary and repetitive movements observed. The other diagnoses, while possible, are less supported by the clinical evidence.",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "Onset after prolonged antipsychotic use (haloperidol)",
+                "Involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)"
+              ],
+              "schizophrenia with secondary motor symptoms": [
+                "Patient's schizophrenia could be manifesting with secondary motor symptoms",
+                "Specific movements are more suggestive of medication side effects"
+              ],
+              "dystonia": [
+                "Unusual smacking motion with lips",
+                "Pursing of mouth",
+                "Excessive blinking"
+              ]
+            },
+            "response_time": 6.1824445724487305,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752761009.3159103
+          },
+          "Dr. Michael J. O'Connor": {
+            "content": "```json\n{\"tardive dyskinesia\": [\"onset after prolonged antipsychotic use (haloperidol)\", \"involuntary, repetitive movements (smacking lips, pursing mouth, excessive blinking)\"], \"schizophrenia with secondary motor symptoms\": [\"patient's schizophrenia could manifest with secondary motor symptoms\", \"specific movements are more suggestive of medication side effects\"], \"drug-induced movement disorder\": [\"symptoms consistent with antipsychotic-induced movement disorders\", \"strong association with haloperidol use points more directly to tardive dyskinesia\"]}\n```\n\nNow, I will elaborate on my clinical reasoning:\n\n### Systematic Review (address EVERY diagnosis):\n\n1. **Tardive Dyskinesia - High**\n   - **Evidence:**\n     - **Onset after prolonged antipsychotic use (haloperidol):** The patient has been on haloperidol for several months, which is a well-known risk factor for tardive dyskinesia.\n     - **Involuntary, repetitive movements (smacking lips, pursing mouth, excessive blinking):** The patient's symptoms are consistent with the classic presentation of tardive dyskinesia, characterized by involuntary, repetitive, and often stereotyped movements.\n   - **Clinical Reasoning:** The combination of a history of prolonged antipsychotic use and the specific movements described strongly supports a diagnosis of tardive dyskinesia.\n\n2. **Schizophrenia with Secondary Motor Symptoms - Moderate**\n   - **Evidence:**\n     - **Patient's schizophrenia could manifest with secondary motor symptoms:** Schizophrenia can indeed present with secondary motor symptoms, though these are less common and usually less specific than those seen in movement disorders.\n     - **Specific movements are more suggestive of medication side effects:** The specific movements described (smacking lips, pursing mouth, excessive blinking) are more characteristic of a movement disorder rather than schizophrenia.\n   - **Clinical Reasoning:** While the patient has schizophrenia, the nature of the symptoms is more indicative of a movement disorder rather than a primary psychiatric manifestation.\n\n3. **Drug-Induced Movement Disorder - Low**\n   - **Evidence:**\n     - **Symptoms consistent with antipsychotic-induced movement disorders:** The patient's symptoms are consistent with movement disorders that can be induced by antipsychotics.\n     - **Strong association with haloperidol use points more directly to tardive dyskinesia:** The prolonged use of haloperidol and the specific nature of the movements make tardive dyskinesia the most likely diagnosis.\n   - **Clinical Reasoning:** The symptoms are consistent with antipsychotic-induced movement disorders, but the strong association with haloperidol and the specific movements make tardive dyskinesia the most likely diagnosis.\n\n### Detailed Analysis (top 3 most supported):\n\n1. **Tardive Dyskinesia - High**\n   - **Full Evidence-Based Reasoning:** The patient's history of prolonged antipsychotic use (haloperidol) and the presence of involuntary, repetitive movements (smacking lips, pursing mouth, excessive blinking) are highly characteristic of tardive dyskinesia. The specific movements and the timing of onset provide strong support for this diagnosis. Tardive dyskinesia is a well-established complication of long-term antipsychotic use, and the symptoms described are consistent with this condition.\n\n2. **Drug-Induced Movement Disorder - Low**\n   - **Full Evidence-Based Reasoning:** While the patient's symptoms are consistent with movement disorders induced by antipsychotics, the strong association with haloperidol and the specific nature of the movements make tardive dyskinesia the most likely diagnosis. Drug-induced movement disorders can include a range of conditions, but the specific presentation in this case points more directly to tardive dyskinesia.\n\n3. **Schizophrenia with Secondary Motor Symptoms - Moderate**\n   - **Full Evidence-Based Reasoning:** The patient's schizophrenia could potentially manifest with secondary motor symptoms, but the specific movements described are more characteristic of a movement disorder. While schizophrenia can present with motor symptoms, these are usually less specific and less common than those seen in movement disorders. The patient's history of antipsychotic use and the specific nature of the movements make tardive dyskinesia the more likely diagnosis.\n\nIn conclusion, the patient's symptoms are most consistent with tardive dyskinesia, given the history of prolonged antipsychotic use and the specific movements observed. While schizophrenia with secondary motor symptoms cannot be completely ruled out, the evidence strongly supports tardive dyskinesia as the primary diagnosis.",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "onset after prolonged antipsychotic use (haloperidol)",
+                "involuntary, repetitive movements (smacking lips, pursing mouth, excessive blinking)"
+              ],
+              "schizophrenia with secondary motor symptoms": [
+                "patient's schizophrenia could manifest with secondary motor symptoms",
+                "specific movements are more suggestive of medication side effects"
+              ],
+              "drug-induced movement disorder": [
+                "symptoms consistent with antipsychotic-induced movement disorders",
+                "strong association with haloperidol use points more directly to tardive dyskinesia"
+              ]
+            },
+            "response_time": 7.013893127441406,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752761009.3159108
+          },
+          "Dr. Emily R. Thompson": {
+            "content": "```json\n{\"tardive dyskinesia\": [\"onset after prolonged antipsychotic use (haloperidol)\", \"involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)\"], \"schizophrenia with secondary motor symptoms\": [\"patient's schizophrenia could manifest with secondary motor symptoms\", \"specific movements are more suggestive of medication side effects\"], \"drug-induced movement disorder\": [\"symptoms consistent with antipsychotic-induced movement disorders\", \"strong association with haloperidol use points more directly to tardive dyskinesia\"]}\n```\n\n**Detailed Clinical Reasoning:**\n\n**1. Tardive Dyskinesia - High**\n- **Evidence 1: Onset after prolonged antipsychotic use (haloperidol)** - The patient has been on haloperidol for several months, which is a known risk factor for tardive dyskinesia.\n- **Evidence 2: Involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)** - The patient's symptoms are consistent with the classic presentation of tardive dyskinesia, characterized by repetitive, involuntary movements.\n\n**2. Schizophrenia with Secondary Motor Symptoms - Moderate**\n- **Evidence 1: Patient's schizophrenia could manifest with secondary motor symptoms** - While schizophrenia can sometimes present with motor symptoms, the specific nature of the patient's symptoms is more consistent with a movement disorder.\n- **Evidence 2: Specific movements are more suggestive of medication side effects** - The patient's movements are repetitive and involuntary, which are more characteristic of a movement disorder induced by antipsychotics rather than a primary psychiatric symptom.\n\n**3. Drug-Induced Movement Disorder - Low**\n- **Evidence 1: Symptoms consistent with antipsychotic-induced movement disorders** - The patient's symptoms are consistent with tardive dyskinesia, which is a type of drug-induced movement disorder.\n- **Evidence 2: Strong association with haloperidol use points more directly to tardive dyskinesia** - The long-term use of haloperidol increases the likelihood of developing tardive dyskinesia, making it the most likely diagnosis.\n\n**Detailed Analysis:**\n\n1. **Tardive Dyskinesia - High**\n   - **Confidence: HIGH**\n   - **Full Evidence-Based Reasoning:** The patient's symptoms are consistent with tardive dyskinesia, a well-known side effect of long-term antipsychotic use. The specific movements (smacking lips, pursing mouth, excessive blinking) are characteristic of this condition. The patient's history of prolonged haloperidol use further supports this diagnosis.\n\n2. **Schizophrenia with Secondary Motor Symptoms - Moderate**\n   - **Confidence: MEDIUM**\n   - **Full Evidence-Based Reasoning:** While schizophrenia can manifest with motor symptoms, the patient's symptoms are more consistent with a movement disorder. The repetitive and involuntary nature of the movements, along with the history of antipsychotic use, suggest a secondary motor symptom rather than a primary psychiatric manifestation.\n\n3. **Drug-Induced Movement Disorder - Low**\n   - **Confidence: LOW**\n   - **Full Evidence-Based Reasoning:** The symptoms are consistent with a drug-induced movement disorder, and the strong association with haloperidol use points more directly to tardive dyskinesia. However, this diagnosis is less specific and less likely given the clear association with the patient's antipsychotic use.\n\nIn conclusion, the patient's symptoms are most consistent with tardive dyskinesia, a well-known side effect of long-term antipsychotic use, particularly with haloperidol. The patient's history and the nature of the movements strongly support this diagnosis. Further evaluation, such as a detailed neuropsychological assessment and possibly a review of the antipsychotic regimen, would be beneficial.",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "onset after prolonged antipsychotic use (haloperidol)",
+                "involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)"
+              ],
+              "schizophrenia with secondary motor symptoms": [
+                "patient's schizophrenia could manifest with secondary motor symptoms",
+                "specific movements are more suggestive of medication side effects"
+              ],
+              "drug-induced movement disorder": [
+                "symptoms consistent with antipsychotic-induced movement disorders",
+                "strong association with haloperidol use points more directly to tardive dyskinesia"
+              ]
+            },
+            "response_time": 5.867436647415161,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752761009.3159118
+          },
+          "Dr. James H. Lee": {
+            "content": "```json\n{\"tardive dyskinesia\": [\"onset after prolonged antipsychotic use (haloperidol)\", \"involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)\"], \"schizophrenia with secondary motor symptoms\": [\"patient's schizophrenia could be manifesting with secondary motor symptoms\", \"specific movements are more suggestive of medication side effects\"], \"drug-induced movement disorder\": [\"symptoms consistent with antipsychotic-induced movement disorders\", \"strong association with haloperidol use points more directly to tardive dyskinesia\"]}\n```\n\nNow, I will provide my detailed clinical reasoning:\n\n**Tardive Dyskinesia (High)**: The patient's symptoms of an unusual smacking motion with his lips, pursing of his mouth, and excessive blinking have a clear onset after prolonged use of haloperidol, which is a well-known antipsychotic. These movements are described as involuntary and repetitive, which are characteristic of tardive dyskinesia. The fact that the symptoms started slowly about 2 weeks ago and have become more pronounced over time is also consistent with the development of tardive dyskinesia. Given the strong association between haloperidol use and the development of tardive dyskinesia, this diagnosis is highly supported.\n\n**Schizophrenia with Secondary Motor Symptoms (Moderate)**: While the patient's primary diagnosis is schizophrenia, the presence of secondary motor symptoms could be a manifestation of the underlying psychiatric condition. However, the specific nature of the movements (smacking lips, pursing mouth, excessive blinking) are more commonly associated with medication side effects rather than the primary symptoms of schizophrenia. The patient's successful treatment with haloperidol for schizophrenia suggests that these motor symptoms are likely secondary to the antipsychotic rather than a primary manifestation of schizophrenia.\n\n**Drug-Induced Movement Disorder (Low)**: The symptoms are indeed consistent with antipsychotic-induced movement disorders, which include tardive dyskinesia. However, the strong association with haloperidol use and the specific nature of the movements point more directly to tardive dyskinesia. While the term \"drug-induced movement disorder\" is broad and could encompass a range of conditions, the specific diagnosis of tardive dyskinesia is more precise and supported by the evidence.\n\n**Detailed Analysis**:\n\n1. **Tardive Dyskinesia (High)**: The patient's symptoms of an unusual smacking motion with his lips, pursing of his mouth, and excessive blinking are highly characteristic of tardive dyskinesia. The onset after prolonged use of haloperidol, along with the involuntary and repetitive nature of the movements, strongly supports this diagnosis. The progression of symptoms over time is also consistent with the development of tardive dyskinesia.\n\n2. **Drug-Induced Movement Disorder (Low)**: While the patient's symptoms are consistent with antipsychotic-induced movement disorders, the specific nature of the movements and the strong association with haloperidol use point more directly to tardive dyskinesia. The term \"drug-induced movement disorder\" is too broad to be the most specific and supported diagnosis in this case.\n\n3. **Schizophrenia with Secondary Motor Symptoms (Moderate)**: The patient's primary diagnosis is schizophrenia, and secondary motor symptoms could be a manifestation of the underlying condition. However, the specific nature of the movements is more suggestive of medication side effects rather than primary symptoms of schizophrenia. Therefore, while this diagnosis is possible, it is less supported by the clinical evidence compared to the other two.\n\nIn conclusion, the most supported diagnosis is Tardive Dyskinesia, followed by Drug-Induced Movement Disorder, and then Schizophrenia with Secondary Motor Symptoms. The evidence strongly supports the involuntary and repetitive nature of the patient's movements as being characteristic of tardive dyskinesia, which is a well-known side effect of long-term antipsychotic use.",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "onset after prolonged antipsychotic use (haloperidol)",
+                "involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)"
+              ],
+              "schizophrenia with secondary motor symptoms": [
+                "patient's schizophrenia could be manifesting with secondary motor symptoms",
+                "specific movements are more suggestive of medication side effects"
+              ],
+              "drug-induced movement disorder": [
+                "symptoms consistent with antipsychotic-induced movement disorders",
+                "strong association with haloperidol use points more directly to tardive dyskinesia"
+              ]
+            },
+            "response_time": 5.986081600189209,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752761009.3159125
+          },
+          "Dr. Clinical Evaluator": {
+            "content": "```json\n{\"tardive dyskinesia\": [\"onset after prolonged antipsychotic use (haloperidol)\", \"involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)\"], \"schizophrenia with secondary motor symptoms\": [\"patient's schizophrenia could be manifesting with secondary motor symptoms\"], \"drug-induced movement disorder\": [\"symptoms consistent with antipsychotic-induced movement disorders\"]}\n```\n\nNow, I will provide the detailed clinical reasoning:\n\n### SYSTEMATIC REVIEW\n\n1. **Tardive Dyskinesia - High**\n   - **Onset after prolonged antipsychotic use (haloperidol)**: The patient has been on haloperidol for several months, which is a known risk factor for tardive dyskinesia.\n   - **Involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)**: The patient exhibits these specific movements, which are characteristic of tardive dyskinesia.\n\n2. **Schizophrenia with Secondary Motor Symptoms - Moderate**\n   - **Patient's schizophrenia could be manifesting with secondary motor symptoms**: While it is possible that the patient's schizophrenia could be contributing to these movements, the specific nature of the movements (involuntary and repetitive) is more indicative of a medication side effect.\n\n3. **Drug-Induced Movement Disorder - Low**\n   - **Symptoms consistent with antipsychotic-induced movement disorders**: The symptoms are consistent with antipsychotic-induced movement disorders, but the strong association with haloperidol use points more directly to tardive dyskinesia.\n\n### DETAIL ANALYSIS\n\n1. **Tardive Dyskinesia - High**\n   - **Full evidence-based reasoning**: The patient's history of prolonged use of haloperidol, combined with the specific involuntary and repetitive movements (smacking lips, pursing mouth, excessive blinking), strongly supports a diagnosis of tardive dyskinesia. These symptoms are well-documented as a side effect of long-term antipsychotic use, particularly with haloperidol.\n\n2. **Schizophrenia with Secondary Motor Symptoms - Moderate**\n   - **Full evidence-based reasoning**: While the patient's schizophrenia could potentially manifest with secondary motor symptoms, the specific nature of the movements (involuntary and repetitive) is more consistent with a medication side effect. The patient's history of antipsychotic use and the presence of these specific movements make tardive dyskinesia a more likely diagnosis.\n\n3. **Drug-Induced Movement Disorder - Low**\n   - **Full evidence-based reasoning**: The symptoms are consistent with antipsychotic-induced movement disorders, but the specific movements and the patient's history of haloperidol use make tardive dyskinesia a more specific and likely diagnosis. The term \"drug-induced movement disorder\" is a broader category that includes tardive dyskinesia, but it does not capture the specific nature of the patient's symptoms as well as the term \"tardive dyskinesia.\"\n\nIn conclusion, the evidence strongly supports a diagnosis of tardive dyskinesia, with the patient's history of prolonged antipsychotic use and the specific involuntary and repetitive movements being the key diagnostic features. The other diagnoses are less specific and supported by less direct evidence.",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "onset after prolonged antipsychotic use (haloperidol)",
+                "involuntary repetitive movements (smacking lips, pursing mouth, excessive blinking)"
+              ],
+              "schizophrenia with secondary motor symptoms": [
+                "patient's schizophrenia could be manifesting with secondary motor symptoms"
+              ],
+              "drug-induced movement disorder": [
+                "symptoms consistent with antipsychotic-induced movement disorders"
+              ]
+            },
+            "response_time": 4.98006010055542,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752761009.315913
+          }
+        },
+        "metadata": {
+          "total_refinements": 0,
+          "challenges_detected": 8,
+          "evidence_interactions": 42,
+          "specialty_insights": 0,
+          "debate_quality_score": 10.8,
+          "debate_interactions": [
+            {
+              "type": "challenge",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "however",
+              "context": "ry Motor Symptoms\": [\"Patient's schizophrenia could be manifesting with secondary motor symptoms\", \"However, the specific movements are more suggestive of medication side effects\"], \"Drug-Induced Movement Di"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "less likely",
+              "context": "inesia the more likely primary diagnosis.\n\n3. **Drug-Induced Movement Disorder:** This diagnosis is less likely than tardive dyskinesia because the symptoms are highly specific to haloperidol use. While other an"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "clinical",
+              "context": "s\", \"Stronger association with haloperidol use points more directly to tardive dyskinesia\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Tardive Dyskinesia:** This diagnosis is highly probable given the patient's hist"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "symptoms",
+              "context": "movements (smacking lips, pursing mouth, excessive blinking)\"], \"Schizophrenia with Secondary Motor Symptoms\": [\"Patient's schizophrenia could be manifesting with secondary motor symptoms\", \"However, the spec"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "presentation",
+              "context": "n side effects. It's possible that the patient's schizophrenia could be contributing to the overall presentation, but the strong association with haloperidol use makes tardive dyskinesia the more likely primary d"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "consistent with",
+              "context": "ents are more suggestive of medication side effects\"], \"Drug-Induced Movement Disorder\": [\"Symptoms consistent with antipsychotic-induced movement disorders\", \"Stronger association with haloperidol use points more d"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "given the",
+              "context": "nesia\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Tardive Dyskinesia:** This diagnosis is highly probable given the patient's history of long-term haloperidol use and the characteristic involuntary, repetitive movem"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "however",
+              "context": "ossibility. The symptoms align with those seen in various antipsychotic-induced movement disorders. However, the strong association with haloperidol use makes tardive dyskinesia a more likely culprit.\n\n3. **"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "clinical",
+              "context": "r Symptoms\": [\"Patient's schizophrenia could be manifesting with secondary motor symptoms\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Tardive Dyskinesia:** This is my top diagnosis. The patient's history of long-te"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "symptoms",
+              "context": "```json\n{\"Tardive Dyskinesia\": [\"History of haloperidol use\", \"Onset of symptoms after prolonged antipsychotic use\", \"Involuntary, repetitive movements\"], \"Drug-Induced Movement Di"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "imaging",
+              "context": "edication side effects, particularly tardive dyskinesia.  \n\n**Important Considerations:**\n\n* **Neuroimaging:**  While not immediately necessary, neuroimaging (e.g., MRI) could be helpful to rule out other ne"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "consistent with",
+              "context": "ipsychotic use\", \"Involuntary, repetitive movements\"], \"Drug-Induced Movement Disorder\": [\"Symptoms consistent with antipsychotic-induced movement disorders\"], \"Schizophrenia with Secondary Motor Symptoms\": [\"Patien"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Elena Ramirez",
+              "position": 2,
+              "pattern": "however",
+              "context": "is diagnosis is also plausible as the symptoms align with antipsychotic-induced movement disorders. However, the strong association with haloperidol use and the specific presentation point more strongly towa"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Elena Ramirez",
+              "position": 2,
+              "pattern": "clinical",
+              "context": "r Symptoms\": [\"Patient's schizophrenia could be manifesting with secondary motor symptoms\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Tardive Dyskinesia:** This diagnosis is highly likely given the patient's histor"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Elena Ramirez",
+              "position": 2,
+              "pattern": "symptoms",
+              "context": "movements (smacking lips, pursing mouth, excessive blinking)\"], \"Drug-Induced Movement Disorder\": [\"Symptoms consistent with antipsychotic-induced movement disorders\"], \"Schizophrenia with Secondary Motor Sym"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Elena Ramirez",
+              "position": 2,
+              "pattern": "presentation",
+              "context": "c-induced movement disorders. However, the strong association with haloperidol use and the specific presentation point more strongly towards tardive dyskinesia, which is a specific type of drug-induced movement d"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Elena Ramirez",
+              "position": 2,
+              "pattern": "consistent with",
+              "context": "(smacking lips, pursing mouth, excessive blinking)\"], \"Drug-Induced Movement Disorder\": [\"Symptoms consistent with antipsychotic-induced movement disorders\"], \"Schizophrenia with Secondary Motor Symptoms\": [\"Patien"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Elena Ramirez",
+              "position": 2,
+              "pattern": "given the",
+              "context": "ymptoms\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Tardive Dyskinesia:** This diagnosis is highly likely given the patient's history of long-term haloperidol use and the onset of involuntary, repetitive movements c"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Sarah M. Patel",
+              "position": 3,
+              "pattern": "however",
+              "context": "likely that these movements are a secondary effect rather than a primary symptom of schizophrenia. However, it is still possible that there could be a secondary motor symptom related to the patient's schizo"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah M. Patel",
+              "position": 3,
+              "pattern": "evidence",
+              "context": "inesia a more likely diagnosis.\n\n### DETAILED_ANALYSIS\n1. **Tardive Dyskinesia - High**\n   - **Full evidence-based reasoning**: The patient's history of prolonged use of haloperidol, combined with the specifi"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah M. Patel",
+              "position": 3,
+              "pattern": "clinical",
+              "context": "g motion with lips\", \"Pursing of mouth\", \"Excessive blinking\"]}\n```\n\nNow, I will provide a detailed clinical reasoning for the top three diagnoses:\n\n### SYSTEMATIC_REVIEW\n1. **Tardive Dyskinesia - High**\n   -"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah M. Patel",
+              "position": 3,
+              "pattern": "symptoms",
+              "context": "movements (smacking lips, pursing mouth, excessive blinking)\"], \"schizophrenia with secondary motor symptoms\": [\"Patient's schizophrenia could be manifesting with secondary motor symptoms\", \"Specific movement"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah M. Patel",
+              "position": 3,
+              "pattern": "abnormal",
+              "context": "isorder characterized by sustained muscle contractions causing twisting and repetitive movements or abnormal postures. However, the specific nature of the movements (smacking lips, pursing mouth, excessive bl"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah M. Patel",
+              "position": 3,
+              "pattern": "normal",
+              "context": "order characterized by sustained muscle contractions causing twisting and repetitive movements or abnormal postures. However, the specific nature of the movements (smacking lips, pursing mouth, excessive bl"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah M. Patel",
+              "position": 3,
+              "pattern": "consistent with",
+              "context": "ary motor symptoms**: While the patient has schizophrenia, the specific movements observed are more consistent with a side effect of antipsychotic medication rather than a primary symptom of schizophrenia.\n   - **Sp"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael J. O'Connor",
+              "position": 4,
+              "pattern": "evidence",
+              "context": "asoning:\n\n### Systematic Review (address EVERY diagnosis):\n\n1. **Tardive Dyskinesia - High**\n   - **Evidence:**\n     - **Onset after prolonged antipsychotic use (haloperidol):** The patient has been on halope"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael J. O'Connor",
+              "position": 4,
+              "pattern": "clinical",
+              "context": "with haloperidol use points more directly to tardive dyskinesia\"]}\n```\n\nNow, I will elaborate on my clinical reasoning:\n\n### Systematic Review (address EVERY diagnosis):\n\n1. **Tardive Dyskinesia - High**\n   -"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael J. O'Connor",
+              "position": 4,
+              "pattern": "symptoms",
+              "context": "movements (smacking lips, pursing mouth, excessive blinking)\"], \"schizophrenia with secondary motor symptoms\": [\"patient's schizophrenia could manifest with secondary motor symptoms\", \"specific movements are"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael J. O'Connor",
+              "position": 4,
+              "pattern": "presentation",
+              "context": "lips, pursing mouth, excessive blinking):** The patient's symptoms are consistent with the classic presentation of tardive dyskinesia, characterized by involuntary, repetitive, and often stereotyped movements."
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael J. O'Connor",
+              "position": 4,
+              "pattern": "consistent with",
+              "context": "ents are more suggestive of medication side effects\"], \"drug-induced movement disorder\": [\"symptoms consistent with antipsychotic-induced movement disorders\", \"strong association with haloperidol use points more dir"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael J. O'Connor",
+              "position": 4,
+              "pattern": "given the",
+              "context": "kely diagnosis.\n\nIn conclusion, the patient's symptoms are most consistent with tardive dyskinesia, given the history of prolonged antipsychotic use and the specific movements observed. While schizophrenia wit"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Emily R. Thompson",
+              "position": 5,
+              "pattern": "however",
+              "context": "sorder, and the strong association with haloperidol use points more directly to tardive dyskinesia. However, this diagnosis is less specific and less likely given the clear association with the patient's ant"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Emily R. Thompson",
+              "position": 5,
+              "pattern": "less likely",
+              "context": "eridol use points more directly to tardive dyskinesia. However, this diagnosis is less specific and less likely given the clear association with the patient's antipsychotic use.\n\nIn conclusion, the patient's sym"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily R. Thompson",
+              "position": 5,
+              "pattern": "evidence",
+              "context": "o tardive dyskinesia\"]}\n```\n\n**Detailed Clinical Reasoning:**\n\n**1. Tardive Dyskinesia - High**\n- **Evidence 1: Onset after prolonged antipsychotic use (haloperidol)** - The patient has been on haloperidol fo"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily R. Thompson",
+              "position": 5,
+              "pattern": "clinical",
+              "context": "rong association with haloperidol use points more directly to tardive dyskinesia\"]}\n```\n\n**Detailed Clinical Reasoning:**\n\n**1. Tardive Dyskinesia - High**\n- **Evidence 1: Onset after prolonged antipsychotic"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily R. Thompson",
+              "position": 5,
+              "pattern": "symptoms",
+              "context": "movements (smacking lips, pursing mouth, excessive blinking)\"], \"schizophrenia with secondary motor symptoms\": [\"patient's schizophrenia could manifest with secondary motor symptoms\", \"specific movements are"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily R. Thompson",
+              "position": 5,
+              "pattern": "presentation",
+              "context": "lips, pursing mouth, excessive blinking)** - The patient's symptoms are consistent with the classic presentation of tardive dyskinesia, characterized by repetitive, involuntary movements.\n\n**2. Schizophrenia with"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily R. Thompson",
+              "position": 5,
+              "pattern": "consistent with",
+              "context": "ents are more suggestive of medication side effects\"], \"drug-induced movement disorder\": [\"symptoms consistent with antipsychotic-induced movement disorders\", \"strong association with haloperidol use points more dir"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily R. Thompson",
+              "position": 5,
+              "pattern": "given the",
+              "context": "oints more directly to tardive dyskinesia. However, this diagnosis is less specific and less likely given the clear association with the patient's antipsychotic use.\n\nIn conclusion, the patient's symptoms are"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. James H. Lee",
+              "position": 6,
+              "pattern": "however",
+              "context": "sence of secondary motor symptoms could be a manifestation of the underlying psychiatric condition. However, the specific nature of the movements (smacking lips, pursing mouth, excessive blinking) are more c"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. James H. Lee",
+              "position": 6,
+              "pattern": "evidence",
+              "context": "ge of conditions, the specific diagnosis of tardive dyskinesia is more precise and supported by the evidence.\n\n**Detailed Analysis**:\n\n1. **Tardive Dyskinesia (High)**: The patient's symptoms of an unusual sm"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. James H. Lee",
+              "position": 6,
+              "pattern": "clinical",
+              "context": "haloperidol use points more directly to tardive dyskinesia\"]}\n```\n\nNow, I will provide my detailed clinical reasoning:\n\n**Tardive Dyskinesia (High)**: The patient's symptoms of an unusual smacking motion wit"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. James H. Lee",
+              "position": 6,
+              "pattern": "symptoms",
+              "context": "movements (smacking lips, pursing mouth, excessive blinking)\"], \"schizophrenia with secondary motor symptoms\": [\"patient's schizophrenia could be manifesting with secondary motor symptoms\", \"specific movement"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. James H. Lee",
+              "position": 6,
+              "pattern": "suggests",
+              "context": "ry symptoms of schizophrenia. The patient's successful treatment with haloperidol for schizophrenia suggests that these motor symptoms are likely secondary to the antipsychotic rather than a primary manifesta"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. James H. Lee",
+              "position": 6,
+              "pattern": "consistent with",
+              "context": "ents are more suggestive of medication side effects\"], \"drug-induced movement disorder\": [\"symptoms consistent with antipsychotic-induced movement disorders\", \"strong association with haloperidol use points more dir"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. James H. Lee",
+              "position": 6,
+              "pattern": "given the",
+              "context": "ave become more pronounced over time is also consistent with the development of tardive dyskinesia. Given the strong association between haloperidol use and the development of tardive dyskinesia, this diagnosi"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "evidence",
+              "context": "directly to tardive dyskinesia.\n\n### DETAIL ANALYSIS\n\n1. **Tardive Dyskinesia - High**\n   - **Full evidence-based reasoning**: The patient's history of prolonged use of haloperidol, combined with the specifi"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "clinical",
+              "context": "s consistent with antipsychotic-induced movement disorders\"]}\n```\n\nNow, I will provide the detailed clinical reasoning:\n\n### SYSTEMATIC REVIEW\n\n1. **Tardive Dyskinesia - High**\n   - **Onset after prolonged an"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "symptoms",
+              "context": "movements (smacking lips, pursing mouth, excessive blinking)\"], \"schizophrenia with secondary motor symptoms\": [\"patient's schizophrenia could be manifesting with secondary motor symptoms\"], \"drug-induced mov"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "consistent with",
+              "context": "could be manifesting with secondary motor symptoms\"], \"drug-induced movement disorder\": [\"symptoms consistent with antipsychotic-induced movement disorders\"]}\n```\n\nNow, I will provide the detailed clinical reasonin"
+            }
+          ],
+          "all_refinements": [],
+          "high_value_interactions": 50,
+          "tier_1_count": 0,
+          "agent_contributions": {
+            "Dr. Anya Sharma": 223,
+            "Dr. Liam O'Connell": 230,
+            "Dr. Elena Ramirez": 191,
+            "Dr. Sarah M. Patel": 538,
+            "Dr. Michael J. O'Connor": 605,
+            "Dr. Emily R. Thompson": 491,
+            "Dr. James H. Lee": 545,
+            "Dr. Clinical Evaluator": 417
+          }
+        },
+        "success": true,
+        "execution_time": 42.97923135757446,
+        "formatted_output": ""
+      },
+      "post_debate_voting": {
+        "round_type": "post_debate_voting",
+        "participants": [
+          "Dr. Anya Sharma",
+          "Dr. Liam O'Connell",
+          "Dr. Elena Ramirez",
+          "Dr. Sarah M. Patel",
+          "Dr. Michael J. O'Connor",
+          "Dr. Emily R. Thompson",
+          "Dr. James H. Lee",
+          "Dr. Clinical Evaluator"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"vote_ranking\": [\"Tardive Dyskinesia\", \"Drug-Induced Movement Disorder\", \"Chorea\"], \"rationale\": \"The patient's symptoms of involuntary lip smacking, pursing, and blinking, along with a history of prolonged haloperidol use, strongly suggest Tardive Dyskinesia. Drug-Induced Movement Disorder is a broader category that could encompass Tardive Dyskinesia, and Chorea, while less likely, could be considered due to the unpredictable nature of the movements.\"}\n```\n\n**<PREFERENTIAL_VOTE>**\n1st Choice: **Tardive Dyskinesia** - The patient's symptoms, onset after prolonged antipsychotic use (haloperidol), and lack of significant distress align strongly with the classic presentation of tardive dyskinesia. \n\n2nd Choice: **Drug-Induced Movement Disorder** - This is a broader category that could encompass Tardive Dyskinesia, given the patient's history of antipsychotic medication.\n\n3rd Choice: **Chorea** - While less likely, chorea could be considered due to the variable and unpredictable nature of the movements described. However, the strong association with antipsychotic use makes Tardive Dyskinesia the more probable diagnosis.\n\n**<VOTING_CONFIDENCE>**\nOverall confidence in top choice: **85%**",
+            "structured_data": null,
+            "response_time": 3.2876617908477783,
+            "confidence_score": 0.66,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761034.3745797
+          },
+          "Dr. Liam O'Connell": {
+            "content": "```json\n{\n\"vote_ranking\": [\"Tardive Dyskinesia\", \"Drug-Induced Movement Disorder\", \"Chorea\"],\n\"rationale\": \"The patient's history of prolonged haloperidol use, the gradual onset of involuntary movements, and the lack of distress align strongly with Tardive Dyskinesia. However, given the possibility of other drug-induced movement disorders, I'm considering that as a second option. Chorea is a less likely possibility but remains a consideration due to the unpredictable nature of the movements.\"\n}\n```\n\n**Explanation:**\n\nMy top choice is **Tardive Dyskinesia**.  Here's why:\n\n* **History of Antipsychotic Use:** The patient has been on haloperidol for several months, a known risk factor for tardive dyskinesia.\n* **Gradual Onset:** The symptoms developed slowly over two weeks, which is consistent with the typical progression of tardive dyskinesia.\n* **Involuntary Movements:** The described movements (smacking lips, pursing mouth, excessive blinking) are classic manifestations of tardive dyskinesia.\n\n**Second Choice: Drug-Induced Movement Disorder**\n\nWhile tardive dyskinesia is the most likely diagnosis, it's important to consider other drug-induced movement disorders.  \n\n**Third Choice: Chorea**\n\nChorea is characterized by variable, unpredictable movements. While the patient's symptoms could potentially be chorea, the history of antipsychotic use makes tardive dyskinesia a more probable diagnosis.\n\n\n\n**Overall Confidence:** 85% \n\nI am fairly confident in my top choice, but the possibility of other drug-induced movement disorders warrants consideration.",
+            "structured_data": null,
+            "response_time": 4.0131354331970215,
+            "confidence_score": 0.6799999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761034.3745806
+          },
+          "Dr. Elena Ramirez": {
+            "content": "```json\n{\"vote_ranking\": [\"Tardive Dyskinesia\", \"Drug-Induced Movement Disorder\", \"Chorea\"], \"rationale\": \"The patient's symptoms of involuntary lip smacking, pursing, and blinking, coupled with a history of prolonged haloperidol use, strongly suggest Tardive Dyskinesia. Drug-Induced Movement Disorder is a broader category that encompasses Tardive Dyskinesia, and Chorea, while less likely, could be considered due to the unpredictable nature of the movements.\"}\n```\n\n**Explanation:**\n\n* **1st Choice: Tardive Dyskinesia:** This diagnosis is the most likely given the patient's history of long-term haloperidol use and the specific symptoms described (involuntary lip smacking, pursing, and blinking). Tardive Dyskinesia is a well-known side effect of antipsychotic medications, particularly those with a high dopamine-blocking effect like haloperidol.\n\n* **2nd Choice: Drug-Induced Movement Disorder:** This is a broader category that includes Tardive Dyskinesia. It encompasses various movement disorders caused by medications, so it's a reasonable second choice.\n\n* **3rd Choice: Chorea:** While less likely than Tardive Dyskinesia, Chorea could be considered due to the variable and unpredictable nature of the movements described. However, the strong association with haloperidol use makes Tardive Dyskinesia the more probable diagnosis.\n\n\n\n**VOTING_CONFIDENCE:** 90%",
+            "structured_data": null,
+            "response_time": 3.602407217025757,
+            "confidence_score": 0.6799999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761034.3745813
+          },
+          "Dr. Sarah M. Patel": {
+            "content": "```json\n{\n  \"vote_ranking\": [\"tardive dyskinesia\", \"facial dyskinesia\", \"chorea\"],\n  \"rationale\": \"The patient's symptoms of an unusual smacking motion with his lips, pursing of his mouth, and excessive blinking are consistent with tardive dyskinesia, which is known to occur after prolonged use of antipsychotics. The onset and progression of these symptoms align with the patient's history of haloperidol use. While facial dyskinesia is a subset of tardive dyskinesia, the term 'facial dyskinesia' is more specific to the symptoms described. Chorea, while a possibility, is typically more unpredictable and less consistent with the patient's presentation.\"\n}\n```\n\nAnd for the confidence level:\n\n```json\n{\n  \"voting_confidence\": \"Overall confidence in top choice: 90%\"\n}\n```\n\nTo elaborate further:\n\n1st Choice: Tardive Dyskinesia - The patient's symptoms are consistent with tardive dyskinesia, a well-known side effect of long-term antipsychotic use, particularly with haloperidol. The symptoms described, such as an unusual smacking motion with his lips, pursing of his mouth, and excessive blinking, are characteristic of this condition. The onset and progression of these symptoms also align with the patient's history of haloperidol use.\n\n2nd Choice: Facial Dyskinesia - This is a subset of tardive dyskinesia, focusing specifically on the facial manifestations. The patient's symptoms are primarily facial, which makes this a strong secondary choice.\n\n3rd Choice: Chorea - While chorea can present with repetitive and unpredictable movements, the patient's symptoms are more consistent with a more predictable pattern, which is more characteristic of tardive dyskinesia. However, it is still a possibility, especially if the patient's movements were more variable and unpredictable.\n\nOverall confidence in the top choice: 90% - Given the clear alignment of the patient's symptoms with the known side effects of long-term antipsychotic use, I have a high level of confidence in the diagnosis of tardive dyskinesia.",
+            "structured_data": null,
+            "response_time": 3.3377113342285156,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761034.3745823
+          },
+          "Dr. Michael J. O'Connor": {
+            "content": "```json\n{\"vote_ranking\": [\"Tardive Dyskinesia\", \"Facial Dyskinesia\", \"Akathisia\"], \"rationale\": \"The patient's symptoms are consistent with tardive dyskinesia, which is a known side effect of long-term antipsychotic use. While facial dyskinesia is a specific type of tardive dyskinesia, the symptoms described are broad enough to encompass other movement disorders. Akathisia, while a common side effect of antipsychotics, does not typically present with the specific motor symptoms described.\"}\n```\n\nAnd for the voting confidence:\n\n```json\n{\"voting_confidence\": \"Overall confidence in top choice: 85%\"}\n```\n\nHere's the full response:\n\n<PREFERENTIAL_VOTE>\n1st Choice: Tardive Dyskinesia - The patient's symptoms are consistent with tardive dyskinesia, which is a known side effect of long-term antipsychotic use. The symptoms described, such as smacking motion with lips, pursing of mouth, and excessive blinking, are characteristic of tardive dyskinesia.\n2nd Choice: Facial Dyskinesia - Facial dyskinesia is a specific type of tardive dyskinesia, and the patient's symptoms are consistent with this condition. However, the symptoms described are broad enough to encompass other movement disorders as well.\n3rd Choice: Akathisia - While akathisia is a common side effect of antipsychotics, it typically presents with inner restlessness and an inability to sit still. The patient's symptoms do not seem to align with this diagnosis.\n</PREFERENTIAL_VOTE>\n\n<VOTING_CONFIDENCE>\nOverall confidence in top choice: 85%\n</VOTING_CONFIDENCE>",
+            "structured_data": null,
+            "response_time": 2.7239105701446533,
+            "confidence_score": 0.7799999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761034.374583
+          },
+          "Dr. Emily R. Thompson": {
+            "content": "```json\n{\"vote_ranking\": [\"Tardive Dyskinesia\", \"Drug-Induced Movement Disorder\", \"Chorea\"], \"rationale\": \"The patient's symptoms are consistent with tardive dyskinesia, which is often associated with long-term use of antipsychotics like haloperidol. While chorea and drug-induced movement disorder are also possibilities, the specific symptoms described align more closely with tardive dyskinesia.\"}\n```\n\nAnd for the confidence level:\n\n```json\n{\"voting_confidence\": \"Overall confidence in top choice: 85%\"}\n```\n\nNow, elaborating on the reasoning:\n\n1st Choice: Tardive Dyskinesia - The patient's symptoms, including the unusual smacking motion with his lips, pursing of his mouth, and excessive blinking, are highly characteristic of tardive dyskinesia. This condition typically develops after prolonged use of antipsychotic medications, such as haloperidol, which the patient has been taking for several months. The onset of these symptoms about 2 weeks ago is also consistent with the development of tardive dyskinesia.\n\n2nd Choice: Drug-Induced Movement Disorder - This diagnosis is also a strong contender because the patient's symptoms could be a result of the antipsychotic medication he is receiving. Drug-induced movement disorders can include a variety of involuntary movements, and tardive dyskinesia is a specific type of such disorder. However, the specific symptoms described are more indicative of tardive dyskinesia.\n\n3rd Choice: Chorea - While chorea can present with unpredictable, variable movements, the patient's symptoms are more repetitive and involuntary, which are more characteristic of tardive dyskinesia. Chorea is typically associated with conditions like Huntington's disease or with the use of certain medications, but the presentation here is more aligned with tardive dyskinesia.\n\nOverall confidence in top choice: 85% - This high confidence is based on the specific symptoms described and the known association between tardive dyskinesia and long-term antipsychotic use. However, it's important to confirm the diagnosis through a thorough neuropsychological evaluation and possibly by ruling out other causes.",
+            "structured_data": null,
+            "response_time": 3.3232996463775635,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761034.3745835
+          },
+          "Dr. James H. Lee": {
+            "content": "```json\n{\"vote_ranking\": [\"Tardive Dyskinesia\", \"Drug-Induced Movement Disorder\", \"Chorea\"], \"rationale\": \"The patient's symptoms are consistent with tardive dyskinesia, which is a known side effect of long-term antipsychotic use. The onset and nature of the movements align with this diagnosis. While drug-induced movement disorders are a broader category, and chorea can present with similar symptoms, the specific history of haloperidol use and the gradual onset make tardive dyskinesia the most likely diagnosis.\"}\n```\n\nAnd here is the voting confidence:\n\n```json\n{\"voting_confidence\": \"Overall confidence in top choice: 85%\"}\n```\n\n**PREFERENTIAL_VOTE**\n1st Choice: Tardive Dyskinesia - The patient's symptoms are consistent with tardive dyskinesia, which is a known side effect of long-term antipsychotic use. The onset and nature of the movements align with this diagnosis.\n2nd Choice: Drug-Induced Movement Disorder - This is a broader category that includes tardive dyskinesia, and the patient's history and symptoms are consistent with this condition.\n3rd Choice: Chorea - While chorea can present with similar symptoms, the specific history of haloperidol use and the gradual onset make tardive dyskinesia the most likely diagnosis.\n\n**VOTING_CONFIDENCE**\nOverall confidence in top choice: 85%\n\nThis ranking is based on the clinical presentation and the known side effects of antipsychotic medications, particularly haloperidol, in elderly patients with schizophrenia.",
+            "structured_data": null,
+            "response_time": 2.496704578399658,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761034.3745847
+          },
+          "Dr. Clinical Evaluator": {
+            "content": "```json\n{\"vote_ranking\": [\"Tardive Dyskinesia\", \"Drug-Induced Movement Disorder\", \"Chorea\"], \"rationale\": \"The patient's symptoms are consistent with tardive dyskinesia, given the onset after prolonged use of haloperidol. While chorea and drug-induced movement disorder are also possibilities, the specific presentation and context make tardive dyskinesia the most likely diagnosis.\"}\n```\n\nAnd here is the voting confidence:\n\n```json\n{\"VOTING_CONFIDENCE\": \"Overall confidence in top choice: 85%\"}\n```\n\n**PREFERENTIAL_VOTE**\n1st Choice: Tardive Dyskinesia - The patient's symptoms are consistent with tardive dyskinesia, given the onset after prolonged use of haloperidol. The specific presentation of unusual smacking motion with lips, pursing of mouth, and excessive blinking are characteristic of this condition.\n2nd Choice: Drug-Induced Movement Disorder - This diagnosis is also a strong possibility given the patient's history of antipsychotic use and the symptoms being consistent with movement disorders induced by medications.\n3rd Choice: Chorea - While chorea can present with similar symptoms, the context of prolonged antipsychotic use and the specific presentation make tardive dyskinesia the most likely diagnosis.\n\n**VOTING_CONFIDENCE**\nOverall confidence in top choice: 85%",
+            "structured_data": null,
+            "response_time": 2.1940107345581055,
+            "confidence_score": 0.74,
+            "reasoning_quality": "basic",
+            "timestamp": 1752761034.374585
+          }
+        },
+        "metadata": {
+          "borda_scores": {
+            "**Tardive Dyskinesia**": 3,
+            "**Drug": 2,
+            "**Chorea**": 1,
+            "Drug": 11,
+            "Chorea**": 2,
+            "Tardive Dyskinesia:** This Diagnosis Is The Most Likely Given The Patient'S History Of Long": 3,
+            "Chorea:** While Less Likely Than Tardive Dyskinesia": 1,
+            "Tardive Dyskinesia": 15,
+            "Facial Dyskinesia": 4,
+            "Chorea": 4,
+            "Akathisia": 1
+          },
+          "ranked_results": [
+            [
+              "Tardive Dyskinesia",
+              15
+            ],
+            [
+              "Drug",
+              11
+            ],
+            [
+              "Facial Dyskinesia",
+              4
+            ],
+            [
+              "Chorea",
+              4
+            ],
+            [
+              "**Tardive Dyskinesia**",
+              3
+            ],
+            [
+              "Tardive Dyskinesia:** This Diagnosis Is The Most Likely Given The Patient'S History Of Long",
+              3
+            ],
+            [
+              "**Drug",
+              2
+            ],
+            [
+              "Chorea**",
+              2
+            ],
+            [
+              "**Chorea**",
+              1
+            ],
+            [
+              "Chorea:** While Less Likely Than Tardive Dyskinesia",
+              1
+            ],
+            [
+              "Akathisia",
+              1
+            ]
+          ],
+          "winner": "Tardive Dyskinesia",
+          "all_rankings": {
+            "Dr. Anya Sharma": [
+              "**Tardive Dyskinesia**",
+              "**Drug",
+              "**Chorea**"
+            ],
+            "Dr. Liam O'Connell": [
+              "Drug",
+              "Chorea**"
+            ],
+            "Dr. Elena Ramirez": [
+              "Tardive Dyskinesia:** This Diagnosis Is The Most Likely Given The Patient'S History Of Long",
+              "Drug",
+              "Chorea:** While Less Likely Than Tardive Dyskinesia"
+            ],
+            "Dr. Sarah M. Patel": [
+              "Tardive Dyskinesia",
+              "Facial Dyskinesia",
+              "Chorea"
+            ],
+            "Dr. Michael J. O'Connor": [
+              "Tardive Dyskinesia",
+              "Facial Dyskinesia",
+              "Akathisia"
+            ],
+            "Dr. Emily R. Thompson": [
+              "Tardive Dyskinesia",
+              "Drug",
+              "Chorea"
+            ],
+            "Dr. James H. Lee": [
+              "Tardive Dyskinesia",
+              "Drug",
+              "Chorea"
+            ],
+            "Dr. Clinical Evaluator": [
+              "Tardive Dyskinesia",
+              "Drug",
+              "Chorea"
+            ]
+          },
+          "total_votes": 8,
+          "voting_summary": {
+            "Tardive Dyskinesia": 15,
+            "Drug": 11,
+            "Facial Dyskinesia": 4,
+            "Chorea": 4,
+            "**Tardive Dyskinesia**": 3
+          }
+        },
+        "success": true,
+        "execution_time": 25.058642387390137,
+        "formatted_output": ""
+      },
+      "cant_miss": {
+        "round_type": "cant_miss",
+        "participants": [
+          "Dr. Anya Sharma",
+          "Dr. Liam O'Connell",
+          "Dr. Elena Ramirez",
+          "Dr. Sarah M. Patel",
+          "Dr. Michael J. O'Connor",
+          "Dr. Emily R. Thompson",
+          "Dr. James H. Lee",
+          "Dr. Clinical Evaluator"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"Tardive Dyskinesia\": [\"Onset after prolonged antipsychotic use\", \"Involuntary, repetitive movements\"], \"Neuroleptic Malignant Syndrome\": [\"Symptoms can include muscle rigidity, fever, altered mental status\", \"Association with antipsychotic use\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with a constellation of symptoms highly suggestive of **Tardive Dyskinesia**, a movement disorder often associated with long-term antipsychotic medication use.  \n\n* **History of Antipsychotic Use:** The patient has been on haloperidol for several months, a known risk factor for tardive dyskinesia.\n* **Onset and Progression:** The symptoms started gradually and have worsened over time, consistent with the typical course of tardive dyskinesia.\n* **Involuntary Movements:** The described movements (smacking lips, pursing mouth, excessive blinking) are characteristic of tardive dyskinesia.\n\nHowever, it's crucial to also consider **Neuroleptic Malignant Syndrome (NMS)**, a rare but life-threatening reaction to antipsychotics. While the patient's symptoms don't initially scream NMS, it's essential to rule it out due to the potential for severe complications.\n\n**<CANT_MISS_DIAGNOSES>**\n- **Tardive Dyskinesia** -  This is the most likely diagnosis given the patient's history and symptoms. Early recognition and management can help prevent further progression. - **Risk Level: HIGH**\n- **Neuroleptic Malignant Syndrome** - This is a serious condition that requires immediate medical attention. - **Risk Level: HIGH**\n\n**<IMMEDIATE_WORKUP>**\n- **Thorough neurological examination:** To assess the full extent of the movements and rule out other neurological conditions.\n- **Review of medications:** To confirm the patient's current antipsychotic regimen and dosage.\n\n**<TIME_SENSITIVITY>**\nBoth tardive dyskinesia and NMS require prompt attention. While tardive dyskinesia may not be immediately life-threatening, early intervention can help manage symptoms and prevent further progression. NMS, on the other hand, is a medical emergency that requires immediate treatment to prevent potentially fatal complications.",
+            "structured_data": {
+              "Tardive Dyskinesia": [
+                "Onset after prolonged antipsychotic use",
+                "Involuntary, repetitive movements"
+              ],
+              "Neuroleptic Malignant Syndrome": [
+                "Symptoms can include muscle rigidity, fever, altered mental status",
+                "Association with antipsychotic use"
+              ]
+            },
+            "response_time": 5.424946546554565,
+            "confidence_score": 0.76,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761073.626721
+          },
+          "Dr. Liam O'Connell": {
+            "content": "```json\n{\"tardive dyskinesia\": [\"Onset after prolonged antipsychotic use\", \"Involuntary, repetitive movements\"], \"neuroleptic malignant syndrome\": [\"History of antipsychotic use\", \"Symptoms can include muscle rigidity, fever, and altered mental status\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with a constellation of symptoms highly suggestive of **tardive dyskinesia**, a movement disorder often associated with long-term antipsychotic use. The patient's history of haloperidol use for several months, coupled with the gradual onset and worsening of involuntary movements (smacking lips, pursing mouth, excessive blinking), strongly supports this diagnosis.\n\n**Neuroleptic malignant syndrome (NMS)** is another critical consideration. While less common than tardive dyskinesia, NMS is a life-threatening reaction to antipsychotics.  The patient's history of antipsychotic use and the potential for muscle rigidity, fever, and altered mental status warrant careful monitoring for this serious condition.\n\n**CANT_MISS_DIAGNOSES**\n- **Tardive Dyskinesia** -  The patient's history of long-term antipsychotic use and the presence of involuntary, repetitive movements are highly suggestive of this condition.  \n- **Neuroleptic Malignant Syndrome** -  This is a potentially life-threatening reaction to antipsychotics and requires immediate attention if suspected.\n\n**Risk Level: HIGH** for both diagnoses\n\n**IMMEDIATE_WORKUP**\n- **Thorough neurological examination:**  Assess for additional neurological signs, including muscle rigidity, tremors, and changes in gait.\n- **Vital signs monitoring:**  Closely monitor temperature, heart rate, blood pressure, and respiratory rate for signs of NMS.\n\n**TIME_SENSITIVITY**\nBoth diagnoses require prompt evaluation and management. Tardive dyskinesia may be irreversible, but early intervention can help manage symptoms. NMS is a medical emergency and requires immediate treatment to prevent life-threatening complications.",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "Onset after prolonged antipsychotic use",
+                "Involuntary, repetitive movements"
+              ],
+              "neuroleptic malignant syndrome": [
+                "History of antipsychotic use",
+                "Symptoms can include muscle rigidity, fever, and altered mental status"
+              ]
+            },
+            "response_time": 4.760236978530884,
+            "confidence_score": 0.7,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761073.626722
+          },
+          "Dr. Elena Ramirez": {
+            "content": "```json\n{\"Tardive Dyskinesia\": [\"Onset after prolonged antipsychotic use\", \"Involuntary, repetitive movements\"], \"Neuroleptic Malignant Syndrome\": [\"History of antipsychotic use\", \"Can present with muscle rigidity and altered mental status\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with a concerning constellation of symptoms that strongly suggest **Tardive Dyskinesia**.  \n\n* **History of Antipsychotic Use:** The patient has been on haloperidol, a typical antipsychotic, for several months. Tardive Dyskinesia is a well-known side effect of long-term antipsychotic use.\n* **Onset and Progression:** The symptoms started slowly and have worsened over time, consistent with the gradual development of Tardive Dyskinesia.\n* **Involuntary Movements:** The described movements (smacking lips, pursing mouth, excessive blinking) are characteristic of Tardive Dyskinesia.\n\nWhile the patient's symptoms are primarily neurological, it's crucial to rule out **Neuroleptic Malignant Syndrome (NMS)**, a rare but life-threatening reaction to antipsychotics. \n\n* **History of Antipsychotic Use:**  NMS is associated with antipsychotic medication use.\n* **Potential for Muscle Rigidity:**  NMS can present with muscle rigidity, which could be missed if the focus is solely on the movement disorder.\n\n**<CANT_MISS_DIAGNOSES>**\n- **Tardive Dyskinesia** -  Highly likely given the patient's history and symptoms. Requires prompt management to prevent worsening. - **Risk level: HIGH**\n- **Neuroleptic Malignant Syndrome** -  A potentially life-threatening complication that requires immediate attention. - **Risk level: HIGH**\n\n**<IMMEDIATE_WORKUP>**\n- **Thorough neurological examination:** Assess for muscle rigidity, tremors, and other signs of NMS.\n- **Review of medications:** Confirm the dosage and duration of haloperidol use.\n\n**<TIME_SENSITIVITY>**\nBoth Tardive Dyskinesia and NMS require prompt attention. While Tardive Dyskinesia is a chronic condition, early intervention can help manage symptoms and prevent worsening. NMS is a medical emergency that requires immediate treatment to prevent life-threatening complications.",
+            "structured_data": {
+              "Tardive Dyskinesia": [
+                "Onset after prolonged antipsychotic use",
+                "Involuntary, repetitive movements"
+              ],
+              "Neuroleptic Malignant Syndrome": [
+                "History of antipsychotic use",
+                "Can present with muscle rigidity and altered mental status"
+              ]
+            },
+            "response_time": 5.64938759803772,
+            "confidence_score": 0.72,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761073.6267226
+          },
+          "Dr. Sarah M. Patel": {
+            "content": "{\"tardive dyskinesia\": [\"Onset after prolonged antipsychotic use\", \"Involuntary, repetitive movements\"], \"schizophrenia with secondary symptoms\": [\"Long-standing psychiatric history\", \"Recent exacerbation of symptoms\"], \"neuroleptic malignant syndrome\": [\"Rapid onset of severe symptoms\", \"Risk of life-threatening complications\"]}\n\n<CANT_MISS_DIAGNOSES>\n- Tardive Dyskinesia - This condition can occur due to prolonged use of antipsychotics and is characterized by involuntary, repetitive movements. It is a critical diagnosis as it can be managed with dose reduction or switching to a different class of antipsychotics, but if left untreated, it can worsen and become debilitating. - Risk level: HIGH\n- Schizophrenia with Secondary Symptoms - Given the patient's history of schizophrenia and the recent exacerbation of symptoms, it is important to consider secondary symptoms that may be contributing to the current presentation. This is a critical diagnosis as it can affect the patient's treatment plan and overall prognosis. - Risk level: HIGH\n- Neuroleptic Malignant Syndrome - This condition is a rare but life-threatening complication of antipsychotic use, characterized by a rapid onset of severe symptoms including muscle rigidity, altered mental status, and autonomic instability. It is a critical diagnosis as it requires immediate intervention and can be fatal if not treated promptly. - Risk level: HIGH\n</CANT_MISS_DIAGNOSES>\n\n<IMMEDIATE_WORKUP>\n- Electrolytes panel (to check for imbalances that can contribute to neuroleptic malignant syndrome)\n- Muscle enzymes (to check for rhabdomyolysis, a potential complication of neuroleptic malignant syndrome)\n- Urine drug screen (to rule out substance-induced movement disorders)\n</IMMEDIATE_WORKUP>\n\n<TIME_SENSITIVITY>\nThese conditions must be ruled out or treated as soon as possible to prevent potential life-threatening complications. Tardive dyskinesia and schizophrenia with secondary symptoms can be managed with adjustments in treatment, but neuroleptic malignant syndrome requires immediate medical intervention.\n</TIME_SENSITIVITY>\n\nDetailed clinical reasoning:\n\n1. **Tardive Dyskinesia**: The patient has a history of long-term antipsychotic use, which is a significant risk factor for developing tardive dyskinesia. The onset of these symptoms after 2 weeks of use is consistent with this diagnosis. Tardive dyskinesia can cause significant distress and functional impairment, and it is crucial to address it promptly to prevent further progression.\n\n2. **Schizophrenia with Secondary Symptoms**: The patient's history of schizophrenia and the recent exacerbation of symptoms make it essential to consider secondary symptoms that may be contributing to the current presentation. These secondary symptoms could include mood disorders, anxiety, or other psychotic symptoms that might require a different treatment approach.\n\n3. **Neuroleptic Malignant Syndrome**: The rapid onset of severe symptoms, including muscle rigidity and altered mental status, is highly suggestive of neuroleptic malignant syndrome. This condition is a life-threatening emergency that requires immediate medical intervention. The risk of this syndrome is particularly high in patients with a history of antipsychotic use, especially if there has been a recent change in medication or an increase in dosage.\n\nThe immediate workup is crucial to rule out or confirm these diagnoses. The electrolytes panel and muscle enzymes are important to check for potential imbalances that can contribute to neuroleptic malignant syndrome. A urine drug screen is necessary to rule out substance-induced movement disorders, which can present similarly to tardive dyskinesia. Prompt treatment and management are essential to prevent potential life-threatening complications.",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "Onset after prolonged antipsychotic use",
+                "Involuntary, repetitive movements"
+              ],
+              "schizophrenia with secondary symptoms": [
+                "Long-standing psychiatric history",
+                "Recent exacerbation of symptoms"
+              ],
+              "neuroleptic malignant syndrome": [
+                "Rapid onset of severe symptoms",
+                "Risk of life-threatening complications"
+              ]
+            },
+            "response_time": 5.4554784297943115,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761073.6267233
+          },
+          "Dr. Michael J. O'Connor": {
+            "content": "```json\n{\"tardive dyskinesia\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"], \"facial dyskinesia\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"], \"schizophrenia with secondary symptoms\": [\"long-standing psychiatric history\", \"recent exacerbation of symptoms\"], \"dystonia\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"]}\n```\n\nNow, I will explain my clinical reasoning:\n\n### CANT_MISS_DIAGNOSES\n- **Tardive Dyskinesia** - The patient's symptoms of an unusual smacking motion with his lips, pursing of his mouth, and excessive blinking, along with their onset after prolonged antipsychotic use (haloperidol), are highly characteristic of tardive dyskinesia. This condition can be life-threatening in terms of social and occupational functioning, as well as the patient's quality of life. - [Risk level: HIGH]\n- **Facial Dyskinesia** - This diagnosis is closely related to tardive dyskinesia and can be missed if the focus is solely on the term \"tardive dyskinesia.\" The symptoms described are consistent with this diagnosis. - [Risk level: HIGH]\n- **Schizophrenia with Secondary Symptoms** - The patient's psychiatric history and the recent exacerbation of symptoms could indicate an underlying or secondary psychiatric condition contributing to the motor symptoms. This is important to rule out as it may influence the treatment approach. - [Risk level: MEDIUM]\n\n### IMMEDIATE_WORKUP\n- **Electromyography (EMG) and Nerve Conduction Studies (NCS)** - These tests can help differentiate between dystonia and tardive dyskinesia, and they can also assess for any neuropathy that might be contributing to the symptoms.\n- **Brain Imaging (MRI)** - An MRI can help rule out any structural or vascular causes of the symptoms, such as brain lesions or stroke.\n\n### TIME_SENSITIVITY\n- **Immediate Workup** - The conditions must be ruled out or treated as soon as possible to prevent further progression and to ensure the patient's safety and comfort. Tardive dyskinesia and dystonia can worsen over time if not addressed.\n- **Follow-Up** - Continuous monitoring and regular follow-up assessments are necessary to manage the patient's condition effectively and to make any necessary adjustments to the treatment plan.\n\nThe patient's symptoms, especially the unusual facial movements and their timing relative to the initiation of antipsychotic treatment, strongly suggest a movement disorder. Tardive dyskinesia is the most likely diagnosis, but it is crucial to rule out other conditions such as dystonia and secondary symptoms related to his psychiatric condition. The immediate workup is essential to confirm the diagnosis and to initiate appropriate management.",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ],
+              "facial dyskinesia": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ],
+              "schizophrenia with secondary symptoms": [
+                "long-standing psychiatric history",
+                "recent exacerbation of symptoms"
+              ],
+              "dystonia": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            },
+            "response_time": 4.382836818695068,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761073.6267238
+          },
+          "Dr. Emily R. Thompson": {
+            "content": "```json\n{\"tardive dyskinesia\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"], \"neuroleptic malignant syndrome\": [\"recent initiation of antipsychotic use\", \"progressive worsening of symptoms\"], \"glossitis\": [\"unusual smacking motion with lips\", \"pursing of mouth\"], \"schizophrenia with secondary symptoms\": [\"long-standing psychiatric history\", \"recent onset of motor symptoms\"]}\n```\n\nClinical reasoning:\n\n**Tardive Dyskinesia (TD):** The patient has an unusual smacking motion with his lips, pursing of his mouth, and excessive blinking. These are classic symptoms of TD, which can occur in patients with a history of long-term antipsychotic use. TD can be a significant concern as it can lead to social isolation, discomfort, and reduced quality of life. It is important to diagnose and manage this condition promptly to prevent further progression.\n\n**Neuroleptic Malignant Syndrome (NMS):** The patient has recently started taking haloperidol and is experiencing progressive worsening of symptoms. NMS is a life-threatening condition that can occur with the use of antipsychotics. It is characterized by muscle rigidity, altered mental status, autonomic dysfunction, and can be fatal if not recognized and treated promptly. Given the recent initiation of antipsychotics and the progressive nature of the symptoms, NMS is a critical diagnosis that cannot be missed.\n\n**Glossitis:** The unusual smacking motion with lips and pursing of the mouth can also be indicative of glossitis, which is inflammation of the tongue. While glossitis is not immediately life-threatening, it can cause significant discomfort and should be ruled out to ensure the patient's well-being.\n\n**Schizophrenia with Secondary Symptoms:** The patient has a history of schizophrenia, and the recent onset of motor symptoms could be secondary to his psychiatric condition. However, it is important to rule out other neurological conditions first, as the motor symptoms could be a sign of a more serious underlying issue.\n\n**IMMEDIATE WORKUP:**\n- Order a comprehensive blood panel including electrolytes, thyroid function tests, and a complete blood count (CBC) to check for any metabolic or hematological abnormalities.\n- Perform a neurological examination to assess for any signs of NMS, including muscle rigidity, altered mental status, and autonomic dysfunction.\n- Consider an MRI of the brain to rule out any structural abnormalities that could be contributing to the symptoms.\n\n**TIME SENSITIVITY:**\n- NMS and TD require immediate attention due to their potential for rapid progression and life-threatening complications. These conditions should be ruled out or treated within the next 24-48 hours.\n- Glossitis and secondary symptoms of schizophrenia should be evaluated promptly, but the urgency is lower compared to NMS and TD.\n\nIt is crucial to prioritize the evaluation and management of NMS and TD due to their potential for immediate harm if missed. The patient should be closely monitored for any signs of worsening symptoms, and appropriate interventions should be initiated as soon as possible.",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ],
+              "neuroleptic malignant syndrome": [
+                "recent initiation of antipsychotic use",
+                "progressive worsening of symptoms"
+              ],
+              "glossitis": [
+                "unusual smacking motion with lips",
+                "pursing of mouth"
+              ],
+              "schizophrenia with secondary symptoms": [
+                "long-standing psychiatric history",
+                "recent onset of motor symptoms"
+              ]
+            },
+            "response_time": 4.561180114746094,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761073.6267247
+          },
+          "Dr. James H. Lee": {
+            "content": "```json\n{\"tardive dyskinesia\": [\"unusual smacking motion with lips\", \"pursing of mouth\"], \"schizophrenia\": [\"history of schizophrenia\", \"recent exacerbation of symptoms\"], \"neuroleptic malignant syndrome\": [\"recent use of antipsychotics\", \"unusual and pronounced motor symptoms\"], \"dystonia\": [\"unusual smacking motion with lips\", \"pursing of mouth\"]}\n```\n\nClinical reasoning:\n\n- **Tardive Dyskinesia**: The patient has a history of long-term antipsychotic use, specifically haloperidol, and is now exhibiting unusual and pronounced motor symptoms such as smacking motions, pursing of the mouth, and excessive blinking. These symptoms are characteristic of tardive dyskinesia, which can develop after prolonged use of antipsychotic medications. It is crucial to consider this diagnosis as it can be a direct result of the medication and may require adjustment or discontinuation of the antipsychotic.\n\n- **Schizophrenia**: The patient's history of schizophrenia is well-documented, and the recent exacerbation of symptoms, such as the onset of unusual motor movements, could be indicative of a worsening of his underlying psychiatric condition. Schizophrenia can present with a variety of motor symptoms, and these new-onset symptoms should be evaluated in the context of the patient's overall psychiatric status.\n\n- **Neuroleptic Malignant Syndrome (NMS)**: The patient has a history of recent use of antipsychotics and is presenting with unusual and pronounced motor symptoms. NMS is a rare but life-threatening condition that can occur with the use of antipsychotic medications. It is characterized by muscle rigidity, fever, altered mental status, and autonomic instability. Given the patient's recent use of antipsychotics and the nature of his symptoms, NMS must be considered, and prompt evaluation and management are essential.\n\n- **Dystonia**: The patient's symptoms, including the smacking motion and pursing of the mouth, could also be indicative of dystonia, a movement disorder characterized by involuntary muscle contractions that cause twisting and repetitive movements or abnormal postures. While dystonia is less likely given the patient's history of antipsychotic use, it is still a potential diagnosis to consider, especially if the symptoms persist or worsen.\n\n**IMMEDIATE WORKUP**:\n- Electroencephalogram (EEG) to rule out any seizure activity or other neurological causes.\n- Serum anticholinergic level to assess for anticholinergic toxicity, which can exacerbate tardive dyskinesia.\n- Muscle tone assessment and neurological examination to evaluate for dystonia or other movement disorders.\n\n**TIME_SENSITIVITY**:\n- Tardive dyskinesia and dystonia: These conditions require prompt evaluation and potential management to prevent further progression and reduce the patient's discomfort.\n- Neuroleptic Malignant Syndrome: Immediate evaluation and treatment are critical due to the life-threatening nature of the condition. Prompt recognition and intervention can significantly reduce the risk of morbidity and mortality.\n\nThese conditions must be ruled out or treated as soon as possible to ensure the patient's safety and well-being.",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "unusual smacking motion with lips",
+                "pursing of mouth"
+              ],
+              "schizophrenia": [
+                "history of schizophrenia",
+                "recent exacerbation of symptoms"
+              ],
+              "neuroleptic malignant syndrome": [
+                "recent use of antipsychotics",
+                "unusual and pronounced motor symptoms"
+              ],
+              "dystonia": [
+                "unusual smacking motion with lips",
+                "pursing of mouth"
+              ]
+            },
+            "response_time": 4.71864128112793,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752761073.6267326
+          },
+          "Dr. Clinical Evaluator": {
+            "content": "```json\n{\"tardive dyskinesia\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"], \"glossitis\": [\"unusual smacking motion with lips\", \"pursing of mouth\"], \"neuroleptic malignant syndrome\": [\"unusual smacking motion with lips\", \"pursing of mouth\", \"excessive blinking\"]}\n```\n\nNow, I will provide the detailed clinical reasoning:\n\n### CANT_MISS_DIAGNOSES\n- **Tardive Dyskinesia** - The patient's symptoms of an unusual smacking motion with his lips, pursing of his mouth, and excessive blinking are consistent with tardive dyskinesia. This condition can occur as a result of long-term use of antipsychotic medications, such as haloperidol, which the patient has been on for several months. Tardive dyskinesia is a critical diagnosis that cannot be missed because it is a known side effect of antipsychotic medications and can significantly impact the patient's quality of life. The risk level is HIGH.\n- **Glossitis** - The patient's symptoms of an unusual smacking motion with his lips and pursing of his mouth could also be indicative of glossitis, which is inflammation of the tongue. Glossitis can cause the tongue to appear swollen and can lead to difficulty swallowing and speaking. This condition is also critical and cannot be missed because it can cause significant discomfort and may be a sign of an underlying infection or other systemic issue. The risk level is MEDIUM.\n- **Neuroleptic Malignant Syndrome (NMS)** - The patient's symptoms of an unusual smacking motion with his lips, pursing of his mouth, and excessive blinking, along with the fact that these symptoms started slowly and have become more pronounced, are concerning for neuroleptic malignant syndrome. NMS is a rare but life-threatening condition that can occur as a result of antipsychotic medications. It is characterized by muscle rigidity, altered mental status, and autonomic dysfunction. NMS is a critical diagnosis that cannot be missed because it can be immediately life-threatening. The risk level is HIGH.\n\n### IMMEDIATE_WORKUP\n- **Electrolytes Panel** - To rule out any metabolic imbalances that could be contributing to the patient's symptoms.\n- **Complete Blood Count (CBC)** - To check for any signs of infection or other systemic issues.\n- **Thyroid Function Tests** - To rule out hyperthyroidism, which can present with similar symptoms.\n\n### TIME_SENSITIVITY\nThese conditions must be ruled out or treated as soon as possible. Tardive dyskinesia and glossitis can be managed with medication adjustments or other interventions, but NMS is a medical emergency that requires immediate attention to prevent life-threatening complications.",
+            "structured_data": {
+              "tardive dyskinesia": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ],
+              "glossitis": [
+                "unusual smacking motion with lips",
+                "pursing of mouth"
+              ],
+              "neuroleptic malignant syndrome": [
+                "unusual smacking motion with lips",
+                "pursing of mouth",
+                "excessive blinking"
+              ]
+            },
+            "response_time": 4.254613876342773,
+            "confidence_score": 0.7799999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752761073.626733
+          }
+        },
+        "metadata": {
+          "critical_diagnoses": [
+            {
+              "diagnosis": "Tardive Dyskinesia",
+              "mention_count": 1,
+              "high_risk_mentions": 1,
+              "priority_score": 3,
+              "all_reasons": [
+                "This condition can occur due to prolonged use of antipsychotics and is characterized by involuntary, repetitive movements. It is a critical diagnosis as it can be managed with dose reduction or switching to a different class of antipsychotics, but if left untreated, it can worsen and become debilitating."
+              ],
+              "consensus_risk": "HIGH"
+            },
+            {
+              "diagnosis": "Schizophrenia with Secondary Symptoms",
+              "mention_count": 1,
+              "high_risk_mentions": 1,
+              "priority_score": 3,
+              "all_reasons": [
+                "Given the patient's history of schizophrenia and the recent exacerbation of symptoms, it is important to consider secondary symptoms that may be contributing to the current presentation. This is a critical diagnosis as it can affect the patient's treatment plan and overall prognosis."
+              ],
+              "consensus_risk": "HIGH"
+            },
+            {
+              "diagnosis": "Neuroleptic Malignant Syndrome",
+              "mention_count": 1,
+              "high_risk_mentions": 1,
+              "priority_score": 3,
+              "all_reasons": [
+                "This condition is a rare but life-threatening complication of antipsychotic use, characterized by a rapid onset of severe symptoms including muscle rigidity, altered mental status, and autonomic instability. It is a critical diagnosis as it requires immediate intervention and can be fatal if not treated promptly."
+              ],
+              "consensus_risk": "HIGH"
+            }
+          ],
+          "total_critical_identified": 3,
+          "unique_critical_diagnoses": 3,
+          "high_priority_count": 3,
+          "agent_contributions": {
+            "Dr. Anya Sharma": 0,
+            "Dr. Liam O'Connell": 0,
+            "Dr. Elena Ramirez": 0,
+            "Dr. Sarah M. Patel": 3,
+            "Dr. Michael J. O'Connor": 0,
+            "Dr. Emily R. Thompson": 0,
+            "Dr. James H. Lee": 0,
+            "Dr. Clinical Evaluator": 0
+          }
+        },
+        "success": true,
+        "execution_time": 39.252113342285156,
+        "formatted_output": ""
+      }
+    },
+    "sequence_metadata": {
+      "total_rounds": 7,
+      "start_time": 1752760916.843655,
+      "end_time": 1752761073.6267464,
+      "total_execution_time": 156.7830913066864
+    }
+  }
+}

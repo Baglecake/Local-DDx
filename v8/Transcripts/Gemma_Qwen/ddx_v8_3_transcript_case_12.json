@@ -1,0 +1,1852 @@
+{
+  "case_id": "Case 12",
+  "timestamp": "2025-07-17T15:18:49.002246",
+  "evaluation_method": "Enhanced_DD_Evaluator_v6",
+  "tp_count": 2,
+  "fp_count": 4,
+  "fn_count": 0,
+  "caa_count": 0,
+  "ae_count": 0,
+  "total_gt_diagnoses": 2,
+  "total_team_diagnoses": 6,
+  "tp_rate": 1.0,
+  "caa_weight_applied": 0.7,
+  "traditional_precision": 0.3333333333333333,
+  "traditional_recall": 1.0,
+  "clinical_reasoning_quality": 0.3333333333333333,
+  "diagnostic_safety": 0.3333333333333333,
+  "final_diagnoses": [
+    "Pelvic Inflammatory Disease",
+    "Cyclic Pelvic Pain",
+    "Endometriosis",
+    "Unexplained Infertility",
+    "Irritable Bowel Syndrome (Ibs)",
+    "Pelvic Inflammatory Disease (Pid)"
+  ],
+  "ground_truth_diagnoses": [
+    "endometriosis",
+    "pelvic inflammatory disease (PID)"
+  ],
+  "true_positives": [
+    {
+      "ground_truth": "pelvic inflammatory disease (PID)",
+      "system": "Pelvic Inflammatory Disease"
+    },
+    {
+      "ground_truth": "endometriosis",
+      "system": "Endometriosis"
+    }
+  ],
+  "false_positives": [
+    "Cyclic Pelvic Pain",
+    "Irritable Bowel Syndrome (Ibs)",
+    "Unexplained Infertility",
+    "Pelvic Inflammatory Disease (Pid)"
+  ],
+  "false_negatives": [],
+  "ai_enhanced_matching": true,
+  "context_informed_matches": 0,
+  "credibility_scores": {
+    "Dr. Anya Sharma": 27.944444444444446,
+    "Dr. Liam O'Connell": 36.1375,
+    "Dr. Nadia Khan": 34.52,
+    "Dr. Sarah Chen": 37.5,
+    "Dr. Michael Kim": 44.825,
+    "Dr. Emily Green": 32.63333333333333,
+    "Dr. John Lee": 38.1125,
+    "Dr. Clinical Evaluator": 38.675
+  },
+  "weighting_tier": "Good",
+  "specialist_performance": {
+    "top_performer": "Dr. Michael Kim",
+    "top_score": 44.825,
+    "average_score": 36.29347222222223,
+    "specialist_rankings": [
+      {
+        "name": "Dr. Michael Kim",
+        "specialty": "Gastroenterology",
+        "final_score": 44.825,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Clinical Evaluator",
+        "specialty": "Internal Medicine",
+        "final_score": 38.675,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. John Lee",
+        "specialty": "Urology",
+        "final_score": 38.1125,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Sarah Chen",
+        "specialty": "Endocrinology",
+        "final_score": 37.5,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Liam O'Connell",
+        "specialty": "Infectious Disease",
+        "final_score": 36.1375,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Nadia Khan",
+        "specialty": "Emergency Medicine",
+        "final_score": 34.52,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Emily Green",
+        "specialty": "Rheumatology",
+        "final_score": 32.63333333333333,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Anya Sharma",
+        "specialty": "Reproductive Endocrinology",
+        "final_score": 27.944444444444446,
+        "relevance_weight": 0.6666666666666666
+      }
+    ]
+  },
+  "round_completion": {
+    "rounds_completed": 7,
+    "tempo_scores": {
+      "specialized_ranking": 1.0,
+      "symptom_management": 1.0,
+      "team_independent_differentials": 3.6,
+      "master_list_generation": 1.0,
+      "refinement_and_justification": 1.125,
+      "post_debate_voting": 1.0,
+      "cant_miss": 1.0
+    },
+    "debate_quality": 1.125
+  },
+  "full_transcript": {
+    "case_description": "\nA 30-year-old woman comes to the physician because she has been unable to conceive for 3 years. Analysis of her husband's semen has shown normal sperm counts during this time. The patient also reports episodic pelvic and back pain accompanied by painful diarrhea for 5 years. She has about one such episode on average per month for 4-6 days. She has taken ibuprofen for the pain, which has provided some relief. Menses have occurred at regular 29-day intervals since menarche at the age of 14 years and last for 7 days. She is sexually active with her husband and does not use contraception. Vital signs are within normal limits. Pelvic and bimanual examinations are normal; rectal examination is unremarkable. A hysterosalpingogram 6 months prior showed normal results. What is the most likely underlying mechanism of this patient's symptoms?\n",
+    "agents": [
+      {
+        "name": "Dr. Anya Sharma",
+        "specialty": "Reproductive Endocrinology",
+        "persona": "Dr. Sharma is a highly experienced reproductive endocrinologist with a particular focus on unexplained infertility. She utilizes a comprehensive approach, combining advanced diagnostic techniques with a patient-centered understanding of their emotional and physical well-being. She is adept at navigating complex hormonal pathways and identifying subtle imbalances.",
+        "model_id": "conservative_model"
+      },
+      {
+        "name": "Dr. Liam O'Connell",
+        "specialty": "Infectious Disease",
+        "persona": "Dr. O'Connell is a seasoned gastroenterologist specializing in inflammatory bowel diseases. He is skilled in diagnosing and managing a wide range of gastrointestinal conditions, with a particular emphasis on understanding the complex interplay between the gut microbiome and systemic health. He employs a multidisciplinary approach, incorporating advanced imaging and endoscopic techniques.",
+        "model_id": "conservative_model"
+      },
+      {
+        "name": "Dr. Nadia Khan",
+        "specialty": "Emergency Medicine",
+        "persona": "Dr. Khan is a compassionate pain management specialist with a focus on interventional techniques. She utilizes a multi-modal approach, combining medication management, physical therapy, and minimally invasive procedures to address chronic pain. She prioritizes patient education and empowers them to actively participate in their pain management journey.",
+        "model_id": "conservative_model"
+      },
+      {
+        "name": "Dr. Sarah Chen",
+        "specialty": "Endocrinology",
+        "persona": "Dr. Sarah Chen is a highly experienced reproductive endocrinologist with a keen interest in understanding the complex interplay between hormones and fertility. She is known for her meticulous approach to diagnosing and treating infertility, often identifying subtle hormonal imbalances that can affect fertility. Dr. Chen is known for her collaborative style, working closely with other specialists to provide comprehensive care.",
+        "model_id": "innovative_model"
+      },
+      {
+        "name": "Dr. Michael Kim",
+        "specialty": "Gastroenterology",
+        "persona": "Dr. Michael Kim is a board-certified gastroenterologist with a focus on chronic gastrointestinal disorders. He is known for his innovative approaches to managing complex cases and his ability to integrate advanced diagnostic techniques. Dr. Kim is a strong advocate for patient education and often collaborates with other specialists to provide a holistic approach to care.",
+        "model_id": "innovative_model"
+      },
+      {
+        "name": "Dr. Emily Green",
+        "specialty": "Rheumatology",
+        "persona": "Dr. Emily Green is a rheumatologist with a particular interest in inflammatory and autoimmune conditions that can affect multiple systems. She is known for her detailed patient evaluations and her ability to connect seemingly unrelated symptoms. Dr. Green is a strong advocate for patient-centered care and often involves patients in the decision-making process.",
+        "model_id": "innovative_model"
+      },
+      {
+        "name": "Dr. John Lee",
+        "specialty": "Urology",
+        "persona": "Dr. John Lee is a urologist with a specialization in male reproductive health and urogynecological issues. He is known for his detailed examinations and his ability to identify subtle urological issues that can affect fertility. Dr. Lee is a strong communicator and works closely with other specialists to ensure comprehensive care.",
+        "model_id": "innovative_model"
+      },
+      {
+        "name": "Dr. Clinical Evaluator",
+        "specialty": "Internal Medicine",
+        "persona": "Expert clinical evaluator specializing in diagnosis equivalence assessment.",
+        "model_id": "innovative_model"
+      }
+    ],
+    "rounds": {
+      "specialized_ranking": {
+        "round_type": "specialized_ranking",
+        "participants": [
+          "Dr. Anya Sharma"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"unexplained infertility\": [\"3 years of trying to conceive\", \"normal semen analysis\"], \"endometriosis\": [\"episodic pelvic and back pain\", \"painful diarrhea\"], \"pelvic inflammatory disease\": [\"episodic pelvic pain\", \"history of sexually transmitted infections (implied)\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with a complex case involving both infertility and chronic pelvic pain. \n\n1. **Reproductive Endocrinology (Dr. Anya Sharma):**  This is the most relevant specialty due to the patient's primary concern: infertility.  The fact that she has been trying to conceive for 3 years with a normal partner semen analysis suggests a potential female factor infertility. The history of regular menses and a normal hysterosalpingogram makes other causes like ovulation disorders or tubal blockage less likely.\n\n2. **Gynecology (Dr. Emily Green):** While not listed, Gynecology is also highly relevant.  The patient's pelvic pain and history of painful diarrhea could indicate endometriosis or pelvic inflammatory disease (PID), both conditions that can impact fertility.\n\n3. **Infectious Disease (Dr. Liam O'Connell):** The episodic nature of the patient's symptoms, particularly the diarrhea, raises the possibility of an underlying infection.  However, without specific details about the diarrhea (e.g., bloody, watery, etc.), it's difficult to pinpoint a specific infectious cause.\n\n4. **Gastroenterology (Dr. Michael Kim):** The patient's history of episodic diarrhea warrants consideration of a gastrointestinal cause. However, the pain is primarily localized to the pelvic region, suggesting a gynecological or reproductive origin.\n\n5. **Rheumatology (Dr. Emily Green):** While less likely, chronic pelvic pain could be associated with a rheumatic condition. However, the absence of other systemic symptoms makes this less probable.\n\n**<CAN'T MISS>**\n\n* **Endometriosis:** This is a highly plausible diagnosis given the patient's history of chronic pelvic and back pain, particularly if it is associated with her menstrual cycle. \n* **Pelvic Inflammatory Disease (PID):**  The episodic nature of the pain and diarrhea, coupled with the potential for sexually transmitted infections, makes PID a serious consideration.\n\n\nIt's crucial to perform a thorough pelvic examination, including a bimanual exam and possibly an ultrasound, to assess for any signs of endometriosis or other pelvic pathology.  Further investigations, such as an endometrial biopsy or laparoscopy, may be necessary to confirm the diagnosis and rule out other conditions.",
+            "structured_data": {
+              "unexplained infertility": [
+                "3 years of trying to conceive",
+                "normal semen analysis"
+              ],
+              "endometriosis": [
+                "episodic pelvic and back pain",
+                "painful diarrhea"
+              ],
+              "pelvic inflammatory disease": [
+                "episodic pelvic pain",
+                "history of sexually transmitted infections (implied)"
+              ]
+            },
+            "response_time": 5.828619956970215,
+            "confidence_score": 0.72,
+            "reasoning_quality": "high",
+            "timestamp": 1752765379.9309218
+          }
+        },
+        "metadata": {
+          "rankings": [
+            "1. **Reproductive Endocrinology (Dr. Anya Sharma):**  This is the most relevant specialty due to the patient's primary concern: infertility.  The fact that she has been trying to conceive for 3 years with a normal partner semen analysis suggests a potential female factor infertility. The history of regular menses and a normal hysterosalpingogram makes other causes like ovulation disorders or tubal blockage less likely.",
+            "2. **Gynecology (Dr. Emily Green):** While not listed, Gynecology is also highly relevant.  The patient's pelvic pain and history of painful diarrhea could indicate endometriosis or pelvic inflammatory disease (PID), both conditions that can impact fertility."
+          ],
+          "cant_miss": [],
+          "total_ranked": 2
+        },
+        "success": true,
+        "execution_time": 5.835114479064941,
+        "formatted_output": "```json\n{\"unexplained infertility\": [\"3 years of trying to conceive\", \"normal semen analysis\"], \"endometriosis\": [\"episodic pelvic and back pain\", \"painful diarrhea\"], \"pelvic inflammatory disease\": [\"episodic pelvic pain\", \"history of sexually transmitted infections (implied)\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with a complex case involving both infertility and chronic pelvic pain. \n\n1. **Reproductive Endocrinology (Dr. Anya Sharma):**  This is the most relevant specialty due to the patient's primary concern: infertility.  The fact that she has been trying to conceive for 3 years with a normal partner semen analysis suggests a potential female factor infertility. The history of regular menses and a normal hysterosalpingogram makes other causes like ovulation disorders or tubal blockage less likely.\n\n2. **Gynecology (Dr. Emily Green):** While not listed, Gynecology is also highly relevant.  The patient's pelvic pain and history of painful diarrhea could indicate endometriosis or pelvic inflammatory disease (PID), both conditions that can impact fertility.\n\n3. **Infectious Disease (Dr. Liam O'Connell):** The episodic nature of the patient's symptoms, particularly the diarrhea, raises the possibility of an underlying infection.  However, without specific details about the diarrhea (e.g., bloody, watery, etc.), it's difficult to pinpoint a specific infectious cause.\n\n4. **Gastroenterology (Dr. Michael Kim):** The patient's history of episodic diarrhea warrants consideration of a gastrointestinal cause. However, the pain is primarily localized to the pelvic region, suggesting a gynecological or reproductive origin.\n\n5. **Rheumatology (Dr. Emily Green):** While less likely, chronic pelvic pain could be associated with a rheumatic condition. However, the absence of other systemic symptoms makes this less probable.\n\n**<CAN'T MISS>**\n\n* **Endometriosis:** This is a highly plausible diagnosis given the patient's history of chronic pelvic and back pain, particularly if it is associated with her menstrual cycle. \n* **Pelvic Inflammatory Disease (PID):**  The episodic nature of the pain and diarrhea, coupled with the potential for sexually transmitted infections, makes PID a serious consideration.\n\n\nIt's crucial to perform a thorough pelvic examination, including a bimanual exam and possibly an ultrasound, to assess for any signs of endometriosis or other pelvic pathology.  Further investigations, such as an endometrial biopsy or laparoscopy, may be necessary to confirm the diagnosis and rule out other conditions."
+      },
+      "symptom_management": {
+        "round_type": "symptom_management",
+        "participants": [
+          "Dr. Nadia Khan"
+        ],
+        "responses": {
+          "Dr. Nadia Khan": {
+            "content": "```json\n{\"Irritable Bowel Syndrome (IBS)\": [\"Episodic pelvic and back pain accompanied by painful diarrhea\", \"Symptoms occurring for 5 years\"], \"Pelvic Inflammatory Disease (PID)\": [\"History of pelvic pain and abnormal uterine bleeding\", \"Normal pelvic exam doesn't rule out PID\"], \"Gastroenteritis\": [\"Painful diarrhea\", \"Potential for viral or bacterial infection\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with a complex history of chronic pelvic and back pain, coupled with episodic diarrhea. While her hysterosalpingogram was normal, the persistent pain and diarrhea raise concerns for underlying gastrointestinal or gynecological conditions.\n\n* **Irritable Bowel Syndrome (IBS):** The patient's description of episodic pain and diarrhea, lasting for several years, aligns with the typical presentation of IBS.  \n\n* **Pelvic Inflammatory Disease (PID):** Although her pelvic exam is unremarkable, PID can sometimes present with atypical symptoms, and a history of pelvic pain warrants consideration. \n\n* **Gastroenteritis:** The presence of painful diarrhea suggests a possible acute gastroenteritis, which could be viral or bacterial.\n\n**Immediate Management Plan:**\n\n<SYMPTOM_MITIGATION>\n[Pelvic and Back Pain]: [Administer a short-acting opioid analgesic like acetaminophen with codeine or oxycodone for immediate pain relief. Consider a non-opioid analgesic like ibuprofen or naproxen if the patient has no contraindications.]\n[Diarrhea]: [Administer an anti-diarrheal medication like loperamide (Imodium) to help control the diarrhea. Encourage oral rehydration with electrolyte solutions to prevent dehydration.]\n</SYMPTOM_MITIGATION>\n\n<IMMEDIATE_ACTIONS>\n- Obtain a complete blood count (CBC) and inflammatory markers (CRP, ESR) to assess for infection.\n- Perform a urinalysis to rule out urinary tract infection (UTI).\n- Consider a stool sample for culture and sensitivity to identify potential bacterial pathogens.\n- Initiate intravenous fluids if the patient is dehydrated.\n-  If the patient's symptoms are severe or worsen, consider further imaging studies, such as a CT scan of the abdomen or pelvis.\n-  Consult with a gastroenterologist for further evaluation and management of potential gastrointestinal conditions.\n</IMMEDIATE_ACTIONS>\n\n\n\n**Important Note:** This is a preliminary assessment and management plan. Further investigation and evaluation are necessary to determine the definitive diagnosis and guide long-term treatment.",
+            "structured_data": {
+              "Irritable Bowel Syndrome (IBS)": [
+                "Episodic pelvic and back pain accompanied by painful diarrhea",
+                "Symptoms occurring for 5 years"
+              ],
+              "Pelvic Inflammatory Disease (PID)": [
+                "History of pelvic pain and abnormal uterine bleeding",
+                "Normal pelvic exam doesn't rule out PID"
+              ],
+              "Gastroenteritis": [
+                "Painful diarrhea",
+                "Potential for viral or bacterial infection"
+              ]
+            },
+            "response_time": 5.605255365371704,
+            "confidence_score": 0.72,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765385.5434105
+          }
+        },
+        "metadata": {
+          "interventions": [
+            "[Pelvic and Back Pain]: [Administer a short-acting opioid analgesic like acetaminophen with codeine or oxycodone for immediate pain relief. Consider a non-opioid analgesic like ibuprofen or naproxen if the patient has no contraindications.]",
+            "[Diarrhea]: [Administer an anti-diarrheal medication like loperamide (Imodium) to help control the diarrhea. Encourage oral rehydration with electrolyte solutions to prevent dehydration.]"
+          ],
+          "immediate_actions": [
+            "Obtain a complete blood count (CBC) and inflammatory markers (CRP, ESR) to assess for infection.",
+            "Perform a urinalysis to rule out urinary tract infection (UTI).",
+            "Consider a stool sample for culture and sensitivity to identify potential bacterial pathogens.",
+            "Initiate intravenous fluids if the patient is dehydrated.",
+            "If the patient's symptoms are severe or worsen, consider further imaging studies, such as a CT scan of the abdomen or pelvis.",
+            "Consult with a gastroenterologist for further evaluation and management of potential gastrointestinal conditions."
+          ],
+          "immediate_interventions_count": 8
+        },
+        "success": true,
+        "execution_time": 5.612462043762207,
+        "formatted_output": "```json\n{\"Irritable Bowel Syndrome (IBS)\": [\"Episodic pelvic and back pain accompanied by painful diarrhea\", \"Symptoms occurring for 5 years\"], \"Pelvic Inflammatory Disease (PID)\": [\"History of pelvic pain and abnormal uterine bleeding\", \"Normal pelvic exam doesn't rule out PID\"], \"Gastroenteritis\": [\"Painful diarrhea\", \"Potential for viral or bacterial infection\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with a complex history of chronic pelvic and back pain, coupled with episodic diarrhea. While her hysterosalpingogram was normal, the persistent pain and diarrhea raise concerns for underlying gastrointestinal or gynecological conditions.\n\n* **Irritable Bowel Syndrome (IBS):** The patient's description of episodic pain and diarrhea, lasting for several years, aligns with the typical presentation of IBS.  \n\n* **Pelvic Inflammatory Disease (PID):** Although her pelvic exam is unremarkable, PID can sometimes present with atypical symptoms, and a history of pelvic pain warrants consideration. \n\n* **Gastroenteritis:** The presence of painful diarrhea suggests a possible acute gastroenteritis, which could be viral or bacterial.\n\n**Immediate Management Plan:**\n\n<SYMPTOM_MITIGATION>\n[Pelvic and Back Pain]: [Administer a short-acting opioid analgesic like acetaminophen with codeine or oxycodone for immediate pain relief. Consider a non-opioid analgesic like ibuprofen or naproxen if the patient has no contraindications.]\n[Diarrhea]: [Administer an anti-diarrheal medication like loperamide (Imodium) to help control the diarrhea. Encourage oral rehydration with electrolyte solutions to prevent dehydration.]\n</SYMPTOM_MITIGATION>\n\n<IMMEDIATE_ACTIONS>\n- Obtain a complete blood count (CBC) and inflammatory markers (CRP, ESR) to assess for infection.\n- Perform a urinalysis to rule out urinary tract infection (UTI).\n- Consider a stool sample for culture and sensitivity to identify potential bacterial pathogens.\n- Initiate intravenous fluids if the patient is dehydrated.\n-  If the patient's symptoms are severe or worsen, consider further imaging studies, such as a CT scan of the abdomen or pelvis.\n-  Consult with a gastroenterologist for further evaluation and management of potential gastrointestinal conditions.\n</IMMEDIATE_ACTIONS>\n\n\n\n**Important Note:** This is a preliminary assessment and management plan. Further investigation and evaluation are necessary to determine the definitive diagnosis and guide long-term treatment."
+      },
+      "team_independent_differentials": {
+        "round_type": "team_independent_differentials",
+        "participants": [
+          "Dr. Anya Sharma",
+          "Dr. Liam O'Connell",
+          "Dr. Nadia Khan",
+          "Dr. Sarah Chen",
+          "Dr. Michael Kim",
+          "Dr. Emily Green",
+          "Dr. John Lee",
+          "Dr. Clinical Evaluator"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"Endometriosis\": [\"Episodic pelvic and back pain\", \"Painful diarrhea\", \"History of infertility\"], \"Unexplained Infertility\": [\"History of infertility for 3 years\", \"Normal semen analysis\", \"Normal hysterosalpingogram\"], \"Pelvic Inflammatory Disease\": [\"History of pelvic pain\", \"Painful diarrhea\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Endometriosis (Confidence: 40%)**:  The patient's history of episodic pelvic and back pain, accompanied by painful diarrhea, is highly suggestive of endometriosis. These symptoms are classic presentations of the disease, particularly when they occur in a cyclical pattern coinciding with her menstrual cycle. The fact that she has been experiencing these symptoms for 5 years further supports this possibility.\n\n2. **Unexplained Infertility (Confidence: 35%)**:  The patient has been trying to conceive for 3 years without success, and her husband's semen analysis is normal. This, coupled with a normal hysterosalpingogram, points towards unexplained infertility. While endometriosis could be contributing to her infertility, it's important to consider other potential factors.\n\n3. **Pelvic Inflammatory Disease (Confidence: 20%)**:  The history of pelvic pain and painful diarrhea could also be indicative of pelvic inflammatory disease (PID). However, the lack of fever, abnormal vaginal discharge, or cervical motion tenderness makes PID less likely.\n\n**Specialty Focus:**\n\nAs a reproductive endocrinologist, my primary concern is the patient's infertility.  While endometriosis is a common cause of infertility, it's crucial to rule out other potential factors.  \n\n**Next Steps:**\n\n* **Further investigation into endometriosis:** This could involve a laparoscopic evaluation to confirm the diagnosis and assess the extent of the disease.\n* **Hormonal profile analysis:**  Evaluating hormone levels, such as FSH, LH, and AMH, can provide insights into ovarian function and potential underlying hormonal imbalances.\n* **Endometrial biopsy:**  This can help assess the endometrial lining and rule out any abnormalities that could be contributing to infertility.\n* **Genetic testing:**  In cases of unexplained infertility, genetic testing may be considered to identify any potential genetic factors.",
+            "structured_data": {
+              "Endometriosis": [
+                "Episodic pelvic and back pain",
+                "Painful diarrhea",
+                "History of infertility"
+              ],
+              "Unexplained Infertility": [
+                "History of infertility for 3 years",
+                "Normal semen analysis",
+                "Normal hysterosalpingogram"
+              ],
+              "Pelvic Inflammatory Disease": [
+                "History of pelvic pain",
+                "Painful diarrhea"
+              ]
+            },
+            "response_time": 4.968397855758667,
+            "confidence_score": 0.6799999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765418.190608
+          },
+          "Dr. Liam O'Connell": {
+            "content": "```json\n{\"Inflammatory Bowel Disease (IBD)\": [\"Episodic diarrhea with abdominal pain, duration of 5 years\", \"Potential for pelvic pain due to inflammation\"], \"Pelvic Inflammatory Disease (PID)\": [\"History of painful diarrhea, potential for concurrent infection\", \"Episodic nature of symptoms\"], \"Irritable Bowel Syndrome (IBS)\": [\"Common cause of episodic diarrhea and abdominal pain\", \"Lack of specific findings on exam\"], \"Gastroenteritis\": [\"Possible if diarrhea is accompanied by other systemic symptoms like fever or nausea\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Inflammatory Bowel Disease (IBD):** The patient's history of episodic diarrhea with abdominal pain for 5 years, along with the potential for pelvic pain due to inflammation, raises suspicion for IBD.  While the absence of other classic IBD symptoms like weight loss or rectal bleeding makes it less likely, it's still a possibility.\n\n2. **Pelvic Inflammatory Disease (PID):** The presence of painful diarrhea alongside pelvic pain suggests a potential for PID. The episodic nature of her symptoms could be consistent with recurrent infections.\n\n3. **Irritable Bowel Syndrome (IBS):**  IBS is a common cause of episodic diarrhea and abdominal pain, and the lack of specific findings on exam supports this possibility. However, the duration of symptoms and the presence of pelvic pain make IBS less likely than IBD or PID.\n\n4. **Gastroenteritis:** While less likely given the chronic nature of her symptoms, gastroenteritis could be a contributing factor if the diarrhea is accompanied by other systemic symptoms like fever or nausea.\n\n**Specialty-Specific Insights and Considerations:**\n\nAs an Infectious Disease specialist, my focus is on identifying and managing infections. While IBD and IBS are primarily considered non-infectious conditions, they can sometimes be triggered or exacerbated by infections.  \n\nI would recommend further investigation, including:\n\n* **Stool studies:** To rule out infections and assess for inflammatory markers.\n* **Colonoscopy and biopsy:** To evaluate for IBD or other inflammatory bowel conditions.\n* **Pelvic ultrasound:** To assess for signs of PID or other pelvic pathology.\n\n\n\nIt's important to note that this is a preliminary assessment based on limited information. A comprehensive evaluation and further testing are necessary to arrive at a definitive diagnosis and develop an appropriate treatment plan.",
+            "structured_data": {
+              "Inflammatory Bowel Disease (IBD)": [
+                "Episodic diarrhea with abdominal pain, duration of 5 years",
+                "Potential for pelvic pain due to inflammation"
+              ],
+              "Pelvic Inflammatory Disease (PID)": [
+                "History of painful diarrhea, potential for concurrent infection",
+                "Episodic nature of symptoms"
+              ],
+              "Irritable Bowel Syndrome (IBS)": [
+                "Common cause of episodic diarrhea and abdominal pain",
+                "Lack of specific findings on exam"
+              ],
+              "Gastroenteritis": [
+                "Possible if diarrhea is accompanied by other systemic symptoms like fever or nausea"
+              ]
+            },
+            "response_time": 5.22527551651001,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752765418.1906095
+          },
+          "Dr. Nadia Khan": {
+            "content": "```json\n{\"Irritable Bowel Syndrome (IBS)\": [\"Episodic pelvic and back pain with diarrhea\", \"Symptoms lasting for 5 years\"], \"Pelvic Inflammatory Disease (PID)\": [\"History of painful diarrhea\", \"Normal pelvic and rectal exams\"], \"Endometriosis\": [\"Pelvic and back pain\", \"History of infertility\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Irritable Bowel Syndrome (IBS) - Confidence: 60%:** The patient's history of episodic pelvic and back pain accompanied by painful diarrhea for 5 years, occurring monthly for 4-6 days, is highly suggestive of IBS. The fact that ibuprofen provides some relief further supports this diagnosis.\n\n2. **Pelvic Inflammatory Disease (PID) - Confidence: 25%:** While the pelvic and rectal exams were normal, PID can sometimes present with atypical symptoms. The history of painful diarrhea warrants consideration of PID, especially given the patient's history of infertility.\n\n3. **Endometriosis - Confidence: 15%:**  Endometriosis is a common cause of pelvic pain, and infertility can be a symptom. The patient's history of pelvic and back pain, along with her infertility, makes endometriosis a possibility. However, the normal hysterosalpingogram 6 months prior weakens this diagnosis somewhat.\n\n**Specialty Focus:**\n\nAs an Emergency Medicine specialist, my focus is on the acute presentation of the patient's symptoms. While the patient's history suggests chronic conditions, my immediate concern is to rule out any acute complications that could require urgent intervention.  I would focus on:\n\n* **Assessing the severity of the current episode:** Is the pain debilitating? Are there any signs of fever, nausea, vomiting, or other concerning symptoms?\n* **Performing a thorough physical examination:**  While the initial pelvic exam was normal, a repeat examination is warranted to look for any signs of inflammation or tenderness.\n* **Ordering appropriate laboratory tests:**  A complete blood count, urinalysis, and pregnancy test would be helpful to rule out infection or other underlying conditions.\n\nBased on the initial assessment, I would determine the need for further investigation or referral to a specialist for chronic pain management or gynecological evaluation.",
+            "structured_data": {
+              "Irritable Bowel Syndrome (IBS)": [
+                "Episodic pelvic and back pain with diarrhea",
+                "Symptoms lasting for 5 years"
+              ],
+              "Pelvic Inflammatory Disease (PID)": [
+                "History of painful diarrhea",
+                "Normal pelvic and rectal exams"
+              ],
+              "Endometriosis": [
+                "Pelvic and back pain",
+                "History of infertility"
+              ]
+            },
+            "response_time": 4.9748101234436035,
+            "confidence_score": 0.76,
+            "reasoning_quality": "high",
+            "timestamp": 1752765418.1906104
+          },
+          "Dr. Sarah Chen": {
+            "content": "{\"irregular menstruation\": [\"pelvic and back pain\", \"painful diarrhea\"], \"endometriosis\": [\"pelvic and back pain\", \"painful diarrhea\"], \"cyclic pelvic pain\": [\"pelvic and back pain\", \"painful diarrhea\"]}\n\n<DIFFERENTIAL_DIAGNOSIS>\n1. Irregular menstruation - [Confidence: 35%] - [Reasoning: The patient has regular menstrual cycles, but the associated symptoms of pelvic and back pain and painful diarrhea suggest an underlying condition affecting her reproductive system.]\n2. Endometriosis - [Confidence: 50%] - [Reasoning: The patient's symptoms, particularly the episodic pelvic and back pain and painful diarrhea, are consistent with endometriosis, a condition where endometrial tissue grows outside the uterus, often causing pain and infertility.]\n3. Cyclic pelvic pain - [Confidence: 15%] - [Reasoning: The patient's symptoms occur cyclically, which could be related to her menstrual cycle, but the specific nature of her symptoms (pelvic and back pain, and painful diarrhea) are more indicative of endometriosis.]\n</DIFFERENTIAL_DIAGNOSIS>\n\n<SPECIALTY_FOCUS>\n[Your specialty-specific insights and considerations]\nEndometriosis is a condition that can significantly impact a woman's fertility and is often associated with pelvic pain and gastrointestinal symptoms. The patient's history of regular menstrual cycles and the absence of other systemic symptoms make endometriosis a plausible diagnosis. A thorough evaluation, including imaging and possibly laparoscopy, would be necessary to confirm the diagnosis and to rule out other causes of her symptoms. Additionally, given the patient's infertility, it is important to consider the impact of endometriosis on her reproductive health and to discuss potential treatment options that could improve her chances of conception.\n</SPECIALTY_FOCUS>",
+            "structured_data": {
+              "irregular menstruation": [
+                "pelvic and back pain",
+                "painful diarrhea"
+              ],
+              "endometriosis": [
+                "pelvic and back pain",
+                "painful diarrhea"
+              ],
+              "cyclic pelvic pain": [
+                "pelvic and back pain",
+                "painful diarrhea"
+              ]
+            },
+            "response_time": 2.872992753982544,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "basic",
+            "timestamp": 1752765418.1906168
+          },
+          "Dr. Michael Kim": {
+            "content": "{\"irritable bowel syndrome\": [\"episodic painful diarrhea\", \"episodic pelvic and back pain\"], \"pelvic inflammatory disease\": [\"pelvic and back pain\", \"history of painful diarrhea\"], \"endometriosis\": [\"history of painful menstruation\", \"chronic pelvic pain\"], \"functional dyspepsia\": [\"chronic gastrointestinal symptoms\", \"normal semen analysis\"]}\n\n<DIFFERENTIAL_DIAGNOSIS>\n1. Irritable Bowel Syndrome - Confidence: 60% - The patient presents with episodic diarrhea and pelvic pain, which are common symptoms in IBS. The episodic nature of her symptoms and the lack of structural abnormalities on examination support this diagnosis.\n2. Pelvic Inflammatory Disease - Confidence: 30% - Although the hysterosalpingogram was normal, the patient's history of pelvic and back pain could suggest an ongoing or recurrent infection. However, given the normal imaging and her otherwise normal examination, this is less likely.\n3. Endometriosis - Confidence: 20% - The patient's history of painful menstruation and chronic pelvic pain could be indicative of endometriosis. However, without more specific signs or symptoms such as infertility or pain during intercourse, this is less likely to be the primary cause of her symptoms.\n4. Functional Dyspepsia - Confidence: 10% - The patient's chronic gastrointestinal symptoms could be related to functional dyspepsia, given the absence of other more serious gastrointestinal disorders and the normal semen analysis of her partner.\n</DIFFERENTIAL_DIAGNOSIS>\n\n<SPECIALTY_FOCUS>\nAs a Gastroenterologist, I focus on the gastrointestinal system, which includes the intestines, stomach, and other related organs. The patient's symptoms are predominantly gastrointestinal in nature, with episodes of diarrhea and pain. While endometriosis and pelvic inflammatory disease are potential causes of her pelvic pain, they are less likely to be the primary cause of her gastrointestinal symptoms. The episodic nature of her symptoms and the absence of structural abnormalities make irritable bowel syndrome a strong candidate. Additionally, given the normal semen analysis of her partner, we can rule out male factor infertility as a cause of her inability to conceive.\n</SPECIALTY_FOCUS>",
+            "structured_data": {
+              "irritable bowel syndrome": [
+                "episodic painful diarrhea",
+                "episodic pelvic and back pain"
+              ],
+              "pelvic inflammatory disease": [
+                "pelvic and back pain",
+                "history of painful diarrhea"
+              ],
+              "endometriosis": [
+                "history of painful menstruation",
+                "chronic pelvic pain"
+              ],
+              "functional dyspepsia": [
+                "chronic gastrointestinal symptoms",
+                "normal semen analysis"
+              ]
+            },
+            "response_time": 3.3167648315429688,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765418.1906178
+          },
+          "Dr. Emily Green": {
+            "content": "{\"inflammatory bowel disease\": [\"episodic pelvic and back pain\", \"painful diarrhea\"], \"ankylosing spondylitis\": [\"episodic pelvic and back pain\"], \"lupus erythematosus\": [\"chronic, episodic symptoms\"]}\n\n<DIFFERENTIAL_DIAGNOSIS>\n1. Inflammatory Bowel Disease - Confidence: 60% - The patient's history of episodic pelvic and back pain, along with painful diarrhea, suggests a possible inflammatory process in the gastrointestinal tract. Inflammatory bowel disease (IBD) such as Crohn's disease or ulcerative colitis can present with these symptoms, and the episodic nature of her symptoms aligns with the intermittent nature of IBD.\n2. Ankylosing Spondylitis - Confidence: 40% - The patient's episodic pelvic and back pain, especially if it is predominantly in the lower back and radiates to the pelvis, could be indicative of ankylosing spondylitis (AS). AS is a form of inflammatory arthritis that often affects the sacroiliac joints and can cause pain and stiffness in the spine and pelvis. The episodic nature of her symptoms could be due to the intermittent nature of AS.\n3. Lupus Erythematosus - Confidence: 30% - The patient's chronic, episodic symptoms, including pain and diarrhea, along with the absence of a clear cause for her infertility, could suggest an underlying autoimmune condition like systemic lupus erythematosus (SLE). SLE can present with a wide range of symptoms, including gastrointestinal issues and musculoskeletal pain.\n</DIFFERENTIAL_DIAGNOSIS>\n\n<SPECIALTY_FOCUS>\n[Your specialty-specific insights and considerations]\nAs a rheumatologist, I would consider the possibility of an underlying autoimmune or inflammatory condition that could be contributing to the patient's symptoms. The episodic nature of her pain and the presence of gastrointestinal symptoms are particularly suggestive of conditions such as inflammatory bowel disease or ankylosing spondylitis. The absence of a clear cause for her infertility and the chronic, episodic nature of her symptoms could also point towards an autoimmune condition like SLE. It would be important to further investigate these possibilities with appropriate laboratory tests, imaging, and possibly a referral to a gastroenterologist or a rheumatologist specializing in inflammatory bowel disease and ankylosing spondylitis.\n</SPECIALTY_FOCUS>",
+            "structured_data": {
+              "inflammatory bowel disease": [
+                "episodic pelvic and back pain",
+                "painful diarrhea"
+              ],
+              "ankylosing spondylitis": [
+                "episodic pelvic and back pain"
+              ],
+              "lupus erythematosus": [
+                "chronic, episodic symptoms"
+              ]
+            },
+            "response_time": 3.6362130641937256,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765418.1906185
+          },
+          "Dr. John Lee": {
+            "content": "{\"interstitial cystitis/bladder pain syndrome\": [\"pelvic and back pain\", \"painful diarrhea\"], \"endometriosis\": [\"episodic pain\", \"infertility\"], \"chronic prostatitis/chronic pelvic pain syndrome\": [\"episodic pain\", \"infertility\"]}\n\n<DIFFERENTIAL_DIAGNOSIS>\n1. Interstitial Cystitis/Bladder Pain Syndrome - [Confidence: 35%] - The patient's episodic pelvic and back pain, along with painful diarrhea, are consistent with symptoms of interstitial cystitis, a chronic condition affecting the bladder that can cause pelvic pain and gastrointestinal symptoms.\n2. Endometriosis - [Confidence: 30%] - The patient's history of infertility and episodic pain, especially in the pelvic and back areas, could be indicative of endometriosis, a condition where tissue similar to the lining of the uterus grows outside the uterus, often causing infertility and pelvic pain.\n3. Chronic Prostatitis/Chronic Pelvic Pain Syndrome - [Confidence: 25%] - Although the patient is female, her husband's semen analysis was normal, suggesting the issue might be related to her. Chronic prostatitis can cause pelvic pain and can affect fertility, though it is more common in males. The episodic nature of her pain and the history of infertility suggest this could be a contributing factor.\n</DIFFERENTIAL_DIAGNOSIS>\n\n<SPECIALTY_FOCUS>\n[Your specialty-specific insights and considerations]\nChronic pelvic pain and infertility in females can often be multifactorial, involving both urogynecological and gynecological issues. The interstitial cystitis and endometriosis are both conditions that can cause chronic pelvic pain and affect fertility. Endometriosis is particularly relevant given the patient's history of infertility and the episodic nature of her pain. Interstitial cystitis, while less common in females, can also present with similar symptoms and should be considered given the patient's complaints.\n\nIt's important to note that the patient's history of regular menstrual cycles and normal hysterosalpingogram suggest that other common causes of infertility such as tubal or ovarian issues are less likely. The episodic nature of her pain and the fact that it occurs in both the pelvic and back areas, along with the presence of painful diarrhea, make interstitial cystitis a plausible diagnosis.\n\nFurther diagnostic testing, such as a bladder biopsy for interstitial cystitis or laparoscopy for endometriosis, would be necessary to confirm the diagnosis and guide appropriate treatment.\n</SPECIALTY_FOCUS>",
+            "structured_data": {
+              "interstitial cystitis/bladder pain syndrome": [
+                "pelvic and back pain",
+                "painful diarrhea"
+              ],
+              "endometriosis": [
+                "episodic pain",
+                "infertility"
+              ],
+              "chronic prostatitis/chronic pelvic pain syndrome": [
+                "episodic pain",
+                "infertility"
+              ]
+            },
+            "response_time": 3.917083501815796,
+            "confidence_score": 0.7,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765418.1906197
+          },
+          "Dr. Clinical Evaluator": {
+            "content": "```json\n{\"irritable bowel syndrome\": [\"episodic pelvic and back pain\", \"painful diarrhea\"], \"endometriosis\": [\"episodic pelvic and back pain\", \"painful diarrhea\"], \"chronic pelvic pain\": [\"episodic pelvic and back pain\", \"painful diarrhea\"]}\n```\n\n### Differential Diagnosis\n\n1. **Irritable Bowel Syndrome (IBS) - Confidence: 60%** - The patient reports episodic pelvic and back pain along with painful diarrhea, which are common symptoms of IBS. IBS is a functional gastrointestinal disorder that can cause abdominal pain, bloating, and changes in bowel habits. The absence of significant findings on pelvic and rectal examination supports this diagnosis.\n2. **Endometriosis - Confidence: 50%** - The patient's history of episodic pelvic and back pain, along with painful diarrhea, is also consistent with endometriosis. Endometriosis can cause chronic pelvic pain and gastrointestinal symptoms, although it is less likely given the normal findings on hysterosalpingogram.\n3. **Chronic Pelvic Pain - Confidence: 40%** - The patient's symptoms of episodic pelvic and back pain, along with painful diarrhea, are also consistent with chronic pelvic pain. This diagnosis is less specific but encompasses a range of conditions that could cause these symptoms.\n\n### Specialty Focus\n\n**Internal Medicine Insights:**\n- **Functional Gastrointestinal Disorders:** IBS is a common functional gastrointestinal disorder that can cause significant discomfort and should be considered in this patient. The episodic nature of her symptoms and the absence of other significant findings support this diagnosis.\n- **Endometriosis:** While endometriosis is a possibility, the normal findings on hysterosalpingogram and the absence of other typical signs (such as dysmenorrhea or infertility due to endometriosis) make it less likely.\n- **Chronic Pelvic Pain:** This is a broad diagnosis that encompasses a range of conditions, including endometriosis, interstitial cystitis, and other less common causes. It is important to consider this diagnosis as it can be a significant source of discomfort for the patient.\n\nThe patient's symptoms are likely related to a functional gastrointestinal disorder, with IBS being the most probable diagnosis given the available evidence. Further diagnostic testing or referral to a gastroenterologist or a specialist in functional gastrointestinal disorders may be warranted to confirm the diagnosis and provide appropriate management.",
+            "structured_data": {
+              "irritable bowel syndrome": [
+                "episodic pelvic and back pain",
+                "painful diarrhea"
+              ],
+              "endometriosis": [
+                "episodic pelvic and back pain",
+                "painful diarrhea"
+              ],
+              "chronic pelvic pain": [
+                "episodic pelvic and back pain",
+                "painful diarrhea"
+              ]
+            },
+            "response_time": 3.6950747966766357,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752765418.1906202
+          }
+        },
+        "metadata": {
+          "total_diagnoses": 26,
+          "agent_count": 8,
+          "all_diagnoses": [
+            {
+              "diagnosis": "Endometriosis",
+              "evidence": [
+                "Episodic pelvic and back pain",
+                "Painful diarrhea",
+                "History of infertility"
+              ]
+            },
+            {
+              "diagnosis": "Unexplained Infertility",
+              "evidence": [
+                "History of infertility for 3 years",
+                "Normal semen analysis",
+                "Normal hysterosalpingogram"
+              ]
+            },
+            {
+              "diagnosis": "Pelvic Inflammatory Disease",
+              "evidence": [
+                "History of pelvic pain",
+                "Painful diarrhea"
+              ]
+            },
+            {
+              "diagnosis": "Inflammatory Bowel Disease (IBD)",
+              "evidence": [
+                "Episodic diarrhea with abdominal pain, duration of 5 years",
+                "Potential for pelvic pain due to inflammation"
+              ]
+            },
+            {
+              "diagnosis": "Pelvic Inflammatory Disease (PID)",
+              "evidence": [
+                "History of painful diarrhea, potential for concurrent infection",
+                "Episodic nature of symptoms"
+              ]
+            },
+            {
+              "diagnosis": "Irritable Bowel Syndrome (IBS)",
+              "evidence": [
+                "Common cause of episodic diarrhea and abdominal pain",
+                "Lack of specific findings on exam"
+              ]
+            },
+            {
+              "diagnosis": "Gastroenteritis",
+              "evidence": [
+                "Possible if diarrhea is accompanied by other systemic symptoms like fever or nausea"
+              ]
+            },
+            {
+              "diagnosis": "Irritable Bowel Syndrome (IBS)",
+              "evidence": [
+                "Episodic pelvic and back pain with diarrhea",
+                "Symptoms lasting for 5 years"
+              ]
+            },
+            {
+              "diagnosis": "Pelvic Inflammatory Disease (PID)",
+              "evidence": [
+                "History of painful diarrhea",
+                "Normal pelvic and rectal exams"
+              ]
+            },
+            {
+              "diagnosis": "Endometriosis",
+              "evidence": [
+                "Pelvic and back pain",
+                "History of infertility"
+              ]
+            },
+            {
+              "diagnosis": "irregular menstruation",
+              "evidence": [
+                "pelvic and back pain",
+                "painful diarrhea"
+              ]
+            },
+            {
+              "diagnosis": "endometriosis",
+              "evidence": [
+                "pelvic and back pain",
+                "painful diarrhea"
+              ]
+            },
+            {
+              "diagnosis": "cyclic pelvic pain",
+              "evidence": [
+                "pelvic and back pain",
+                "painful diarrhea"
+              ]
+            },
+            {
+              "diagnosis": "irritable bowel syndrome",
+              "evidence": [
+                "episodic painful diarrhea",
+                "episodic pelvic and back pain"
+              ]
+            },
+            {
+              "diagnosis": "pelvic inflammatory disease",
+              "evidence": [
+                "pelvic and back pain",
+                "history of painful diarrhea"
+              ]
+            },
+            {
+              "diagnosis": "endometriosis",
+              "evidence": [
+                "history of painful menstruation",
+                "chronic pelvic pain"
+              ]
+            },
+            {
+              "diagnosis": "functional dyspepsia",
+              "evidence": [
+                "chronic gastrointestinal symptoms",
+                "normal semen analysis"
+              ]
+            },
+            {
+              "diagnosis": "inflammatory bowel disease",
+              "evidence": [
+                "episodic pelvic and back pain",
+                "painful diarrhea"
+              ]
+            },
+            {
+              "diagnosis": "ankylosing spondylitis",
+              "evidence": [
+                "episodic pelvic and back pain"
+              ]
+            },
+            {
+              "diagnosis": "lupus erythematosus",
+              "evidence": [
+                "chronic, episodic symptoms"
+              ]
+            },
+            {
+              "diagnosis": "interstitial cystitis/bladder pain syndrome",
+              "evidence": [
+                "pelvic and back pain",
+                "painful diarrhea"
+              ]
+            },
+            {
+              "diagnosis": "endometriosis",
+              "evidence": [
+                "episodic pain",
+                "infertility"
+              ]
+            },
+            {
+              "diagnosis": "chronic prostatitis/chronic pelvic pain syndrome",
+              "evidence": [
+                "episodic pain",
+                "infertility"
+              ]
+            },
+            {
+              "diagnosis": "irritable bowel syndrome",
+              "evidence": [
+                "episodic pelvic and back pain",
+                "painful diarrhea"
+              ]
+            },
+            {
+              "diagnosis": "endometriosis",
+              "evidence": [
+                "episodic pelvic and back pain",
+                "painful diarrhea"
+              ]
+            },
+            {
+              "diagnosis": "chronic pelvic pain",
+              "evidence": [
+                "episodic pelvic and back pain",
+                "painful diarrhea"
+              ]
+            }
+          ],
+          "diagnoses_by_agent": {
+            "Dr. Anya Sharma": [],
+            "Dr. Liam O'Connell": [],
+            "Dr. Nadia Khan": [],
+            "Dr. Sarah Chen": [
+              {
+                "diagnosis": "Irregular menstruation",
+                "confidence": 35,
+                "reasoning": "[Confidence: 35%] - [Reasoning: The patient has regular menstrual cycles, but the associated symptoms of pelvic and back pain and painful diarrhea suggest an underlying condition affecting her reproductive system.]",
+                "raw_line": "1. Irregular menstruation - [Confidence: 35%] - [Reasoning: The patient has regular menstrual cycles, but the associated symptoms of pelvic and back pain and painful diarrhea suggest an underlying condition affecting her reproductive system.]"
+              },
+              {
+                "diagnosis": "Endometriosis",
+                "confidence": 50,
+                "reasoning": "[Confidence: 50%] - [Reasoning: The patient's symptoms, particularly the episodic pelvic and back pain and painful diarrhea, are consistent with endometriosis, a condition where endometrial tissue grows outside the uterus, often causing pain and infertility.]",
+                "raw_line": "2. Endometriosis - [Confidence: 50%] - [Reasoning: The patient's symptoms, particularly the episodic pelvic and back pain and painful diarrhea, are consistent with endometriosis, a condition where endometrial tissue grows outside the uterus, often causing pain and infertility.]"
+              },
+              {
+                "diagnosis": "Cyclic pelvic pain",
+                "confidence": 15,
+                "reasoning": "[Confidence: 15%] - [Reasoning: The patient's symptoms occur cyclically, which could be related to her menstrual cycle, but the specific nature of her symptoms (pelvic and back pain, and painful diarrhea) are more indicative of endometriosis.]",
+                "raw_line": "3. Cyclic pelvic pain - [Confidence: 15%] - [Reasoning: The patient's symptoms occur cyclically, which could be related to her menstrual cycle, but the specific nature of her symptoms (pelvic and back pain, and painful diarrhea) are more indicative of endometriosis.]"
+              }
+            ],
+            "Dr. Michael Kim": [
+              {
+                "diagnosis": "Irritable Bowel Syndrome",
+                "confidence": 60,
+                "reasoning": "Confidence: 60% - The patient presents with episodic diarrhea and pelvic pain, which are common symptoms in IBS. The episodic nature of her symptoms and the lack of structural abnormalities on examination support this diagnosis.",
+                "raw_line": "1. Irritable Bowel Syndrome - Confidence: 60% - The patient presents with episodic diarrhea and pelvic pain, which are common symptoms in IBS. The episodic nature of her symptoms and the lack of structural abnormalities on examination support this diagnosis."
+              },
+              {
+                "diagnosis": "Pelvic Inflammatory Disease",
+                "confidence": 30,
+                "reasoning": "Confidence: 30% - Although the hysterosalpingogram was normal, the patient's history of pelvic and back pain could suggest an ongoing or recurrent infection. However, given the normal imaging and her otherwise normal examination, this is less likely.",
+                "raw_line": "2. Pelvic Inflammatory Disease - Confidence: 30% - Although the hysterosalpingogram was normal, the patient's history of pelvic and back pain could suggest an ongoing or recurrent infection. However, given the normal imaging and her otherwise normal examination, this is less likely."
+              },
+              {
+                "diagnosis": "Endometriosis",
+                "confidence": 20,
+                "reasoning": "Confidence: 20% - The patient's history of painful menstruation and chronic pelvic pain could be indicative of endometriosis. However, without more specific signs or symptoms such as infertility or pain during intercourse, this is less likely to be the primary cause of her symptoms.",
+                "raw_line": "3. Endometriosis - Confidence: 20% - The patient's history of painful menstruation and chronic pelvic pain could be indicative of endometriosis. However, without more specific signs or symptoms such as infertility or pain during intercourse, this is less likely to be the primary cause of her symptoms."
+              },
+              {
+                "diagnosis": "Functional Dyspepsia",
+                "confidence": 10,
+                "reasoning": "Confidence: 10% - The patient's chronic gastrointestinal symptoms could be related to functional dyspepsia, given the absence of other more serious gastrointestinal disorders and the normal semen analysis of her partner.",
+                "raw_line": "4. Functional Dyspepsia - Confidence: 10% - The patient's chronic gastrointestinal symptoms could be related to functional dyspepsia, given the absence of other more serious gastrointestinal disorders and the normal semen analysis of her partner."
+              }
+            ],
+            "Dr. Emily Green": [
+              {
+                "diagnosis": "Inflammatory Bowel Disease",
+                "confidence": 60,
+                "reasoning": "Confidence: 60% - The patient's history of episodic pelvic and back pain, along with painful diarrhea, suggests a possible inflammatory process in the gastrointestinal tract. Inflammatory bowel disease (IBD) such as Crohn's disease or ulcerative colitis can present with these symptoms, and the episodic nature of her symptoms aligns with the intermittent nature of IBD.",
+                "raw_line": "1. Inflammatory Bowel Disease - Confidence: 60% - The patient's history of episodic pelvic and back pain, along with painful diarrhea, suggests a possible inflammatory process in the gastrointestinal tract. Inflammatory bowel disease (IBD) such as Crohn's disease or ulcerative colitis can present with these symptoms, and the episodic nature of her symptoms aligns with the intermittent nature of IBD."
+              },
+              {
+                "diagnosis": "Ankylosing Spondylitis",
+                "confidence": 40,
+                "reasoning": "Confidence: 40% - The patient's episodic pelvic and back pain, especially if it is predominantly in the lower back and radiates to the pelvis, could be indicative of ankylosing spondylitis (AS). AS is a form of inflammatory arthritis that often affects the sacroiliac joints and can cause pain and stiffness in the spine and pelvis. The episodic nature of her symptoms could be due to the intermittent nature of AS.",
+                "raw_line": "2. Ankylosing Spondylitis - Confidence: 40% - The patient's episodic pelvic and back pain, especially if it is predominantly in the lower back and radiates to the pelvis, could be indicative of ankylosing spondylitis (AS). AS is a form of inflammatory arthritis that often affects the sacroiliac joints and can cause pain and stiffness in the spine and pelvis. The episodic nature of her symptoms could be due to the intermittent nature of AS."
+              },
+              {
+                "diagnosis": "Lupus Erythematosus",
+                "confidence": 30,
+                "reasoning": "Confidence: 30% - The patient's chronic, episodic symptoms, including pain and diarrhea, along with the absence of a clear cause for her infertility, could suggest an underlying autoimmune condition like systemic lupus erythematosus (SLE). SLE can present with a wide range of symptoms, including gastrointestinal issues and musculoskeletal pain.",
+                "raw_line": "3. Lupus Erythematosus - Confidence: 30% - The patient's chronic, episodic symptoms, including pain and diarrhea, along with the absence of a clear cause for her infertility, could suggest an underlying autoimmune condition like systemic lupus erythematosus (SLE). SLE can present with a wide range of symptoms, including gastrointestinal issues and musculoskeletal pain."
+              }
+            ],
+            "Dr. John Lee": [
+              {
+                "diagnosis": "Interstitial Cystitis/Bladder Pain Syndrome",
+                "confidence": 35,
+                "reasoning": "[Confidence: 35%] - The patient's episodic pelvic and back pain, along with painful diarrhea, are consistent with symptoms of interstitial cystitis, a chronic condition affecting the bladder that can cause pelvic pain and gastrointestinal symptoms.",
+                "raw_line": "1. Interstitial Cystitis/Bladder Pain Syndrome - [Confidence: 35%] - The patient's episodic pelvic and back pain, along with painful diarrhea, are consistent with symptoms of interstitial cystitis, a chronic condition affecting the bladder that can cause pelvic pain and gastrointestinal symptoms."
+              },
+              {
+                "diagnosis": "Endometriosis",
+                "confidence": 30,
+                "reasoning": "[Confidence: 30%] - The patient's history of infertility and episodic pain, especially in the pelvic and back areas, could be indicative of endometriosis, a condition where tissue similar to the lining of the uterus grows outside the uterus, often causing infertility and pelvic pain.",
+                "raw_line": "2. Endometriosis - [Confidence: 30%] - The patient's history of infertility and episodic pain, especially in the pelvic and back areas, could be indicative of endometriosis, a condition where tissue similar to the lining of the uterus grows outside the uterus, often causing infertility and pelvic pain."
+              },
+              {
+                "diagnosis": "Chronic Prostatitis/Chronic Pelvic Pain Syndrome",
+                "confidence": 25,
+                "reasoning": "[Confidence: 25%] - Although the patient is female, her husband's semen analysis was normal, suggesting the issue might be related to her. Chronic prostatitis can cause pelvic pain and can affect fertility, though it is more common in males. The episodic nature of her pain and the history of infertility suggest this could be a contributing factor.",
+                "raw_line": "3. Chronic Prostatitis/Chronic Pelvic Pain Syndrome - [Confidence: 25%] - Although the patient is female, her husband's semen analysis was normal, suggesting the issue might be related to her. Chronic prostatitis can cause pelvic pain and can affect fertility, though it is more common in males. The episodic nature of her pain and the history of infertility suggest this could be a contributing factor."
+              }
+            ],
+            "Dr. Clinical Evaluator": []
+          }
+        },
+        "success": true,
+        "execution_time": 32.647170305252075,
+        "formatted_output": ""
+      },
+      "master_list_generation": {
+        "round_type": "master_list_generation",
+        "participants": [
+          "Dr. Anya Sharma"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "<MASTER DDX LIST>\n1. Endometriosis - High -  The patient's history of episodic pelvic and back pain with painful diarrhea, occurring monthly for 4-6 days, strongly suggests endometriosis. This is further supported by her age and the fact that she has been trying to conceive for 3 years.\n2. Unexplained Infertility - Moderate - While endometriosis is a likely cause, it's important to consider unexplained infertility as a possibility. \n3. Irritable Bowel Syndrome (IBS) - Low - The patient's symptoms could also be attributed to IBS, but the cyclical nature and severity of her pain make endometriosis more likely.\n4. Inflammatory Bowel Disease (IBD) - Low -  While IBD can cause abdominal pain, the patient's symptoms are more consistent with endometriosis or IBS.",
+            "structured_data": null,
+            "response_time": 2.0208330154418945,
+            "confidence_score": 0.64,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765420.2167306
+          }
+        },
+        "metadata": {
+          "master_diagnoses": [
+            "1. Endometriosis - High -  The patient's history of episodic pelvic and back pain with painful diarrhea, occurring monthly for 4-6 days, strongly suggests endometriosis. This is further supported by her age and the fact that she has been trying to conceive for 3 years.",
+            "2. Unexplained Infertility - Moderate - While endometriosis is a likely cause, it's important to consider unexplained infertility as a possibility.",
+            "3. Irritable Bowel Syndrome (IBS) - Low - The patient's symptoms could also be attributed to IBS, but the cyclical nature and severity of her pain make endometriosis more likely.",
+            "4. Inflammatory Bowel Disease (IBD) - Low -  While IBD can cause abdominal pain, the patient's symptoms are more consistent with endometriosis or IBS."
+          ],
+          "consolidation_notes": "",
+          "original_diagnosis_count": 26,
+          "deduplicated_count": 4
+        },
+        "success": true,
+        "execution_time": 2.0260825157165527,
+        "formatted_output": "<MASTER DDX LIST>\n1. Endometriosis - High -  The patient's history of episodic pelvic and back pain with painful diarrhea, occurring monthly for 4-6 days, strongly suggests endometriosis. This is further supported by her age and the fact that she has been trying to conceive for 3 years.\n2. Unexplained Infertility - Moderate - While endometriosis is a likely cause, it's important to consider unexplained infertility as a possibility. \n3. Irritable Bowel Syndrome (IBS) - Low - The patient's symptoms could also be attributed to IBS, but the cyclical nature and severity of her pain make endometriosis more likely.\n4. Inflammatory Bowel Disease (IBD) - Low -  While IBD can cause abdominal pain, the patient's symptoms are more consistent with endometriosis or IBS."
+      },
+      "refinement_and_justification": {
+        "round_type": "refinement_and_justification",
+        "participants": [
+          "Dr. Anya Sharma",
+          "Dr. Liam O'Connell",
+          "Dr. Nadia Khan",
+          "Dr. Sarah Chen",
+          "Dr. Michael Kim",
+          "Dr. Emily Green",
+          "Dr. John Lee",
+          "Dr. Clinical Evaluator"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"Endometriosis\": [\"Episodic pelvic and back pain with painful diarrhea for 5 years\", \"Symptoms occurring monthly for 4-6 days\", \"Age of 30 and history of trying to conceive for 3 years\"], \"Unexplained Infertility\": [\"Normal semen analysis\", \"History of 3 years of trying to conceive without success\"], \"Irritable Bowel Syndrome (IBS)\": [\"Episodic pelvic and back pain with diarrhea\", \"Symptoms lasting for 5 years\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Endometriosis:** This diagnosis is highly probable based on the patient's history of cyclical pelvic and back pain accompanied by painful diarrhea. The duration of these symptoms (5 years) and their cyclical nature (monthly for 4-6 days) strongly suggest a condition like endometriosis.  The patient's age (30) and history of trying to conceive for 3 years further support this possibility, as endometriosis is a common cause of infertility.\n\n2. **Unexplained Infertility:** While endometriosis is a strong contender, it's crucial to consider unexplained infertility. The patient's normal semen analysis and 3 years of unsuccessful attempts to conceive warrant this consideration.  \n\n3. **Irritable Bowel Syndrome (IBS):**  IBS is a possibility, but the cyclical nature and severity of the patient's pain, particularly its correlation with her menstrual cycle, make endometriosis more likely.  \n\n**Further Investigations:**\n\nTo confirm the diagnosis and rule out other possibilities, I would recommend the following:\n\n* **Laparoscopy:** This is the gold standard for diagnosing endometriosis. It allows for direct visualization of the pelvic organs and identification of endometrial tissue outside the uterus.\n* **Hormonal Profile:** Assessing hormone levels (e.g., FSH, LH, estrogen, progesterone) can provide further insights into the patient's reproductive health and help rule out other hormonal imbalances.\n* **Endometrial Biopsy:** This procedure can help evaluate the thickness and composition of the uterine lining, which can be affected by endometriosis.",
+            "structured_data": {
+              "Endometriosis": [
+                "Episodic pelvic and back pain with painful diarrhea for 5 years",
+                "Symptoms occurring monthly for 4-6 days",
+                "Age of 30 and history of trying to conceive for 3 years"
+              ],
+              "Unexplained Infertility": [
+                "Normal semen analysis",
+                "History of 3 years of trying to conceive without success"
+              ],
+              "Irritable Bowel Syndrome (IBS)": [
+                "Episodic pelvic and back pain with diarrhea",
+                "Symptoms lasting for 5 years"
+              ]
+            },
+            "response_time": 5.090648412704468,
+            "confidence_score": 0.72,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765465.2001114
+          },
+          "Dr. Liam O'Connell": {
+            "content": "```json\n{\"Endometriosis\": [\"Episodic pelvic and back pain with painful diarrhea\", \"History of trying to conceive for 3 years\"], \"Irritable Bowel Syndrome (IBS)\": [\"Episodic pelvic and back pain with diarrhea\", \"Symptoms lasting for 5 years\"], \"Pelvic Inflammatory Disease (PID)\": [\"History of painful diarrhea\", \"Normal pelvic exam\"] }\n```\n\n**Clinical Reasoning:**\n\nAs an Infectious Disease specialist, my primary focus is on identifying and managing infections. While the patient's symptoms could be attributed to various gynecological or gastrointestinal conditions, I'll focus on diagnoses that fall within my area of expertise.\n\n* **Endometriosis:** This diagnosis is highly plausible given the patient's history of cyclical pelvic and back pain accompanied by painful diarrhea. The timing of these episodes, occurring monthly for 4-6 days, aligns with the typical menstrual cycle.  The fact that she has been trying to conceive for 3 years further supports this possibility, as endometriosis is a known cause of infertility.\n\n* **Irritable Bowel Syndrome (IBS):**  IBS is a common disorder characterized by abdominal pain, bloating, diarrhea, and constipation. The patient's history of episodic pelvic and back pain with diarrhea, lasting for 5 years, could be consistent with IBS. However, the cyclical nature of her symptoms and the association with pain during menstruation make endometriosis a more likely diagnosis.\n\n* **Pelvic Inflammatory Disease (PID):** PID is an infection of the female reproductive organs. While the patient reports a history of painful diarrhea, her normal pelvic exam and lack of other concerning symptoms make PID less likely. However, it's important to consider this diagnosis, especially given the potential for chronic pelvic pain associated with untreated PID.\n\n**Next Steps:**\n\nGiven my initial assessment, I would recommend further investigation into endometriosis. This could involve:\n\n* **Pelvic Ultrasound:** To visualize the ovaries and uterus for signs of endometriosis.\n* **Laparoscopy:** A minimally invasive surgical procedure that allows direct visualization of the pelvic organs and can confirm the diagnosis of endometriosis.\n* **Hormonal Therapy:** To manage pain and potentially improve fertility.",
+            "structured_data": {
+              "Endometriosis": [
+                "Episodic pelvic and back pain with painful diarrhea",
+                "History of trying to conceive for 3 years"
+              ],
+              "Irritable Bowel Syndrome (IBS)": [
+                "Episodic pelvic and back pain with diarrhea",
+                "Symptoms lasting for 5 years"
+              ],
+              "Pelvic Inflammatory Disease (PID)": [
+                "History of painful diarrhea",
+                "Normal pelvic exam"
+              ]
+            },
+            "response_time": 5.460498809814453,
+            "confidence_score": 0.7799999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752765465.2001123
+          },
+          "Dr. Nadia Khan": {
+            "content": "```json\n{\"Endometriosis\": [\"Episodic pelvic and back pain with painful diarrhea\", \"History of trying to conceive for 3 years\"], \"Unexplained Infertility\": [\"3 years of trying to conceive\", \"Normal semen analysis\"], \"Irritable Bowel Syndrome (IBS)\": [\"Episodic pelvic and back pain with diarrhea\", \"History of self-treatment with ibuprofen\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Endometriosis:** This diagnosis remains highly plausible based on the patient's history of cyclical pelvic and back pain accompanied by painful diarrhea, lasting 4-6 days each month for 5 years. The pain's cyclical nature strongly suggests a hormonal influence, aligning with the pathophysiology of endometriosis.  Her history of trying to conceive for 3 years without success further supports this diagnosis, as endometriosis is a common cause of infertility.\n\n2. **Unexplained Infertility:** While endometriosis is a strong contender, it's crucial to acknowledge the possibility of unexplained infertility.  The patient's history of 3 years of trying to conceive with normal semen analysis warrants further investigation into other potential factors contributing to infertility.\n\n3. **Irritable Bowel Syndrome (IBS):**  While IBS can cause abdominal pain and diarrhea, the cyclical nature and severity of the patient's symptoms, particularly the pelvic pain, make endometriosis a more likely diagnosis.  However, IBS should not be ruled out entirely, as it can sometimes present with more severe symptoms than typical.\n\n**Important Considerations:**\n\n* **Further Investigations:** Given the high suspicion of endometriosis, further investigations such as pelvic ultrasound or laparoscopy may be warranted to confirm the diagnosis.\n* **Multidisciplinary Approach:**  This case highlights the need for a multidisciplinary approach involving gynecology, reproductive endocrinology, and gastroenterology to comprehensively address the patient's concerns and develop a tailored management plan.",
+            "structured_data": {
+              "Endometriosis": [
+                "Episodic pelvic and back pain with painful diarrhea",
+                "History of trying to conceive for 3 years"
+              ],
+              "Unexplained Infertility": [
+                "3 years of trying to conceive",
+                "Normal semen analysis"
+              ],
+              "Irritable Bowel Syndrome (IBS)": [
+                "Episodic pelvic and back pain with diarrhea",
+                "History of self-treatment with ibuprofen"
+              ]
+            },
+            "response_time": 4.805757761001587,
+            "confidence_score": 0.74,
+            "reasoning_quality": "high",
+            "timestamp": 1752765465.200113
+          },
+          "Dr. Sarah Chen": {
+            "content": "```json\n{\"endometriosis\": [\"episodic pelvic and back pain\", \"painful diarrhea\", \"3 years of trying to conceive\"], \"unexplained infertility\": [\"normal semen analysis\", \"3 years of trying to conceive\"], \"irritable bowel syndrome (ibs)\": [\"episodic pelvic and back pain\", \"diarrhea\", \"5 years of symptoms\"]}\n```\n\nNow, I will provide the detailed clinical reasoning for the top three diagnoses:\n\n### Detailed Analysis\n\n1. **Endometriosis - Confidence: HIGH**\n   - **Clinical Reasoning:**\n     - The patient reports episodic pelvic and back pain that occurs monthly for 4-6 days, which is highly characteristic of endometriosis. Endometriosis is a common cause of chronic pelvic pain and infertility, especially in women of reproductive age.\n     - The patient has been trying to conceive for 3 years, which is a significant period, and endometriosis is one of the leading causes of unexplained infertility.\n     - The painful diarrhea that occurs in a cyclical pattern is also consistent with endometriosis, as the disease can affect the gastrointestinal tract and cause bowel symptoms.\n\n2. **Unexplained Infertility - Confidence: MEDIUM**\n   - **Clinical Reasoning:**\n     - The patient has a normal semen analysis, ruling out male factor infertility.\n     - Despite a thorough evaluation, there is no clear explanation for her infertility, which could be due to endometriosis or other undiagnosed factors.\n     - The patient's history of trying to conceive for 3 years without success, and the presence of endometriosis, make unexplained infertility a plausible diagnosis.\n\n3. **Irritable Bowel Syndrome (IBS) - Confidence: LOW**\n   - **Clinical Reasoning:**\n     - The patient's symptoms of episodic pelvic and back pain and diarrhea are also consistent with IBS, which is a common gastrointestinal disorder.\n     - However, the cyclical nature and severity of her pain are more consistent with endometriosis, which often presents with more severe and regular pain.\n     - The duration of her symptoms (5 years) is also a factor, as IBS can cause long-term gastrointestinal symptoms, but the pain is more likely to be endometriosis-related given the cyclical pattern and severity.\n\n### Conclusion\n\nBased on the patient's history and symptoms, endometriosis is the most likely underlying mechanism for her symptoms. The episodic pelvic and back pain, painful diarrhea, and the duration of her symptoms are highly indicative of endometriosis. While unexplained infertility is a possibility, it is less likely given the presence of endometriosis. IBS is a less likely diagnosis due to the more severe and cyclical nature of her pain. \n\nI would recommend further diagnostic tests such as a laparoscopy to confirm the presence of endometriosis and to assess the extent of the disease. Additionally, a thorough evaluation for other potential causes of infertility should be conducted, including a detailed hormonal assessment and evaluation of other reproductive organs.",
+            "structured_data": {
+              "endometriosis": [
+                "episodic pelvic and back pain",
+                "painful diarrhea",
+                "3 years of trying to conceive"
+              ],
+              "unexplained infertility": [
+                "normal semen analysis",
+                "3 years of trying to conceive"
+              ],
+              "irritable bowel syndrome (ibs)": [
+                "episodic pelvic and back pain",
+                "diarrhea",
+                "5 years of symptoms"
+              ]
+            },
+            "response_time": 4.713274002075195,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752765465.2001138
+          },
+          "Dr. Michael Kim": {
+            "content": "```json\n{\"endometriosis\": [\"episodic pelvic and back pain\", \"painful diarrhea\", \"history of trying to conceive for 3 years\"], \"irritable bowel syndrome (ibs)\": [\"episodic pelvic and back pain\", \"painful diarrhea\", \"symptoms lasting for 5 years\"], \"unexplained infertility\": [\"3 years of trying to conceive\", \"normal semen analysis\"]}\n```\n\nNow, I will provide a detailed clinical reasoning for the top three diagnoses based on the provided evidence:\n\n### Systematic Review\n1. **Endometriosis - High** - The patient's history of episodic pelvic and back pain with painful diarrhea, occurring monthly for 4-6 days, strongly suggests endometriosis. This is further supported by her age and the fact that she has been trying to conceive for 3 years.\n2. **Unexplained Infertility - Moderate** - While endometriosis is a likely cause, it's important to consider unexplained infertility as a possibility. The patient has normal semen analysis and has been trying to conceive for 3 years without success.\n3. **Irritable Bowel Syndrome (IBS) - Low** - The patient's symptoms could also be attributed to IBS, but the cyclical nature and severity of her pain make endometriosis more likely.\n\n### Detailed Analysis\n1. **Endometriosis - High** - **Full Evidence-Based Reasoning**: The patient's symptoms of episodic pelvic and back pain, along with painful diarrhea, occurring monthly for 4-6 days, are highly indicative of endometriosis. Endometriosis is a common cause of chronic pelvic pain and gastrointestinal symptoms, particularly in women of reproductive age. Additionally, the fact that she has been trying to conceive for 3 years without success, combined with normal semen analysis, supports the possibility of endometriosis as a contributing factor to her infertility.\n   \n2. **Unexplained Infertility - Moderate** - **Full Evidence-Based Reasoning**: Despite the strong suspicion of endometriosis based on the patient's symptoms, unexplained infertility remains a possibility. While endometriosis is a common cause of infertility, there can be other factors contributing to the inability to conceive, such as unexplained factors or less common causes like mild tubal factors, sperm quality issues not detected by standard semen analysis, or other less common causes of infertility.\n\n3. **Irritable Bowel Syndrome (IBS) - Low** - **Full Evidence-Based Reasoning**: While the patient's symptoms could be attributed to IBS, the cyclical nature and severity of her pain make endometriosis more likely. IBS can cause abdominal pain and diarrhea, but the regular and cyclical nature of the patient's symptoms, along with the age and history of trying to conceive, make endometriosis a more probable diagnosis. However, IBS should still be considered in the differential diagnosis.\n\nIn conclusion, endometriosis is the most likely underlying mechanism for the patient's symptoms given the cyclical nature of her pain and the age-related risk factors. Unexplained infertility is also a possibility, and IBS should be considered as a potential comorbidity. Further diagnostic evaluation, including laparoscopy and endometrial biopsy for endometriosis, and possibly further infertility evaluations, would be warranted to confirm the diagnosis and guide appropriate treatment.",
+            "structured_data": {
+              "endometriosis": [
+                "episodic pelvic and back pain",
+                "painful diarrhea",
+                "history of trying to conceive for 3 years"
+              ],
+              "irritable bowel syndrome (ibs)": [
+                "episodic pelvic and back pain",
+                "painful diarrhea",
+                "symptoms lasting for 5 years"
+              ],
+              "unexplained infertility": [
+                "3 years of trying to conceive",
+                "normal semen analysis"
+              ]
+            },
+            "response_time": 5.106849908828735,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752765465.2001145
+          },
+          "Dr. Emily Green": {
+            "content": "```json\n{\"endometriosis\": [\"episodic pelvic and back pain\", \"painful diarrhea\", \"3 years of trying to conceive\", \"normal semen analysis\"], \"irritable bowel syndrome\": [\"episodic pelvic and back pain\", \"painful diarrhea\", \"5 years of symptoms\"], \"unexplained infertility\": [\"3 years of trying to conceive\", \"normal semen analysis\"]}\n```\n\nNow, I will provide a detailed clinical reasoning for the top three diagnoses:\n\n---\n\n**PART 1 - Systematic Review**\n\n1. **Endometriosis - High**\n   - **Evidences**: Episodic pelvic and back pain, painful diarrhea, 3 years of trying to conceive, normal semen analysis\n   - **Clinical Reasoning**: The patient's symptoms of episodic pelvic and back pain, along with painful diarrhea, are highly characteristic of endometriosis. The fact that she has been trying to conceive for 3 years without success, and her husband's semen analysis is normal, further supports the likelihood of endometriosis as a contributing factor to her infertility.\n\n2. **Irritable Bowel Syndrome (IBS) - Low**\n   - **Evidences**: Episodic pelvic and back pain, painful diarrhea, 5 years of symptoms\n   - **Clinical Reasoning**: While the patient's symptoms are consistent with IBS, the cyclical nature and severity of her pain make endometriosis a more likely diagnosis. Additionally, the duration of her symptoms (5 years) is not uncommon for IBS, but the severity and cyclical nature suggest a more complex underlying condition like endometriosis.\n\n3. **Unexplained Infertility - Moderate**\n   - **Evidences**: 3 years of trying to conceive, normal semen analysis\n   - **Clinical Reasoning**: Despite the patient's history of trying to conceive for 3 years, the normal semen analysis of her husband suggests that unexplained infertility could be a possibility. However, given the other symptoms, endometriosis is more likely to be the underlying cause of her infertility.\n\n---\n\n**PART 2 - Detailed Analysis**\n\n1. **Endometriosis - High**\n   - **Full Evidence-Based Reasoning**: The patient's symptoms of episodic pelvic and back pain, along with painful diarrhea, are highly characteristic of endometriosis. The fact that she has been trying to conceive for 3 years without success, and her husband's semen analysis is normal, further supports the likelihood of endometriosis as a contributing factor to her infertility. Endometriosis is a common cause of both chronic pelvic pain and infertility, and the cyclical nature of her symptoms is consistent with this diagnosis. Additionally, the normal semen analysis of her husband rules out male factor infertility, making endometriosis a more plausible explanation.\n\n2. **Irritable Bowel Syndrome (IBS) - Low**\n   - **Full Evidence-Based Reasoning**: While the patient's symptoms of episodic pelvic and back pain, along with painful diarrhea, are consistent with IBS, the severity and cyclical nature of her symptoms suggest a more complex underlying condition like endometriosis. The duration of her symptoms (5 years) is not uncommon for IBS, but the severity and cyclical nature suggest a more complex underlying condition. The normal semen analysis of her husband further rules out male factor infertility, making endometriosis a more likely diagnosis.\n\n3. **Unexplained Infertility - Moderate**\n   - **Full Evidence-Based Reasoning**: Despite the patient's history of trying to conceive for 3 years, the normal semen analysis of her husband suggests that unexplained infertility could be a possibility. However, given the other symptoms, endometriosis is more likely to be the underlying cause of her infertility. The fact that she has been trying to conceive for 3 years without success, and the normal semen analysis, makes unexplained infertility a moderate possibility, but endometriosis is a more likely cause based on the patient's symptoms.\n\n---\n\nIn conclusion, based on the patient's symptoms and the evidence provided, endometriosis is the most likely underlying mechanism for her symptoms and infertility. Further diagnostic workup, such as a laparoscopy, may be necessary to confirm the diagnosis and plan appropriate treatment.",
+            "structured_data": {
+              "endometriosis": [
+                "episodic pelvic and back pain",
+                "painful diarrhea",
+                "3 years of trying to conceive",
+                "normal semen analysis"
+              ],
+              "irritable bowel syndrome": [
+                "episodic pelvic and back pain",
+                "painful diarrhea",
+                "5 years of symptoms"
+              ],
+              "unexplained infertility": [
+                "3 years of trying to conceive",
+                "normal semen analysis"
+              ]
+            },
+            "response_time": 6.480501174926758,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752765465.200115
+          },
+          "Dr. John Lee": {
+            "content": "```json\n{\"endometriosis\": [\"episodic pelvic and back pain\", \"painful diarrhea\", \"3 years of trying to conceive\", \"normal semen analysis\"], \"unexplained infertility\": [\"3 years of trying to conceive\", \"normal semen analysis\"], \"irritable bowel syndrome (ibs)\": [\"episodic pelvic and back pain\", \"diarrhea\"]}\n```\n\nNow, I will explain my clinical reasoning:\n\n### SYSTEMATIC REVIEW\n\n1. **Endometriosis - High**\n   - **Evidence**: The patient reports episodic pelvic and back pain that occurs monthly for 4-6 days, and she has experienced painful diarrhea for 5 years. Additionally, she has been trying to conceive for 3 years without success, and her husband's semen analysis is normal.\n   - **Clinical Reasoning**: Endometriosis is a common cause of chronic pelvic pain and infertility in women. The cyclical nature of her pain and the presence of painful diarrhea, which is a well-known symptom of endometriosis, strongly support this diagnosis. The fact that she has been trying to conceive for 3 years without success, and her husband's semen analysis is normal, further points towards a female factor, making endometriosis a likely culprit.\n\n2. **Unexplained Infertility - Moderate**\n   - **Evidence**: The patient has been trying to conceive for 3 years, and her husband's semen analysis is normal.\n   - **Clinical Reasoning**: Unexplained infertility is a diagnosis of exclusion, meaning that after thorough evaluation, no specific cause can be identified. While endometriosis is a strong possibility, it is also possible that the infertility is unexplained, given the normal semen analysis and the presence of other symptoms that could be related to endometriosis.\n\n3. **Irritable Bowel Syndrome (IBS) - Low**\n   - **Evidence**: The patient reports episodic pelvic and back pain and painful diarrhea.\n   - **Clinical Reasoning**: While IBS can cause abdominal pain and diarrhea, the cyclical nature and severity of her pain are more consistent with endometriosis. The fact that her pain and diarrhea occur monthly, and the presence of other symptoms (such as back pain) that are more characteristic of endometriosis, make IBS less likely as the primary diagnosis.\n\n### DETAIL ANALYSIS\n\n1. **Endometriosis - High**\n   - **Full Evidence-Based Reasoning**: The patient's history of episodic pelvic and back pain that occurs monthly for 4-6 days, and her history of painful diarrhea, are highly indicative of endometriosis. The fact that she has been trying to conceive for 3 years without success, and her husband's semen analysis is normal, further supports the likelihood of endometriosis as the underlying cause of her infertility. Endometriosis can lead to pelvic adhesions, scar tissue, and other structural changes that can affect fertility. Additionally, the cyclical nature of her symptoms is a hallmark of endometriosis.\n\n2. **Unexplained Infertility - Moderate**\n   - **Full Evidence-Based Reasoning**: While endometriosis is a strong possibility, it is also possible that the infertility is unexplained. Unexplained infertility is a diagnosis of exclusion, meaning that after thorough evaluation, no specific cause can be identified. The patient's history of trying to conceive for 3 years without success, and the normal semen analysis of her husband, suggest that the cause of her infertility may not be readily apparent. Further investigation may be needed to rule out other potential causes, such as mild endometriosis or other subtle urogynecological issues.\n\n3. **Irritable Bowel Syndrome (IBS) - Low**\n   - **Full Evidence-Based Reasoning**: While IBS can cause abdominal pain and diarrhea, the cyclical nature and severity of the patient's pain are more consistent with endometriosis. The fact that her pain and diarrhea occur monthly, and the presence of other symptoms (such as back pain) that are more characteristic of endometriosis, make IBS less likely as the primary diagnosis. However, it is still possible that IBS is contributing to her symptoms, and further evaluation may be necessary to rule it out.\n\nIn conclusion, based on the patient's symptoms and the history of trying to conceive for 3 years without success, endometriosis is the most likely underlying mechanism of her symptoms. Unexplained infertility remains a possibility, and further evaluation may be necessary to rule out other potential causes.",
+            "structured_data": {
+              "endometriosis": [
+                "episodic pelvic and back pain",
+                "painful diarrhea",
+                "3 years of trying to conceive",
+                "normal semen analysis"
+              ],
+              "unexplained infertility": [
+                "3 years of trying to conceive",
+                "normal semen analysis"
+              ],
+              "irritable bowel syndrome (ibs)": [
+                "episodic pelvic and back pain",
+                "diarrhea"
+              ]
+            },
+            "response_time": 6.9004387855529785,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752765465.2001157
+          },
+          "Dr. Clinical Evaluator": {
+            "content": "```json\n{\"endometriosis\": [\"episodic pelvic and back pain\", \"painful diarrhea\", \"3 years of trying to conceive\", \"normal semen analysis\"], \"irritable bowel syndrome\": [\"episodic pelvic and back pain\", \"diarrhea\", \"5 years of symptoms\"], \"unexplained infertility\": [\"3 years of trying to conceive\", \"normal semen analysis\"]}\n```\n\nNow, I will provide the detailed clinical reasoning:\n\n### Systematic Review\n\n1. **Endometriosis - High**\n   - **Evidences:**\n     - Episodic pelvic and back pain (occurring monthly for 4-6 days)\n     - Painful diarrhea\n     - 3 years of trying to conceive\n     - Normal semen analysis\n   - **Clinical Reasoning:**\n     The patient's symptoms of episodic pelvic and back pain, along with painful diarrhea, are highly suggestive of endometriosis. The cyclical nature of her pain and the duration of her infertility align well with the clinical presentation of endometriosis. Additionally, the normal semen analysis rules out male factor infertility, making endometriosis a strong candidate.\n\n2. **Irritable Bowel Syndrome (IBS) - Low**\n   - **Evidences:**\n     - Episodic pelvic and back pain\n     - Diarrhea\n     - 5 years of symptoms\n   - **Clinical Reasoning:**\n     While IBS can present with similar symptoms, the cyclical nature and severity of the pain, along with the regular menstrual cycle, make endometriosis more likely. However, IBS cannot be completely ruled out, especially given the duration of symptoms.\n\n3. **Unexplained Infertility - Moderate**\n   - **Evidences:**\n     - 3 years of trying to conceive\n     - Normal semen analysis\n   - **Clinical Reasoning:**\n     Despite the normal semen analysis and the presence of endometriosis, unexplained infertility remains a possibility. This is because endometriosis can affect fertility, and other factors such as ovulation, tubal patency, and immune factors could contribute to unexplained infertility.\n\n### Detailed Analysis\n\n1. **Endometriosis - High**\n   - **Full Evidence-Based Reasoning:**\n     The patient's symptoms of episodic pelvic and back pain, along with painful diarrhea, are highly suggestive of endometriosis. The cyclical nature of her pain and the duration of her infertility align well with the clinical presentation of endometriosis. Additionally, the normal semen analysis rules out male factor infertility, making endometriosis a strong candidate. Endometriosis is a common cause of chronic pelvic pain and infertility, and the combination of these symptoms strongly supports this diagnosis.\n\n2. **Irritable Bowel Syndrome (IBS) - Low**\n   - **Full Evidence-Based Reasoning:**\n     While IBS can present with similar symptoms, the cyclical nature and severity of the pain, along with the regular menstrual cycle, make endometriosis more likely. However, IBS cannot be completely ruled out, especially given the duration of symptoms. IBS is a common gastrointestinal disorder that can cause abdominal pain and diarrhea, but the cyclical nature of the pain and the regular menstrual cycle make endometriosis a more probable diagnosis.\n\n3. **Unexplained Infertility - Moderate**\n   - **Full Evidence-Based Reasoning:**\n     Despite the normal semen analysis and the presence of endometriosis, unexplained infertility remains a possibility. This is because endometriosis can affect fertility, and other factors such as ovulation, tubal patency, and immune factors could contribute to unexplained infertility. The patient's history of trying to conceive for 3 years without success, along with the normal semen analysis, suggests that there may be other underlying factors contributing to her infertility.\n\nIn conclusion, endometriosis is the most likely underlying mechanism for the patient's symptoms, followed by IBS and unexplained infertility. Further diagnostic workup, including imaging and laparoscopy, may be necessary to confirm the diagnosis of endometriosis and to address the patient's infertility concerns.",
+            "structured_data": {
+              "endometriosis": [
+                "episodic pelvic and back pain",
+                "painful diarrhea",
+                "3 years of trying to conceive",
+                "normal semen analysis"
+              ],
+              "irritable bowel syndrome": [
+                "episodic pelvic and back pain",
+                "diarrhea",
+                "5 years of symptoms"
+              ],
+              "unexplained infertility": [
+                "3 years of trying to conceive",
+                "normal semen analysis"
+              ]
+            },
+            "response_time": 6.369272947311401,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752765465.2001162
+          }
+        },
+        "metadata": {
+          "total_refinements": 0,
+          "challenges_detected": 12,
+          "evidence_interactions": 53,
+          "specialty_insights": 1,
+          "debate_quality_score": 14.3,
+          "debate_interactions": [
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "clinical",
+              "context": "ome (IBS)\": [\"Episodic pelvic and back pain with diarrhea\", \"Symptoms lasting for 5 years\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Endometriosis:** This diagnosis is highly probable based on the patient's histor"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "symptoms",
+              "context": "```json\n{\"Endometriosis\": [\"Episodic pelvic and back pain with painful diarrhea for 5 years\", \"Symptoms occurring monthly for 4-6 days\", \"Age of 30 and history of trying to conceive for 3 years\"], \"Unexp"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "biopsy",
+              "context": "into the patient's reproductive health and help rule out other hormonal imbalances.\n* **Endometrial Biopsy:** This procedure can help evaluate the thickness and composition of the uterine lining, which can"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "normal",
+              "context": "4-6 days\", \"Age of 30 and history of trying to conceive for 3 years\"], \"Unexplained Infertility\": [\"Normal semen analysis\", \"History of 3 years of trying to conceive without success\"], \"Irritable Bowel Synd"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "based on",
+              "context": "or 5 years\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Endometriosis:** This diagnosis is highly probable based on the patient's history of cyclical pelvic and back pain accompanied by painful diarrhea. The duratio"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "however",
+              "context": "of episodic pelvic and back pain with diarrhea, lasting for 5 years, could be consistent with IBS. However, the cyclical nature of her symptoms and the association with pain during menstruation make endomet"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "less likely",
+              "context": "history of painful diarrhea, her normal pelvic exam and lack of other concerning symptoms make PID less likely. However, it's important to consider this diagnosis, especially given the potential for chronic pel"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "clinical",
+              "context": "\"Pelvic Inflammatory Disease (PID)\": [\"History of painful diarrhea\", \"Normal pelvic exam\"] }\n```\n\n**Clinical Reasoning:**\n\nAs an Infectious Disease specialist, my primary focus is on identifying and managing"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "symptoms",
+              "context": "e for 3 years\"], \"Irritable Bowel Syndrome (IBS)\": [\"Episodic pelvic and back pain with diarrhea\", \"Symptoms lasting for 5 years\"], \"Pelvic Inflammatory Disease (PID)\": [\"History of painful diarrhea\", \"Normal"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "normal",
+              "context": "mptoms lasting for 5 years\"], \"Pelvic Inflammatory Disease (PID)\": [\"History of painful diarrhea\", \"Normal pelvic exam\"] }\n```\n\n**Clinical Reasoning:**\n\nAs an Infectious Disease specialist, my primary focus"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "consistent with",
+              "context": "The patient's history of episodic pelvic and back pain with diarrhea, lasting for 5 years, could be consistent with IBS. However, the cyclical nature of her symptoms and the association with pain during menstruation"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "given the",
+              "context": "ses that fall within my area of expertise.\n\n* **Endometriosis:** This diagnosis is highly plausible given the patient's history of cyclical pelvic and back pain accompanied by painful diarrhea. The timing of t"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Nadia Khan",
+              "position": 2,
+              "pattern": "however",
+              "context": "the patient's symptoms, particularly the pelvic pain, make endometriosis a more likely diagnosis.  However, IBS should not be ruled out entirely, as it can sometimes present with more severe symptoms than t"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Nadia Khan",
+              "position": 2,
+              "pattern": "clinical",
+              "context": "[\"Episodic pelvic and back pain with diarrhea\", \"History of self-treatment with ibuprofen\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Endometriosis:** This diagnosis remains highly plausible based on the patient's"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Nadia Khan",
+              "position": 2,
+              "pattern": "symptoms",
+              "context": "While IBS can cause abdominal pain and diarrhea, the cyclical nature and severity of the patient's symptoms, particularly the pelvic pain, make endometriosis a more likely diagnosis.  However, IBS should not"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Nadia Khan",
+              "position": 2,
+              "pattern": "normal",
+              "context": "of trying to conceive for 3 years\"], \"Unexplained Infertility\": [\"3 years of trying to conceive\", \"Normal semen analysis\"], \"Irritable Bowel Syndrome (IBS)\": [\"Episodic pelvic and back pain with diarrhea\","
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Nadia Khan",
+              "position": 2,
+              "pattern": "suggests",
+              "context": "d by painful diarrhea, lasting 4-6 days each month for 5 years. The pain's cyclical nature strongly suggests a hormonal influence, aligning with the pathophysiology of endometriosis.  Her history of trying to"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Nadia Khan",
+              "position": 2,
+              "pattern": "given the",
+              "context": "th more severe symptoms than typical.\n\n**Important Considerations:**\n\n* **Further Investigations:** Given the high suspicion of endometriosis, further investigations such as pelvic ultrasound or laparoscopy ma"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Nadia Khan",
+              "position": 2,
+              "pattern": "based on",
+              "context": "ofen\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Endometriosis:** This diagnosis remains highly plausible based on the patient's history of cyclical pelvic and back pain accompanied by painful diarrhea, lasting 4-6"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "however",
+              "context": "pain and diarrhea are also consistent with IBS, which is a common gastrointestinal disorder.\n     - However, the cyclical nature and severity of her pain are more consistent with endometriosis, which often p"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "less likely",
+              "context": "ptoms are highly indicative of endometriosis. While unexplained infertility is a possibility, it is less likely given the presence of endometriosis. IBS is a less likely diagnosis due to the more severe and cycl"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "clinical",
+              "context": "ic pelvic and back pain\", \"diarrhea\", \"5 years of symptoms\"]}\n```\n\nNow, I will provide the detailed clinical reasoning for the top three diagnoses:\n\n### Detailed Analysis\n\n1. **Endometriosis - Confidence: HIG"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "symptoms",
+              "context": "eive\"], \"irritable bowel syndrome (ibs)\": [\"episodic pelvic and back pain\", \"diarrhea\", \"5 years of symptoms\"]}\n```\n\nNow, I will provide the detailed clinical reasoning for the top three diagnoses:\n\n### Detai"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "normal",
+              "context": "and back pain\", \"painful diarrhea\", \"3 years of trying to conceive\"], \"unexplained infertility\": [\"normal semen analysis\", \"3 years of trying to conceive\"], \"irritable bowel syndrome (ibs)\": [\"episodic pel"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "consistent with",
+              "context": "s of unexplained infertility.\n     - The painful diarrhea that occurs in a cyclical pattern is also consistent with endometriosis, as the disease can affect the gastrointestinal tract and cause bowel symptoms.\n\n2. *"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "given the",
+              "context": "cause long-term gastrointestinal symptoms, but the pain is more likely to be endometriosis-related given the cyclical pattern and severity.\n\n### Conclusion\n\nBased on the patient's history and symptoms, endome"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "based on",
+              "context": "s more likely to be endometriosis-related given the cyclical pattern and severity.\n\n### Conclusion\n\nBased on the patient's history and symptoms, endometriosis is the most likely underlying mechanism for her s"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "however",
+              "context": "along with the age and history of trying to conceive, make endometriosis a more probable diagnosis. However, IBS should still be considered in the differential diagnosis.\n\nIn conclusion, endometriosis is the"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "more probable",
+              "context": "the patient's symptoms, along with the age and history of trying to conceive, make endometriosis a more probable diagnosis. However, IBS should still be considered in the differential diagnosis.\n\nIn conclusion, e"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "evidence",
+              "context": "Now, I will provide a detailed clinical reasoning for the top three diagnoses based on the provided evidence:\n\n### Systematic Review\n1. **Endometriosis - High** - The patient's history of episodic pelvic and"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "clinical",
+              "context": "y\": [\"3 years of trying to conceive\", \"normal semen analysis\"]}\n```\n\nNow, I will provide a detailed clinical reasoning for the top three diagnoses based on the provided evidence:\n\n### Systematic Review\n1. **E"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "symptoms",
+              "context": "3 years\"], \"irritable bowel syndrome (ibs)\": [\"episodic pelvic and back pain\", \"painful diarrhea\", \"symptoms lasting for 5 years\"], \"unexplained infertility\": [\"3 years of trying to conceive\", \"normal semen a"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "biopsy",
+              "context": "ed as a potential comorbidity. Further diagnostic evaluation, including laparoscopy and endometrial biopsy for endometriosis, and possibly further infertility evaluations, would be warranted to confirm the"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "normal",
+              "context": "ea\", \"symptoms lasting for 5 years\"], \"unexplained infertility\": [\"3 years of trying to conceive\", \"normal semen analysis\"]}\n```\n\nNow, I will provide a detailed clinical reasoning for the top three diagnose"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "suggests",
+              "context": "ry of episodic pelvic and back pain with painful diarrhea, occurring monthly for 4-6 days, strongly suggests endometriosis. This is further supported by her age and the fact that she has been trying to concei"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "given the",
+              "context": "s.\n\nIn conclusion, endometriosis is the most likely underlying mechanism for the patient's symptoms given the cyclical nature of her pain and the age-related risk factors. Unexplained infertility is also a pos"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "based on",
+              "context": "emen analysis\"]}\n```\n\nNow, I will provide a detailed clinical reasoning for the top three diagnoses based on the provided evidence:\n\n### Systematic Review\n1. **Endometriosis - High** - The patient's history o"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Emily Green",
+              "position": 5,
+              "pattern": "however",
+              "context": "normal semen analysis of her husband suggests that unexplained infertility could be a possibility. However, given the other symptoms, endometriosis is more likely to be the underlying cause of her infertili"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Green",
+              "position": 5,
+              "pattern": "evidence",
+              "context": "r the top three diagnoses:\n\n---\n\n**PART 1 - Systematic Review**\n\n1. **Endometriosis - High**\n   - **Evidences**: Episodic pelvic and back pain, painful diarrhea, 3 years of trying to conceive, normal semen an"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Green",
+              "position": 5,
+              "pattern": "clinical",
+              "context": "y\": [\"3 years of trying to conceive\", \"normal semen analysis\"]}\n```\n\nNow, I will provide a detailed clinical reasoning for the top three diagnoses:\n\n---\n\n**PART 1 - Systematic Review**\n\n1. **Endometriosis - H"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Green",
+              "position": 5,
+              "pattern": "symptoms",
+              "context": "is\"], \"irritable bowel syndrome\": [\"episodic pelvic and back pain\", \"painful diarrhea\", \"5 years of symptoms\"], \"unexplained infertility\": [\"3 years of trying to conceive\", \"normal semen analysis\"]}\n```\n\nNow,"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Green",
+              "position": 5,
+              "pattern": "normal",
+              "context": "metriosis\": [\"episodic pelvic and back pain\", \"painful diarrhea\", \"3 years of trying to conceive\", \"normal semen analysis\"], \"irritable bowel syndrome\": [\"episodic pelvic and back pain\", \"painful diarrhea\","
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Green",
+              "position": 5,
+              "pattern": "suggests",
+              "context": "e the patient's history of trying to conceive for 3 years, the normal semen analysis of her husband suggests that unexplained infertility could be a possibility. However, given the other symptoms, endometrios"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Green",
+              "position": 5,
+              "pattern": "consistent with",
+              "context": "painful diarrhea, 5 years of symptoms\n   - **Clinical Reasoning**: While the patient's symptoms are consistent with IBS, the cyclical nature and severity of her pain make endometriosis a more likely diagnosis. Addit"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Green",
+              "position": 5,
+              "pattern": "given the",
+              "context": "emen analysis of her husband suggests that unexplained infertility could be a possibility. However, given the other symptoms, endometriosis is more likely to be the underlying cause of her infertility.\n\n---\n\n*"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Green",
+              "position": 5,
+              "pattern": "based on",
+              "context": "sis, makes unexplained infertility a moderate possibility, but endometriosis is a more likely cause based on the patient's symptoms.\n\n---\n\nIn conclusion, based on the patient's symptoms and the evidence provi"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. John Lee",
+              "position": 6,
+              "pattern": "however",
+              "context": "pain) that are more characteristic of endometriosis, make IBS less likely as the primary diagnosis. However, it is still possible that IBS is contributing to her symptoms, and further evaluation may be neces"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. John Lee",
+              "position": 6,
+              "pattern": "less likely",
+              "context": "sence of other symptoms (such as back pain) that are more characteristic of endometriosis, make IBS less likely as the primary diagnosis.\n\n### DETAIL ANALYSIS\n\n1. **Endometriosis - High**\n   - **Full Evidence-Ba"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. John Lee",
+              "position": 6,
+              "pattern": "evidence",
+              "context": "w, I will explain my clinical reasoning:\n\n### SYSTEMATIC REVIEW\n\n1. **Endometriosis - High**\n   - **Evidence**: The patient reports episodic pelvic and back pain that occurs monthly for 4-6 days, and she has"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. John Lee",
+              "position": 6,
+              "pattern": "clinical",
+              "context": "e bowel syndrome (ibs)\": [\"episodic pelvic and back pain\", \"diarrhea\"]}\n```\n\nNow, I will explain my clinical reasoning:\n\n### SYSTEMATIC REVIEW\n\n1. **Endometriosis - High**\n   - **Evidence**: The patient repor"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. John Lee",
+              "position": 6,
+              "pattern": "symptoms",
+              "context": "ible that the infertility is unexplained, given the normal semen analysis and the presence of other symptoms that could be related to endometriosis.\n\n3. **Irritable Bowel Syndrome (IBS) - Low**\n   - **Evidenc"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. John Lee",
+              "position": 6,
+              "pattern": "normal",
+              "context": "metriosis\": [\"episodic pelvic and back pain\", \"painful diarrhea\", \"3 years of trying to conceive\", \"normal semen analysis\"], \"unexplained infertility\": [\"3 years of trying to conceive\", \"normal semen analys"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. John Lee",
+              "position": 6,
+              "pattern": "consistent with",
+              "context": "le IBS can cause abdominal pain and diarrhea, the cyclical nature and severity of her pain are more consistent with endometriosis. The fact that her pain and diarrhea occur monthly, and the presence of other symptom"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. John Lee",
+              "position": 6,
+              "pattern": "given the",
+              "context": "ile endometriosis is a strong possibility, it is also possible that the infertility is unexplained, given the normal semen analysis and the presence of other symptoms that could be related to endometriosis.\n\n3"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. John Lee",
+              "position": 6,
+              "pattern": "based on",
+              "context": "ntributing to her symptoms, and further evaluation may be necessary to rule it out.\n\nIn conclusion, based on the patient's symptoms and the history of trying to conceive for 3 years without success, endometri"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "however",
+              "context": "e and severity of the pain, along with the regular menstrual cycle, make endometriosis more likely. However, IBS cannot be completely ruled out, especially given the duration of symptoms.\n\n3. **Unexplained I"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "more probable",
+              "context": "diarrhea, but the cyclical nature of the pain and the regular menstrual cycle make endometriosis a more probable diagnosis.\n\n3. **Unexplained Infertility - Moderate**\n   - **Full Evidence-Based Reasoning:**"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "evidence",
+              "context": "provide the detailed clinical reasoning:\n\n### Systematic Review\n\n1. **Endometriosis - High**\n   - **Evidences:**\n     - Episodic pelvic and back pain (occurring monthly for 4-6 days)\n     - Painful diarrhea"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "clinical",
+              "context": ": [\"3 years of trying to conceive\", \"normal semen analysis\"]}\n```\n\nNow, I will provide the detailed clinical reasoning:\n\n### Systematic Review\n\n1. **Endometriosis - High**\n   - **Evidences:**\n     - Episodic"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "symptoms",
+              "context": "n analysis\"], \"irritable bowel syndrome\": [\"episodic pelvic and back pain\", \"diarrhea\", \"5 years of symptoms\"], \"unexplained infertility\": [\"3 years of trying to conceive\", \"normal semen analysis\"]}\n```\n\nNow,"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "presentation",
+              "context": "s. The cyclical nature of her pain and the duration of her infertility align well with the clinical presentation of endometriosis. Additionally, the normal semen analysis rules out male factor infertility, making"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "imaging",
+              "context": "tient's symptoms, followed by IBS and unexplained infertility. Further diagnostic workup, including imaging and laparoscopy, may be necessary to confirm the diagnosis of endometriosis and to address the pati"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "normal",
+              "context": "metriosis\": [\"episodic pelvic and back pain\", \"painful diarrhea\", \"3 years of trying to conceive\", \"normal semen analysis\"], \"irritable bowel syndrome\": [\"episodic pelvic and back pain\", \"diarrhea\", \"5 year"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "suggests",
+              "context": "'s history of trying to conceive for 3 years without success, along with the normal semen analysis, suggests that there may be other underlying factors contributing to her infertility.\n\nIn conclusion, endomet"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 7,
+              "pattern": "given the",
+              "context": "rual cycle, make endometriosis more likely. However, IBS cannot be completely ruled out, especially given the duration of symptoms.\n\n3. **Unexplained Infertility - Moderate**\n   - **Evidences:**\n     - 3 years"
+            }
+          ],
+          "all_refinements": [],
+          "high_value_interactions": 65,
+          "tier_1_count": 0,
+          "agent_contributions": {
+            "Dr. Anya Sharma": 286,
+            "Dr. Liam O'Connell": 323,
+            "Dr. Nadia Khan": 265,
+            "Dr. Sarah Chen": 436,
+            "Dr. Michael Kim": 476,
+            "Dr. Emily Green": 602,
+            "Dr. John Lee": 650,
+            "Dr. Clinical Evaluator": 547
+          }
+        },
+        "success": true,
+        "execution_time": 44.98335671424866,
+        "formatted_output": ""
+      },
+      "post_debate_voting": {
+        "round_type": "post_debate_voting",
+        "participants": [
+          "Dr. Anya Sharma",
+          "Dr. Liam O'Connell",
+          "Dr. Nadia Khan",
+          "Dr. Sarah Chen",
+          "Dr. Michael Kim",
+          "Dr. Emily Green",
+          "Dr. John Lee",
+          "Dr. Clinical Evaluator"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"vote_ranking\": [\"endometriosis\", \"unexplained infertility\", \"pelvic inflammatory disease\"], \"rationale\": \"The patient's history of episodic pelvic and back pain accompanied by painful diarrhea, along with her infertility, points towards endometriosis as the most likely diagnosis. Unexplained infertility is a possibility given the normal semen analysis and the absence of clear findings in other investigations. Pelvic inflammatory disease is less likely due to the normal hysterosalpingogram and the absence of other typical symptoms like fever or abnormal vaginal discharge.\"}\n```\n\n**<PREFERENTIAL_VOTE>**\n1st Choice: **Endometriosis** - The patient's description of episodic pelvic and back pain with painful diarrhea aligns well with the classic presentation of endometriosis. The duration of these symptoms (5 years) further supports this diagnosis.\n\n2nd Choice: **Unexplained Infertility** - While endometriosis is the most likely culprit, it's important to acknowledge that infertility can sometimes remain unexplained despite thorough investigations.\n\n3rd Choice: **Pelvic Inflammatory Disease** - Although less likely given the normal hysterosalpingogram, pelvic inflammatory disease cannot be completely ruled out.\n\n**<VOTING_CONFIDENCE>**\nOverall confidence in top choice: **80%**\n\n\n\nI believe endometriosis is the most plausible explanation for the patient's symptoms based on the clinical presentation. However, further investigations, such as an endometrial biopsy or laparoscopy, would be necessary to confirm the diagnosis.",
+            "structured_data": null,
+            "response_time": 3.4335830211639404,
+            "confidence_score": 0.76,
+            "reasoning_quality": "high",
+            "timestamp": 1752765489.657364
+          },
+          "Dr. Liam O'Connell": {
+            "content": "```json\n{\n\"vote_ranking\": [\"Irritable Bowel Syndrome (IBS)\", \"Pelvic Inflammatory Disease (PID)\", \"Endometriosis\"],\n\"rationale\": \"The patient's primary complaint is episodic diarrhea with abdominal pain, a classic symptom of IBS.  While PID and endometriosis can cause pelvic pain and diarrhea, the duration and pattern of symptoms, along with the normal hysterosalpingogram, make IBS the most likely diagnosis. PID would require further investigation with pelvic exams and possibly imaging, and endometriosis, while possible, is less likely given the regular menstrual cycle and lack of other associated symptoms.\"\n}\n```\n\n**<PREFERENTIAL_VOTE>**\n1st Choice: **Irritable Bowel Syndrome (IBS)** - The patient's symptoms of episodic pelvic and back pain accompanied by painful diarrhea for 5 years align well with the typical presentation of IBS. \n\n2nd Choice: **Pelvic Inflammatory Disease (PID)** -  While the patient's history and exam are not strongly suggestive of PID, it remains a possibility given the potential for pelvic pain and diarrhea.  \n\n3rd Choice: **Endometriosis** -  Although endometriosis can cause pelvic pain and diarrhea, the patient's regular menstrual cycle and lack of other associated symptoms make it less likely.\n\n**<VOTING_CONFIDENCE>**\nOverall confidence in top choice: **80%** \n\n\n\nI believe IBS is the most likely diagnosis based on the patient's history and the absence of other clear indicators. However, further investigation might be warranted to rule out other possibilities.",
+            "structured_data": null,
+            "response_time": 3.678478240966797,
+            "confidence_score": 0.74,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765489.657366
+          },
+          "Dr. Nadia Khan": {
+            "content": "```json\n{\n\"vote_ranking\": [\"Irritable Bowel Syndrome (IBS)\", \"Endometriosis\", \"Pelvic Inflammatory Disease (PID)\"],\n\"rationale\": \"The patient's history of episodic pelvic and back pain accompanied by painful diarrhea for 5 years, with a pattern of 1 episode per month for 4-6 days, strongly suggests a functional gastrointestinal disorder like IBS. Endometriosis is also a possibility given the pelvic pain, but the lack of other typical symptoms like dysmenorrhea or infertility makes it less likely. PID is possible but less likely given the normal pelvic exam and hysterosalpingogram.\"\n}\n```\n\n**My Reasoning:**\n\n1. **Irritable Bowel Syndrome (IBS):** This diagnosis aligns best with the patient's primary complaint of episodic pelvic and back pain accompanied by painful diarrhea. The duration of symptoms (5 years), frequency (1 episode per month), and the fact that ibuprofen provides some relief are all consistent with IBS.\n\n2. **Endometriosis:** While endometriosis can cause pelvic pain, the patient's lack of other typical symptoms like dysmenorrhea or infertility makes it less likely.  \n\n3. **Pelvic Inflammatory Disease (PID):**  PID is less likely given the normal pelvic exam and hysterosalpingogram.  \n\n**Confidence:** 80% \n\n\n\nI am confident in my top choice, IBS, due to the strong correlation between the patient's symptoms and the typical presentation of this disorder. However, further investigation, including a thorough review of the patient's medical history and possibly further testing, may be necessary to confirm the diagnosis.",
+            "structured_data": null,
+            "response_time": 3.8515076637268066,
+            "confidence_score": 0.72,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765489.6573672
+          },
+          "Dr. Sarah Chen": {
+            "content": "<PREFERENTIAL_VOTE>\n1st Choice: Endometriosis - The patient's history of episodic pelvic and back pain, along with painful diarrhea, is consistent with endometriosis. Endometriosis can cause chronic pelvic pain and dysmenorrhea, and it is a common cause of infertility. Additionally, the normal semen analysis and hysterosalpingogram results suggest that the infertility is not due to male factor or anatomical obstruction.\n2nd Choice: Irritable Bowel Syndrome (IBS) - The patient's history of episodic diarrhea and pelvic and back pain for 5 years is also consistent with IBS. IBS can cause similar symptoms, and it is a common gastrointestinal disorder that can coexist with endometriosis.\n3rd Choice: Cyclic Pelvic Pain - While cyclic pelvic pain can be related to menstrual cycles, the patient's history of episodic pain and diarrhea does not strongly support this diagnosis over endometriosis or IBS.\n</PREFERENTIAL_VOTE>\n\n<VOTING_CONFIDENCE>\nOverall confidence in top choice: 85%\n</VOTING_CONFIDENCE>\n\nEndometriosis is the most likely underlying mechanism for this patient's symptoms. The combination of chronic pelvic pain, painful diarrhea, and infertility without other clear causes points towards endometriosis. Endometriosis can affect fertility by causing adhesions, distorting the anatomy of the reproductive tract, and leading to hormonal imbalances that can affect ovulation and implantation. The other diagnoses, while possible, do not fit as well with the clinical presentation and the duration of symptoms.",
+            "structured_data": null,
+            "response_time": 2.4589321613311768,
+            "confidence_score": 0.7,
+            "reasoning_quality": "basic",
+            "timestamp": 1752765489.6573687
+          },
+          "Dr. Michael Kim": {
+            "content": "```json\n{\"vote_ranking\": [\"Irritable Bowel Syndrome (IBS)\", \"Endometriosis\", \"Pelvic Inflammatory Disease (PID)\"], \"rationale\": \"Based on the patient's history of episodic pelvic and back pain accompanied by painful diarrhea for 5 years, and the absence of any significant findings on examination, IBS appears to be the most likely underlying mechanism for her symptoms. Endometriosis is also a plausible diagnosis given the patient's infertility and pain history, while PID is less likely given the normal semen analysis and normal hysterosalpingogram.\"}\n```\n\nAnd for the voting confidence:\n\n```json\n{\"voting_confidence\": \"Overall confidence in top choice: 70%\"}\n```\n\nHere is the preferential vote in a more detailed format:\n\n<PREFERENTIAL_VOTE>\n1st Choice: Irritable Bowel Syndrome (IBS) - The patient's symptoms of episodic pelvic and back pain accompanied by painful diarrhea for 5 years, along with the absence of significant findings on examination, suggest a functional gastrointestinal disorder like IBS.\n2nd Choice: Endometriosis - Given the patient's history of infertility and the presence of pain, endometriosis remains a strong consideration, as it can cause both pelvic pain and gastrointestinal symptoms.\n3rd Choice: Pelvic Inflammatory Disease (PID) - PID is less likely given the normal semen analysis and the normal results from the hysterosalpingogram, which rule out significant pelvic inflammatory processes.\n</PREFERENTIAL_VOTE>\n\n<VOTING_CONFIDENCE>\nOverall confidence in top choice: 70%\n</VOTING_CONFIDENCE>",
+            "structured_data": null,
+            "response_time": 2.534221887588501,
+            "confidence_score": 0.72,
+            "reasoning_quality": "basic",
+            "timestamp": 1752765489.6573696
+          },
+          "Dr. Emily Green": {
+            "content": "```json\n{\"vote_ranking\": [\"Endometriosis\", \"Irritable Bowel Syndrome (IBS)\", \"Pelvic Inflammatory Disease (PID)\"], \"rationale\": \"The patient's symptoms of pelvic and back pain, along with painful diarrhea, are more consistent with endometriosis, which is a common cause of infertility and chronic pelvic pain. The duration and pattern of her symptoms, along with the history of irregular menstrual cycles, support this diagnosis. While IBS can present with similar gastrointestinal symptoms, the chronic nature of her pain and the lack of significant findings on pelvic examination make endometriosis more likely. PID is less likely given the normal findings on the hysterosalpingogram and the absence of other risk factors such as recent sexually transmitted infections.\"}\n```\n\n<PREFERENTIAL_VOTE>\n1st Choice: Endometriosis - The patient's symptoms of pelvic and back pain, along with painful diarrhea, are more consistent with endometriosis, which is a common cause of infertility and chronic pelvic pain. The duration and pattern of her symptoms, along with the history of irregular menstrual cycles, support this diagnosis.\n2nd Choice: Irritable Bowel Syndrome (IBS) - While IBS can present with similar gastrointestinal symptoms, the chronic nature of her pain and the lack of significant findings on pelvic examination make endometriosis more likely.\n3rd Choice: Pelvic Inflammatory Disease (PID) - PID is less likely given the normal findings on the hysterosalpingogram and the absence of other risk factors such as recent sexually transmitted infections.\n</PREFERENTIAL_VOTE>\n\n<VOTING_CONFIDENCE>\nOverall confidence in top choice: 85%\n</VOTING_CONFIDENCE>\n```\n\nI believe endometriosis is the most likely underlying mechanism for the patient's symptoms, given the chronic nature of her pain, the pattern of her menstrual cycles, and the absence of other significant findings. Endometriosis can cause infertility and chronic pelvic pain, which aligns well with the patient's history and symptoms.",
+            "structured_data": null,
+            "response_time": 3.097912549972534,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "basic",
+            "timestamp": 1752765489.6573706
+          },
+          "Dr. John Lee": {
+            "content": "<PREFERENTIAL_VOTE>\n1st Choice: Irritable Bowel Syndrome (IBS) - The patient's history of episodic pelvic and back pain accompanied by painful diarrhea for 5 years, along with the duration and frequency of these episodes, strongly suggest IBS. The normal results of the hysterosalpingogram and the normal findings on pelvic and bimanual examinations also support this diagnosis, as organic causes for infertility would have been more likely to be identified.\n2nd Choice: Endometriosis - While the patient's symptoms are consistent with endometriosis, the normal hysterosalpingogram and the normal findings on pelvic and bimanual examinations make this less likely. However, endometriosis can cause pelvic pain and infertility, and the patient's history of painful menstruation could be a clue.\n3rd Choice: Pelvic Inflammatory Disease (PID) - The patient's history of painful diarrhea could potentially be related to PID, but the absence of other signs of infection and the normal hysterosalpingogram make this less likely. PID is also less common in a woman who has had normal hysterosalpingogram results.\n</PREFERENTIAL_VOTE>\n\n<VOTING_CONFIDENCE>\nOverall confidence in top choice: 85%\n</VOTING_CONFIDENCE>\n\nI believe that Irritable Bowel Syndrome (IBS) is the most likely underlying mechanism for this patient's symptoms. The patient's long history of episodic pain and diarrhea, along with the lack of other significant findings, strongly support this diagnosis. IBS can cause significant pelvic and back pain, and the symptoms are well-documented in the literature. The other diagnoses are less likely given the available evidence, but I acknowledge that endometriosis remains a possibility and would warrant further consideration if the IBS diagnosis does not resolve the symptoms.",
+            "structured_data": null,
+            "response_time": 2.817384719848633,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765489.657372
+          },
+          "Dr. Clinical Evaluator": {
+            "content": "```json\n{\"vote_ranking\": [\"Irritable Bowel Syndrome (IBS)\", \"Endometriosis\", \"Pelvic Inflammatory Disease (PID)\"], \"rationale\": \"The patient's symptoms, including episodic pelvic and back pain, painful diarrhea, and a history of these symptoms for 5 years, are most consistent with Irritable Bowel Syndrome (IBS). The absence of other significant findings and the normal semen analysis for her partner further support this diagnosis. Endometriosis is a close second, given the presence of pelvic and back pain, though it is less likely given the duration and pattern of symptoms. Pelvic Inflammatory Disease (PID) is less likely due to the normal hysterosalpingogram and the absence of other typical signs and symptoms of PID.\"}\n```\n\n**PREFERENTIAL_VOTE**\n1st Choice: Irritable Bowel Syndrome (IBS) - The patient's symptoms, including episodic pelvic and back pain, painful diarrhea, and a history of these symptoms for 5 years, are most consistent with Irritable Bowel Syndrome (IBS). The absence of other significant findings and the normal semen analysis for her partner further support this diagnosis.\n2nd Choice: Endometriosis - Given the presence of pelvic and back pain, though it is less likely given the duration and pattern of symptoms.\n3rd Choice: Pelvic Inflammatory Disease (PID) - Less likely due to the normal hysterosalpingogram and the absence of other typical signs and symptoms of PID.\n\n**VOTING_CONFIDENCE**\nOverall confidence in top choice: 85%\n```",
+            "structured_data": null,
+            "response_time": 2.461646556854248,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "basic",
+            "timestamp": 1752765489.6573727
+          }
+        },
+        "metadata": {
+          "borda_scores": {
+            "**Endometriosis**": 4,
+            "**Unexplained Infertility**": 2,
+            "**Pelvic Inflammatory Disease**": 1,
+            "**Irritable Bowel Syndrome (Ibs)**": 3,
+            "**Pelvic Inflammatory Disease (Pid)**": 2,
+            "**Irritable Bowel Syndrome (Ibs)": 3,
+            "**Endometriosis": 2,
+            "**Pelvic Inflammatory Disease (Pid)": 1,
+            "Endometriosis": 12,
+            "Irritable Bowel Syndrome (Ibs)": 13,
+            "Cyclic Pelvic Pain": 1,
+            "Pelvic Inflammatory Disease (Pid)": 4
+          },
+          "ranked_results": [
+            [
+              "Irritable Bowel Syndrome (Ibs)",
+              13
+            ],
+            [
+              "Endometriosis",
+              12
+            ],
+            [
+              "**Endometriosis**",
+              4
+            ],
+            [
+              "Pelvic Inflammatory Disease (Pid)",
+              4
+            ],
+            [
+              "**Irritable Bowel Syndrome (Ibs)**",
+              3
+            ],
+            [
+              "**Irritable Bowel Syndrome (Ibs)",
+              3
+            ],
+            [
+              "**Unexplained Infertility**",
+              2
+            ],
+            [
+              "**Pelvic Inflammatory Disease (Pid)**",
+              2
+            ],
+            [
+              "**Endometriosis",
+              2
+            ],
+            [
+              "**Pelvic Inflammatory Disease**",
+              1
+            ],
+            [
+              "**Pelvic Inflammatory Disease (Pid)",
+              1
+            ],
+            [
+              "Cyclic Pelvic Pain",
+              1
+            ]
+          ],
+          "winner": "Irritable Bowel Syndrome (Ibs)",
+          "all_rankings": {
+            "Dr. Anya Sharma": [
+              "**Endometriosis**",
+              "**Unexplained Infertility**",
+              "**Pelvic Inflammatory Disease**"
+            ],
+            "Dr. Liam O'Connell": [
+              "**Irritable Bowel Syndrome (Ibs)**",
+              "**Pelvic Inflammatory Disease (Pid)**",
+              "**Endometriosis**"
+            ],
+            "Dr. Nadia Khan": [
+              "**Irritable Bowel Syndrome (Ibs)",
+              "**Endometriosis",
+              "**Pelvic Inflammatory Disease (Pid)"
+            ],
+            "Dr. Sarah Chen": [
+              "Endometriosis",
+              "Irritable Bowel Syndrome (Ibs)",
+              "Cyclic Pelvic Pain"
+            ],
+            "Dr. Michael Kim": [
+              "Irritable Bowel Syndrome (Ibs)",
+              "Endometriosis",
+              "Pelvic Inflammatory Disease (Pid)"
+            ],
+            "Dr. Emily Green": [
+              "Endometriosis",
+              "Irritable Bowel Syndrome (Ibs)",
+              "Pelvic Inflammatory Disease (Pid)"
+            ],
+            "Dr. John Lee": [
+              "Irritable Bowel Syndrome (Ibs)",
+              "Endometriosis",
+              "Pelvic Inflammatory Disease (Pid)"
+            ],
+            "Dr. Clinical Evaluator": [
+              "Irritable Bowel Syndrome (Ibs)",
+              "Endometriosis",
+              "Pelvic Inflammatory Disease (Pid)"
+            ]
+          },
+          "total_votes": 8,
+          "voting_summary": {
+            "Irritable Bowel Syndrome (Ibs)": 13,
+            "Endometriosis": 12,
+            "**Endometriosis**": 4,
+            "Pelvic Inflammatory Disease (Pid)": 4,
+            "**Irritable Bowel Syndrome (Ibs)**": 3
+          }
+        },
+        "success": true,
+        "execution_time": 24.457220554351807,
+        "formatted_output": ""
+      },
+      "cant_miss": {
+        "round_type": "cant_miss",
+        "participants": [
+          "Dr. Anya Sharma",
+          "Dr. Liam O'Connell",
+          "Dr. Nadia Khan",
+          "Dr. Sarah Chen",
+          "Dr. Michael Kim",
+          "Dr. Emily Green",
+          "Dr. John Lee",
+          "Dr. Clinical Evaluator"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"Endometriosis\": [\"Episodic pelvic and back pain with painful diarrhea\", \"History of trying to conceive for 3 years\"], \"Unexplained Infertility\": [\"3 years of trying to conceive\", \"Normal semen analysis\"], \"Pelvic Inflammatory Disease (PID)\": [\"History of painful diarrhea\", \"Potential for infertility\"]\n}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with a complex interplay of symptoms suggestive of several potential diagnoses.  \n\n* **Endometriosis:** The patient's history of chronic pelvic and back pain, particularly with painful diarrhea, is highly suggestive of endometriosis. This condition, characterized by the growth of endometrial-like tissue outside the uterus, often presents with cyclical pain and dysmenorrhea. The fact that she has been trying to conceive for 3 years without success further strengthens this possibility, as endometriosis is a common cause of infertility.\n\n* **Unexplained Infertility:**  The patient's 3 years of trying to conceive with a normal semen analysis points towards unexplained infertility. This diagnosis is often made when no clear cause for infertility can be identified after thorough investigation.\n\n* **Pelvic Inflammatory Disease (PID):** While the hysterosalpingogram was normal, the history of painful diarrhea raises the possibility of PID. PID, an infection of the female reproductive organs, can cause chronic pelvic pain and potentially lead to infertility.\n\n**CANT_MISS_DIAGNOSES**\n- **Endometriosis** -  This condition can cause significant pain and infertility, and early diagnosis and treatment are crucial to prevent long-term complications. - **Risk level: HIGH**\n- **Pelvic Inflammatory Disease (PID)** - Untreated PID can lead to serious complications, including infertility and ectopic pregnancy. - **Risk level: HIGH**\n\n**IMMEDIATE_WORKUP**\n- **Transvaginal Ultrasound:** To assess for endometrial thickening, ovarian cysts, or other structural abnormalities suggestive of endometriosis.\n- **Laparoscopy:** The gold standard for diagnosing endometriosis. It allows direct visualization of the pelvic organs and biopsy of suspicious lesions.\n\n**TIME_SENSITIVITY**\nThese conditions require prompt evaluation and management.  Endometriosis can worsen over time, leading to increased pain and infertility. PID can progress rapidly, leading to serious complications if left untreated.",
+            "structured_data": {
+              "Endometriosis": [
+                "Episodic pelvic and back pain with painful diarrhea",
+                "History of trying to conceive for 3 years"
+              ],
+              "Unexplained Infertility": [
+                "3 years of trying to conceive",
+                "Normal semen analysis"
+              ],
+              "Pelvic Inflammatory Disease (PID)": [
+                "History of painful diarrhea",
+                "Potential for infertility"
+              ]
+            },
+            "response_time": 5.420449495315552,
+            "confidence_score": 0.6799999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765528.2882211
+          },
+          "Dr. Liam O'Connell": {
+            "content": "```json\n{\"Pelvic Inflammatory Disease (PID)\": [\"History of painful diarrhea\", \"Normal hysterosalpingogram\"], \"Endometriosis\": [\"Episodic pelvic and back pain with painful diarrhea\", \"History of trying to conceive for 3 years\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with a complex interplay of symptoms suggestive of both gynecological and potentially infectious causes.  \n\n* **Pelvic Inflammatory Disease (PID):**  While the hysterosalpingogram was normal, PID can present with chronic, intermittent symptoms like painful diarrhea and pelvic pain. The history of painful diarrhea is a key indicator.  PID can lead to serious complications like infertility and sepsis if untreated.\n\n* **Endometriosis:** The patient's history of infertility, coupled with episodic pelvic and back pain accompanied by painful diarrhea, strongly suggests endometriosis. This condition can cause significant pain and impact fertility.\n\n**CANT_MISS_DIAGNOSES**\n- **Pelvic Inflammatory Disease (PID)** -  PID can lead to serious complications like infertility and sepsis if untreated.\n- **Endometriosis** - This condition can cause significant pain and impact fertility.\n\n**IMMEDIATE_WORKUP**\n- **Pelvic Ultrasound:** To assess for signs of PID (e.g., fluid collection, thickened endometrium) and endometriosis (e.g., endometrial implants).\n- **Complete Blood Count (CBC):** To rule out infection (elevated white blood cell count)\n\n**TIME_SENSITIVITY**\n- PID and endometriosis require prompt evaluation and management. While the patient's symptoms are episodic, the potential for long-term complications necessitates a timely diagnosis and appropriate treatment plan.",
+            "structured_data": {
+              "Pelvic Inflammatory Disease (PID)": [
+                "History of painful diarrhea",
+                "Normal hysterosalpingogram"
+              ],
+              "Endometriosis": [
+                "Episodic pelvic and back pain with painful diarrhea",
+                "History of trying to conceive for 3 years"
+              ]
+            },
+            "response_time": 3.9878768920898438,
+            "confidence_score": 0.7,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765528.2882223
+          },
+          "Dr. Nadia Khan": {
+            "content": "```json\n{\"pelvic inflammatory disease\": [\"episodic pelvic and back pain\", \"painful diarrhea\", \"history of trying to conceive\"], \"ectopic pregnancy\": [\"history of trying to conceive\", \"episodic pelvic and back pain\"], \"appendicitis\": [\"episodic pelvic and back pain\", \"potential for referred pain to back\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with a complex constellation of symptoms, including infertility, pelvic pain, and diarrhea.  While the history suggests a chronic condition, it's crucial to rule out potentially life-threatening diagnoses in the emergency setting.\n\n* **Pelvic Inflammatory Disease (PID):** The combination of pelvic and back pain, painful diarrhea, and a history of trying to conceive raises suspicion for PID. This infection can spread and cause serious complications if untreated.\n\n* **Ectopic Pregnancy:**  The patient's history of trying to conceive for 3 years, coupled with episodic pelvic and back pain, warrants consideration of an ectopic pregnancy. This condition can be life-threatening if the fallopian tube ruptures.\n\n* **Appendicitis:** While less likely given the chronic nature of the symptoms, appendicitis should not be ruled out. The patient's pain could be referred from the appendix, and it's essential to consider this possibility, especially if there are any signs of peritonitis.\n\n**CANT_MISS_DIAGNOSES**\n- **Ectopic Pregnancy** -  Rupture can lead to life-threatening hemorrhage. - **Risk level: HIGH**\n- **Pelvic Inflammatory Disease** - Untreated PID can lead to infertility and other serious complications. - **Risk level: HIGH**\n- **Appendicitis** -  Rupture can lead to peritonitis, a life-threatening condition. - **Risk level: MEDIUM**\n\n**IMMEDIATE_WORKUP**\n- **Pelvic Exam:**  To assess for tenderness, masses, or signs of inflammation.\n- **Ultrasound:** To visualize the uterus, ovaries, and fallopian tubes for signs of ectopic pregnancy, PID, or appendicitis.\n\n**TIME_SENSITIVITY**\nThese conditions require urgent evaluation and treatment.  Ectopic pregnancy and appendicitis can rapidly deteriorate, requiring immediate surgical intervention. PID also requires prompt treatment with antibiotics to prevent long-term complications.",
+            "structured_data": {
+              "pelvic inflammatory disease": [
+                "episodic pelvic and back pain",
+                "painful diarrhea",
+                "history of trying to conceive"
+              ],
+              "ectopic pregnancy": [
+                "history of trying to conceive",
+                "episodic pelvic and back pain"
+              ],
+              "appendicitis": [
+                "episodic pelvic and back pain",
+                "potential for referred pain to back"
+              ]
+            },
+            "response_time": 5.451949596405029,
+            "confidence_score": 0.66,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765528.2882233
+          },
+          "Dr. Sarah Chen": {
+            "content": "```json\n{\"endometriosis\": [\"episodic pelvic and back pain\", \"painful diarrhea\"], \"irregular ovulation\": [\"unexplained infertility\", \"regular menstrual cycle\"], \"irritable bowel syndrome (IBS)\": [\"episodic pelvic and back pain\", \"painful diarrhea\"]}\n```\n\nDetailed clinical reasoning:\n\n**Endometriosis:**\n- **Evidence:** The patient reports episodic pelvic and back pain, which is a common symptom of endometriosis. Additionally, she experiences painful diarrhea, which can be associated with endometriosis affecting the gastrointestinal tract.\n- **Why it can't be missed:** Endometriosis is a significant cause of infertility and can lead to chronic pain and gastrointestinal symptoms. If left untreated, it can progress and cause severe complications.\n- **Risk level:** HIGH\n- **Immediate workup:** Consider performing a laparoscopy to visualize the pelvic and abdominal organs and confirm the presence of endometriosis.\n- **Time sensitivity:** Endometriosis should be ruled out as soon as possible to prevent further progression and potential damage to reproductive organs.\n\n**Irregular Ovulation:**\n- **Evidence:** The patient has been trying to conceive for 3 years without success, and her semen analysis is normal. This suggests that the issue may lie with her ovulation or reproductive hormones.\n- **Why it can't be missed:** Irregular ovulation can be a significant factor in unexplained infertility. Regular menstrual cycles do not guarantee regular ovulation.\n- **Risk level:** MEDIUM\n- **Immediate workup:** Perform a follicular study to assess ovulation and hormone levels such as FSH, LH, and estradiol.\n- **Time sensitivity:** While not immediately life-threatening, it is important to address irregular ovulation to improve fertility outcomes.\n\n**Irritable Bowel Syndrome (IBS):**\n- **Evidence:** The patient reports episodic pelvic and back pain, as well as painful diarrhea, which are classic symptoms of IBS.\n- **Why it can't be missed:** IBS can significantly impact quality of life and may be contributing to the patient's discomfort. It is essential to rule out IBS to provide appropriate management and improve her overall well-being.\n- **Risk level:** MEDIUM\n- **Immediate workup:** Consider a detailed history and physical examination, and possibly a stool analysis to rule out other causes of diarrhea.\n- **Time sensitivity:** IBS can be managed effectively with lifestyle changes and medication, but it is important to address it to improve the patient's quality of life.\n\nIn summary, endometriosis is the most critical diagnosis to rule out due to its potential impact on fertility and chronic pain. Irregular ovulation and IBS are also important to consider, as they can contribute to both infertility and gastrointestinal symptoms. Immediate workup and timely management are crucial to address these conditions effectively.",
+            "structured_data": {
+              "endometriosis": [
+                "episodic pelvic and back pain",
+                "painful diarrhea"
+              ],
+              "irregular ovulation": [
+                "unexplained infertility",
+                "regular menstrual cycle"
+              ],
+              "irritable bowel syndrome (IBS)": [
+                "episodic pelvic and back pain",
+                "painful diarrhea"
+              ]
+            },
+            "response_time": 4.327785491943359,
+            "confidence_score": 0.76,
+            "reasoning_quality": "high",
+            "timestamp": 1752765528.288224
+          },
+          "Dr. Michael Kim": {
+            "content": "```json\n{\"endometriosis\": [\"episodic pelvic and back pain with painful diarrhea\", \"history of trying to conceive for 3 years\"], \"irritable bowel syndrome (ibs)\": [\"episodic pelvic and back pain with painful diarrhea\", \"symptoms lasting for 5 years\"], \"pelvic inflammatory disease (pid)\": [\"history of painful diarrhea\", \"normal semen analysis\"]}\n```\n\nNow, let me explain my clinical reasoning:\n\n**Clinical Reasoning:**\n\n- **Endometriosis**: The patient has been trying to conceive for 3 years, which suggests a possible underlying reproductive issue. Additionally, she experiences episodic pelvic and back pain along with painful diarrhea, which are common symptoms of endometriosis. Endometriosis can cause chronic pelvic pain and gastrointestinal symptoms, and it is a critical diagnosis that cannot be missed due to its potential impact on fertility and overall quality of life. The risk level is HIGH because endometriosis can lead to significant pain and infertility if not managed properly.\n\n- **Irritable Bowel Syndrome (IBS)**: The patient reports episodic pelvic and back pain along with painful diarrhea, which are hallmark symptoms of IBS. IBS can cause chronic gastrointestinal symptoms and can significantly affect a patient's quality of life. It is a critical diagnosis to consider as it can be managed with appropriate dietary and lifestyle changes, but it can also progress if left untreated. The risk level is MEDIUM due to the chronic nature of the condition and the potential for significant discomfort.\n\n- **Pelvic Inflammatory Disease (PID)**: Although the patient's semen analysis is normal, she has a history of painful diarrhea, which can be a symptom of PID. PID can cause pelvic pain and gastrointestinal symptoms, and it is important to rule out this condition, especially if there is a history of sexually transmitted infections or other risk factors. The risk level is MEDIUM because PID can lead to complications such as infertility if left untreated.\n\n**Immediate Workup:**\n\n- **Pelvic Ultrasound**: To assess for any structural abnormalities in the pelvis that may be contributing to the symptoms.\n- **Stool Culture and Parasitology**: To rule out any infectious causes of the diarrhea.\n- **Hormonal Assessment**: To evaluate for any hormonal imbalances that may be contributing to the symptoms.\n\n**Time Sensitivity:**\n\n- It is important to rule out endometriosis and PID as soon as possible, as these conditions can have significant long-term impacts if not treated promptly. IBS can be managed over time, but it is important to start treatment as soon as the diagnosis is made to alleviate symptoms and improve quality of life.\n\nIn summary, the most critical diagnoses that cannot be missed are endometriosis and pelvic inflammatory disease, with IBS being a close third. Immediate workup is necessary to confirm or rule out these conditions, and prompt treatment should be considered if any of these diagnoses are confirmed.",
+            "structured_data": {
+              "endometriosis": [
+                "episodic pelvic and back pain with painful diarrhea",
+                "history of trying to conceive for 3 years"
+              ],
+              "irritable bowel syndrome (ibs)": [
+                "episodic pelvic and back pain with painful diarrhea",
+                "symptoms lasting for 5 years"
+              ],
+              "pelvic inflammatory disease (pid)": [
+                "history of painful diarrhea",
+                "normal semen analysis"
+              ]
+            },
+            "response_time": 4.416901111602783,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752765528.2882247
+          },
+          "Dr. Emily Green": {
+            "content": "```json\n{\"endometriosis\": [\"episodic pelvic and back pain with painful diarrhea\", \"history of trying to conceive for 3 years\"], \"irritable bowel syndrome (IBS)\": [\"episodic pelvic and back pain with painful diarrhea\", \"history of trying to conceive for 3 years\"], \"systemic lupus erythematosus (SLE)\": [\"unexplained infertility\", \"episodic pelvic and back pain with painful diarrhea\"]}\n```\n\nNow, I will provide my clinical reasoning:\n\n**Clinical Reasoning:**\n\n- **Endometriosis:** The patient's history of episodic pelvic and back pain, along with painful diarrhea, are consistent with endometriosis. This condition is often associated with chronic pelvic pain and gastrointestinal symptoms, which can interfere with fertility. The fact that she has been trying to conceive for 3 years without success further supports the need to consider endometriosis, as it can affect fertility by causing adhesions and altering the anatomy of the reproductive tract.\n\n- **Irritable Bowel Syndrome (IBS):** The patient's history of episodic pelvic and back pain, along with painful diarrhea, also aligns with IBS. IBS can cause a variety of gastrointestinal symptoms and is often associated with pelvic pain, especially in women of reproductive age. The duration and pattern of her symptoms are consistent with IBS, and it is important to consider this condition as it can significantly impact quality of life and fertility.\n\n- **Systemic Lupus Erythematosus (SLE):** The patient's unexplained infertility and the presence of systemic symptoms such as episodic pelvic and back pain, along with painful diarrhea, could suggest an underlying autoimmune condition like SLE. SLE can present with a variety of non-specific symptoms, including gastrointestinal issues and chronic pain, which can contribute to fertility problems. Given the patient's history of unexplained infertility and the persistence of her symptoms, SLE should be considered in the differential diagnosis.\n\n**CANT_MISS_DIAGNOSES:**\n- **Endometriosis** - The patient's symptoms are consistent with this condition, and it can significantly impact fertility. - [Risk level: HIGH]\n- **Irritable Bowel Syndrome (IBS)** - The patient's symptoms are consistent with IBS, and it can cause significant discomfort and affect fertility. - [Risk level: HIGH]\n- **Systemic Lupus Erythematosus (SLE)** - The patient's unexplained infertility and systemic symptoms suggest the need to rule out SLE. - [Risk level: MEDIUM]\n\n**IMMEDIATE_WORKUP:**\n- **Pelvic Ultrasound** - To evaluate for endometriosis and other pelvic pathology.\n- **Colonoscopy** - To evaluate for IBS and any underlying gastrointestinal pathology.\n- **Antinuclear Antibody (ANA) Test** - To screen for SLE.\n\n**TIME_SENSITIVITY:**\nThese conditions must be ruled out or treated promptly to prevent further complications and to improve the patient's quality of life and fertility prospects. Prompt evaluation and management are crucial to address the underlying causes of her symptoms.",
+            "structured_data": {
+              "endometriosis": [
+                "episodic pelvic and back pain with painful diarrhea",
+                "history of trying to conceive for 3 years"
+              ],
+              "irritable bowel syndrome (IBS)": [
+                "episodic pelvic and back pain with painful diarrhea",
+                "history of trying to conceive for 3 years"
+              ],
+              "systemic lupus erythematosus (SLE)": [
+                "unexplained infertility",
+                "episodic pelvic and back pain with painful diarrhea"
+              ]
+            },
+            "response_time": 4.714138031005859,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765528.2882257
+          },
+          "Dr. John Lee": {
+            "content": "```json\n{\"endometriosis\": [\"episodic pelvic and back pain\", \"painful diarrhea\"], \"irritable bowel syndrome (IBS)\": [\"episodic pelvic and back pain\", \"episodic painful diarrhea\"], \"pelvic inflammatory disease (PID)\": [\"history of painful diarrhea\", \"episodic pelvic and back pain\"]}\n```\n\nClinical reasoning:\n\n**Endometriosis**:\n- **Evidences**: The patient reports episodic pelvic and back pain, which is a common symptom of endometriosis. Additionally, she has experienced painful diarrhea, which can be a less common but still significant symptom associated with endometriosis, particularly if the disease has extended beyond the pelvis.\n- **Why it can't be missed**: Endometriosis can significantly impact fertility and quality of life. It is crucial to consider this condition as it can cause chronic pain and affect fertility, especially in women who have been trying to conceive for an extended period.\n- **Risk level**: HIGH\n- **Required test/intervention**: Further evaluation of the patient's pelvic anatomy and hormonal status, possibly including a detailed pelvic ultrasound or MRI to assess for endometriotic lesions.\n- **Time sensitivity**: Endometriosis can be managed with medical or surgical interventions, but early diagnosis can help prevent worsening symptoms and preserve fertility.\n\n**Irritable Bowel Syndrome (IBS)**:\n- **Evidences**: The patient's history of episodic painful diarrhea and pelvic and back pain is consistent with IBS. IBS is a common gastrointestinal condition that can cause significant discomfort and can coexist with other pelvic symptoms.\n- **Why it can't be missed**: IBS is a common cause of chronic pelvic pain and can significantly affect quality of life. It is important to consider IBS in the differential diagnosis, especially given the patient's history of episodic symptoms.\n- **Risk level**: MEDIUM\n- **Required test/intervention**: A thorough gastrointestinal workup, including a colonoscopy or endoscopy, and possibly a detailed dietary and lifestyle assessment.\n- **Time sensitivity**: While IBS can be managed with lifestyle changes and medications, it is important to rule out other more serious conditions that could be causing the symptoms.\n\n**Pelvic Inflammatory Disease (PID)**:\n- **Evidences**: The patient's history of painful diarrhea and episodic pelvic and back pain can be indicative of PID, which can cause inflammation and scarring in the pelvic organs, potentially affecting fertility.\n- **Why it can't be missed**: PID is a serious condition that can lead to chronic pelvic pain, infertility, and other complications if not treated promptly. It is important to consider PID in the differential diagnosis, especially given the patient's history of painful diarrhea.\n- **Risk level**: MEDIUM\n- **Required test/intervention**: A detailed gynecological examination and possibly a pelvic ultrasound or MRI to assess for any signs of pelvic inflammation.\n- **Time sensitivity**: PID requires prompt treatment to prevent complications, including potential damage to the fallopian tubes and other pelvic structures.\n\n**CANT_MISS_DIAGNOSES**\n- **Endometriosis** - [Episodic pelvic and back pain, painful diarrhea] - [Risk level: HIGH]\n- **Irritable Bowel Syndrome (IBS)** - [Episodic pelvic and back pain, episodic painful diarrhea] - [Risk level: MEDIUM]\n- **Pelvic Inflammatory Disease (PID)** - [History of painful diarrhea, episodic pelvic and back pain] - [Risk level: MEDIUM]\n\n**IMMEDIATE_WORKUP**\n- **Thorough gynecological examination** - To assess for any signs of endometriosis or PID.\n- **Colonoscopy or endoscopy** - To evaluate for IBS or other gastrointestinal conditions.\n- **Pelvic ultrasound or MRI** - To assess for any signs of pelvic inflammation or endometriosis.\n\n**TIME_SENSITIVITY**\n- **Prompt evaluation and treatment** - It is important to rule out or treat these conditions as soon as possible to prevent worsening symptoms and potential complications.",
+            "structured_data": {
+              "endometriosis": [
+                "episodic pelvic and back pain",
+                "painful diarrhea"
+              ],
+              "irritable bowel syndrome (IBS)": [
+                "episodic pelvic and back pain",
+                "episodic painful diarrhea"
+              ],
+              "pelvic inflammatory disease (PID)": [
+                "history of painful diarrhea",
+                "episodic pelvic and back pain"
+              ]
+            },
+            "response_time": 6.166418790817261,
+            "confidence_score": 0.7799999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752765528.2882261
+          },
+          "Dr. Clinical Evaluator": {
+            "content": "```json\n{\"endometriosis\": [\"episodic pelvic and back pain\", \"unexplained infertility\"], \"irritable bowel syndrome\": [\"episodic painful diarrhea\", \"duration of 5 years\"], \"pelvic inflammatory disease\": [\"history of painful diarrhea\", \"episodic pelvic and back pain\"]}\n```\n\n### Clinical Reasoning:\n\n#### Endometriosis\n- **Evidence 1:** Episodic pelvic and back pain\n- **Evidence 2:** Unexplained infertility\n\n**Why it can't be missed:** Endometriosis is a common cause of chronic pelvic pain and infertility. The patient's history of 5 years of episodic pelvic and back pain, along with unexplained infertility, strongly suggests endometriosis. This condition can lead to significant pain and infertility if not addressed, making it a critical diagnosis to consider.\n\n**Risk Level:** HIGH\n\n#### Irritable Bowel Syndrome (IBS)\n- **Evidence 1:** Episodic painful diarrhea\n- **Evidence 2:** Duration of 5 years\n\n**Why it can't be missed:** IBS is a common gastrointestinal disorder characterized by episodic diarrhea and abdominal pain. The patient's history of 5 years of episodic painful diarrhea and the presence of pelvic and back pain are consistent with IBS. While IBS is not life-threatening, it can significantly impact quality of life and should be ruled out promptly.\n\n**Risk Level:** MEDIUM\n\n#### Pelvic Inflammatory Disease (PID)\n- **Evidence 1:** History of painful diarrhea\n- **Evidence 2:** Episodic pelvic and back pain\n\n**Why it can't be missed:** PID is a serious condition that can lead to complications such as infertility, chronic pelvic pain, and potentially life-threatening infections if left untreated. The patient's history of painful diarrhea and episodic pelvic and back pain, along with her age and sexual activity, make PID a critical diagnosis to consider. Prompt evaluation and treatment are essential to prevent severe complications.\n\n**Risk Level:** HIGH\n\n### IMMEDIATE WORKUP\n- **Pelvic and Transvaginal Ultrasound:** To assess for endometriosis and other pelvic abnormalities.\n- **Colonoscopy:** To evaluate for IBS or other gastrointestinal conditions.\n- **Pelvic MRI:** To further evaluate for endometriosis if necessary.\n\n### TIME SENSITIVITY\n- **Endometriosis and PID:** These conditions require prompt evaluation and treatment to prevent complications such as chronic pain and infertility.\n- **IBS:** While not immediately life-threatening, IBS can significantly impact quality of life and should be addressed promptly.\n\nBy focusing on these diagnoses, we can ensure that the patient receives appropriate and timely care to address her symptoms and prevent potential complications.",
+            "structured_data": {
+              "endometriosis": [
+                "episodic pelvic and back pain",
+                "unexplained infertility"
+              ],
+              "irritable bowel syndrome": [
+                "episodic painful diarrhea",
+                "duration of 5 years"
+              ],
+              "pelvic inflammatory disease": [
+                "history of painful diarrhea",
+                "episodic pelvic and back pain"
+              ]
+            },
+            "response_time": 4.10250997543335,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752765528.2882266
+          }
+        },
+        "metadata": {
+          "critical_diagnoses": [],
+          "total_critical_identified": 0,
+          "unique_critical_diagnoses": 0,
+          "high_priority_count": 0,
+          "agent_contributions": {
+            "Dr. Anya Sharma": 0,
+            "Dr. Liam O'Connell": 0,
+            "Dr. Nadia Khan": 0,
+            "Dr. Sarah Chen": 0,
+            "Dr. Michael Kim": 0,
+            "Dr. Emily Green": 0,
+            "Dr. John Lee": 0,
+            "Dr. Clinical Evaluator": 0
+          }
+        },
+        "success": true,
+        "execution_time": 38.63081383705139,
+        "formatted_output": ""
+      }
+    },
+    "sequence_metadata": {
+      "total_rounds": 7,
+      "start_time": 1752765374.0957904,
+      "end_time": 1752765528.2882414,
+      "total_execution_time": 154.19245100021362
+    }
+  }
+}

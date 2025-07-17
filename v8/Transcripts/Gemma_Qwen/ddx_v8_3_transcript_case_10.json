@@ -1,0 +1,2176 @@
+{
+  "case_id": "Case 10",
+  "timestamp": "2025-07-17T14:40:43.868540",
+  "evaluation_method": "Enhanced_DD_Evaluator_v6",
+  "tp_count": 2,
+  "fp_count": 3,
+  "fn_count": 0,
+  "caa_count": 0,
+  "ae_count": 3,
+  "total_gt_diagnoses": 5,
+  "total_team_diagnoses": 5,
+  "tp_rate": 0.4,
+  "caa_weight_applied": 0.0,
+  "traditional_precision": 0.4,
+  "traditional_recall": 1.0,
+  "clinical_reasoning_quality": 0.625,
+  "diagnostic_safety": 0.4,
+  "final_diagnoses": [
+    "Cardiac Tamponade",
+    "Aortic Dissection",
+    "Traumatic Aortic Injury",
+    "Acute Myocardial Infarction",
+    "Pulmonary Contusion"
+  ],
+  "ground_truth_diagnoses": [
+    "myocardial infarction",
+    "myocardial contusion",
+    "pulmonary embolism",
+    "pneumothorax",
+    "aortic dissection"
+  ],
+  "true_positives": [
+    {
+      "ground_truth": "aortic dissection",
+      "system": "Aortic Dissection"
+    },
+    {
+      "ground_truth": "myocardial infarction",
+      "system": "Acute Myocardial Infarction"
+    }
+  ],
+  "false_positives": [
+    "Pulmonary Contusion",
+    "Cardiac Tamponade",
+    "Traumatic Aortic Injury"
+  ],
+  "false_negatives": [],
+  "ai_enhanced_matching": true,
+  "context_informed_matches": 0,
+  "credibility_scores": {
+    "Dr. Anya Sharma": 30.700000000000003,
+    "Dr. Liam O'Connell": 36.045833333333334,
+    "Dr. Maya Patel": 34.68000000000001,
+    "Dr. Sarah Chen": 32.2125,
+    "Dr. Michael Kim": 40.9875,
+    "Dr. Emily Patel": 29.600000000000005,
+    "Dr. Rajiv Gupta": 34.74166666666667,
+    "Dr. Lisa Rodriguez": 33.862500000000004,
+    "Dr. Clinical Evaluator": 25.250000000000004
+  },
+  "weighting_tier": "Excellent",
+  "specialist_performance": {
+    "top_performer": "Dr. Michael Kim",
+    "top_score": 40.9875,
+    "average_score": 33.120000000000005,
+    "specialist_rankings": [
+      {
+        "name": "Dr. Michael Kim",
+        "specialty": "Surgery",
+        "final_score": 40.9875,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Liam O'Connell",
+        "specialty": "Cardiology",
+        "final_score": 36.045833333333334,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Rajiv Gupta",
+        "specialty": "Surgery",
+        "final_score": 34.74166666666667,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Maya Patel",
+        "specialty": "Emergency Medicine",
+        "final_score": 34.68000000000001,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Lisa Rodriguez",
+        "specialty": "Emergency Medicine",
+        "final_score": 33.862500000000004,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Sarah Chen",
+        "specialty": "Emergency Medicine",
+        "final_score": 32.2125,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Anya Sharma",
+        "specialty": "Surgery",
+        "final_score": 30.700000000000003,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Emily Patel",
+        "specialty": "Cardiology",
+        "final_score": 29.600000000000005,
+        "relevance_weight": 0.6666666666666666
+      },
+      {
+        "name": "Dr. Clinical Evaluator",
+        "specialty": "Internal Medicine",
+        "final_score": 25.250000000000004,
+        "relevance_weight": 0.6666666666666666
+      }
+    ]
+  },
+  "round_completion": {
+    "rounds_completed": 7,
+    "tempo_scores": {
+      "specialized_ranking": 1.0,
+      "symptom_management": 1.0,
+      "team_independent_differentials": 3.7,
+      "master_list_generation": 1.0,
+      "refinement_and_justification": 1.0555555555555556,
+      "post_debate_voting": 1.0,
+      "cant_miss": 1.0
+    },
+    "debate_quality": 1.0555555555555556
+  },
+  "full_transcript": {
+    "case_description": "\nA 27-year-old man presents to the emergency department after a motor vehicle collision. The patient was the front seat unrestrained driver in a head on collision. The patient's echocardiogram (ECG) is notable only for sinus tachycardia. His temperature is 99.5 \u00b0F (37.5 \u00b0C), blood pressure is 107/58 mmHg, pulse is 120/min, respirations are 17/min, and oxygen saturation is 98% on room air. The patient is given 2 liters of Ringer lactate solution and morphine. Initial workup demonstrates that the patient's pulmonary capillary wedge pressure and troponins are elevated. The patient is currently complaining of chest pain. Physical exam is notable for an uncomfortable young man with bruising over his chest wall. What is the most likely diagnosis?\n",
+    "agents": [
+      {
+        "name": "Dr. Anya Sharma",
+        "specialty": "Surgery",
+        "persona": "Dr. Sharma is a highly experienced trauma surgeon with a particular focus on blunt chest trauma. She has a meticulous approach to patient assessment, prioritizing a thorough physical examination and a comprehensive understanding of the patient's mechanism of injury. She is adept at interpreting imaging studies and guiding surgical interventions.",
+        "model_id": "conservative_model"
+      },
+      {
+        "name": "Dr. Liam O'Connell",
+        "specialty": "Cardiology",
+        "persona": "Dr. O'Connell is a skilled interventional cardiologist with extensive experience in managing acute cardiac events. He is particularly adept at performing echocardiograms and interpreting complex cardiac imaging. He has a strong understanding of cardiac physiology and is skilled in performing percutaneous coronary interventions if necessary.",
+        "model_id": "conservative_model"
+      },
+      {
+        "name": "Dr. Maya Patel",
+        "specialty": "Emergency Medicine",
+        "persona": "Dr. Patel is a board-certified critical care physician with extensive experience in managing critically ill patients. She is skilled in monitoring vital signs, interpreting laboratory data, and adjusting treatment plans based on the patient's evolving condition. She has a strong understanding of hemodynamic monitoring and fluid management.",
+        "model_id": "conservative_model"
+      },
+      {
+        "name": "Dr. Sarah Chen",
+        "specialty": "Emergency Medicine",
+        "persona": "Dr. Sarah Chen is a highly experienced critical care physician with a strong focus on trauma and acute care. She is known for her meticulous approach and ability to manage complex cases. Dr. Chen has a background in trauma surgery and is well-versed in the management of post-traumatic stress and physical trauma. She is particularly adept at integrating patient history with current symptoms to provide comprehensive care.",
+        "model_id": "innovative_model"
+      },
+      {
+        "name": "Dr. Michael Kim",
+        "specialty": "Surgery",
+        "persona": "Dr. Michael Kim is a board-certified cardiovascular surgeon with a specialization in minimally invasive and robotic surgery techniques. He is known for his innovative approach and ability to handle complex cardiovascular cases. Dr. Kim is highly skilled in the diagnosis and treatment of aortic and coronary artery diseases, and he is particularly adept at managing post-traumatic cardiovascular complications.",
+        "model_id": "innovative_model"
+      },
+      {
+        "name": "Dr. Emily Patel",
+        "specialty": "Cardiology",
+        "persona": "Dr. Emily Patel is a cardiologist with a focus on cardiovascular imaging. She is known for her ability to interpret complex imaging studies and provide detailed reports. Dr. Patel is particularly skilled in echocardiography, CT angiography, and MRI, which are essential for diagnosing and monitoring cardiovascular conditions.",
+        "model_id": "innovative_model"
+      },
+      {
+        "name": "Dr. Rajiv Gupta",
+        "specialty": "Surgery",
+        "persona": "Dr. Rajiv Gupta is a thoracic surgeon with extensive experience in the management of chest wall and lung injuries. He is known for his surgical skills and ability to handle complex cases involving the chest wall and lungs. Dr. Gupta is particularly adept at managing post-traumatic injuries and ensuring proper wound care and pain management.",
+        "model_id": "innovative_model"
+      },
+      {
+        "name": "Dr. Lisa Rodriguez",
+        "specialty": "Emergency Medicine",
+        "persona": "Dr. Lisa Rodriguez is an emergency medicine physician with a focus on trauma and critical care. She is known for her ability to manage acute cases and provide rapid, effective care. Dr. Rodriguez is particularly skilled in the initial assessment and stabilization of trauma patients, ensuring that all necessary interventions are promptly addressed.",
+        "model_id": "innovative_model"
+      },
+      {
+        "name": "Dr. Clinical Evaluator",
+        "specialty": "Internal Medicine",
+        "persona": "Expert clinical evaluator specializing in diagnosis equivalence assessment.",
+        "model_id": "innovative_model"
+      }
+    ],
+    "rounds": {
+      "specialized_ranking": {
+        "round_type": "specialized_ranking",
+        "participants": [
+          "Dr. Anya Sharma"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"Cardiac Tamponade\": [\"Elevated pulmonary capillary wedge pressure\", \"Chest pain\", \"Bruising over chest wall\"], \"Tension Pneumothorax\": [\"Chest pain\", \"Bruising over chest wall\", \"Possible respiratory distress (if present)\"], \"Rib Fractures\": [\"Bruising over chest wall\", \"Chest pain\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with classic signs and symptoms suggestive of blunt chest trauma.  \n\n* **Cardiac Tamponade:** The elevated pulmonary capillary wedge pressure (PCWP) in conjunction with chest pain and bruising over the chest wall raises significant concern for cardiac tamponade. This is a life-threatening condition where blood accumulates in the pericardial sac, compressing the heart and impairing its ability to pump effectively.\n\n* **Tension Pneumothorax:**  The patient's chest pain and bruising, along with the potential for respiratory distress (not explicitly stated but a possibility), warrant consideration of a tension pneumothorax. This occurs when air leaks into the pleural space and becomes trapped, causing pressure to build up and compress the lung.\n\n* **Rib Fractures:** The bruising over the chest wall strongly suggests rib fractures, which are common in blunt chest trauma.  \n\n**Specialty Ranking:**\n\n<RANK>\n1. **Surgery:**  The patient's potential for cardiac tamponade, tension pneumothorax, and rib fractures all require surgical expertise for diagnosis and management.\n2. **Emergency Medicine:**  The initial assessment, stabilization, and management of the patient's airway, breathing, and circulation fall under the purview of emergency medicine.\n3. **Cardiology:** While cardiac tamponade is a serious concern, the primary focus in this case is on the immediate surgical management of potential life-threatening conditions. Cardiology would be more involved in the long-term management of any cardiac complications.\n\n</RANK>\n\n<CAN'T MISS>\n- **Cardiac Tamponade:** This is a life-threatening condition that requires immediate surgical intervention.\n- **Tension Pneumothorax:** This can rapidly deteriorate and lead to respiratory failure, necessitating urgent surgical intervention.\n</CAN'T MISS>",
+            "structured_data": {
+              "Cardiac Tamponade": [
+                "Elevated pulmonary capillary wedge pressure",
+                "Chest pain",
+                "Bruising over chest wall"
+              ],
+              "Tension Pneumothorax": [
+                "Chest pain",
+                "Bruising over chest wall",
+                "Possible respiratory distress (if present)"
+              ],
+              "Rib Fractures": [
+                "Bruising over chest wall",
+                "Chest pain"
+              ]
+            },
+            "response_time": 4.846638917922974,
+            "confidence_score": 0.66,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763066.3022416
+          }
+        },
+        "metadata": {
+          "rankings": [
+            "1. **Surgery:**  The patient's potential for cardiac tamponade, tension pneumothorax, and rib fractures all require surgical expertise for diagnosis and management.",
+            "2. **Emergency Medicine:**  The initial assessment, stabilization, and management of the patient's airway, breathing, and circulation fall under the purview of emergency medicine.",
+            "3. **Cardiology:** While cardiac tamponade is a serious concern, the primary focus in this case is on the immediate surgical management of potential life-threatening conditions. Cardiology would be more involved in the long-term management of any cardiac complications."
+          ],
+          "cant_miss": [
+            "**Cardiac Tamponade:** This is a life-threatening condition that requires immediate surgical intervention.",
+            "**Tension Pneumothorax:** This can rapidly deteriorate and lead to respiratory failure, necessitating urgent surgical intervention."
+          ],
+          "total_ranked": 3
+        },
+        "success": true,
+        "execution_time": 4.852226495742798,
+        "formatted_output": "```json\n{\"Cardiac Tamponade\": [\"Elevated pulmonary capillary wedge pressure\", \"Chest pain\", \"Bruising over chest wall\"], \"Tension Pneumothorax\": [\"Chest pain\", \"Bruising over chest wall\", \"Possible respiratory distress (if present)\"], \"Rib Fractures\": [\"Bruising over chest wall\", \"Chest pain\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with classic signs and symptoms suggestive of blunt chest trauma.  \n\n* **Cardiac Tamponade:** The elevated pulmonary capillary wedge pressure (PCWP) in conjunction with chest pain and bruising over the chest wall raises significant concern for cardiac tamponade. This is a life-threatening condition where blood accumulates in the pericardial sac, compressing the heart and impairing its ability to pump effectively.\n\n* **Tension Pneumothorax:**  The patient's chest pain and bruising, along with the potential for respiratory distress (not explicitly stated but a possibility), warrant consideration of a tension pneumothorax. This occurs when air leaks into the pleural space and becomes trapped, causing pressure to build up and compress the lung.\n\n* **Rib Fractures:** The bruising over the chest wall strongly suggests rib fractures, which are common in blunt chest trauma.  \n\n**Specialty Ranking:**\n\n<RANK>\n1. **Surgery:**  The patient's potential for cardiac tamponade, tension pneumothorax, and rib fractures all require surgical expertise for diagnosis and management.\n2. **Emergency Medicine:**  The initial assessment, stabilization, and management of the patient's airway, breathing, and circulation fall under the purview of emergency medicine.\n3. **Cardiology:** While cardiac tamponade is a serious concern, the primary focus in this case is on the immediate surgical management of potential life-threatening conditions. Cardiology would be more involved in the long-term management of any cardiac complications.\n\n</RANK>\n\n<CAN'T MISS>\n- **Cardiac Tamponade:** This is a life-threatening condition that requires immediate surgical intervention.\n- **Tension Pneumothorax:** This can rapidly deteriorate and lead to respiratory failure, necessitating urgent surgical intervention.\n</CAN'T MISS>"
+      },
+      "symptom_management": {
+        "round_type": "symptom_management",
+        "participants": [
+          "Dr. Maya Patel"
+        ],
+        "responses": {
+          "Dr. Maya Patel": {
+            "content": "```json\n{\"pulmonary contusion\": [\"chest pain\", \"bruising over chest wall\", \"elevated troponins\"], \"tension pneumothorax\": [\"chest pain\", \"tachycardia\", \"elevated troponins\"], \"cardiac tamponade\": [\"elevated troponins\", \"pulsus paradoxus (not mentioned but should be assessed)\", \"hypotension\"], \"acute coronary syndrome\": [\"chest pain\", \"elevated troponins\", \"tachycardia\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with concerning findings following a high-energy motor vehicle collision. His symptoms and lab results point towards several potential diagnoses:\n\n* **Pulmonary Contusion:** The chest pain, bruising, and elevated troponins are consistent with a pulmonary contusion. This injury involves damage to the lung tissue, leading to inflammation and fluid buildup.\n\n* **Tension Pneumothorax:** The chest pain, tachycardia, and elevated troponins could also indicate a tension pneumothorax. This life-threatening condition occurs when air leaks into the pleural space and compresses the lung, leading to a shift in mediastinal structures.\n\n* **Cardiac Tamponade:** The elevated troponins and potential for hypotension (although his BP is currently stable) raise concern for cardiac tamponade. This occurs when fluid accumulates in the pericardial sac, compressing the heart and impairing its function.\n\n* **Acute Coronary Syndrome:** While less likely given his age and the mechanism of injury, the chest pain and elevated troponins could also suggest an acute coronary syndrome.\n\n**Immediate Management Plan:**\n\n<SYMPTOM_MITIGATION>\n[Chest Pain]:  Administer supplemental oxygen, administer analgesics (morphine already given), and consider a short-acting benzodiazepine for anxiety.\n[Tachycardia]:  Monitor heart rate closely and address any underlying causes (pain, anxiety, hypovolemia).\n</SYMPTOM_MITIGATION>\n\n<IMMEDIATE_ACTIONS>\n- Obtain a chest x-ray to assess for pneumothorax, pulmonary contusion, and other lung injuries.\n- Perform an echocardiogram to evaluate for pericardial effusion and cardiac function.\n- Monitor vital signs closely, including blood pressure, heart rate, respiratory rate, and oxygen saturation.\n- Continue intravenous fluid resuscitation with Ringer's lactate as needed to maintain adequate blood pressure and perfusion.\n- Consider a pericardiocentesis if cardiac tamponade is suspected.\n- Obtain a 12-lead ECG to rule out acute coronary syndrome.\n- Consult with a trauma surgeon for further management.\n</IMMEDIATE_ACTIONS>\n\n\n\n**Note:** This is a rapidly evolving situation, and the management plan may need to be adjusted based on the patient's response to treatment and the results of further investigations.",
+            "structured_data": {
+              "pulmonary contusion": [
+                "chest pain",
+                "bruising over chest wall",
+                "elevated troponins"
+              ],
+              "tension pneumothorax": [
+                "chest pain",
+                "tachycardia",
+                "elevated troponins"
+              ],
+              "cardiac tamponade": [
+                "elevated troponins",
+                "pulsus paradoxus (not mentioned but should be assessed)",
+                "hypotension"
+              ],
+              "acute coronary syndrome": [
+                "chest pain",
+                "elevated troponins",
+                "tachycardia"
+              ]
+            },
+            "response_time": 6.303452014923096,
+            "confidence_score": 0.66,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763072.61315
+          }
+        },
+        "metadata": {
+          "interventions": [
+            "[Chest Pain]:  Administer supplemental oxygen, administer analgesics (morphine already given), and consider a short-acting benzodiazepine for anxiety.",
+            "[Tachycardia]:  Monitor heart rate closely and address any underlying causes (pain, anxiety, hypovolemia)."
+          ],
+          "immediate_actions": [
+            "Obtain a chest x-ray to assess for pneumothorax, pulmonary contusion, and other lung injuries.",
+            "Perform an echocardiogram to evaluate for pericardial effusion and cardiac function.",
+            "Monitor vital signs closely, including blood pressure, heart rate, respiratory rate, and oxygen saturation.",
+            "Continue intravenous fluid resuscitation with Ringer's lactate as needed to maintain adequate blood pressure and perfusion.",
+            "Consider a pericardiocentesis if cardiac tamponade is suspected.",
+            "Obtain a 12-lead ECG to rule out acute coronary syndrome.",
+            "Consult with a trauma surgeon for further management."
+          ],
+          "immediate_interventions_count": 9
+        },
+        "success": true,
+        "execution_time": 6.310881614685059,
+        "formatted_output": "```json\n{\"pulmonary contusion\": [\"chest pain\", \"bruising over chest wall\", \"elevated troponins\"], \"tension pneumothorax\": [\"chest pain\", \"tachycardia\", \"elevated troponins\"], \"cardiac tamponade\": [\"elevated troponins\", \"pulsus paradoxus (not mentioned but should be assessed)\", \"hypotension\"], \"acute coronary syndrome\": [\"chest pain\", \"elevated troponins\", \"tachycardia\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with concerning findings following a high-energy motor vehicle collision. His symptoms and lab results point towards several potential diagnoses:\n\n* **Pulmonary Contusion:** The chest pain, bruising, and elevated troponins are consistent with a pulmonary contusion. This injury involves damage to the lung tissue, leading to inflammation and fluid buildup.\n\n* **Tension Pneumothorax:** The chest pain, tachycardia, and elevated troponins could also indicate a tension pneumothorax. This life-threatening condition occurs when air leaks into the pleural space and compresses the lung, leading to a shift in mediastinal structures.\n\n* **Cardiac Tamponade:** The elevated troponins and potential for hypotension (although his BP is currently stable) raise concern for cardiac tamponade. This occurs when fluid accumulates in the pericardial sac, compressing the heart and impairing its function.\n\n* **Acute Coronary Syndrome:** While less likely given his age and the mechanism of injury, the chest pain and elevated troponins could also suggest an acute coronary syndrome.\n\n**Immediate Management Plan:**\n\n<SYMPTOM_MITIGATION>\n[Chest Pain]:  Administer supplemental oxygen, administer analgesics (morphine already given), and consider a short-acting benzodiazepine for anxiety.\n[Tachycardia]:  Monitor heart rate closely and address any underlying causes (pain, anxiety, hypovolemia).\n</SYMPTOM_MITIGATION>\n\n<IMMEDIATE_ACTIONS>\n- Obtain a chest x-ray to assess for pneumothorax, pulmonary contusion, and other lung injuries.\n- Perform an echocardiogram to evaluate for pericardial effusion and cardiac function.\n- Monitor vital signs closely, including blood pressure, heart rate, respiratory rate, and oxygen saturation.\n- Continue intravenous fluid resuscitation with Ringer's lactate as needed to maintain adequate blood pressure and perfusion.\n- Consider a pericardiocentesis if cardiac tamponade is suspected.\n- Obtain a 12-lead ECG to rule out acute coronary syndrome.\n- Consult with a trauma surgeon for further management.\n</IMMEDIATE_ACTIONS>\n\n\n\n**Note:** This is a rapidly evolving situation, and the management plan may need to be adjusted based on the patient's response to treatment and the results of further investigations."
+      },
+      "team_independent_differentials": {
+        "round_type": "team_independent_differentials",
+        "participants": [
+          "Dr. Anya Sharma",
+          "Dr. Liam O'Connell",
+          "Dr. Maya Patel",
+          "Dr. Sarah Chen",
+          "Dr. Michael Kim",
+          "Dr. Emily Patel",
+          "Dr. Rajiv Gupta",
+          "Dr. Lisa Rodriguez",
+          "Dr. Clinical Evaluator"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"cardiac tamponade\": [\"Elevated pulmonary capillary wedge pressure\", \"Chest pain\", \"Bruising over chest wall\"], \"pulmonary contusion\": [\"Chest pain\", \"Bruising over chest wall\", \"Mechanism of injury\"], \"tension pneumothorax\": [\"Chest pain\", \"Elevated pulmonary capillary wedge pressure\", \"Tachycardia\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Cardiac Tamponade (Confidence: 70%)**: This is the most concerning diagnosis given the patient's presentation.  The combination of elevated pulmonary capillary wedge pressure (PCWP), chest pain, and bruising over the chest wall strongly suggests pericardial effusion, which can lead to tamponade. The mechanism of injury (head-on collision) is also consistent with blunt chest trauma, a common cause of cardiac tamponade.\n\n2. **Pulmonary Contusion (Confidence: 60%)**:  The patient's mechanism of injury (blunt chest trauma) and the presence of chest pain and bruising are highly suggestive of pulmonary contusion. This condition involves damage to the lung tissue, often leading to respiratory distress.\n\n3. **Tension Pneumothorax (Confidence: 40%)**: While the patient's ECG is not showing signs of a pneumothorax, the elevated PCWP and tachycardia could indicate a tension pneumothorax, where air trapped in the pleural space compresses the lung and heart. This is a life-threatening condition that requires immediate attention.\n\n**Specialty Focus:**\n\nAs a trauma surgeon, my primary concern is the potential for life-threatening hemorrhage and organ damage. The patient's elevated PCWP and troponins raise the possibility of cardiac injury, which could be due to tamponade or myocardial contusion.  The bruising and chest pain suggest potential for both pulmonary and cardiac involvement.  \n\nImmediate steps include:\n\n* **Thorough physical examination:**  I would focus on assessing the patient's respiratory status, cardiovascular function, and any signs of abdominal or pelvic injury.\n* **Repeat ECG and echocardiogram:** These studies will help to further evaluate the patient's cardiac function and rule out or confirm tamponade.\n* **Chest X-ray:** This will help to visualize the lungs and identify any pneumothorax or other pulmonary abnormalities.\n* **Close monitoring:** The patient's vital signs, oxygen saturation, and mental status need to be closely monitored.\n\n\nThe patient's presentation warrants immediate and aggressive management to address the potential for life-threatening complications.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "Elevated pulmonary capillary wedge pressure",
+                "Chest pain",
+                "Bruising over chest wall"
+              ],
+              "pulmonary contusion": [
+                "Chest pain",
+                "Bruising over chest wall",
+                "Mechanism of injury"
+              ],
+              "tension pneumothorax": [
+                "Chest pain",
+                "Elevated pulmonary capillary wedge pressure",
+                "Tachycardia"
+              ]
+            },
+            "response_time": 5.527103424072266,
+            "confidence_score": 0.64,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763109.1253164
+          },
+          "Dr. Liam O'Connell": {
+            "content": "```json\n{\"acute myocardial infarction\": [\"Elevated troponins\", \"Chest pain\"], \"pulmonary contusion\": [\"Chest pain\", \"Bruising over chest wall\", \"Trauma\"], \"Cardiac tamponade\": [\"Elevated pulmonary capillary wedge pressure\", \"Chest pain\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Acute Myocardial Infarction (Confidence: 60%)**: The patient's elevated troponin levels, coupled with chest pain following a traumatic event, strongly suggest myocardial injury.  While the mechanism of injury is blunt trauma, it's possible for myocardial contusion or even coronary artery dissection to occur in such events.\n\n2. **Pulmonary Contusion (Confidence: 30%)**: The patient's history of blunt chest trauma, bruising over the chest wall, and the presence of chest pain are consistent with a pulmonary contusion. This can lead to elevated pulmonary capillary wedge pressure due to impaired lung function.\n\n3. **Cardiac Tamponade (Confidence: 10%)**: The elevated pulmonary capillary wedge pressure in the setting of chest pain is concerning for cardiac tamponade. However, the absence of Beck's triad (hypotension, distended neck veins, muffled heart sounds) makes this diagnosis less likely at this stage.\n\n**SPECIALTY_FOCUS**\n\nAs a cardiologist, my primary concern is the potential for myocardial injury. The elevated troponins are a critical finding that requires further investigation.  I would prioritize:\n\n* **Repeat troponin measurements:** To assess the trend and severity of myocardial injury.\n* **ECG monitoring:** To look for any ST-segment changes or arrhythmias.\n* **Echocardiography:** To evaluate cardiac function, wall motion abnormalities, and rule out pericardial effusion.\n* **Coronary angiography:** If myocardial infarction is suspected, this would be necessary to assess for coronary artery blockages.\n\n\nIt's important to remember that the patient's presentation is complex, and a multidisciplinary approach involving trauma surgeons and critical care specialists is essential for optimal management.",
+            "structured_data": {
+              "acute myocardial infarction": [
+                "Elevated troponins",
+                "Chest pain"
+              ],
+              "pulmonary contusion": [
+                "Chest pain",
+                "Bruising over chest wall",
+                "Trauma"
+              ],
+              "Cardiac tamponade": [
+                "Elevated pulmonary capillary wedge pressure",
+                "Chest pain"
+              ]
+            },
+            "response_time": 4.612019300460815,
+            "confidence_score": 0.64,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763109.1253178
+          },
+          "Dr. Maya Patel": {
+            "content": "```json\n{\"pulmonary contusion\": [\"chest pain\", \"bruising over chest wall\", \"elevated troponins\"], \"tension pneumothorax\": [\"chest pain\", \"tachycardia\", \"elevated pulmonary capillary wedge pressure\"], \"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"tachycardia\", \"chest pain\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Pulmonary Contusion (Confidence: 60%)**:  The patient's history of a motor vehicle collision, chest pain, and bruising over his chest wall are highly suggestive of pulmonary contusion. Elevated troponins could be due to the chest trauma and associated myocardial injury.\n\n2. **Tension Pneumothorax (Confidence: 30%)**: The combination of chest pain, tachycardia, and elevated pulmonary capillary wedge pressure raises concern for a tension pneumothorax. This is a life-threatening condition that requires immediate attention.\n\n3. **Cardiac Tamponade (Confidence: 10%)**: While the elevated pulmonary capillary wedge pressure is concerning, the absence of Beck's triad (hypotension, distended neck veins, muffled heart sounds) makes cardiac tamponade less likely. However, it should still be considered in the differential diagnosis.\n\n**SPECIALTY_FOCUS**\n\nAs an Emergency Medicine specialist, my primary focus is on rapidly identifying and managing life-threatening conditions. In this case, I would prioritize:\n\n* **Thorough assessment:**  I would perform a focused physical exam, including auscultation of the lungs and heart, and assess for signs of shock.\n* **Diagnostic testing:**  A chest X-ray is crucial to rule out pneumothorax and evaluate for pulmonary contusion.  ECG monitoring is essential to detect any arrhythmias.\n* **Immediate intervention:** If a tension pneumothorax is suspected, immediate needle decompression is necessary. For pulmonary contusion, supportive care with oxygen and pain management is crucial.\n\n\nI would closely monitor the patient's vital signs and hemodynamic status, and be prepared to escalate care if necessary.",
+            "structured_data": {
+              "pulmonary contusion": [
+                "chest pain",
+                "bruising over chest wall",
+                "elevated troponins"
+              ],
+              "tension pneumothorax": [
+                "chest pain",
+                "tachycardia",
+                "elevated pulmonary capillary wedge pressure"
+              ],
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "tachycardia",
+                "chest pain"
+              ]
+            },
+            "response_time": 4.583251476287842,
+            "confidence_score": 0.64,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763109.1253192
+          },
+          "Dr. Sarah Chen": {
+            "content": "{\"acute myocardial infarction\": [\"elevated troponins\", \"elevated pulmonary capillary wedge pressure\"], \"pulmonary embolism\": [\"calf tenderness\", \"chest pain\"], \"hemothorax\": [\"bruising over chest wall\", \"hypotension\"]}\n\n<DIFFERENTIAL_DIAGNOSIS>\n1. Acute myocardial infarction - Confidence: 70% - The patient's elevated troponins and pulmonary capillary wedge pressure, along with chest pain, are strong indicators of an acute myocardial infarction. The patient's history of trauma and the presence of chest pain are also relevant.\n2. Pulmonary embolism - Confidence: 50% - The patient's chest pain, along with the presence of bruising over the chest wall and hypotension, could suggest a pulmonary embolism. However, the troponins and pulmonary capillary wedge pressure are more indicative of cardiac issues.\n3. Hemothorax - Confidence: 30% - The bruising over the chest wall and the patient's hypotension could be indicative of a hemothorax, which is a collection of blood in the pleural space. However, the troponins and pulmonary capillary wedge pressure are more consistent with cardiac issues.\n</DIFFERENTIAL_DIAGNOSIS>\n\n<SPECIALTY_FOCUS>\nIn Emergency Medicine, the initial assessment of a trauma patient often involves a rapid and systematic approach to identify life-threatening conditions. The patient's presentation with chest pain, hypotension, and signs of internal bleeding are critical. The elevated troponins and pulmonary capillary wedge pressure are particularly concerning for myocardial infarction, as they suggest myocardial injury and left ventricular dysfunction. These findings are consistent with a high-risk trauma patient who may have sustained significant internal injuries.\n\nIt is crucial to perform a thorough physical examination, including palpation of the lower extremities for signs of deep vein thrombosis, which can lead to pulmonary embolism. Additionally, the patient should undergo further imaging such as a chest X-ray and possibly a CT scan to evaluate for other potential injuries, such as a hemothorax or pneumothorax.\n\nGiven the patient's history and current presentation, immediate intervention is necessary to stabilize the patient and prevent further complications. Continuous monitoring of vital signs, blood pressure, and oxygen saturation is essential, and the patient should be kept on close observation for any changes in condition.\n</SPECIALTY_FOCUS>",
+            "structured_data": {
+              "acute myocardial infarction": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure"
+              ],
+              "pulmonary embolism": [
+                "calf tenderness",
+                "chest pain"
+              ],
+              "hemothorax": [
+                "bruising over chest wall",
+                "hypotension"
+              ]
+            },
+            "response_time": 3.7338221073150635,
+            "confidence_score": 0.64,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763109.125326
+          },
+          "Dr. Michael Kim": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\"], \"aortic dissection\": [\"chest pain\", \"hypotension\"], \"hemothorax\": [\"bruising over the chest wall\", \"hypotension\"]}\n```\n\n**Clinical Reasoning:**\n\n**CARDIAC TAMPONADE:**\n- Elevated pulmonary capillary wedge pressure and elevated troponins are strong indicators of cardiac tamponade. Cardiac tamponade is a condition where blood accumulates in the pericardial space, leading to compression of the heart and impaired ventricular filling. The chest pain and tachycardia in this case are also consistent with this diagnosis.\n\n**AORTIC DISSECTION:**\n- The patient's history of a motor vehicle collision and the presence of chest pain are concerning for aortic dissection. Aortic dissection is a critical condition where a tear in the inner lining of the aorta leads to a separation of the layers of the aortic wall. The combination of chest pain and hypotension can be seen in cases of aortic dissection, especially if there is involvement of the descending aorta.\n\n**HEMOTHORAX:**\n- The presence of bruising over the chest wall and hypotension can be indicative of a hemothorax, which is a collection of blood in the pleural space. This can occur as a result of trauma and can lead to hypotension if there is significant blood loss. However, the evidence for this diagnosis is less strong compared to the other two, given the additional clinical findings such as the elevated troponins and capillary wedge pressure.\n\n**SPECIALTY_FOCUS:**\n- As a cardiovascular surgeon, it is crucial to address the potential for life-threatening conditions such as cardiac tamponade and aortic dissection. The management of these conditions would require immediate surgical intervention and close monitoring. It is essential to perform a thorough physical examination, including an assessment of jugular venous pressure and pericardial examination, to confirm or rule out cardiac tamponade. Additionally, imaging studies such as a CT scan of the chest and a transesophageal echocardiogram would be necessary to evaluate for aortic dissection and other intrathoracic injuries. Prompt diagnosis and treatment are critical to prevent severe complications and ensure the patient's survival.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins"
+              ],
+              "aortic dissection": [
+                "chest pain",
+                "hypotension"
+              ],
+              "hemothorax": [
+                "bruising over the chest wall",
+                "hypotension"
+              ]
+            },
+            "response_time": 3.5779783725738525,
+            "confidence_score": 0.76,
+            "reasoning_quality": "high",
+            "timestamp": 1752763109.1253266
+          },
+          "Dr. Emily Patel": {
+            "content": "```json\n{\"acute myocardial infarction\": [\"elevated troponins\", \"elevated pulmonary capillary wedge pressure\"], \"cardiac contusion\": [\"trauma history\", \"sinus tachycardia\"], \"pulmonary embolism\": [\"chest pain\", \"elevated pulmonary capillary wedge pressure\"]}\n```\n\n<DIFFERENTIAL_DIAGNOSIS>\n1. Acute myocardial infarction - Confidence: 70% - The patient's elevated troponins and elevated pulmonary capillary wedge pressure are concerning for an acute myocardial infarction. These findings suggest myocardial injury and increased left ventricular filling pressure, which can occur in the setting of a myocardial infarction.\n2. Cardiac contusion - Confidence: 50% - The patient's history of a motor vehicle collision and the presence of sinus tachycardia are indicative of a possible cardiac contusion. Trauma to the chest can lead to myocardial contusion, which can present with chest pain and tachycardia.\n3. Pulmonary embolism - Confidence: 30% - The patient's chest pain and elevated pulmonary capillary wedge pressure could be indicative of a pulmonary embolism. However, the primary imaging and clinical findings are more suggestive of a cardiac issue.\n</DIFFERENTIAL_DIAGNOSIS>\n\n<SPECIALTY_FOCUS>\n[Your specialty-specific insights and considerations]\n- **Echocardiography**: Although the initial echocardiogram was only notable for sinus tachycardia, a more detailed assessment might be necessary to rule out structural cardiac abnormalities such as left ventricular dysfunction or valvular issues.\n- **Imaging**: A CT angiography of the chest could be beneficial to rule out other causes of chest pain and to assess for any pulmonary embolism.\n- **Monitoring**: Continuous ECG monitoring is essential to detect any arrhythmias that might develop, especially in the setting of trauma and myocardial injury.\n- **Risk Factors**: Consider the patient's age and the mechanism of injury to assess for any underlying cardiovascular risk factors that might contribute to the presentation.\n- **Treatment**: Depending on the diagnosis, treatment could range from anticoagulation for a pulmonary embolism to cardiac catheterization for an acute myocardial infarction.\n</SPECIALTY_FOCUS>",
+            "structured_data": {
+              "acute myocardial infarction": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure"
+              ],
+              "cardiac contusion": [
+                "trauma history",
+                "sinus tachycardia"
+              ],
+              "pulmonary embolism": [
+                "chest pain",
+                "elevated pulmonary capillary wedge pressure"
+              ]
+            },
+            "response_time": 3.5287702083587646,
+            "confidence_score": 0.72,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763109.1253273
+          },
+          "Dr. Rajiv Gupta": {
+            "content": "```json\n{\"traumatic chest injury\": [\"elevated troponins\", \"elevated pulmonary capillary wedge pressure\", \"chest pain\", \"bruising over the chest wall\"], \"pneumothorax\": [\"respiratory distress\", \"dyspnea\", \"chest pain\"], \"hemothorax\": [\"hypotension\", \"chest pain\", \"bruising over the chest wall\"]}\n```\n\nNow, I'll provide the detailed clinical reasoning:\n\n<DIFFERENTIAL_DIAGNOSIS>\n1. Traumatic Chest Injury - [Confidence: 80%] - The patient's history of a motor vehicle collision, elevated troponins, and chest pain are all consistent with a traumatic chest injury. The presence of bruising over the chest wall further supports this diagnosis. Troponins are often elevated in cases of myocardial contusion or chest wall injury, leading to myocardial injury.\n2. Pneumothorax - [Confidence: 15%] - While the patient does have chest pain and bruising, the respiratory distress and dyspnea are not as prominent, and the initial workup does not indicate any respiratory compromise. However, pneumothorax is a potential complication of chest trauma and should be considered.\n3. Hemothorax - [Confidence: 5%] - The patient's hypotension and chest pain could be indicative of hemothorax, but the absence of significant respiratory distress and the presence of chest wall bruising make this diagnosis less likely.\n</DIFFERENTIAL_DIAGNOSIS>\n\n<SPECIALTY_FOCUS>\nAs a thoracic surgeon, I am particularly focused on the potential for chest wall and lung injuries resulting from the motor vehicle collision. The elevated troponins and pulmonary capillary wedge pressure suggest myocardial injury or pulmonary contusion, which are common in patients with chest trauma. The chest pain and bruising are consistent with a direct injury to the chest wall. It is crucial to perform a thorough physical examination, including inspection for paradoxical movement, and to consider imaging studies such as a chest X-ray or CT scan to evaluate for any internal injuries. Given the patient's hemodynamic instability, it is essential to rule out any life-threatening conditions such as hemothorax or pneumothorax.\n</SPECIALTY_FOCUS>",
+            "structured_data": {
+              "traumatic chest injury": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure",
+                "chest pain",
+                "bruising over the chest wall"
+              ],
+              "pneumothorax": [
+                "respiratory distress",
+                "dyspnea",
+                "chest pain"
+              ],
+              "hemothorax": [
+                "hypotension",
+                "chest pain",
+                "bruising over the chest wall"
+              ]
+            },
+            "response_time": 3.474677801132202,
+            "confidence_score": 0.6799999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763109.125328
+          },
+          "Dr. Lisa Rodriguez": {
+            "content": "```json\n{\"traumatic aortic injury\": [\"elevated troponins\", \"elevated pulmonary capillary wedge pressure\"], \"cardiac contusion\": [\"sinus tachycardia\", \"chest pain\"], \"pneumothorax\": [\"bruising over the chest wall\", \"hypotension\"]}\n```\n\n### DIFFERENTIAL_DIAGNOSIS\n1. **Traumatic Aortic Injury** - [Confidence: 70%] - [Reasoning: The patient's presentation after a motor vehicle collision, elevated troponins, and elevated pulmonary capillary wedge pressure are strong indicators of a traumatic aortic injury. These findings suggest significant hemodynamic instability and potential aortic rupture.]\n2. **Cardiac Contusion** - [Confidence: 60%] - [Reasoning: The patient's history of a motor vehicle collision, sinus tachycardia, and chest pain are consistent with a cardiac contusion. Chest wall bruising and hypotension can also be seen in cases of blunt chest trauma.]\n3. **Pneumothorax** - [Confidence: 50%] - [Reasoning: The presence of chest wall bruising and hypotension could indicate a pneumothorax. However, the other more specific and critical findings such as elevated troponins and pulmonary capillary wedge pressure make this diagnosis less likely.]\n\n### SPECIALTY_FOCUS\n[Your specialty-specific insights and considerations]\n- **Hemodynamic Stability**: The patient's hypotension and the need for fluid resuscitation are critical signs that point towards a significant underlying injury. Continuous monitoring of blood pressure and hemodynamic status is essential.\n- **Immediate Imaging**: Given the suspicion of a traumatic aortic injury, immediate imaging such as a chest CT scan or aortography should be considered to confirm the diagnosis and guide further management.\n- **Cardiac Monitoring**: Continuous ECG monitoring is crucial to detect any arrhythmias or changes in cardiac rhythm that might be associated with a cardiac contusion or other cardiac injuries.\n- **Pain Management**: Effective pain control is important to assess the patient's true level of pain and to ensure accurate assessment of chest pain, which can be a symptom of multiple underlying conditions.",
+            "structured_data": {
+              "traumatic aortic injury": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure"
+              ],
+              "cardiac contusion": [
+                "sinus tachycardia",
+                "chest pain"
+              ],
+              "pneumothorax": [
+                "bruising over the chest wall",
+                "hypotension"
+              ]
+            },
+            "response_time": 3.385336399078369,
+            "confidence_score": 0.72,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763109.1253288
+          },
+          "Dr. Clinical Evaluator": {
+            "content": "```json\n{\"acute myocardial infarction\": [\"elevated troponins\", \"elevated pulmonary capillary wedge pressure\"], \"pulmonary embolism\": [\"chest pain\", \"elevated D-dimer\"], \"stability after trauma\": [\"sinus tachycardia\", \"bruising over chest wall\"]}\n```\n\n### DIFFERENTIAL_DIAGNOSIS\n1. **Acute Myocardial Infarction (AMI)** - [Confidence: 70%] - [Reasoning: The patient's elevated troponins and elevated pulmonary capillary wedge pressure are strong indicators of myocardial injury and potential heart strain. The chest pain and tachycardia are also consistent with AMI.]\n2. **Pulmonary Embolism (PE)** - [Confidence: 50%] - [Reasoning: The patient's chest pain, especially if it is pleuritic, and the elevated D-dimer levels suggest the possibility of a pulmonary embolism. However, the presence of trauma and the elevated pulmonary capillary wedge pressure make AMI more likely.]\n3. **Stability After Trauma** - [Confidence: 30%] - [Reasoning: The patient's presentation after a motor vehicle collision with sinus tachycardia and bruising over the chest wall suggests a stable post-trauma state. However, the clinical findings of chest pain and the elevated troponins and pulmonary capillary wedge pressure make other diagnoses more likely.]\n\n### SPECIALTY_FOCUS\n[Your specialty-specific insights and considerations]\n- **Trauma and Cardiology Integration**: Given the patient's history of a motor vehicle collision, it is crucial to consider the impact of trauma on cardiac function. The presence of chest pain and the elevated troponins and pulmonary capillary wedge pressure are significant and should prompt a thorough evaluation for both cardiac and pulmonary causes.\n- **Cardiac Monitoring**: Continuous cardiac monitoring is essential to detect any changes in heart rate or rhythm, which could indicate the onset of an AMI or other cardiac issues.\n- **Pulmonary Workup**: Considering the possibility of a pulmonary embolism, a D-dimer test and possibly a CT pulmonary angiography should be considered if the clinical suspicion is high.\n- **Resuscitation and Fluid Management**: The patient has already received initial resuscitation with fluids and pain management. However, ongoing fluid management and monitoring for signs of heart failure or other complications are critical.\n- **Multidisciplinary Approach**: Collaboration with a cardiologist and pulmonologist is recommended to ensure a comprehensive evaluation and management plan, especially given the complexity of the patient's presentation.",
+            "structured_data": {
+              "acute myocardial infarction": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure"
+              ],
+              "pulmonary embolism": [
+                "chest pain",
+                "elevated D-dimer"
+              ],
+              "stability after trauma": [
+                "sinus tachycardia",
+                "bruising over chest wall"
+              ]
+            },
+            "response_time": 4.054156303405762,
+            "confidence_score": 0.66,
+            "reasoning_quality": "high",
+            "timestamp": 1752763109.1253293
+          }
+        },
+        "metadata": {
+          "total_diagnoses": 27,
+          "agent_count": 9,
+          "all_diagnoses": [
+            {
+              "diagnosis": "cardiac tamponade",
+              "evidence": [
+                "Elevated pulmonary capillary wedge pressure",
+                "Chest pain",
+                "Bruising over chest wall"
+              ]
+            },
+            {
+              "diagnosis": "pulmonary contusion",
+              "evidence": [
+                "Chest pain",
+                "Bruising over chest wall",
+                "Mechanism of injury"
+              ]
+            },
+            {
+              "diagnosis": "tension pneumothorax",
+              "evidence": [
+                "Chest pain",
+                "Elevated pulmonary capillary wedge pressure",
+                "Tachycardia"
+              ]
+            },
+            {
+              "diagnosis": "acute myocardial infarction",
+              "evidence": [
+                "Elevated troponins",
+                "Chest pain"
+              ]
+            },
+            {
+              "diagnosis": "pulmonary contusion",
+              "evidence": [
+                "Chest pain",
+                "Bruising over chest wall",
+                "Trauma"
+              ]
+            },
+            {
+              "diagnosis": "Cardiac tamponade",
+              "evidence": [
+                "Elevated pulmonary capillary wedge pressure",
+                "Chest pain"
+              ]
+            },
+            {
+              "diagnosis": "pulmonary contusion",
+              "evidence": [
+                "chest pain",
+                "bruising over chest wall",
+                "elevated troponins"
+              ]
+            },
+            {
+              "diagnosis": "tension pneumothorax",
+              "evidence": [
+                "chest pain",
+                "tachycardia",
+                "elevated pulmonary capillary wedge pressure"
+              ]
+            },
+            {
+              "diagnosis": "cardiac tamponade",
+              "evidence": [
+                "elevated pulmonary capillary wedge pressure",
+                "tachycardia",
+                "chest pain"
+              ]
+            },
+            {
+              "diagnosis": "acute myocardial infarction",
+              "evidence": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure"
+              ]
+            },
+            {
+              "diagnosis": "pulmonary embolism",
+              "evidence": [
+                "calf tenderness",
+                "chest pain"
+              ]
+            },
+            {
+              "diagnosis": "hemothorax",
+              "evidence": [
+                "bruising over chest wall",
+                "hypotension"
+              ]
+            },
+            {
+              "diagnosis": "cardiac tamponade",
+              "evidence": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins"
+              ]
+            },
+            {
+              "diagnosis": "aortic dissection",
+              "evidence": [
+                "chest pain",
+                "hypotension"
+              ]
+            },
+            {
+              "diagnosis": "hemothorax",
+              "evidence": [
+                "bruising over the chest wall",
+                "hypotension"
+              ]
+            },
+            {
+              "diagnosis": "acute myocardial infarction",
+              "evidence": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure"
+              ]
+            },
+            {
+              "diagnosis": "cardiac contusion",
+              "evidence": [
+                "trauma history",
+                "sinus tachycardia"
+              ]
+            },
+            {
+              "diagnosis": "pulmonary embolism",
+              "evidence": [
+                "chest pain",
+                "elevated pulmonary capillary wedge pressure"
+              ]
+            },
+            {
+              "diagnosis": "traumatic chest injury",
+              "evidence": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure",
+                "chest pain",
+                "bruising over the chest wall"
+              ]
+            },
+            {
+              "diagnosis": "pneumothorax",
+              "evidence": [
+                "respiratory distress",
+                "dyspnea",
+                "chest pain"
+              ]
+            },
+            {
+              "diagnosis": "hemothorax",
+              "evidence": [
+                "hypotension",
+                "chest pain",
+                "bruising over the chest wall"
+              ]
+            },
+            {
+              "diagnosis": "traumatic aortic injury",
+              "evidence": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure"
+              ]
+            },
+            {
+              "diagnosis": "cardiac contusion",
+              "evidence": [
+                "sinus tachycardia",
+                "chest pain"
+              ]
+            },
+            {
+              "diagnosis": "pneumothorax",
+              "evidence": [
+                "bruising over the chest wall",
+                "hypotension"
+              ]
+            },
+            {
+              "diagnosis": "acute myocardial infarction",
+              "evidence": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure"
+              ]
+            },
+            {
+              "diagnosis": "pulmonary embolism",
+              "evidence": [
+                "chest pain",
+                "elevated D-dimer"
+              ]
+            },
+            {
+              "diagnosis": "stability after trauma",
+              "evidence": [
+                "sinus tachycardia",
+                "bruising over chest wall"
+              ]
+            }
+          ],
+          "diagnoses_by_agent": {
+            "Dr. Anya Sharma": [],
+            "Dr. Liam O'Connell": [],
+            "Dr. Maya Patel": [],
+            "Dr. Sarah Chen": [
+              {
+                "diagnosis": "Acute myocardial infarction",
+                "confidence": 70,
+                "reasoning": "Confidence: 70% - The patient's elevated troponins and pulmonary capillary wedge pressure, along with chest pain, are strong indicators of an acute myocardial infarction. The patient's history of trauma and the presence of chest pain are also relevant.",
+                "raw_line": "1. Acute myocardial infarction - Confidence: 70% - The patient's elevated troponins and pulmonary capillary wedge pressure, along with chest pain, are strong indicators of an acute myocardial infarction. The patient's history of trauma and the presence of chest pain are also relevant."
+              },
+              {
+                "diagnosis": "Pulmonary embolism",
+                "confidence": 50,
+                "reasoning": "Confidence: 50% - The patient's chest pain, along with the presence of bruising over the chest wall and hypotension, could suggest a pulmonary embolism. However, the troponins and pulmonary capillary wedge pressure are more indicative of cardiac issues.",
+                "raw_line": "2. Pulmonary embolism - Confidence: 50% - The patient's chest pain, along with the presence of bruising over the chest wall and hypotension, could suggest a pulmonary embolism. However, the troponins and pulmonary capillary wedge pressure are more indicative of cardiac issues."
+              },
+              {
+                "diagnosis": "Hemothorax",
+                "confidence": 30,
+                "reasoning": "Confidence: 30% - The bruising over the chest wall and the patient's hypotension could be indicative of a hemothorax, which is a collection of blood in the pleural space. However, the troponins and pulmonary capillary wedge pressure are more consistent with cardiac issues.",
+                "raw_line": "3. Hemothorax - Confidence: 30% - The bruising over the chest wall and the patient's hypotension could be indicative of a hemothorax, which is a collection of blood in the pleural space. However, the troponins and pulmonary capillary wedge pressure are more consistent with cardiac issues."
+              }
+            ],
+            "Dr. Michael Kim": [],
+            "Dr. Emily Patel": [
+              {
+                "diagnosis": "Acute myocardial infarction",
+                "confidence": 70,
+                "reasoning": "Confidence: 70% - The patient's elevated troponins and elevated pulmonary capillary wedge pressure are concerning for an acute myocardial infarction. These findings suggest myocardial injury and increased left ventricular filling pressure, which can occur in the setting of a myocardial infarction.",
+                "raw_line": "1. Acute myocardial infarction - Confidence: 70% - The patient's elevated troponins and elevated pulmonary capillary wedge pressure are concerning for an acute myocardial infarction. These findings suggest myocardial injury and increased left ventricular filling pressure, which can occur in the setting of a myocardial infarction."
+              },
+              {
+                "diagnosis": "Cardiac contusion",
+                "confidence": 50,
+                "reasoning": "Confidence: 50% - The patient's history of a motor vehicle collision and the presence of sinus tachycardia are indicative of a possible cardiac contusion. Trauma to the chest can lead to myocardial contusion, which can present with chest pain and tachycardia.",
+                "raw_line": "2. Cardiac contusion - Confidence: 50% - The patient's history of a motor vehicle collision and the presence of sinus tachycardia are indicative of a possible cardiac contusion. Trauma to the chest can lead to myocardial contusion, which can present with chest pain and tachycardia."
+              },
+              {
+                "diagnosis": "Pulmonary embolism",
+                "confidence": 30,
+                "reasoning": "Confidence: 30% - The patient's chest pain and elevated pulmonary capillary wedge pressure could be indicative of a pulmonary embolism. However, the primary imaging and clinical findings are more suggestive of a cardiac issue.",
+                "raw_line": "3. Pulmonary embolism - Confidence: 30% - The patient's chest pain and elevated pulmonary capillary wedge pressure could be indicative of a pulmonary embolism. However, the primary imaging and clinical findings are more suggestive of a cardiac issue."
+              }
+            ],
+            "Dr. Rajiv Gupta": [
+              {
+                "diagnosis": "Traumatic Chest Injury",
+                "confidence": 80,
+                "reasoning": "[Confidence: 80%] - The patient's history of a motor vehicle collision, elevated troponins, and chest pain are all consistent with a traumatic chest injury. The presence of bruising over the chest wall further supports this diagnosis. Troponins are often elevated in cases of myocardial contusion or chest wall injury, leading to myocardial injury.",
+                "raw_line": "1. Traumatic Chest Injury - [Confidence: 80%] - The patient's history of a motor vehicle collision, elevated troponins, and chest pain are all consistent with a traumatic chest injury. The presence of bruising over the chest wall further supports this diagnosis. Troponins are often elevated in cases of myocardial contusion or chest wall injury, leading to myocardial injury."
+              },
+              {
+                "diagnosis": "Pneumothorax",
+                "confidence": 15,
+                "reasoning": "[Confidence: 15%] - While the patient does have chest pain and bruising, the respiratory distress and dyspnea are not as prominent, and the initial workup does not indicate any respiratory compromise. However, pneumothorax is a potential complication of chest trauma and should be considered.",
+                "raw_line": "2. Pneumothorax - [Confidence: 15%] - While the patient does have chest pain and bruising, the respiratory distress and dyspnea are not as prominent, and the initial workup does not indicate any respiratory compromise. However, pneumothorax is a potential complication of chest trauma and should be considered."
+              },
+              {
+                "diagnosis": "Hemothorax",
+                "confidence": 5,
+                "reasoning": "[Confidence: 5%] - The patient's hypotension and chest pain could be indicative of hemothorax, but the absence of significant respiratory distress and the presence of chest wall bruising make this diagnosis less likely.",
+                "raw_line": "3. Hemothorax - [Confidence: 5%] - The patient's hypotension and chest pain could be indicative of hemothorax, but the absence of significant respiratory distress and the presence of chest wall bruising make this diagnosis less likely."
+              }
+            ],
+            "Dr. Lisa Rodriguez": [],
+            "Dr. Clinical Evaluator": []
+          }
+        },
+        "success": true,
+        "execution_time": 36.512136697769165,
+        "formatted_output": ""
+      },
+      "master_list_generation": {
+        "round_type": "master_list_generation",
+        "participants": [
+          "Dr. Anya Sharma"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "<MASTER DDX LIST>\n1. Cardiac Tamponade - High - Elevated troponins and pulmonary capillary wedge pressure, chest pain, and bruising are suggestive of cardiac tamponade.\n2. Pulmonary Contusion - Moderate - Chest pain, tachycardia, and bruising are consistent with pulmonary contusion.\n3. Acute Myocardial Infarction - Moderate - Elevated troponins suggest myocardial injury, but the absence of ECG changes and the presence of other findings point towards alternative diagnoses.\n4. Hemothorax - Low - Bruising over the chest wall raises the possibility of hemothorax, but it is less likely given the absence of other classic signs like hypotension and absent breath sounds. \n5. Aortic Dissection - Low - While chest pain and hypotension are present, the absence of other classic findings like a widened mediastinum on imaging makes aortic dissection less likely.\n\n</CONSOLIDATION_NOTES>",
+            "structured_data": null,
+            "response_time": 3.2134816646575928,
+            "confidence_score": 0.74,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763112.3456345
+          }
+        },
+        "metadata": {
+          "master_diagnoses": [
+            "1. Cardiac Tamponade - High - Elevated troponins and pulmonary capillary wedge pressure, chest pain, and bruising are suggestive of cardiac tamponade.",
+            "2. Pulmonary Contusion - Moderate - Chest pain, tachycardia, and bruising are consistent with pulmonary contusion.",
+            "3. Acute Myocardial Infarction - Moderate - Elevated troponins suggest myocardial injury, but the absence of ECG changes and the presence of other findings point towards alternative diagnoses.",
+            "4. Hemothorax - Low - Bruising over the chest wall raises the possibility of hemothorax, but it is less likely given the absence of other classic signs like hypotension and absent breath sounds.",
+            "5. Aortic Dissection - Low - While chest pain and hypotension are present, the absence of other classic findings like a widened mediastinum on imaging makes aortic dissection less likely.",
+            "6. Myocardial Infarction",
+            "7. Myocardial Injury"
+          ],
+          "consolidation_notes": "",
+          "original_diagnosis_count": 27,
+          "deduplicated_count": 7
+        },
+        "success": true,
+        "execution_time": 3.22027587890625,
+        "formatted_output": "<MASTER DDX LIST>\n1. Cardiac Tamponade - High - Elevated troponins and pulmonary capillary wedge pressure, chest pain, and bruising are suggestive of cardiac tamponade.\n2. Pulmonary Contusion - Moderate - Chest pain, tachycardia, and bruising are consistent with pulmonary contusion.\n3. Acute Myocardial Infarction - Moderate - Elevated troponins suggest myocardial injury, but the absence of ECG changes and the presence of other findings point towards alternative diagnoses.\n4. Hemothorax - Low - Bruising over the chest wall raises the possibility of hemothorax, but it is less likely given the absence of other classic signs like hypotension and absent breath sounds. \n5. Aortic Dissection - Low - While chest pain and hypotension are present, the absence of other classic findings like a widened mediastinum on imaging makes aortic dissection less likely.\n\n</CONSOLIDATION_NOTES>"
+      },
+      "refinement_and_justification": {
+        "round_type": "refinement_and_justification",
+        "participants": [
+          "Dr. Anya Sharma",
+          "Dr. Liam O'Connell",
+          "Dr. Maya Patel",
+          "Dr. Sarah Chen",
+          "Dr. Michael Kim",
+          "Dr. Emily Patel",
+          "Dr. Rajiv Gupta",
+          "Dr. Lisa Rodriguez",
+          "Dr. Clinical Evaluator"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"hemothorax\": [\"bruising over the chest wall\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Cardiac Tamponade (High Confidence):** The combination of elevated pulmonary capillary wedge pressure, elevated troponins, chest pain, and bruising strongly suggests cardiac tamponade. These findings indicate pericardial effusion compressing the heart, leading to impaired cardiac function.\n\n2. **Hemorrhage (Moderate Confidence):** While the patient's blood pressure is not severely low, the presence of bruising over the chest wall raises the possibility of hemothorax.  Further investigation with imaging (chest X-ray or CT) is crucial to confirm or rule out this diagnosis.\n\n3. **Pulmonary Contusion (Moderate Confidence):** Chest pain, tachycardia, and bruising are consistent with pulmonary contusion, a common injury in blunt chest trauma. However, the presence of elevated troponins and pulmonary capillary wedge pressure suggests a more serious cardiac involvement.\n\n**Further Investigations:**\n\n* **Immediate Chest X-ray:** To assess for pneumothorax, hemothorax, and other lung injuries.\n* **Echocardiogram:** To further evaluate pericardial effusion and cardiac function.\n* **CT Scan:** To provide a more detailed view of the chest, including the heart, lungs, and great vessels.\n\n**Management:**\n\nThe patient's presentation strongly suggests cardiac tamponade, which is a life-threatening condition. Immediate pericardiocentesis should be considered to relieve the pericardial pressure and restore cardiac function.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "hemothorax": [
+                "bruising over the chest wall"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ]
+            },
+            "response_time": 4.383397579193115,
+            "confidence_score": 0.6799999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752763161.983981
+          },
+          "Dr. Liam O'Connell": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"traumatic aortic injury\": [\"elevated troponins\", \"elevated pulmonary capillary wedge pressure\", \"chest pain\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Cardiac Tamponade:** This remains a high concern given the combination of elevated pulmonary capillary wedge pressure (PCWP), elevated troponins, chest pain, and bruising. The PCWP elevation suggests impaired right ventricular filling, a hallmark of tamponade. The troponins indicate myocardial injury, which can occur due to the pressure on the heart.\n\n2. **Traumatic Aortic Injury:**  The elevated troponins and PCWP, along with chest pain, make this a serious possibility.  Aortic injury can lead to both myocardial injury (due to decreased blood flow) and hemodynamic instability (PCWP elevation).  \n\n3. **Pulmonary Contusion:** This diagnosis is supported by the patient's history of trauma, chest pain, tachycardia, and bruising.  \n\n**Further Considerations:**\n\n* **Imaging:** A chest X-ray and CT scan are crucial to visualize the heart, aorta, and lungs. These images can help differentiate between cardiac tamponade, aortic injury, and pulmonary contusion.\n* **Echocardiogram:** A more detailed echocardiogram can assess cardiac function and chamber dimensions, providing further evidence for or against cardiac tamponade.\n* **Hemodynamic Monitoring:** Continuous monitoring of blood pressure, heart rate, and oxygen saturation is essential to assess the patient's hemodynamic stability.\n\n\nLet me know if you have any further questions or if there are any specific aspects you'd like me to elaborate on.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "traumatic aortic injury": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure",
+                "chest pain"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ]
+            },
+            "response_time": 4.842434406280518,
+            "confidence_score": 0.6799999999999999,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763161.9839818
+          },
+          "Dr. Maya Patel": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"], \"traumatic aortic injury\": [\"elevated troponins\", \"elevated pulmonary capillary wedge pressure\", \"chest pain\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Cardiac Tamponade (High Confidence):** The combination of elevated pulmonary capillary wedge pressure (PCWP), elevated troponins, chest pain, and bruising strongly suggests cardiac tamponade.  The PCWP elevation indicates increased pressure in the left ventricle, which can be caused by fluid accumulation in the pericardial sac. Troponin elevation points to myocardial injury, which can occur due to compression of the heart. Chest pain and bruising are consistent with the trauma history and potential pericardial inflammation.\n\n2. **Pulmonary Contusion (Moderate Confidence):**  While chest pain, tachycardia, and bruising are consistent with pulmonary contusion, the presence of elevated PCWP and troponins makes cardiac tamponade a more likely diagnosis. Pulmonary contusion typically presents with more prominent respiratory symptoms like dyspnea and decreased breath sounds, which are not mentioned in the case.\n\n3. **Traumatic Aortic Injury (Moderate Confidence):** The elevated troponins and PCWP, along with chest pain, raise concern for a traumatic aortic injury. However, the absence of other classic findings like a widened mediastinum on imaging and the patient's relatively stable vital signs make this diagnosis less likely at this stage.\n\n**Further Investigations:**\n\n* **Echocardiogram:** A focused echocardiogram should be performed to assess for pericardial effusion and tamponade.\n* **CT Scan:** A CT scan of the chest should be obtained to evaluate for aortic dissection, hemothorax, and pulmonary contusion.\n* **Electrocardiogram (ECG):**  Continuous ECG monitoring is essential to detect any arrhythmias or signs of myocardial ischemia.\n* **Laboratory Tests:**  Repeat troponin levels, complete blood count, and coagulation studies should be monitored.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ],
+              "traumatic aortic injury": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure",
+                "chest pain"
+              ]
+            },
+            "response_time": 5.579522371292114,
+            "confidence_score": 0.74,
+            "reasoning_quality": "high",
+            "timestamp": 1752763161.9839826
+          },
+          "Dr. Sarah Chen": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"], \"traumatic aortic injury\": [\"elevated troponins\", \"elevated pulmonary capillary wedge pressure\"]}\n```\n\nNow, I will provide a detailed clinical reasoning for the top 3 most supported diagnoses:\n\n### Detailed Analysis\n\n1. **Cardiac Tamponade - HIGH**\n   - **Evidence:**\n     - Elevated pulmonary capillary wedge pressure\n     - Elevated troponins\n     - Chest pain\n     - Bruising over the chest wall\n   - **Clinical Reasoning:**\n     Cardiac tamponade is a critical condition where fluid accumulation in the pericardial sac compresses the heart, leading to impaired cardiac output. The presence of elevated pulmonary capillary wedge pressure and troponins, along with chest pain and bruising, are highly indicative of this condition. These findings are consistent with the mechanism of injury from a motor vehicle collision, which can cause blunt trauma to the chest leading to cardiac tamponade.\n\n2. **Pulmonary Contusion - MEDIUM**\n   - **Evidence:**\n     - Chest pain\n     - Tachycardia\n     - Bruising over the chest wall\n   - **Clinical Reasoning:**\n     Pulmonary contusion, or a bruised lung, is a common injury in trauma patients. The patient's history of a motor vehicle collision, chest pain, tachycardia, and bruising over the chest wall are all consistent with this diagnosis. However, the presence of elevated troponins and pulmonary capillary wedge pressure suggests a more significant cardiac involvement, making cardiac tamponade a more likely primary diagnosis. Nevertheless, pulmonary contusion remains a plausible secondary diagnosis.\n\n3. **Traumatic Aortic Injury - MEDIUM**\n   - **Evidence:**\n     - Elevated troponins\n     - Elevated pulmonary capillary wedge pressure\n   - **Clinical Reasoning:**\n     A traumatic aortic injury, such as a transection or dissection, can result from significant blunt trauma. The presence of elevated troponins and pulmonary capillary wedge pressure, along with the patient's history of a motor vehicle collision, supports this diagnosis. However, the absence of other classic signs like a widened mediastinum on imaging and the more specific findings of cardiac tamponade make this diagnosis less likely but still a consideration.\n\n### Conclusion\nBased on the clinical presentation and the available evidence, cardiac tamponade is the most likely diagnosis given the elevated troponins, pulmonary capillary wedge pressure, chest pain, and bruising. Pulmonary contusion and a traumatic aortic injury are also plausible, but less likely given the more specific and severe findings consistent with cardiac tamponade. Immediate intervention, including close monitoring and potential pericardiocentesis, is critical in this case.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ],
+              "traumatic aortic injury": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure"
+              ]
+            },
+            "response_time": 4.667046546936035,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752763161.983983
+          },
+          "Dr. Michael Kim": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"], \"traumatic aortic injury\": [\"trauma history\", \"elevated troponins\", \"elevated pulmonary capillary wedge pressure\"]}\n```\n\nNow, let's delve into the detailed clinical reasoning:\n\n### Systematic Review\n\n1. **Cardiac Tamponade - High**\n   - **Elevated pulmonary capillary wedge pressure**: This finding is consistent with the presence of fluid in the pericardial space, which can compress the heart, leading to impaired ventricular filling and reduced cardiac output.\n   - **Elevated troponins**: These biomarkers indicate myocardial injury, which can be a result of cardiac tamponade.\n   - **Chest pain**: This is a common symptom in patients with cardiac tamponade, often described as sharp and localized.\n   - **Bruising over the chest wall**: This is a sign of trauma and can be indicative of blunt chest trauma, which is a risk factor for cardiac tamponade.\n\n2. **Pulmonary Contusion - Moderate**\n   - **Chest pain**: Pulmonary contusions can cause chest pain, especially if they are severe.\n   - **Tachycardia**: This is a common response to pain and hypoxia, which can occur in the setting of a pulmonary contusion.\n   - **Bruising over the chest wall**: This is a sign of blunt chest trauma, which can lead to pulmonary contusions.\n\n3. **Traumatic Aortic Injury - Low**\n   - **Trauma history**: The patient was involved in a motor vehicle collision, which increases the risk of aortic injury.\n   - **Elevated troponins**: While troponins are elevated, they can also be seen in other conditions such as myocardial contusion or infarction.\n   - **Elevated pulmonary capillary wedge pressure**: This can occur in various conditions, including heart failure, but it is less specific for aortic injury compared to cardiac tamponade.\n\n### Detailed Analysis\n\n1. **Cardiac Tamponade - High**\n   - **Confidence: HIGH**\n   - **Full evidence-based reasoning**: The combination of elevated pulmonary capillary wedge pressure, elevated troponins, chest pain, and bruising over the chest wall strongly suggests cardiac tamponade. These findings are consistent with the mechanism of blunt chest trauma leading to cardiac compression. Cardiac tamponade can result in hemodynamic instability and is a surgical emergency.\n\n2. **Pulmonary Contusion - Moderate**\n   - **Confidence: MEDIUM**\n   - **Full evidence-based reasoning**: While the patient has chest pain, tachycardia, and bruising, these symptoms are also seen in other conditions such as pulmonary contusion. The presence of pulmonary contusion is plausible given the trauma history, but it is less specific and does not fully explain the elevated troponins and pulmonary capillary wedge pressure.\n\n3. **Traumatic Aortic Injury - Low**\n   - **Confidence: LOW**\n   - **Full evidence-based reasoning**: Although the patient has a trauma history and elevated troponins, the absence of other classic signs such as hypotension, widened mediastinum on imaging, and specific aortic injury signs (e.g., pulsus paradoxus, hypotension, and hypotensive response to standing) makes a traumatic aortic injury less likely. The other findings are more consistent with cardiac tamponade.\n\n### Conclusion\nThe most likely diagnosis based on the clinical findings is **cardiac tamponade**, followed by **pulmonary contusion**. The combination of elevated troponins, pulmonary capillary wedge pressure, chest pain, and bruising over the chest wall strongly supports this diagnosis. The patient should be evaluated for pericardial tamponade and considered for pericardiocentesis if hemodynamic instability persists. Further imaging such as a chest X-ray and CT scan of the thorax may be warranted to rule out other injuries.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ],
+              "traumatic aortic injury": [
+                "trauma history",
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure"
+              ]
+            },
+            "response_time": 6.409076929092407,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752763161.9839835
+          },
+          "Dr. Emily Patel": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"], \"aortic dissection\": [\"chest pain\", \"hypotension\"]}\n```\n\nNow, I will provide a detailed clinical reasoning for the top three most supported diagnoses:\n\n### SYSTEMATIC REVIEW\n\n1. **Cardiac Tamponade - High**\n   - **Elevated pulmonary capillary wedge pressure**: This is a key finding in cardiac tamponade, indicating increased left ventricular filling pressure due to the compression of the heart by the pericardial fluid.\n   - **Elevated troponins**: Elevated troponins suggest myocardial injury, which can occur in cardiac tamponade due to the reduced blood flow to the heart.\n   - **Chest pain**: The patient is experiencing chest pain, which can be a symptom of cardiac tamponade.\n   - **Bruising over the chest wall**: This could be a sign of blunt chest trauma, which can lead to cardiac tamponade.\n\n2. **Pulmonary Contusion - Moderate**\n   - **Chest pain**: The patient is experiencing chest pain, which can be a symptom of pulmonary contusion.\n   - **Tachycardia**: Tachycardia can be a response to pain and stress, which is common in pulmonary contusion.\n   - **Bruising over the chest wall**: Bruising is a sign of blunt chest trauma, which can lead to pulmonary contusion.\n\n3. **Aortic Dissection - Low**\n   - **Chest pain**: The patient is experiencing chest pain, which can be a symptom of aortic dissection.\n   - **Hypotension**: Hypotension can occur in aortic dissection, but the absence of other classic findings like a widened mediastinum on imaging makes aortic dissection less likely in this case.\n\n### DETAILED ANALYSIS\n\n1. **Cardiac Tamponade - High**\n   - **Confidence: HIGH**\n   - **Full evidence-based reasoning**: The presence of elevated pulmonary capillary wedge pressure and troponins, along with chest pain and bruising, are highly suggestive of cardiac tamponade. Cardiac tamponade occurs when there is an accumulation of fluid in the pericardial space, leading to reduced cardiac output and hemodynamic instability. The elevated troponins indicate myocardial injury, which can be a result of the reduced blood flow to the heart caused by the pericardial compression. The chest pain and bruising over the chest wall further support the diagnosis of blunt chest trauma, which can lead to cardiac tamponade.\n\n2. **Pulmonary Contusion - Moderate**\n   - **Confidence: MODERATE**\n   - **Full evidence-based reasoning**: The patient's symptoms of chest pain, tachycardia, and bruising over the chest wall are consistent with pulmonary contusion. Pulmonary contusion is a form of blunt chest trauma that can occur in a motor vehicle collision. The tachycardia can be a response to the pain and stress of the injury. While the presence of these symptoms supports pulmonary contusion, the elevated troponins and pulmonary capillary wedge pressure are more indicative of cardiac tamponade, making this diagnosis less likely.\n\n3. **Aortic Dissection - Low**\n   - **Confidence: LOW**\n   - **Full evidence-based reasoning**: The patient's symptoms of chest pain and hypotension are consistent with aortic dissection. However, the absence of other classic findings like a widened mediastinum on imaging makes aortic dissection less likely. Aortic dissection typically presents with severe, tearing chest pain that can be localized to the back, and it often involves hypotension and a widened mediastinum on imaging, which are not present in this case.\n\nIn conclusion, based on the clinical findings, the most likely diagnosis is **cardiac tamponade**, followed by **pulmonary contusion**. Aortic dissection is less likely given the absence of other classic signs. Further imaging, such as a chest CT or echocardiogram, would be beneficial to confirm the diagnosis and guide treatment.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ],
+              "aortic dissection": [
+                "chest pain",
+                "hypotension"
+              ]
+            },
+            "response_time": 6.558999061584473,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752763161.9839845
+          },
+          "Dr. Rajiv Gupta": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"], \"aortic dissection\": [\"chest pain\", \"hypotension\"]}\n```\n\nNow, I'll provide my detailed clinical reasoning:\n\n### Systematic Review\n\n1. **Cardiac Tamponade - High**\n   - **Elevated pulmonary capillary wedge pressure**: This is a strong indicator of cardiac tamponade, as the elevated pressure in the left atrium causes congestion in the lungs.\n   - **Elevated troponins**: Troponins are biomarkers for myocardial injury, and their elevation can be seen in cardiac tamponade due to the stress on the heart.\n   - **Chest pain**: The patient is experiencing chest pain, which can be a symptom of cardiac tamponade.\n   - **Bruising over the chest wall**: While not a specific sign of cardiac tamponade, it can be present in patients with chest wall trauma, which is often seen in motor vehicle collisions.\n\n2. **Pulmonary Contusion - Moderate**\n   - **Chest pain**: The patient is experiencing chest pain, which can be a symptom of pulmonary contusion.\n   - **Tachycardia**: Tachycardia can be a response to pain and stress, and it is also seen in pulmonary contusion due to the inflammatory response.\n   - **Bruising over the chest wall**: Bruising is a common sign of blunt chest wall trauma, which can lead to pulmonary contusion.\n\n3. **Aortic Dissection - Low**\n   - **Chest pain**: The patient is experiencing chest pain, which can be a symptom of aortic dissection.\n   - **Hypotension**: Hypotension is a classic sign of aortic dissection, but it is not present in this case.\n\n### Detailed Analysis\n\n1. **Cardiac Tamponade - High**\n   - **Confidence: HIGH**\n   - **Full evidence-based reasoning**: The patient's elevated pulmonary capillary wedge pressure and troponins are strong indicators of cardiac tamponade. The presence of chest pain and bruising over the chest wall further supports this diagnosis. While pulmonary contusion can cause chest pain and tachycardia, the combination of elevated troponins and pulmonary capillary wedge pressure is more indicative of cardiac tamponade.\n\n2. **Pulmonary Contusion - Moderate**\n   - **Confidence: MEDIUM**\n   - **Full evidence-based reasoning**: The patient's chest pain, tachycardia, and bruising over the chest wall are consistent with pulmonary contusion. However, the absence of other classic signs such as hypotension and the presence of elevated troponins and pulmonary capillary wedge pressure make pulmonary contusion less likely compared to cardiac tamponade.\n\n3. **Aortic Dissection - Low**\n   - **Confidence: LOW**\n   - **Full evidence-based reasoning**: While the patient's chest pain is a classic symptom of aortic dissection, the absence of other classic signs such as a widened mediastinum on imaging and hypotension makes aortic dissection less likely in this case.\n\nIn conclusion, the most likely diagnosis is **cardiac tamponade** due to the presence of elevated pulmonary capillary wedge pressure, elevated troponins, chest pain, and bruising over the chest wall. The patient should be urgently evaluated for potential cardiac tamponade and treated accordingly.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ],
+              "aortic dissection": [
+                "chest pain",
+                "hypotension"
+              ]
+            },
+            "response_time": 5.481110572814941,
+            "confidence_score": 0.74,
+            "reasoning_quality": "high",
+            "timestamp": 1752763161.9839852
+          },
+          "Dr. Lisa Rodriguez": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"], \"trauma-related chest injury\": [\"bruising over the chest wall\", \"tachycardia\", \"chest pain\"]}\n```\n\n### Systematic Review\n\n1. **Cardiac Tamponade - High**\n   - **Elevated pulmonary capillary wedge pressure**: This is a key finding for cardiac tamponade, indicating elevated left ventricular filling pressures.\n   - **Elevated troponins**: Elevated troponins suggest myocardial injury, which can be a result of cardiac tamponade.\n   - **Chest pain**: Chest pain is a common symptom in cardiac tamponade due to the underlying cardiac pathology.\n   - **Bruising**: Bruising over the chest wall can be a sign of trauma, which may lead to cardiac tamponade if there is significant internal bleeding.\n\n2. **Pulmonary Contusion - Moderate**\n   - **Chest pain**: Chest pain is a common symptom in pulmonary contusion due to the injury to the lung tissue.\n   - **Tachycardia**: Tachycardia can be a response to the stress of the injury and can be seen in pulmonary contusion.\n   - **Bruising**: Bruising over the chest wall is a direct sign of trauma, which can lead to pulmonary contusion.\n\n3. **Trauma-Related Chest Injury - Moderate**\n   - **Bruising over the chest wall**: This is a direct sign of trauma.\n   - **Tachycardia**: Tachycardia can be a response to the stress of the injury.\n   - **Chest pain**: Chest pain is a common symptom in trauma-related chest injuries.\n\n### Detailed Analysis\n\n1. **Cardiac Tamponade - High**\n   - **Confidence: HIGH**\n   - **Full evidence-based reasoning**: The presence of elevated pulmonary capillary wedge pressure and troponins, along with chest pain and bruising over the chest wall, strongly suggest cardiac tamponade. Cardiac tamponade is a critical condition where the heart is compressed by fluid accumulation in the pericardial sac, leading to impaired cardiac output and hemodynamic instability. The combination of these clinical findings, especially the elevated capillary wedge pressure and troponins, makes cardiac tamponade the most likely diagnosis in this scenario.\n\n2. **Pulmonary Contusion - Moderate**\n   - **Confidence: MEDIUM**\n   - **Full evidence-based reasoning**: While chest pain, tachycardia, and bruising are consistent with pulmonary contusion, the absence of other classic signs such as hypotension or absent breath sounds makes this diagnosis less likely. Pulmonary contusion can occur due to direct trauma to the lungs, and it is often associated with chest pain and tachycardia. However, the lack of additional findings like hypotension or diminished breath sounds makes it a secondary consideration.\n\n3. **Trauma-Related Chest Injury - Moderate**\n   - **Confidence: MEDIUM**\n   - **Full evidence-based reasoning**: The bruising over the chest wall and chest pain are direct signs of trauma. However, the presence of elevated troponins and pulmonary capillary wedge pressure, along with the patient's history of a motor vehicle collision, make it more likely that the chest pain and other symptoms are related to cardiac tamponade rather than a simple chest injury.\n\n### Conclusion\n\nGiven the clinical findings and the patient's history, the most likely diagnosis is **cardiac tamponade**. This is supported by the elevated pulmonary capillary wedge pressure, elevated troponins, chest pain, and bruising over the chest wall. Immediate management should focus on the potential for cardiac tamponade, including monitoring the patient's hemodynamic status and considering pericardiocentesis if necessary.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ],
+              "trauma-related chest injury": [
+                "bruising over the chest wall",
+                "tachycardia",
+                "chest pain"
+              ]
+            },
+            "response_time": 6.105320692062378,
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high",
+            "timestamp": 1752763161.9839883
+          },
+          "Dr. Clinical Evaluator": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"], \"traumatic aortic injury\": [\"elevated troponins\", \"elevated pulmonary capillary wedge pressure\"]}\n```\n\nNow, I will provide the detailed clinical reasoning for the top 3 most supported diagnoses:\n\n### Detailed Analysis\n\n1. **Cardiac Tamponade - Confidence: HIGH**\n   - **Clinical Reasoning:**\n     - **Elevated Pulmonary Capillary Wedge Pressure:** The patient's elevated pulmonary capillary wedge pressure is a strong indicator of cardiac tamponade. This finding suggests that there is fluid accumulation in the pericardial space, leading to increased pressure on the heart and impaired cardiac output.\n     - **Elevated Troponins:** Elevated troponins are also present, which is consistent with myocardial injury. In the context of cardiac tamponade, the myocardium is compressed, leading to ischemia and subsequent troponin release.\n     - **Chest Pain:** The patient is experiencing chest pain, which is a common symptom in cardiac tamponade due to the mechanical stress on the heart.\n     - **Bruising Over the Chest Wall:** The presence of bruising over the chest wall, while not specific to cardiac tamponade, can be seen in blunt chest trauma and is consistent with the mechanism of injury in a motor vehicle collision.\n\n2. **Pulmonary Contusion - Confidence: MODERATE**\n   - **Clinical Reasoning:**\n     - **Chest Pain:** The patient is experiencing chest pain, which can be a result of a pulmonary contusion. Pulmonary contusions are common in blunt chest trauma and can cause chest pain due to the inflammation and hemorrhage in the lung tissue.\n     - **Tachycardia:** The patient's tachycardia is also consistent with a pulmonary contusion, as the body's response to tissue injury can lead to increased heart rate.\n     - **Bruising Over the Chest Wall:** The presence of bruising over the chest wall is a common finding in blunt chest trauma, which can extend to the lungs, leading to a pulmonary contusion.\n\n3. **Traumatic Aortic Injury - Confidence: MODERATE**\n   - **Clinical Reasoning:**\n     - **Elevated Troponins:** Elevated troponins are present, which can be indicative of a traumatic aortic injury. Traumatic aortic injuries can cause significant myocardial injury due to the force of the trauma.\n     - **Elevated Pulmonary Capillary Wedge Pressure:** The elevated pulmonary capillary wedge pressure can also be a result of a traumatic aortic injury, as the aorta is a major blood vessel that can be damaged in a high-impact collision, leading to increased pressure in the pulmonary vasculature.\n     - **Chest Pain:** The patient's chest pain is consistent with a traumatic aortic injury, as the aorta is a major blood vessel that can be damaged in a high-impact collision, leading to significant pain.\n\n### Conclusion\nGiven the clinical findings and the context of the patient's motor vehicle collision, the most likely diagnosis is **cardiac tamponade**. The presence of elevated pulmonary capillary wedge pressure, elevated troponins, chest pain, and bruising over the chest wall are highly suggestive of cardiac tamponade. While pulmonary contusion and traumatic aortic injury are also possible, the combination of findings is more consistent with cardiac tamponade.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ],
+              "traumatic aortic injury": [
+                "elevated troponins",
+                "elevated pulmonary capillary wedge pressure"
+              ]
+            },
+            "response_time": 5.562835693359375,
+            "confidence_score": 0.76,
+            "reasoning_quality": "high",
+            "timestamp": 1752763161.9839888
+          }
+        },
+        "metadata": {
+          "total_refinements": 0,
+          "challenges_detected": 13,
+          "evidence_interactions": 72,
+          "specialty_insights": 0,
+          "debate_quality_score": 18.3,
+          "debate_interactions": [
+            {
+              "type": "challenge",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "however",
+              "context": "ardia, and bruising are consistent with pulmonary contusion, a common injury in blunt chest trauma. However, the presence of elevated troponins and pulmonary capillary wedge pressure suggests a more serious"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "findings",
+              "context": "e pressure, elevated troponins, chest pain, and bruising strongly suggests cardiac tamponade. These findings indicate pericardial effusion compressing the heart, leading to impaired cardiac function.\n\n2. **He"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "clinical",
+              "context": "ing over the chest wall\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Cardiac Tamponade (High Confidence):** The combination of elevated pulmonary cap"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "presentation",
+              "context": "d view of the chest, including the heart, lungs, and great vessels.\n\n**Management:**\n\nThe patient's presentation strongly suggests cardiac tamponade, which is a life-threatening condition. Immediate pericardiocen"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "imaging",
+              "context": "e of bruising over the chest wall raises the possibility of hemothorax.  Further investigation with imaging (chest X-ray or CT) is crucial to confirm or rule out this diagnosis.\n\n3. **Pulmonary Contusion (Mo"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "elevated",
+              "context": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"hemothorax\":"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "suggests",
+              "context": "elevated pulmonary capillary wedge pressure, elevated troponins, chest pain, and bruising strongly suggests cardiac tamponade. These findings indicate pericardial effusion compressing the heart, leading to i"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Anya Sharma",
+              "position": 0,
+              "pattern": "consistent with",
+              "context": "nosis.\n\n3. **Pulmonary Contusion (Moderate Confidence):** Chest pain, tachycardia, and bruising are consistent with pulmonary contusion, a common injury in blunt chest trauma. However, the presence of elevated tropo"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "question",
+              "context": "n is essential to assess the patient's hemodynamic stability.\n\n\nLet me know if you have any further questions or if there are any specific aspects you'd like me to elaborate on."
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "evidence",
+              "context": "more detailed echocardiogram can assess cardiac function and chamber dimensions, providing further evidence for or against cardiac tamponade.\n* **Hemodynamic Monitoring:** Continuous monitoring of blood pres"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "clinical",
+              "context": "pressure\", \"chest pain\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Cardiac Tamponade:** This remains a high concern given the combination of elevat"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "imaging",
+              "context": "ent's history of trauma, chest pain, tachycardia, and bruising.  \n\n**Further Considerations:**\n\n* **Imaging:** A chest X-ray and CT scan are crucial to visualize the heart, aorta, and lungs. These images can"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "elevated",
+              "context": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"traumatic ao"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "decreased",
+              "context": "st pain, make this a serious possibility.  Aortic injury can lead to both myocardial injury (due to decreased blood flow) and hemodynamic instability (PCWP elevation).  \n\n3. **Pulmonary Contusion:** This diagn"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "suggests",
+              "context": "y capillary wedge pressure (PCWP), elevated troponins, chest pain, and bruising. The PCWP elevation suggests impaired right ventricular filling, a hallmark of tamponade. The troponins indicate myocardial inju"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Liam O'Connell",
+              "position": 1,
+              "pattern": "given the",
+              "context": "\", \"bruising\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Cardiac Tamponade:** This remains a high concern given the combination of elevated pulmonary capillary wedge pressure (PCWP), elevated troponins, chest pain,"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Maya Patel",
+              "position": 2,
+              "pattern": "however",
+              "context": "he elevated troponins and PCWP, along with chest pain, raise concern for a traumatic aortic injury. However, the absence of other classic findings like a widened mediastinum on imaging and the patient's rela"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Maya Patel",
+              "position": 2,
+              "pattern": "less likely",
+              "context": "widened mediastinum on imaging and the patient's relatively stable vital signs make this diagnosis less likely at this stage.\n\n**Further Investigations:**\n\n* **Echocardiogram:** A focused echocardiogram should"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Maya Patel",
+              "position": 2,
+              "pattern": "findings",
+              "context": "with chest pain, raise concern for a traumatic aortic injury. However, the absence of other classic findings like a widened mediastinum on imaging and the patient's relatively stable vital signs make this dia"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Maya Patel",
+              "position": 2,
+              "pattern": "laboratory",
+              "context": "ntinuous ECG monitoring is essential to detect any arrhythmias or signs of myocardial ischemia.\n* **Laboratory Tests:**  Repeat troponin levels, complete blood count, and coagulation studies should be monitored"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Maya Patel",
+              "position": 2,
+              "pattern": "clinical",
+              "context": "njury\": [\"elevated troponins\", \"elevated pulmonary capillary wedge pressure\", \"chest pain\"]}\n```\n\n**Clinical Reasoning:**\n\n1. **Cardiac Tamponade (High Confidence):** The combination of elevated pulmonary cap"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Maya Patel",
+              "position": 2,
+              "pattern": "symptoms",
+              "context": "ade a more likely diagnosis. Pulmonary contusion typically presents with more prominent respiratory symptoms like dyspnea and decreased breath sounds, which are not mentioned in the case.\n\n3. **Traumatic Aort"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Maya Patel",
+              "position": 2,
+              "pattern": "imaging",
+              "context": "aumatic aortic injury. However, the absence of other classic findings like a widened mediastinum on imaging and the patient's relatively stable vital signs make this diagnosis less likely at this stage.\n\n**F"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Maya Patel",
+              "position": 2,
+              "pattern": "elevated",
+              "context": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary co"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Maya Patel",
+              "position": 2,
+              "pattern": "decreased",
+              "context": "s. Pulmonary contusion typically presents with more prominent respiratory symptoms like dyspnea and decreased breath sounds, which are not mentioned in the case.\n\n3. **Traumatic Aortic Injury (Moderate Confide"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Maya Patel",
+              "position": 2,
+              "pattern": "suggests",
+              "context": "ed pulmonary capillary wedge pressure (PCWP), elevated troponins, chest pain, and bruising strongly suggests cardiac tamponade.  The PCWP elevation indicates increased pressure in the left ventricle, which ca"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Maya Patel",
+              "position": 2,
+              "pattern": "indicates",
+              "context": "evated troponins, chest pain, and bruising strongly suggests cardiac tamponade.  The PCWP elevation indicates increased pressure in the left ventricle, which can be caused by fluid accumulation in the pericard"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Maya Patel",
+              "position": 2,
+              "pattern": "consistent with",
+              "context": "to myocardial injury, which can occur due to compression of the heart. Chest pain and bruising are consistent with the trauma history and potential pericardial inflammation.\n\n2. **Pulmonary Contusion (Moderate Conf"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "however",
+              "context": ", chest pain, tachycardia, and bruising over the chest wall are all consistent with this diagnosis. However, the presence of elevated troponins and pulmonary capillary wedge pressure suggests a more signific"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "less likely",
+              "context": "ened mediastinum on imaging and the more specific findings of cardiac tamponade make this diagnosis less likely but still a consideration.\n\n### Conclusion\nBased on the clinical presentation and the available evi"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "evidence",
+              "context": "the top 3 most supported diagnoses:\n\n### Detailed Analysis\n\n1. **Cardiac Tamponade - HIGH**\n   - **Evidence:**\n     - Elevated pulmonary capillary wedge pressure\n     - Elevated troponins\n     - Chest pain"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "findings",
+              "context": "e and troponins, along with chest pain and bruising, are highly indicative of this condition. These findings are consistent with the mechanism of injury from a motor vehicle collision, which can cause blunt t"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "clinical",
+              "context": "ted troponins\", \"elevated pulmonary capillary wedge pressure\"]}\n```\n\nNow, I will provide a detailed clinical reasoning for the top 3 most supported diagnoses:\n\n### Detailed Analysis\n\n1. **Cardiac Tamponade -"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "presentation",
+              "context": "de make this diagnosis less likely but still a consideration.\n\n### Conclusion\nBased on the clinical presentation and the available evidence, cardiac tamponade is the most likely diagnosis given the elevated tropo"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "imaging",
+              "context": "supports this diagnosis. However, the absence of other classic signs like a widened mediastinum on imaging and the more specific findings of cardiac tamponade make this diagnosis less likely but still a con"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "elevated",
+              "context": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary co"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "suggests",
+              "context": "this diagnosis. However, the presence of elevated troponins and pulmonary capillary wedge pressure suggests a more significant cardiac involvement, making cardiac tamponade a more likely primary diagnosis. N"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "consistent with",
+              "context": "ns, along with chest pain and bruising, are highly indicative of this condition. These findings are consistent with the mechanism of injury from a motor vehicle collision, which can cause blunt trauma to the chest l"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "given the",
+              "context": "he clinical presentation and the available evidence, cardiac tamponade is the most likely diagnosis given the elevated troponins, pulmonary capillary wedge pressure, chest pain, and bruising. Pulmonary contusi"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Sarah Chen",
+              "position": 3,
+              "pattern": "based on",
+              "context": "ngs of cardiac tamponade make this diagnosis less likely but still a consideration.\n\n### Conclusion\nBased on the clinical presentation and the available evidence, cardiac tamponade is the most likely diagnosi"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "less likely",
+              "context": "ulsus paradoxus, hypotension, and hypotensive response to standing) makes a traumatic aortic injury less likely. The other findings are more consistent with cardiac tamponade.\n\n### Conclusion\nThe most likely dia"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "evidence",
+              "context": "nade.\n\n### Detailed Analysis\n\n1. **Cardiac Tamponade - High**\n   - **Confidence: HIGH**\n   - **Full evidence-based reasoning**: The combination of elevated pulmonary capillary wedge pressure, elevated troponi"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "findings",
+              "context": "troponins, chest pain, and bruising over the chest wall strongly suggests cardiac tamponade. These findings are consistent with the mechanism of blunt chest trauma leading to cardiac compression. Cardiac tam"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "clinical",
+              "context": "troponins\", \"elevated pulmonary capillary wedge pressure\"]}\n```\n\nNow, let's delve into the detailed clinical reasoning:\n\n### Systematic Review\n\n1. **Cardiac Tamponade - High**\n   - **Elevated pulmonary capill"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "symptoms",
+              "context": "Full evidence-based reasoning**: While the patient has chest pain, tachycardia, and bruising, these symptoms are also seen in other conditions such as pulmonary contusion. The presence of pulmonary contusion"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "imaging",
+              "context": "elevated troponins, the absence of other classic signs such as hypotension, widened mediastinum on imaging, and specific aortic injury signs (e.g., pulsus paradoxus, hypotension, and hypotensive response to"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "elevated",
+              "context": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary co"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "suggests",
+              "context": "capillary wedge pressure, elevated troponins, chest pain, and bruising over the chest wall strongly suggests cardiac tamponade. These findings are consistent with the mechanism of blunt chest trauma leading t"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "consistent with",
+              "context": "**Cardiac Tamponade - High**\n   - **Elevated pulmonary capillary wedge pressure**: This finding is consistent with the presence of fluid in the pericardial space, which can compress the heart, leading to impaired v"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "given the",
+              "context": "n in other conditions such as pulmonary contusion. The presence of pulmonary contusion is plausible given the trauma history, but it is less specific and does not fully explain the elevated troponins and pulmo"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Michael Kim",
+              "position": 4,
+              "pattern": "based on",
+              "context": "ther findings are more consistent with cardiac tamponade.\n\n### Conclusion\nThe most likely diagnosis based on the clinical findings is **cardiac tamponade**, followed by **pulmonary contusion**. The combinatio"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Emily Patel",
+              "position": 5,
+              "pattern": "however",
+              "context": "ning**: The patient's symptoms of chest pain and hypotension are consistent with aortic dissection. However, the absence of other classic findings like a widened mediastinum on imaging makes aortic dissectio"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Emily Patel",
+              "position": 5,
+              "pattern": "less likely",
+              "context": "the absence of other classic findings like a widened mediastinum on imaging makes aortic dissection less likely in this case.\n\n### DETAILED ANALYSIS\n\n1. **Cardiac Tamponade - High**\n   - **Confidence: HIGH**"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Patel",
+              "position": 5,
+              "pattern": "evidence",
+              "context": "case.\n\n### DETAILED ANALYSIS\n\n1. **Cardiac Tamponade - High**\n   - **Confidence: HIGH**\n   - **Full evidence-based reasoning**: The presence of elevated pulmonary capillary wedge pressure and troponins, along"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Patel",
+              "position": 5,
+              "pattern": "findings",
+              "context": "- **Hypotension**: Hypotension can occur in aortic dissection, but the absence of other classic findings like a widened mediastinum on imaging makes aortic dissection less likely in this case.\n\n### DETAIL"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Patel",
+              "position": 5,
+              "pattern": "clinical",
+              "context": "bruising\"], \"aortic dissection\": [\"chest pain\", \"hypotension\"]}\n```\n\nNow, I will provide a detailed clinical reasoning for the top three most supported diagnoses:\n\n### SYSTEMATIC REVIEW\n\n1. **Cardiac Tamponad"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Patel",
+              "position": 5,
+              "pattern": "symptoms",
+              "context": "on - Moderate**\n   - **Confidence: MODERATE**\n   - **Full evidence-based reasoning**: The patient's symptoms of chest pain, tachycardia, and bruising over the chest wall are consistent with pulmonary contusio"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Patel",
+              "position": 5,
+              "pattern": "imaging",
+              "context": "occur in aortic dissection, but the absence of other classic findings like a widened mediastinum on imaging makes aortic dissection less likely in this case.\n\n### DETAILED ANALYSIS\n\n1. **Cardiac Tamponade -"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Patel",
+              "position": 5,
+              "pattern": "elevated",
+              "context": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary co"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Patel",
+              "position": 5,
+              "pattern": "consistent with",
+              "context": "easoning**: The patient's symptoms of chest pain, tachycardia, and bruising over the chest wall are consistent with pulmonary contusion. Pulmonary contusion is a form of blunt chest trauma that can occur in a motor"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Patel",
+              "position": 5,
+              "pattern": "given the",
+              "context": "sis is **cardiac tamponade**, followed by **pulmonary contusion**. Aortic dissection is less likely given the absence of other classic signs. Further imaging, such as a chest CT or echocardiogram, would be ben"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Emily Patel",
+              "position": 5,
+              "pattern": "based on",
+              "context": "potension and a widened mediastinum on imaging, which are not present in this case.\n\nIn conclusion, based on the clinical findings, the most likely diagnosis is **cardiac tamponade**, followed by **pulmonary"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Rajiv Gupta",
+              "position": 6,
+              "pattern": "however",
+              "context": "chest pain, tachycardia, and bruising over the chest wall are consistent with pulmonary contusion. However, the absence of other classic signs such as hypotension and the presence of elevated troponins and"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Rajiv Gupta",
+              "position": 6,
+              "pattern": "less likely",
+              "context": "the presence of elevated troponins and pulmonary capillary wedge pressure make pulmonary contusion less likely compared to cardiac tamponade.\n\n3. **Aortic Dissection - Low**\n   - **Confidence: LOW**\n   - **Full"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Rajiv Gupta",
+              "position": 6,
+              "pattern": "evidence",
+              "context": "case.\n\n### Detailed Analysis\n\n1. **Cardiac Tamponade - High**\n   - **Confidence: HIGH**\n   - **Full evidence-based reasoning**: The patient's elevated pulmonary capillary wedge pressure and troponins are stro"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Rajiv Gupta",
+              "position": 6,
+              "pattern": "clinical",
+              "context": "\"bruising\"], \"aortic dissection\": [\"chest pain\", \"hypotension\"]}\n```\n\nNow, I'll provide my detailed clinical reasoning:\n\n### Systematic Review\n\n1. **Cardiac Tamponade - High**\n   - **Elevated pulmonary capill"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Rajiv Gupta",
+              "position": 6,
+              "pattern": "imaging",
+              "context": "c symptom of aortic dissection, the absence of other classic signs such as a widened mediastinum on imaging and hypotension makes aortic dissection less likely in this case.\n\nIn conclusion, the most likely d"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Rajiv Gupta",
+              "position": 6,
+              "pattern": "elevated",
+              "context": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary co"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Rajiv Gupta",
+              "position": 6,
+              "pattern": "consistent with",
+              "context": "ence-based reasoning**: The patient's chest pain, tachycardia, and bruising over the chest wall are consistent with pulmonary contusion. However, the absence of other classic signs such as hypotension and the presen"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Lisa Rodriguez",
+              "position": 7,
+              "pattern": "however",
+              "context": "ccur due to direct trauma to the lungs, and it is often associated with chest pain and tachycardia. However, the lack of additional findings like hypotension or diminished breath sounds makes it a secondary"
+            },
+            {
+              "type": "challenge",
+              "agent": "Dr. Lisa Rodriguez",
+              "position": 7,
+              "pattern": "less likely",
+              "context": "the absence of other classic signs such as hypotension or absent breath sounds makes this diagnosis less likely. Pulmonary contusion can occur due to direct trauma to the lungs, and it is often associated with c"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Lisa Rodriguez",
+              "position": 7,
+              "pattern": "evidence",
+              "context": "ries.\n\n### Detailed Analysis\n\n1. **Cardiac Tamponade - High**\n   - **Confidence: HIGH**\n   - **Full evidence-based reasoning**: The presence of elevated pulmonary capillary wedge pressure and troponins, along"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Lisa Rodriguez",
+              "position": 7,
+              "pattern": "findings",
+              "context": ", leading to impaired cardiac output and hemodynamic instability. The combination of these clinical findings, especially the elevated capillary wedge pressure and troponins, makes cardiac tamponade the most l"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Lisa Rodriguez",
+              "position": 7,
+              "pattern": "clinical",
+              "context": "rdial sac, leading to impaired cardiac output and hemodynamic instability. The combination of these clinical findings, especially the elevated capillary wedge pressure and troponins, makes cardiac tamponade t"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Lisa Rodriguez",
+              "position": 7,
+              "pattern": "symptoms",
+              "context": "e patient's history of a motor vehicle collision, make it more likely that the chest pain and other symptoms are related to cardiac tamponade rather than a simple chest injury.\n\n### Conclusion\n\nGiven the clin"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Lisa Rodriguez",
+              "position": 7,
+              "pattern": "elevated",
+              "context": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary co"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Lisa Rodriguez",
+              "position": 7,
+              "pattern": "consistent with",
+              "context": "e: MEDIUM**\n   - **Full evidence-based reasoning**: While chest pain, tachycardia, and bruising are consistent with pulmonary contusion, the absence of other classic signs such as hypotension or absent breath sounds"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Lisa Rodriguez",
+              "position": 7,
+              "pattern": "given the",
+              "context": "other symptoms are related to cardiac tamponade rather than a simple chest injury.\n\n### Conclusion\n\nGiven the clinical findings and the patient's history, the most likely diagnosis is **cardiac tamponade**. Th"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Lisa Rodriguez",
+              "position": 7,
+              "pattern": "considering",
+              "context": "s on the potential for cardiac tamponade, including monitoring the patient's hemodynamic status and considering pericardiocentesis if necessary."
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 8,
+              "pattern": "findings",
+              "context": "damaged in a high-impact collision, leading to significant pain.\n\n### Conclusion\nGiven the clinical findings and the context of the patient's motor vehicle collision, the most likely diagnosis is **cardiac ta"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 8,
+              "pattern": "clinical",
+              "context": "d troponins\", \"elevated pulmonary capillary wedge pressure\"]}\n```\n\nNow, I will provide the detailed clinical reasoning for the top 3 most supported diagnoses:\n\n### Detailed Analysis\n\n1. **Cardiac Tamponade -"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 8,
+              "pattern": "elevated",
+              "context": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary co"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 8,
+              "pattern": "suggests",
+              "context": "levated pulmonary capillary wedge pressure is a strong indicator of cardiac tamponade. This finding suggests that there is fluid accumulation in the pericardial space, leading to increased pressure on the hea"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 8,
+              "pattern": "consistent with",
+              "context": "paired cardiac output.\n     - **Elevated Troponins:** Elevated troponins are also present, which is consistent with myocardial injury. In the context of cardiac tamponade, the myocardium is compressed, leading to is"
+            },
+            {
+              "type": "evidence",
+              "agent": "Dr. Clinical Evaluator",
+              "position": 8,
+              "pattern": "given the",
+              "context": "vessel that can be damaged in a high-impact collision, leading to significant pain.\n\n### Conclusion\nGiven the clinical findings and the context of the patient's motor vehicle collision, the most likely diagnos"
+            }
+          ],
+          "all_refinements": [],
+          "high_value_interactions": 85,
+          "tier_1_count": 0,
+          "agent_contributions": {
+            "Dr. Anya Sharma": 217,
+            "Dr. Liam O'Connell": 235,
+            "Dr. Maya Patel": 280,
+            "Dr. Sarah Chen": 391,
+            "Dr. Michael Kim": 545,
+            "Dr. Emily Patel": 571,
+            "Dr. Rajiv Gupta": 466,
+            "Dr. Lisa Rodriguez": 523,
+            "Dr. Clinical Evaluator": 491
+          }
+        },
+        "success": true,
+        "execution_time": 49.6383216381073,
+        "formatted_output": ""
+      },
+      "post_debate_voting": {
+        "round_type": "post_debate_voting",
+        "participants": [
+          "Dr. Anya Sharma",
+          "Dr. Liam O'Connell",
+          "Dr. Maya Patel",
+          "Dr. Sarah Chen",
+          "Dr. Michael Kim",
+          "Dr. Emily Patel",
+          "Dr. Rajiv Gupta",
+          "Dr. Lisa Rodriguez",
+          "Dr. Clinical Evaluator"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\n\"vote_ranking\": [\"Cardiac Tamponade\", \"Pulmonary Contusion\", \"Traumatic Aortic Injury\"],\n\"rationale\": \"The combination of elevated troponins, pulmonary capillary wedge pressure, chest pain, and bruising strongly suggests cardiac tamponade. Pulmonary contusion is a common injury in blunt chest trauma and could explain the elevated troponins and chest pain. Traumatic aortic injury is less likely but still possible given the mechanism of injury and the elevated troponins.\"\n}\n```\n\n**<PREFERENTIAL_VOTE>**\n1st Choice: **Cardiac Tamponade** - The patient's presentation, including elevated troponins and pulmonary capillary wedge pressure, along with chest pain and bruising, strongly points towards cardiac tamponade. This is a life-threatening condition requiring immediate intervention.\n\n2nd Choice: **Pulmonary Contusion** -  The patient's history of blunt chest trauma and the presence of chest pain and elevated troponins are consistent with pulmonary contusion. This injury can also cause hemodynamic instability.\n\n3rd Choice: **Traumatic Aortic Injury** - While less likely than the top two choices, the mechanism of injury and elevated troponins warrant consideration of traumatic aortic injury. This diagnosis requires further investigation with imaging studies.\n\n**<VOTING_CONFIDENCE>**\nOverall confidence in top choice: **85%** \n\n\n\nI believe cardiac tamponade is the most likely diagnosis based on the combination of clinical findings and laboratory results. However, it is crucial to continue monitoring the patient closely and perform further investigations to rule out other potential diagnoses.",
+            "structured_data": null,
+            "response_time": 3.755908966064453,
+            "confidence_score": 0.72,
+            "reasoning_quality": "high",
+            "timestamp": 1752763189.4706047
+          },
+          "Dr. Liam O'Connell": {
+            "content": "```json\n{\n\"vote_ranking\": [\"cardiac tamponade\", \"traumatic aortic injury\", \"pulmonary contusion\"],\n\"rationale\": \"Elevated troponins and pulmonary capillary wedge pressure, along with chest pain and bruising, strongly suggest cardiac tamponade. Traumatic aortic injury is a serious consideration given the mechanism of injury and elevated troponins. Pulmonary contusion is also possible due to the trauma and chest pain.\"\n}\n```\n\n**My Reasoning:**\n\n1. **Cardiac Tamponade:** This is my top choice. The combination of elevated troponins, elevated pulmonary capillary wedge pressure (PCWP), chest pain, and bruising strongly points towards cardiac tamponade.  The PCWP elevation suggests fluid buildup in the pericardial space, which is a hallmark of tamponade.\n\n2. **Traumatic Aortic Injury:** This is a serious concern given the mechanism of injury (high-speed head-on collision) and the presence of elevated troponins.  Aortic injury can lead to cardiac tamponade, and the patient's hemodynamic instability (hypotension) further supports this possibility.\n\n3. **Pulmonary Contusion:** This diagnosis is less likely than the top two, but still possible given the trauma and chest pain.  The absence of significant respiratory distress or findings on the initial chest X-ray makes it less likely.\n\n\n\n**Important Considerations:**\n\n* **Immediate Intervention:** Cardiac tamponade is a life-threatening condition requiring urgent pericardiocentesis. \n* **Further Imaging:** A CT scan of the chest and abdomen is crucial to rule out a traumatic aortic injury and assess for other potential injuries. \n* **Close Monitoring:** The patient's hemodynamic status and cardiac function need to be closely monitored. \n\n\nLet me know if you have any other questions.",
+            "structured_data": null,
+            "response_time": 4.201932668685913,
+            "confidence_score": 0.66,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763189.4706054
+          },
+          "Dr. Maya Patel": {
+            "content": "```json\n{\n\"vote_ranking\": [\"cardiac tamponade\", \"traumatic aortic injury\", \"pulmonary contusion\"],\n\"rationale\": \"The combination of elevated troponins, pulmonary capillary wedge pressure, chest pain, and bruising strongly suggests cardiac tamponade. Traumatic aortic injury is a serious consideration given the mechanism of injury and elevated troponins. Pulmonary contusion is also possible due to the chest trauma.\"\n}\n```\n\n**Explanation:**\n\n**1st Choice: Cardiac Tamponade**\n\n* **Elevated Troponins:**  While not always specific to cardiac tamponade, elevated troponins indicate myocardial injury, which can occur in tamponade due to compression of the heart.\n* **Elevated Pulmonary Capillary Wedge Pressure (PCWP):** This is a key indicator of tamponade. PCWP reflects the pressure in the left ventricle, and it increases significantly when blood flow is restricted by fluid buildup in the pericardial sac.\n* **Chest Pain:**  A hallmark symptom of cardiac tamponade.\n* **Bruising Over the Chest Wall:**  Suggestive of trauma and potential pericardial involvement.\n\n**2nd Choice: Traumatic Aortic Injury**\n\n* **Elevated Troponins:**  Aortic injury can cause myocardial damage, leading to troponin elevation.\n* **Mechanism of Injury:**  A high-speed head-on collision is a significant risk factor for aortic injury.\n\n**3rd Choice: Pulmonary Contusion**\n\n* **Chest Pain:**  A common symptom of pulmonary contusion.\n* **Bruising Over the Chest Wall:**  Consistent with chest trauma.\n\n**Confidence:**\n\nI am **85%** confident in my top choice of cardiac tamponade. The combination of PCWP elevation and troponin elevation, along with the clinical presentation, strongly supports this diagnosis.",
+            "structured_data": null,
+            "response_time": 4.278849363327026,
+            "confidence_score": 0.64,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763189.4706063
+          },
+          "Dr. Sarah Chen": {
+            "content": "```json\n{\"vote_ranking\": [\"cardiac tamponade\", \"pulmonary contusion\", \"traumatic aortic injury\"], \"rationale\": \"The patient's presentation with elevated troponins, pulmonary capillary wedge pressure, chest pain, and bruising over the chest wall are most consistent with cardiac tamponade. The other diagnoses, while possible, do not align as strongly with the clinical picture provided.\"}\n```\n\nAnd here is the voting confidence:\n\n```json\n{\"voting_confidence\": \"90%\"}\n```\n\nNow, let me provide the ranking in the requested format:\n\n<PREFERENTIAL_VOTE>\n1st Choice: Cardiac Tamponade - The patient's presentation with elevated troponins, pulmonary capillary wedge pressure, chest pain, and bruising over the chest wall are most consistent with cardiac tamponade. This condition is a life-threatening emergency requiring prompt intervention.\n2nd Choice: Pulmonary Contusion - While the patient has bruising and chest pain, the combination of elevated troponins and pulmonary capillary wedge pressure is more indicative of cardiac tamponade. However, a pulmonary contusion cannot be ruled out and would require further imaging.\n3rd Choice: Traumatic Aortic Injury - The patient's history of trauma and the presence of chest pain are concerning, but the specific findings of elevated troponins and pulmonary capillary wedge pressure are more indicative of cardiac tamponade. Aortic injuries are less likely given the specific clinical findings.\n</PREFERENTIAL_VOTE>\n\n<VOTING_CONFIDENCE>\nOverall confidence in top choice: 90%\n</VOTING_CONFIDENCE>",
+            "structured_data": null,
+            "response_time": 2.491260528564453,
+            "confidence_score": 0.7,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763189.470607
+          },
+          "Dr. Michael Kim": {
+            "content": "```json\n{\"vote_ranking\": [\"cardiac tamponade\", \"aortic dissection\", \"traumatic aortic injury\"], \"rationale\": \"Given the patient's history of a motor vehicle collision, signs of trauma, elevated troponins, and elevated pulmonary capillary wedge pressure, cardiac tamponade is the most likely diagnosis. Aortic dissection and traumatic aortic injury are also significant considerations, especially given the mechanism of injury and the presence of chest pain and bruising.\"}\n```\n\nWith a voting confidence of:\n\n```json\n{\"voting_confidence\": \"90%\"}\n```\n\n**PREFERENTIAL_VOTE**\n1st Choice: Cardiac Tamponade - Given the patient's history of a motor vehicle collision, signs of trauma, elevated troponins, and elevated pulmonary capillary wedge pressure, cardiac tamponade is the most likely diagnosis.\n2nd Choice: Aortic Dissection - The patient's chest pain and the mechanism of injury make aortic dissection a significant consideration.\n3rd Choice: Traumatic Aortic Injury - Considering the mechanism of injury and the signs of trauma, a traumatic aortic injury remains a plausible diagnosis.\n\n**VOTING_CONFIDENCE**\nOverall confidence in top choice: 90%\n\n**RATIONALE**\nThe patient's presentation, with chest pain, bruising over the chest wall, and signs of trauma from a motor vehicle collision, combined with the elevated troponins and pulmonary capillary wedge pressure, strongly suggests cardiac tamponade. Cardiac tamponade is a critical condition that requires prompt diagnosis and intervention to prevent hemodynamic instability. Aortic dissection and traumatic aortic injury are also important to consider due to the mechanism of injury, but they are less likely than cardiac tamponade given the current clinical findings.",
+            "structured_data": null,
+            "response_time": 2.710261583328247,
+            "confidence_score": 0.72,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763189.4706078
+          },
+          "Dr. Emily Patel": {
+            "content": "```json\n{\"vote_ranking\": [\"cardiac tamponade\", \"pulmonary contusion\", \"acute myocardial infarction\"], \"rationale\": \"The patient's presentation with chest pain, elevated troponins, and pulmonary capillary wedge pressure strongly suggests cardiac tamponade. The bruising over the chest wall and tachycardia are also consistent with a traumatic injury, which makes pulmonary contusion a plausible secondary diagnosis. Acute myocardial infarction, while possible, is less likely given the absence of ECG changes and the presence of other more specific findings.\"}\n```\n\nAnd for the confidence level:\n\n```json\n{\"voting_confidence\": \"85%\"}\n```\n\n**PREFERENTIAL_VOTE**\n1st Choice: Cardiac Tamponade - The patient's elevated troponins, pulmonary capillary wedge pressure, and chest pain are highly indicative of cardiac tamponade, a condition that can occur due to the trauma from the motor vehicle collision.\n2nd Choice: Pulmonary Contusion - The bruising over the chest wall and tachycardia are consistent with a pulmonary contusion, a common injury in blunt chest trauma.\n3rd Choice: Acute Myocardial Infarction - While myocardial infarction is a serious condition, the absence of ECG changes and the presence of other more specific findings make it less likely in this case.\n\n**VOTING_CONFIDENCE**\nOverall confidence in top choice: 85%",
+            "structured_data": null,
+            "response_time": 2.311720132827759,
+            "confidence_score": 0.66,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763189.470609
+          },
+          "Dr. Rajiv Gupta": {
+            "content": "```json\n{\"vote_ranking\": [\"cardiac tamponade\", \"pulmonary contusion\", \"traumatic aortic injury\"], \"rationale\": \"Based on the patient's presentation with elevated pulmonary capillary wedge pressure, elevated troponins, chest pain, and bruising over the chest wall, cardiac tamponade is the most likely diagnosis. The presence of hypotension and tachycardia also supports this diagnosis. Pulmonary contusion is a strong secondary consideration given the mechanism of injury and signs of chest wall bruising. Traumatic aortic injury is less likely given the absence of hypotension and the presence of elevated troponins, which are more consistent with cardiac tamponade.\"}\n```\n\n<PREFERENTIAL_VOTE>\n1st Choice: Cardiac Tamponade - The patient's elevated pulmonary capillary wedge pressure, elevated troponins, chest pain, and bruising over the chest wall are highly suggestive of cardiac tamponade, which is a life-threatening condition that requires immediate intervention.\n2nd Choice: Pulmonary Contusion - The mechanism of injury and the presence of chest pain and bruising over the chest wall make pulmonary contusion a strong secondary consideration, especially in the absence of hypotension and ongoing hemodynamic instability.\n3rd Choice: Traumatic Aortic Injury - While a traumatic aortic injury is a plausible diagnosis given the patient's history of a motor vehicle collision, the absence of hypotension and the presence of elevated troponins and pulmonary capillary wedge pressure make this less likely.\n</PREFERENTIAL_VOTE>\n\n<VOTING_CONFIDENCE>\nOverall confidence in top choice: 85%\n</VOTING_CONFIDENCE>\n\nThe patient's presentation is most consistent with cardiac tamponade, a condition that can rapidly lead to hemodynamic instability and death if not promptly treated. The presence of elevated troponins and pulmonary capillary wedge pressure, along with chest pain and bruising, strongly supports this diagnosis. While pulmonary contusion is a plausible secondary condition, it is less likely to be the primary cause given the patient's hemodynamic status. Traumatic aortic injury remains a possibility but is less likely based on the clinical presentation and the absence of hypotension.",
+            "structured_data": null,
+            "response_time": 3.3542518615722656,
+            "confidence_score": 0.7,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763189.4706097
+          },
+          "Dr. Lisa Rodriguez": {
+            "content": "```json\n{\"vote_ranking\": [\"cardiac tamponade\", \"traumatic aortic injury\", \"pulmonary contusion\"], \"rationale\": \"The patient's history of a motor vehicle collision, elevated troponins, elevated pulmonary capillary wedge pressure, and presence of chest pain and bruising over the chest wall make cardiac tamponade the most likely diagnosis. The troponins and elevated pulmonary capillary wedge pressure are strong indicators of cardiac tamponade, which can occur due to the trauma sustained in the collision. Traumatic aortic injury is a close second, as the mechanism of injury and the presence of chest pain and elevated troponins are consistent with this condition. Pulmonary contusion, while possible, is less likely given the specific findings in this case.\"}\n```\n\n<VOTING_CONFIDENCE>\nOverall confidence in top choice: 85%\n</VOTING_CONFIDENCE>\n\nBased on the evidence presented, the patient's history, physical examination, and laboratory findings strongly support the diagnosis of cardiac tamponade. The presence of elevated troponins and pulmonary capillary wedge pressure, along with chest pain and bruising over the chest wall, are highly indicative of cardiac tamponade. Traumatic aortic injury is also a significant concern given the mechanism of injury, and pulmonary contusion, while possible, is less likely in this specific case.",
+            "structured_data": null,
+            "response_time": 2.09913969039917,
+            "confidence_score": 0.72,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763189.4706104
+          },
+          "Dr. Clinical Evaluator": {
+            "content": "```json\n{\"vote_ranking\": [\"cardiac tamponade\", \"pulmonary contusion\", \"traumatic aortic injury\"], \"rationale\": \"The patient's presentation with elevated pulmonary capillary wedge pressure, elevated troponins, chest pain, and bruising over the chest wall strongly supports cardiac tamponade. Pulmonary contusion is also a plausible diagnosis given the chest pain and bruising, while traumatic aortic injury is less likely given the absence of significant hemodynamic instability and the presence of elevated troponins, which are more consistent with cardiac injury rather than aortic injury.\"}\n```\n\nAnd for the confidence:\n\n```json\n{\"voting_confidence\": \"90%\"}\n```\n\n**PREFERENTIAL_VOTE**\n1st Choice: Cardiac Tamponade - The patient's elevated pulmonary capillary wedge pressure, elevated troponins, chest pain, and bruising over the chest wall are highly indicative of cardiac tamponade.\n2nd Choice: Pulmonary Contusion - The patient's chest pain and bruising are consistent with a pulmonary contusion, which is a plausible secondary injury in a trauma patient.\n3rd Choice: Traumatic Aortic Injury - While a traumatic aortic injury is a potential diagnosis, the absence of significant hemodynamic instability and the presence of elevated troponins make this less likely.\n\n**OVERALL_CONFIDENCE**\nOverall confidence in top choice: 90%",
+            "structured_data": null,
+            "response_time": 2.1676127910614014,
+            "confidence_score": 0.64,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763189.4706109
+          }
+        },
+        "metadata": {
+          "borda_scores": {
+            "**Cardiac Tamponade**": 3,
+            "**Pulmonary Contusion**": 2,
+            "**Traumatic Aortic Injury**": 1,
+            "**Cardiac Tamponade": 3,
+            "**Traumatic Aortic Injury": 2,
+            "**Pulmonary Contusion": 1,
+            "Cardiac Tamponade**": 3,
+            "Traumatic Aortic Injury**": 2,
+            "Pulmonary Contusion**": 1,
+            "Cardiac Tamponade": 15,
+            "Pulmonary Contusion": 8,
+            "Traumatic Aortic Injury": 4,
+            "Aortic Dissection": 2,
+            "Acute Myocardial Infarction": 1
+          },
+          "ranked_results": [
+            [
+              "Cardiac Tamponade",
+              15
+            ],
+            [
+              "Pulmonary Contusion",
+              8
+            ],
+            [
+              "Traumatic Aortic Injury",
+              4
+            ],
+            [
+              "**Cardiac Tamponade**",
+              3
+            ],
+            [
+              "**Cardiac Tamponade",
+              3
+            ],
+            [
+              "Cardiac Tamponade**",
+              3
+            ],
+            [
+              "**Pulmonary Contusion**",
+              2
+            ],
+            [
+              "**Traumatic Aortic Injury",
+              2
+            ],
+            [
+              "Traumatic Aortic Injury**",
+              2
+            ],
+            [
+              "Aortic Dissection",
+              2
+            ],
+            [
+              "**Traumatic Aortic Injury**",
+              1
+            ],
+            [
+              "**Pulmonary Contusion",
+              1
+            ],
+            [
+              "Pulmonary Contusion**",
+              1
+            ],
+            [
+              "Acute Myocardial Infarction",
+              1
+            ]
+          ],
+          "winner": "Cardiac Tamponade",
+          "all_rankings": {
+            "Dr. Anya Sharma": [
+              "**Cardiac Tamponade**",
+              "**Pulmonary Contusion**",
+              "**Traumatic Aortic Injury**"
+            ],
+            "Dr. Liam O'Connell": [
+              "**Cardiac Tamponade",
+              "**Traumatic Aortic Injury",
+              "**Pulmonary Contusion"
+            ],
+            "Dr. Maya Patel": [
+              "Cardiac Tamponade**",
+              "Traumatic Aortic Injury**",
+              "Pulmonary Contusion**"
+            ],
+            "Dr. Sarah Chen": [
+              "Cardiac Tamponade",
+              "Pulmonary Contusion",
+              "Traumatic Aortic Injury"
+            ],
+            "Dr. Michael Kim": [
+              "Cardiac Tamponade",
+              "Aortic Dissection",
+              "Traumatic Aortic Injury"
+            ],
+            "Dr. Emily Patel": [
+              "Cardiac Tamponade",
+              "Pulmonary Contusion",
+              "Acute Myocardial Infarction"
+            ],
+            "Dr. Rajiv Gupta": [
+              "Cardiac Tamponade",
+              "Pulmonary Contusion",
+              "Traumatic Aortic Injury"
+            ],
+            "Dr. Clinical Evaluator": [
+              "Cardiac Tamponade",
+              "Pulmonary Contusion",
+              "Traumatic Aortic Injury"
+            ]
+          },
+          "total_votes": 8,
+          "voting_summary": {
+            "Cardiac Tamponade": 15,
+            "Pulmonary Contusion": 8,
+            "Traumatic Aortic Injury": 4,
+            "**Cardiac Tamponade**": 3,
+            "**Cardiac Tamponade": 3
+          }
+        },
+        "success": true,
+        "execution_time": 27.486588716506958,
+        "formatted_output": ""
+      },
+      "cant_miss": {
+        "round_type": "cant_miss",
+        "participants": [
+          "Dr. Anya Sharma",
+          "Dr. Liam O'Connell",
+          "Dr. Maya Patel",
+          "Dr. Sarah Chen",
+          "Dr. Michael Kim",
+          "Dr. Emily Patel",
+          "Dr. Rajiv Gupta",
+          "Dr. Lisa Rodriguez",
+          "Dr. Clinical Evaluator"
+        ],
+        "responses": {
+          "Dr. Anya Sharma": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"traumatic aortic injury\": [\"chest pain\", \"elevated troponins\", \"mechanism of injury\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with concerning signs and symptoms following a high-energy motor vehicle collision.  His elevated pulmonary capillary wedge pressure and troponins, coupled with chest pain and bruising, raise the suspicion for several life-threatening conditions:\n\n* **Cardiac Tamponade:** This is a critical diagnosis. The elevated pulmonary capillary wedge pressure, a hallmark of tamponade, suggests increased pressure within the pericardial sac, potentially due to bleeding. The elevated troponins could indicate myocardial injury secondary to compression. Chest pain and bruising further support this possibility.\n\n* **Traumatic Aortic Injury:**  The mechanism of injury (head-on collision) and the presence of elevated troponins make this a serious concern. Aortic injury can lead to life-threatening hemorrhage and hemodynamic instability.\n\n* **Pulmonary Contusion:**  The patient's chest pain, tachycardia, and bruising are consistent with pulmonary contusion, a common injury in blunt chest trauma. While not as immediately life-threatening as tamponade or aortic injury, it can lead to respiratory distress and complications.\n\n**<CANT_MISS_DIAGNOSES>**\n- **Cardiac Tamponade** -  Rapidly progressive tamponade can lead to cardiac arrest.  - **Risk level: HIGH**\n- **Traumatic Aortic Injury** -  Aortic rupture can be fatal. - **Risk level: HIGH**\n\n**<IMMEDIATE_WORKUP>**\n- **Focused echocardiogram:** To assess for pericardial effusion and cardiac function.\n- **CT angiography of the chest:** To evaluate for aortic injury and other vascular abnormalities.\n\n**<TIME_SENSITIVITY>**\nThese conditions require immediate evaluation and intervention. The focused echocardiogram and CT angiography should be performed as soon as possible to guide management.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "traumatic aortic injury": [
+                "chest pain",
+                "elevated troponins",
+                "mechanism of injury"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ]
+            },
+            "response_time": 5.133152008056641,
+            "confidence_score": 0.66,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763232.7803786
+          },
+          "Dr. Liam O'Connell": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"aortic dissection\": [\"chest pain\", \"hypotension\", \"bruising\"], \"traumatic aortic injury\": [\"elevated troponins\", \"chest pain\", \"bruising\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with a classic scenario for a potentially life-threatening cardiac injury following a high-energy motor vehicle collision. \n\n* **Cardiac Tamponade:** The combination of elevated pulmonary capillary wedge pressure (PCWP), elevated troponins, chest pain, and bruising strongly suggests cardiac tamponade. This condition occurs when blood accumulates in the pericardial sac, compressing the heart and impairing its ability to pump effectively. \n\n* **Aortic Dissection:** The patient's chest pain, hypotension, and bruising raise concern for an aortic dissection. This is a serious condition where the inner layer of the aorta tears, allowing blood to flow between the layers of the aortic wall.  \n\n* **Traumatic Aortic Injury:** Given the mechanism of injury (head-on collision), a traumatic aortic injury is also a significant possibility. This can manifest with similar symptoms to aortic dissection, including elevated troponins, chest pain, and bruising.\n\n**CANT_MISS_DIAGNOSES**\n- **Cardiac Tamponade** -  This is a life-threatening condition that requires immediate intervention. The elevated PCWP and troponins, along with the patient's symptoms, strongly suggest this diagnosis. - **Risk level: HIGH**\n- **Aortic Dissection** -  Aortic dissection is a rapidly progressing and potentially fatal condition. The patient's chest pain, hypotension, and bruising raise a high suspicion. - **Risk level: HIGH**\n\n**IMMEDIATE_WORKUP**\n- **Transthoracic echocardiogram (TTE):** This is crucial to assess for cardiac tamponade, pericardial effusion, and aortic wall integrity.\n- **CT angiography:** This will provide detailed imaging of the aorta to confirm or rule out aortic dissection or traumatic injury.\n\n**TIME_SENSITIVITY**\n\nThese conditions require immediate attention.  Cardiac tamponade and aortic dissection can rapidly deteriorate, leading to shock and death.  The diagnostic workup and potential interventions (pericardiocentesis for tamponade, surgical repair for aortic dissection) must be performed urgently.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "aortic dissection": [
+                "chest pain",
+                "hypotension",
+                "bruising"
+              ],
+              "traumatic aortic injury": [
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ]
+            },
+            "response_time": 5.780918836593628,
+            "confidence_score": 0.7,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763232.7803793
+          },
+          "Dr. Maya Patel": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"aortic dissection\": [\"chest pain\", \"hypotension\", \"bruising\"], \"traumatic aortic injury\": [\"chest pain\", \"elevated troponins\", \"bruising\"]}\n```\n\n**Clinical Reasoning:**\n\nThis patient presents with concerning findings after a high-energy motor vehicle collision.  \n\n* **Cardiac Tamponade:** The combination of elevated pulmonary capillary wedge pressure (PCWP), elevated troponins, chest pain, and bruising strongly suggests cardiac tamponade. This is a life-threatening condition where blood accumulates in the pericardial sac, compressing the heart and impairing its ability to pump effectively.\n\n* **Aortic Dissection:** Chest pain, hypotension, and bruising are also suggestive of aortic dissection, another potentially fatal condition where the inner layer of the aorta tears, allowing blood to flow between the layers.\n\n* **Traumatic Aortic Injury:** Given the mechanism of injury and the presence of elevated troponins and bruising, traumatic aortic injury is a serious possibility. This involves damage to the aorta, often leading to internal bleeding and potentially life-threatening complications.\n\n**CANT_MISS_DIAGNOSES**\n- **Cardiac Tampage:**  This is a time-sensitive condition that can rapidly deteriorate.  \n- **Aortic Dissection:**  This is a life-threatening condition that requires immediate intervention.\n- **Traumatic Aortic Injury:**  This can lead to significant internal bleeding and requires urgent attention.\n\n**IMMEDIATE_WORKUP**\n- **Thoracic CT Scan:** This is essential to visualize the aorta, heart, and surrounding structures for signs of tamponade, dissection, or injury.\n- **Echocardiogram:**  Repeat echocardiogram to closely monitor cardiac function and assess for pericardial effusion.\n\n**TIME_SENSITIVITY**\nThese conditions require immediate evaluation and treatment. Delaying diagnosis and intervention can have catastrophic consequences.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "aortic dissection": [
+                "chest pain",
+                "hypotension",
+                "bruising"
+              ],
+              "traumatic aortic injury": [
+                "chest pain",
+                "elevated troponins",
+                "bruising"
+              ]
+            },
+            "response_time": 4.837269067764282,
+            "confidence_score": 0.66,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763232.7803802
+          },
+          "Dr. Sarah Chen": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"traumatic aortic injury\": [\"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"], \"hemothorax\": [\"bruising over the chest wall\", \"tachycardia\"]}\n```\n\nNow, I will explain my clinical reasoning:\n\n### Clinical Reasoning:\n\n**1. Cardiac Tamponade:**\n- **Elevated pulmonary capillary wedge pressure and troponins:** These are key indicators of cardiac tamponade, a condition where the heart is compressed by fluid in the pericardial sac, leading to impaired cardiac output and potentially hemodynamic instability.\n- **Chest pain and bruising:** These physical signs are consistent with the trauma history and can be indicative of underlying cardiac issues.\n- **Risk Level:** HIGH. Cardiac tamponade can rapidly lead to hemodynamic instability and if not treated promptly, can be fatal.\n\n**2. Traumatic Aortic Injury:**\n- **Elevated troponins and chest pain:** Elevated troponins and chest pain are strong indicators of aortic injury, which can lead to significant blood loss and aortic dissection.\n- **Bruising:** Bruising over the chest wall can be a sign of underlying aortic injury.\n- **Risk Level:** HIGH. Aortic injuries can be life-threatening if not recognized and treated promptly, often requiring surgical intervention.\n\n**3. Pulmonary Contusion:**\n- **Chest pain, tachycardia, and bruising:** These symptoms are consistent with a pulmonary contusion, which is common in trauma patients and can lead to respiratory compromise.\n- **Risk Level:** MEDIUM. While not immediately life-threatening, pulmonary contusions can worsen and lead to hypoxemia or respiratory failure if not managed.\n\n**4. Hemothorax:**\n- **Bruising over the chest wall and tachycardia:** These signs are indicative of a hemothorax, which is a collection of blood in the pleural space. Hemothorax can lead to hypoxemia and respiratory distress if not addressed.\n- **Risk Level:** MEDIUM. Hemothorax can be managed with thoracentesis or thoracotomy if necessary, but prompt intervention is crucial to prevent respiratory compromise.\n\n### IMMEDIATE WORKUP:\n- **Chest X-ray:** To assess for pneumothorax, hemothorax, and signs of pulmonary contusion.\n- **CT Angiography of the chest:** To rule out aortic injury and other vascular injuries.\n- **Echocardiogram:** To confirm or rule out cardiac tamponade and assess cardiac function.\n\n### TIME SENSITIVITY:\n- **Cardiac Tamponade and Traumatic Aortic Injury:** These conditions must be ruled out or treated as soon as possible to prevent hemodynamic instability and potential organ damage.\n- **Pulmonary Contusion and Hemothorax:** These conditions should be managed promptly to prevent respiratory compromise and ensure adequate oxygenation.\n\nBy focusing on these diagnoses and performing the necessary immediate workup, we can ensure that the patient's life-threatening conditions are identified and treated in a timely manner.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "traumatic aortic injury": [
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ],
+              "hemothorax": [
+                "bruising over the chest wall",
+                "tachycardia"
+              ]
+            },
+            "response_time": 5.129048824310303,
+            "confidence_score": 0.66,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763232.7803807
+          },
+          "Dr. Michael Kim": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"traumatic aortic injury\": [\"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"]}\n```\n\nDetailed clinical reasoning:\n\n**CANT_MISS_DIAGNOSES**\n- **Cardiac Tamponade** - [Why it can't be missed] - [Risk level: HIGH] - Cardiac tamponade is a critical condition where the heart is compressed by fluid accumulation in the pericardial sac, leading to impaired cardiac function and potentially rapid hemodynamic collapse. The presence of elevated pulmonary capillary wedge pressure, troponins, chest pain, and bruising over the chest wall are all significant indicators of this condition. Prompt recognition and intervention are crucial to prevent hemodynamic instability and potential cardiac arrest.\n- **Traumatic Aortic Injury** - [Why it can't be missed] - [Risk level: HIGH] - Aortic injuries can be life-threatening due to the risk of aortic rupture leading to hypotension, shock, and rapid death. The combination of elevated troponins, chest pain, and bruising suggests a possible aortic injury, which must be ruled out promptly to avoid severe hemorrhage and potential aortic dissection.\n- **Pulmonary Contusion** - [Why it can't be missed] - [Risk level: MEDIUM] - While pulmonary contusion is less immediately life-threatening than the other two conditions, it is still a critical injury to be identified and managed appropriately. Chest pain, tachycardia, and bruising are indicative of a pulmonary contusion, which can lead to hypoxemia and respiratory failure if not addressed.\n\n**IMMEDIATE_WORKUP**\n- **Echocardiogram** - To evaluate for cardiac tamponade and assess cardiac function.\n- **CT Angiography of the Thorax** - To rule out aortic injury and other thoracic injuries.\n\n**TIME_SENSITIVITY**\n[How quickly these conditions must be ruled out or treated] - These conditions must be ruled out or treated within minutes to hours, depending on the severity. Cardiac tamponade and traumatic aortic injury are time-sensitive and require immediate intervention, while pulmonary contusion can be managed with close monitoring and supportive care.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "traumatic aortic injury": [
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ]
+            },
+            "response_time": 3.6561224460601807,
+            "confidence_score": 0.62,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763232.7803812
+          },
+          "Dr. Emily Patel": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"aortic dissection\": [\"severe chest pain\", \"hypotension\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"]}\n```\n\nNow, let me explain the clinical reasoning:\n\n### Clinical Reasoning:\n\n#### Cardiac Tamponade\n- **Evidence**: Elevated pulmonary capillary wedge pressure, elevated troponins, chest pain, and bruising.\n- **Why it can't be missed**: Cardiac tamponade is a life-threatening condition where the heart is compressed by an accumulation of fluid in the pericardial sac. This can lead to hemodynamic instability and if not treated promptly, can result in cardiac arrest. The combination of elevated pulmonary capillary wedge pressure (indicating left ventricular filling pressure) and troponins (indicating myocardial injury) strongly suggests a process affecting the heart. Chest pain and bruising are additional supportive signs.\n\n#### Aortic Dissection\n- **Evidence**: Severe chest pain and hypotension.\n- **Why it can't be missed**: Aortic dissection is a medical emergency characterized by a tear in the inner lining of the aorta. It can cause severe chest pain, hypotension, and can lead to life-threatening complications such as organ ischemia or rupture. The presence of severe chest pain and hypotension are critical signs that cannot be ignored.\n\n#### Pulmonary Contusion\n- **Evidence**: Chest pain, tachycardia, and bruising.\n- **Why it can't be missed**: Pulmonary contusion, or bruising of the lung tissue, can occur in cases of blunt chest trauma. It can lead to hypoxemia and can be associated with chest pain and tachycardia. While less immediately life-threatening than the other conditions, it still requires prompt evaluation to prevent further complications.\n\n### Immediate Workup\n- **Required tests/interventions**: \n  - **Echocardiogram**: To assess for cardiac tamponade and other cardiac injuries.\n  - **CT Angiography of the chest**: To rule out aortic dissection and other vascular injuries.\n  - **Blood gases and lactate levels**: To assess for hypoxemia and acidosis.\n  - **Chest X-ray**: To assess for pneumothorax or other pulmonary contusions.\n\n### Time Sensitivity\n- **Cardiac Tamponade and Aortic Dissection**: These conditions must be ruled out or treated immediately to prevent further hemodynamic instability and potential cardiac arrest or aortic rupture.\n- **Pulmonary Contusion**: While less urgent, it still requires prompt evaluation to manage pain and prevent complications such as hypoxemia.\n\nThese diagnoses are prioritized based on the severity and potential for immediate harm if not addressed promptly.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "aortic dissection": [
+                "severe chest pain",
+                "hypotension"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ]
+            },
+            "response_time": 4.376722097396851,
+            "confidence_score": 0.7,
+            "reasoning_quality": "high",
+            "timestamp": 1752763232.780382
+          },
+          "Dr. Rajiv Gupta": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"traumatic aortic injury\": [\"elevated troponins\", \"chest pain\", \"bruising\"], \"pneumothorax\": [\"bruising over the chest wall\", \"chest pain\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"]}\n```\n\nNow, let me explain the clinical reasoning for these diagnoses:\n\n### Clinical Reasoning:\n\n1. **Cardiac Tamponade**\n   - **Elevated pulmonary capillary wedge pressure**: This is a key finding that suggests fluid accumulation in the pericardial space, which can compress the heart and impair its ability to pump blood effectively.\n   - **Elevated troponins**: These are biomarkers of myocardial injury, which can occur in cardiac tamponade due to the lack of adequate coronary perfusion.\n   - **Chest pain and bruising**: These are common symptoms in a trauma patient, and while not specific to cardiac tamponade, they can be present in this condition.\n   - **Risk Level**: HIGH\n   - **Why it can't be missed**: Cardiac tamponade can rapidly lead to hemodynamic instability and death if not treated promptly. Immediate evaluation and management are critical.\n\n2. **Traumatic Aortic Injury**\n   - **Elevated troponins**: These indicate myocardial injury, which can be secondary to a traumatic aortic injury causing aortic insufficiency or dissection.\n   - **Chest pain and bruising**: These are also common in a trauma patient and can be indicative of a more severe injury involving the aorta.\n   - **Risk Level**: HIGH\n   - **Why it can't be missed**: A traumatic aortic injury can lead to significant blood loss, aortic insufficiency, or aortic dissection, all of which can be life-threatening if not identified and managed promptly.\n\n3. **Pneumothorax**\n   - **Bruising over the chest wall**: This can be a sign of a traumatic injury, and in the context of a motor vehicle collision, it could indicate a pneumothorax.\n   - **Chest pain**: This is a common symptom in pneumothorax and can be exacerbated by deep breathing or coughing.\n   - **Risk Level**: MEDIUM\n   - **Why it can't be missed**: While pneumothorax can be managed with chest tube placement, it is still a critical condition that can lead to respiratory compromise if not addressed.\n\n4. **Pulmonary Contusion**\n   - **Chest pain and tachycardia**: These symptoms can be indicative of a pulmonary contusion, which is a bruising of the lung tissue often seen in trauma patients.\n   - **Bruising over the chest wall**: This can also be a sign of a pulmonary contusion.\n   - **Risk Level**: MEDIUM\n   - **Why it can't be missed**: Pulmonary contusion can lead to hypoxemia and can be managed with supportive care, but it is still an important diagnosis to rule out.\n\n### IMMEDIATE WORKUP:\n- **Chest X-ray**: To rule out pneumothorax and other chest wall injuries.\n- **CT Thorax**: To evaluate for aortic injury, pulmonary contusion, and other internal injuries.\n- **Echocardiogram**: To confirm or rule out cardiac tamponade.\n\n### TIME SENSITIVITY:\n- **Cardiac Tamponade and Traumatic Aortic Injury**: These conditions require immediate evaluation and intervention due to the risk of rapid hemodynamic collapse.\n- **Pneumothorax and Pulmonary Contusion**: While these are also critical, they can be managed with more time, but prompt evaluation is necessary to ensure appropriate care.\n\nBy focusing on these diagnoses, we can ensure that the patient receives the necessary care to manage life-threatening conditions in a timely manner.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "traumatic aortic injury": [
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "pneumothorax": [
+                "bruising over the chest wall",
+                "chest pain"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ]
+            },
+            "response_time": 6.058622360229492,
+            "confidence_score": 0.7,
+            "reasoning_quality": "high",
+            "timestamp": 1752763232.7803833
+          },
+          "Dr. Lisa Rodriguez": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"], \"hemothorax\": [\"bruising over the chest wall\", \"hypoxia\", \"hypotension\"]}\n```\n\nNow, I'll provide my clinical reasoning:\n\n**Clinical Reasoning:**\n\n- **Cardiac Tamponade**: This condition is critical and life-threatening. Elevated pulmonary capillary wedge pressure and troponins suggest myocardial injury, and the presence of chest pain and bruising over the chest wall are consistent with this diagnosis. Cardiac tamponade can lead to hemodynamic instability and respiratory distress if not promptly treated.\n\n- **Pulmonary Contusion**: This is a common injury in blunt chest trauma. The patient's history of a motor vehicle collision, chest pain, and bruising over the chest wall are strong indicators of pulmonary contusion. This can cause hypoxia and tachycardia, which need to be addressed to prevent respiratory failure.\n\n- **Hemothorax**: This condition involves bleeding into the pleural space, which can lead to hypotension and respiratory compromise. The presence of bruising over the chest wall, along with signs of hypoxia and hypotension, are red flags for this condition.\n\n**Immediate Workup:**\n\n- **Chest X-ray**: To assess for pneumothorax, hemothorax, and pulmonary contusion.\n- **Echocardiogram**: To confirm or rule out cardiac tamponade.\n- **Arterial Blood Gas (ABG)**: To assess for respiratory acidosis or hypoxemia.\n- **Serial ECGs**: To monitor for arrhythmias or changes in cardiac function.\n\n**Time Sensitivity:**\n\n- **Cardiac Tamponade and Hemothorax**: These conditions require immediate intervention to prevent hemodynamic collapse and respiratory failure. Early recognition and treatment are critical.\n- **Pulmonary Contusion**: While not as immediate, it still needs prompt attention to prevent worsening respiratory compromise.\n\nThese diagnoses and the required immediate workup are essential to ensure the patient's safety and prevent potential life-threatening complications.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ],
+              "hemothorax": [
+                "bruising over the chest wall",
+                "hypoxia",
+                "hypotension"
+              ]
+            },
+            "response_time": 3.4959609508514404,
+            "confidence_score": 0.66,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763232.7803838
+          },
+          "Dr. Clinical Evaluator": {
+            "content": "```json\n{\"cardiac tamponade\": [\"elevated pulmonary capillary wedge pressure\", \"elevated troponins\", \"chest pain\", \"bruising\"], \"pulmonary contusion\": [\"chest pain\", \"tachycardia\", \"bruising\"], \"aortic dissection\": [\"severe chest pain\", \"hypotension\"], \"pneumothorax\": [\"bruising over the chest wall\", \"tachypnea\"]}\n```\n\n### Clinical Reasoning:\n\n#### Cardiac Tamponade\n- **Elevated pulmonary capillary wedge pressure**: This is a key indicator of cardiac tamponade, where the heart is compressed by fluid in the pericardial sac, leading to impaired ventricular filling and reduced cardiac output.\n- **Elevated troponins**: Troponin levels are often elevated in cases of myocardial injury, which can occur in cardiac tamponade due to the direct pressure on the heart.\n- **Chest pain and bruising**: These are common presentations in cases of cardiac tamponade, especially in the context of a traumatic injury like a motor vehicle collision.\n\n**Risk Level**: HIGH\n\n#### Pulmonary Contusion\n- **Chest pain and tachycardia**: Pulmonary contusion, or a bruised lung, can cause chest pain and tachycardia due to the inflammatory response and pain.\n- **Bruising over the chest wall**: This is a common sign of blunt chest trauma, which can lead to pulmonary contusion.\n\n**Risk Level**: HIGH\n\n#### Aortic Dissection\n- **Severe chest pain**: Aortic dissection often presents with severe, tearing chest pain that can be localized to the back or abdomen.\n- **Hypotension**: Aortic dissection can lead to a drop in blood pressure due to the disruption of the aortic flow and the subsequent shock state.\n\n**Risk Level**: HIGH\n\n#### Pneumothorax\n- **Bruising over the chest wall**: Pneumothorax can cause bruising and tenderness over the chest wall due to the underlying lung injury.\n- **Tachypnea**: Pneumothorax can lead to rapid breathing as the body attempts to compensate for the reduced lung volume.\n\n**Risk Level**: MEDIUM\n\n### IMMEDIATE WORKUP\n- **Chest X-ray**: To evaluate for pneumothorax, hemothorax, and pulmonary contusion.\n- **CT scan of the chest**: To rule out aortic dissection and other intrathoracic injuries.\n- **Pericardiocentesis**: If cardiac tamponade is suspected, this may be necessary to relieve the pressure on the heart.\n\n### TIME SENSITIVITY\n- **Cardiac tamponade and aortic dissection**: These conditions require immediate intervention to prevent fatal outcomes.\n- **Pulmonary contusion and pneumothorax**: While not immediately life-threatening, these conditions should be ruled out promptly to manage pain and prevent complications.\n\nThese diagnoses are prioritized based on their potential for immediate harm if missed, with cardiac tamponade and aortic dissection being the most critical.",
+            "structured_data": {
+              "cardiac tamponade": [
+                "elevated pulmonary capillary wedge pressure",
+                "elevated troponins",
+                "chest pain",
+                "bruising"
+              ],
+              "pulmonary contusion": [
+                "chest pain",
+                "tachycardia",
+                "bruising"
+              ],
+              "aortic dissection": [
+                "severe chest pain",
+                "hypotension"
+              ],
+              "pneumothorax": [
+                "bruising over the chest wall",
+                "tachypnea"
+              ]
+            },
+            "response_time": 4.800695419311523,
+            "confidence_score": 0.62,
+            "reasoning_quality": "standard",
+            "timestamp": 1752763232.7803843
+          }
+        },
+        "metadata": {
+          "critical_diagnoses": [],
+          "total_critical_identified": 0,
+          "unique_critical_diagnoses": 0,
+          "high_priority_count": 0,
+          "agent_contributions": {
+            "Dr. Anya Sharma": 0,
+            "Dr. Liam O'Connell": 0,
+            "Dr. Maya Patel": 0,
+            "Dr. Sarah Chen": 0,
+            "Dr. Michael Kim": 0,
+            "Dr. Emily Patel": 0,
+            "Dr. Rajiv Gupta": 0,
+            "Dr. Lisa Rodriguez": 0,
+            "Dr. Clinical Evaluator": 0
+          }
+        },
+        "success": true,
+        "execution_time": 43.30974316596985,
+        "formatted_output": ""
+      }
+    },
+    "sequence_metadata": {
+      "total_rounds": 7,
+      "start_time": 1752763061.4499996,
+      "end_time": 1752763232.7803974,
+      "total_execution_time": 171.33039784431458
+    }
+  }
+}
