@@ -12,9 +12,15 @@
   
 - Development for this version was powered by synchronous Qwen2.5-7B-Instruct-GPTQ-Int4 models. This specific model was chosen for initial version deployment given its tendency towards strict instruction adherence and capacity to handle extended text.
 
--> **v8.1:** Implements master key vulnerability checks in line with methods detailed by Zhao et al. (2025). This version hardens AI enhanced evaluation to prevent "hacking" and lenient assessment. Maintains compatability with earlier configs and robust synchronous operation.
+--------------------------------------------------------------------------------------
+
+**VERSION 8 HISTORY**
+
+-> **v8.3:** Production version. This iteration is powered by Gemma2 and Qwen2.5 models. Primary refactor is the consolidation of the evaluator into a single module which works as a hybrid string matching and AI enhanced assessment equipped with safeguard mechanisms for master key vulnerabilities. 
 
 -> **v8.2:** Building on v8.1, this version represents the first production ready iteration of v8. Additionally, version tests have been powered by Llama3 and Qwen2.5 models paired together synchronously.
+
+-> **v8.1:** Implements master key vulnerability checks in line with methods detailed by Zhao et al. (2025). This version hardens AI enhanced evaluation to prevent "hacking" and lenient assessment. Maintains compatability with earlier configs and robust synchronous operation.
 
 -> Included in this version is a ddx performance analysis script. The ddx_results_analyzer.py translates experiment results in direct relation to industry and academy metrics and benchmarks. This allows for direct comparison as the novel metrics of the ddx are compressed into standard assessment frameworks. See "v8_2_dual_qwen_performance_brief.md" in the v8 "Reports" directory for early insights.
 
