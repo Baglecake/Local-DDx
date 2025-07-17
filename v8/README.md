@@ -252,6 +252,7 @@ results = run_case_batch(cases)
 - **Diagnostic Safety**: Risk-adjusted performance measurement
 - **Reasoning Thoroughness**: Comprehensive consideration assessment
 - **TempoScore**: Debate complexity and interaction quality
+- **Appropriately Excluded**: Diagnoses that were addressed and considered, though excluded from borda counts with justification
 
 ### Dynamic Weighting
 CAA diagnoses receive adaptive weights based on TP rate:
