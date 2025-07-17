@@ -1,0 +1,38 @@
+conservative_model:
+  name: 'Conservative-Model-Gemma-2-9B-AWQ'
+  model_path: 'hugging-quants/gemma-2-9b-it-AWQ-INT4'
+  quantization: 'awq_marlin'  # CHANGED: Use awq_marlin instead of awq
+  dtype: 'bfloat16'
+  memory_fraction: 0.4
+  temperature: 0.3
+  top_p: 0.7
+  max_tokens: 1536
+  max_model_len: 4096
+  enforce_eager: false
+  max_num_seqs: 2
+
+innovative_model:
+  name: 'Innovative-Model-Qwen2.5-GPTQ'
+  model_path: 'Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4'
+  quantization: 'gptq_marlin' # Changed to the faster, recommended kernel
+  dtype: 'half'
+  memory_fraction: 0.45
+  temperature: 0.8
+  top_p: 0.7
+  max_tokens: 1536
+  max_model_len: 4096
+  enforce_eager: false
+  max_num_seqs: 2
+
+rounds:
+  enable_subspecialist_consultation: true
+  enable_preferential_voting: true
+  enable_symptom_management: true
+  
+evaluation:
+  clinical_recall_threshold: 0.85
+  precision_threshold: 0.80
+  
+synthesis:
+  enable_credibility_weighting: true
+  enable_tempo_scoring: true
