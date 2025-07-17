@@ -11,6 +11,8 @@ Additionally, this version implements a unified dual instance approach, loading 
 
 ## Version History
 
+-> **Current** v8_4: Synchronous gemma2-qwen2.5 architecture. Significant refactor of refinement and debate rounds to include direct challenges and responses between agents. Debate now directly informs preferential voting round. These additions were reintroduced from earlier iterations using the robust evaluation and metrics traslation of v8.
+
 -> v8_2_dual_qwen: This setup deploys synchronous dual Qwen2.5 models to power its agents.
 
 -> v8_2_llama_qwen: This setup deploys synchronus llama3 and Qwen2.5 models to power its agents.
