@@ -240,27 +240,39 @@ results = run_case_batch(cases)
 
 ---------------------------------------------------------------------
 
-## Performance Metrics
+## 📊 Performance Metrics
 
-### Traditional Metrics
-- **Precision**: TP / (TP + FP)
-- **Recall**: TP / (TP + FN)
-- **F1-Score**: Harmonic mean of precision and recall
+This project uses a combination of traditional ML metrics for benchmarking and a novel, clinically-focused framework for a more valid assessment of diagnostic performance. The translation between these frameworks is handled by the `ddx_results_analyzer.py` script.
 
-### Enhanced Metrics (Novel)
-- **Clinical Reasoning Quality**: Weighted assessment including AE diagnoses
-- **Diagnostic Safety**: Risk-adjusted performance measurement
-- **Reasoning Thoroughness**: Comprehensive consideration assessment
-- **TempoScore**: Debate complexity and interaction quality
-- **Appropriately Excluded**: Diagnoses that were addressed and considered, though excluded from borda counts with justification
+### Clinically-Focused Metrics (Primary Evaluation)
 
-### Dynamic Weighting
-CAA diagnoses receive adaptive weights based on TP rate:
-- TP Rate ≥ 70%: CAA Weight = +0.7 (bonus)
-- TP Rate ≥ 50%: CAA Weight = +0.3 (mild bonus)  
-- TP Rate ≥ 30%: CAA Weight = 0.0 (neutral)
-- TP Rate < 30%: CAA Weight = -0.2 (penalty)
+Our primary evaluation framework re-categorizes diagnostic outcomes to better reflect real-world clinical competence.
 
+* **Clinical Success Rate**: Measures the percentage of ground truth diagnoses that were correctly handled by the system, either by matching them or by correctly ruling them out with evidence.
+    * `Formula: (TP + AE) / (TP + AE + TM)`
+
+* **Clinical Failure Rate**: Measures the percentage of ground truth diagnoses that the system truly missed, representing actual diagnostic inadequacy.
+    * `Formula: TM / (TP + AE + TM)`
+
+* **Diagnostic Precision**: Measures the accuracy of the final diagnoses proposed by the system.
+    * `Formula: TP / (TP + FP)`
+
+* **Appropriately Excluded (AE)**: A success classification for diagnoses that were considered by the system but reasonably ruled out based on evidence in the transcript. This is a key measure of sound clinical reasoning.
+
+### Traditional Metrics (For Comparison)
+
+These standard metrics are generated for comparison against other benchmarks but are considered less representative of this system's true clinical performance.
+
+* **Precision**: `TP / (TP + FP)`
+* **Recall**: `TP / (TP + FN)` (Note: This formula incorrectly penalizes the system by treating Appropriately Excluded (AE) diagnoses as failures).
+* **F1-Score**: `2 * (Precision * Recall) / (Precision + Recall)`
+
+### Advanced System Metrics
+
+* **Reasoning Thoroughness**: Comprehensive assessment of diagnostic consideration based on evidence from the full transcript.
+* **Diagnostic Safety**: A risk-adjusted performance metric that evaluates the system's ability to avoid critical misses.
+* **TempoScore**: A novel metric that measures the complexity and intensity of the collaborative debate across rounds.
+  
 ## Research Methodology
 
 ### Experimental Design
