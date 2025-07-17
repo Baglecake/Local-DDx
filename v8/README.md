@@ -15,6 +15,8 @@ Additionally, this version implements a unified dual instance approach, loading 
 
 -> v8_2_llama_qwen: This setup deploys synchronus llama3 and Qwen2.5 models to power its agents.
 
+-> v8_3_gemma_qwen: This setup deploys synchronous Gemma2 and Qwen2.5 models to power its agents. This version also consolidates the evaluator into a single v9 edition. 
+
 -> ddx_results_analyzer.py: This script contains metric normalization analysis to interpret the outputs of the LDDx in comparison to industry and academic benchamrks. It serves as a translator between novel and traditional metrics. Use to interpret results. See the "Reports" directory for batched analyses and individual case reports.
 
 ---------------------------------------------------------------------
