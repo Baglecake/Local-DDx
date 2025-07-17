@@ -34,10 +34,10 @@ Traditional Recall (For Comparison):
 • Clinical Success vs Traditional Recall gap: +25.8%
   This gap represents the clinical value of appropriate diagnostic exclusions.
 
-• Average Clinical Performance: 62.7% success rate
+• Average Clinical Performance: 62.7% success rate (TM + AE)
   This credits both exact matches AND appropriate exclusions with reasoning.
 
-• Average Clinical Failure Rate: 19.2%
+• Average Clinical Failure Rate: 19.2% (TM)
   This represents only true diagnostic inadequacy (complete misses).
 
 • Best performing case: Case 3 
