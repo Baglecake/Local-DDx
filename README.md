@@ -152,7 +152,7 @@ This system proposes a multi-agent AI framework for healthcare:
 ### Prerequisites
 - Python 3.8+
 - CUDA-compatible GPU (recommended: A100, V100, or RTX 4090)
-- 16GB+ GPU memory for optimal performance
+- 40GB+ GPU memory for optimal performance
 
 ### Quick Start
 
