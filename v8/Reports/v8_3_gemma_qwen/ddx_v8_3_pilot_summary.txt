@@ -1,0 +1,53 @@
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                        DDx BATCH ANALYSIS SUMMARY                           ║
+║                            15 Cases Analyzed                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+📊 AGGREGATE PERFORMANCE (Primary Clinical Metrics)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Clinical Success Rate (TP + AE):
+   Mean:  69.4%   Median:  66.7%
+   Range: 33.3% - 100.0%
+
+Clinical Failure Rate (TM only):
+   Mean:  17.2%   Median:   0.0%
+   Range:  0.0% - 66.7%
+
+Diagnostic Precision:
+   Mean:  42.1%   Median:  33.3%
+   Range: 16.7% - 75.0%
+
+Traditional Recall (For Comparison):
+   Mean:  49.9%   Median:  50.0%
+   Range: 20.0% - 100.0%
+
+🏆 PERFORMANCE DISTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   EXCELLENT :   5 cases ( 33.3%)
+   GOOD      :   5 cases ( 33.3%)
+   FAIR      :   4 cases ( 26.7%)
+   POOR      :   1 cases (  6.7%)
+
+📈 KEY INSIGHTS (Clinical Binary Perspective)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+• Clinical Success vs Traditional Recall gap: +19.6%
+  This gap represents the clinical value of appropriate diagnostic exclusions.
+
+• Average Clinical Performance: 69.4% success rate
+  This credits both exact matches AND appropriate exclusions with reasoning.
+
+• Average Clinical Failure Rate: 17.2%
+  This represents only true diagnostic inadequacy (complete misses).
+
+• Best performing case: Case 10
+  (100.0% clinical success)
+
+• Most challenging case: Case 4
+  (33.3% clinical success)
+
+CLINICAL INSIGHT: The normalized binary approach shows that systems perform better
+clinically than traditional metrics suggest, because good clinical reasoning includes
+both correct inclusions AND appropriate exclusions with evidence.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
