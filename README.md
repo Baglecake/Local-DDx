@@ -10,7 +10,7 @@
 
 - In addition to the features above, Version 8 offers a standardized benchmark to test against the AI enhanced evaluation in the previous iterations using the OPEN-DDx Data set. While a rigorous diagnostic rubric captures the structure of an academic test, the LDDx demonstrates the social dynamics at play in real, complex situations. As a side by side experiment, the LDDx offers a glimpse into the benefits and risks of artificial social intelligence as they apply to the sensitive context of clinical reasoning and diagnostics.
   
-- Current testing uses synchronous Qwen2.5-7B-Instruct-GPTQ-Int4 models. This specific model was chosen for initial version deployment given its tendency towards strict instruction adherence and capacity to handle extended text.
+- Development for this version was powered by synchronous Qwen2.5-7B-Instruct-GPTQ-Int4 models. This specific model was chosen for initial version deployment given its tendency towards strict instruction adherence and capacity to handle extended text.
 
 -> **v8.1:** Implements master key vulnerability checks in line with methods detailed by Zhao et al. (2025). This version hardens AI enhanced evaluation to prevent "hacking" and lenient assessment. Maintains compatability with earlier configs and robust synchronous operation.
 
