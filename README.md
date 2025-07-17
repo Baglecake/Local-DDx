@@ -16,6 +16,8 @@
 
 **VERSION 8 HISTORY**
 
+-> **Current v8.4:** Synchronous gemma2-qwen2.5 architecture. Significant refactor of refinement and debate rounds to include direct challenges and responses between agents. Agents now change positions as a result of debate, which will directly inform the preferential voting round. These additions were reintroduced from earlier iterations in addition to robust evaluation and metrics traslation of v8. 
+
 -> **v8.3:** Production version. This iteration is powered by Gemma2 and Qwen2.5 models. Primary refactor is the consolidation of the evaluator into a single module which works as a hybrid string matching and AI enhanced assessment equipped with safeguard mechanisms for master key vulnerabilities (See Zhao et al., 2025). 
 
 -> **v8.2:** Building on v8.1, this version represents the first production ready iteration of v8. Additionally, version tests have been powered by Llama3 and Qwen2.5 models paired together synchronously.
