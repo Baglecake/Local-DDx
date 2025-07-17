@@ -16,7 +16,7 @@
 
 **VERSION 8 HISTORY**
 
--> **v8.3:** Production version. This iteration is powered by Gemma2 and Qwen2.5 models. Primary refactor is the consolidation of the evaluator into a single module which works as a hybrid string matching and AI enhanced assessment equipped with safeguard mechanisms for master key vulnerabilities. 
+-> **v8.3:** Production version. This iteration is powered by Gemma2 and Qwen2.5 models. Primary refactor is the consolidation of the evaluator into a single module which works as a hybrid string matching and AI enhanced assessment equipped with safeguard mechanisms for master key vulnerabilities (See Zhao et al., 2025). 
 
 -> **v8.2:** Building on v8.1, this version represents the first production ready iteration of v8. Additionally, version tests have been powered by Llama3 and Qwen2.5 models paired together synchronously.
 
