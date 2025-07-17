@@ -24,7 +24,7 @@
 
 -> **v8.1:** Implements master key vulnerability checks in line with methods detailed by Zhao et al. (2025). This version hardens AI enhanced evaluation to prevent "hacking" and lenient assessment. Maintains compatability with earlier configs and robust synchronous operation.
 
--> Included in this version is a ddx performance analysis script. The ddx_results_analyzer.py translates experiment results in direct relation to industry and academy metrics and benchmarks. This allows for direct comparison as the novel metrics of the ddx are compressed into standard assessment frameworks. See "v8_2_dual_qwen_performance_brief.md" in the v8 "Reports" directory for early insights.
+-> Included in this version is a ddx performance analysis script. The ddx_results_analyzer.py translates experiment results in direct relation to industry and academy metrics and benchmarks. This allows for direct comparison as the novel metrics of the ddx are compressed into standard assessment frameworks. See performance reports in the v8 "Reports" directory for early insights.
 
 **See the version 8 README for further details.** 
 
