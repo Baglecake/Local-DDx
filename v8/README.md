@@ -5,7 +5,7 @@
 
 This version implements a deterministic clinical evaluation engine that provides reproducible, research-grade assessment of diagnostic performance using rule-based clinical equivalence matching and evidence-based transcript analysis.
 
-Additionally, this version implements a unified dual instance approach, loading each llm simultaneously. This refinement significantly improves speed of execution, while also enabling batched execution (See below).
+Additionally, this version implements a synchronous dual instance approach, loading each llm simultaneously. This refinement significantly improves speed of execution, while also enabling batched execution (See below).
 
 ---------------------------------------------------------------------
 
