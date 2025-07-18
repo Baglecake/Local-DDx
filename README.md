@@ -36,7 +36,7 @@
 
 --------------------------------------------------------------------------------------
 
-**LEGACY VERSION OVERVIEW:**
+**LEGACY VERSION OVERVIEW**
 
 > Each version directory contains version transcripts and modules. "Transcripts" and "Modules" directories in the main repo contain modules and transcripts from the initial conceptual design (v6.0) only.
 
