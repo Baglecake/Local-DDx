@@ -18,7 +18,11 @@
 
 **VERSION 8 HISTORY**
 
--> **Current v8.4:** Synchronous gemma2-qwen2.5 architecture. Significant refactor of refinement and debate rounds to include direct challenges and responses between agents. Agents now change positions as a result of debate, which will directly inform the preferential voting round. These additions were reintroduced from earlier iterations in addition to robust evaluation and metrics traslation of v8. 
+-> **Current v8_5:** Building on 8.4 architecture, this version introduces significantly enriched prompting to encourage interactivity amongst agents. Implementation of a "devil's advocate" mechanism acts as a stress test for diagnostic convergence a role assigned to the most credible specialist. Additionally, discourse in the 'refinement and justification' and 'debate rounds' exhibits signs of emergent behaviour within a bounded environment, seen through small fluctuations in experimental outcomes over multiple runs of the same case.
+
+---------------------
+
+-> **v8.4:** Synchronous gemma2-qwen2.5 architecture. Significant refactor of refinement and debate rounds to include direct challenges and responses between agents. Agents now change positions as a result of debate, which will directly inform the preferential voting round. These additions were reintroduced from earlier iterations in addition to robust evaluation and metrics traslation of v8. 
 
 -> **v8.3:** Production version. This iteration is powered by Gemma2 and Qwen2.5 models. Primary refactor is the consolidation of the evaluator into a single module which works as a hybrid string matching and AI enhanced assessment equipped with safeguard mechanisms for master key vulnerabilities (See Zhao et al., 2025). 
 
