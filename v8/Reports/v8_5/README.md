@@ -3,7 +3,7 @@ This directory contains reports for version 8.5 of the ddx.
 ```markdown
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                        DDx v8.5 BATCH ANALYSIS SUMMARY                       ║
-║                            15 Cases Analyzed                                 ║
+║                            16 Cases Analyzed                                 ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
 📊 AGGREGATE PERFORMANCE (Primary Clinical Metrics)
