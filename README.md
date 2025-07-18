@@ -12,6 +12,8 @@
   
 - Development for this version was powered by synchronous Qwen2.5-7B-Instruct-GPTQ-Int4 models. This specific model was chosen for initial version deployment given its tendency towards strict instruction adherence and capacity to handle extended text. As version stability was achieved, a gemma-2-9b-it-AWQ-INT4 model was deployed as the conservative model to achieve genuine ensemble dynamics in production-ready iterations.
 
+- A notable feature of this version is emergent behaviour arising during debate and refinement rounds. Run individual cases multiple times to see the system find different paths to final diagnoses.
+
 --------------------------------------------------------------------------------------
 
 **VERSION 8 HISTORY**
