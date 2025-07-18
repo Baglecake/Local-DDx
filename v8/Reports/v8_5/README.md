@@ -2,7 +2,7 @@ This directory contains reports for version 8.5 of the ddx.
 
 ```markdown
 ╔══════════════════════════════════════════════════════════════════════════════╗
-║                        DDx BATCH ANALYSIS SUMMARY                           ║
+║                        DDx v8.5 BATCH ANALYSIS SUMMARY                      ║
 ║                            11 Cases Analyzed                                ║
 ╚══════════════════════════════════════════════════════════════════════════════╝
 
