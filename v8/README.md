@@ -15,11 +15,11 @@ Additionally, this version implements a unified dual instance approach, loading 
 
 -> v8_4: Synchronous gemma2-qwen2.5 architecture. Significant refactor of refinement and debate rounds to include direct challenges and responses between agents. Debate now directly informs preferential voting round. These additions were reintroduced from earlier iterations using the robust evaluation and metrics traslation of v8.
 
+-> v8_3_gemma_qwen: This setup deploys synchronous Gemma2 and Qwen2.5 models to power its agents. This version also consolidates the evaluator into a single v9 edition. 
+
 -> v8_2_dual_qwen: This setup deploys synchronous dual Qwen2.5 models to power its agents.
 
 -> v8_2_llama_qwen: This setup deploys synchronus llama3 and Qwen2.5 models to power its agents.
-
--> v8_3_gemma_qwen: This setup deploys synchronous Gemma2 and Qwen2.5 models to power its agents. This version also consolidates the evaluator into a single v9 edition. 
 
 -> ddx_results_analyzer.py: This script contains metric normalization analysis to interpret the outputs of the LDDx in comparison to industry and academic benchamrks. It serves as a translator between novel and traditional metrics. Use to interpret results. See the "Reports" directory for batched analyses and individual case reports.
 
