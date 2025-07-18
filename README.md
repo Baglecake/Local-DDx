@@ -76,7 +76,7 @@
 10. Qwen2.5-7B-Instruct-GPTQ-Int4 **
 11. Gemma-2-9b-it-AWQ-INT4 **
 
->*Testing on larger models limited to dual instance approach (v7.3 onwards).
+>*Testing on larger models limited to dual instance approach (v7.3-7.5).
 
 >**Quantized model
 
