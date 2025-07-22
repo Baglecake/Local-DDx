@@ -12,7 +12,7 @@ Additionally, this version implements a synchronous dual instance approach, load
 ## Version History
 
 -> **Current** - v8_6: Expanding on v8.5, this version introduces additional prompting to encourage interactivity amongst agents. Implements comorbidity considerations to encourage collaboration between specialists.
-
+```markdown
 🎯 ROUND 2: Devil's Advocate Assignment + Direct Challenges
 📊 Consensus detected: Hepatic Encephalopathy
 😈 Devil's Advocate assigned: Dr. Anya Sharma
@@ -24,7 +24,7 @@ Additionally, this version implements a synchronous dual instance approach, load
    🔗 Comorbidity discoveries: 9
    🤝 Comorbidity consensus: strong
    📊 Multi-condition likelihood: HIGH - Multiple agents identify concurrent conditions
-
+```
 
 -> v8_5: Building on 8.4 architecture, this version introduces significantly enriched prompting to encourage interactivity amongst agents. Implementation of a "devil's advocate" mechanism acts as a stress test for diagnostic convergence a role assigned to the most credible specialist. Additionally, discourse in the 'refinement and justification' and 'debate rounds' exhibits signs of emergent behaviour within a bounded environment, seen through small fluctuations in experimental outcomes over multiple runs of the same case.
 
