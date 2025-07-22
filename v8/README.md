@@ -11,7 +11,22 @@ Additionally, this version implements a synchronous dual instance approach, load
 
 ## Version History
 
--> **Current** v8_5: Building on 8.4 architecture, this version introduces significantly enriched prompting to encourage interactivity amongst agents. Implementation of a "devil's advocate" mechanism acts as a stress test for diagnostic convergence a role assigned to the most credible specialist. Additionally, discourse in the 'refinement and justification' and 'debate rounds' exhibits signs of emergent behaviour within a bounded environment, seen through small fluctuations in experimental outcomes over multiple runs of the same case.
+-> **Current** - v8_6: Expanding on v8.5, this version introduces additional prompting to encourage interactivity amongst agents. Implements comorbidity considerations to encourage collaboration between specialists.
+
+🎯 ROUND 2: Devil's Advocate Assignment + Direct Challenges
+📊 Consensus detected: Hepatic Encephalopathy
+😈 Devil's Advocate assigned: Dr. Anya Sharma
+📊 Interactive Debate Summary:
+   🎯 Direct challenges: 9
+   🔄 Position changes: 9
+   💬 Evidence citations: 95
+   📈 Interaction quality: 7.28
+   🔗 Comorbidity discoveries: 9
+   🤝 Comorbidity consensus: strong
+   📊 Multi-condition likelihood: HIGH - Multiple agents identify concurrent conditions
+
+
+-> v8_5: Building on 8.4 architecture, this version introduces significantly enriched prompting to encourage interactivity amongst agents. Implementation of a "devil's advocate" mechanism acts as a stress test for diagnostic convergence a role assigned to the most credible specialist. Additionally, discourse in the 'refinement and justification' and 'debate rounds' exhibits signs of emergent behaviour within a bounded environment, seen through small fluctuations in experimental outcomes over multiple runs of the same case.
 
 -> v8_4: Synchronous gemma2-qwen2.5 architecture. Significant refactor of refinement and debate rounds to include direct challenges and responses between agents. Debate now directly informs preferential voting round. These additions were reintroduced from earlier iterations using the robust evaluation and metrics traslation of v8.
 
