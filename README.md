@@ -422,7 +422,7 @@ If you use LDDx in your research, please cite:
   title={DDx v6: Multi-Agent Collaborative Diagnostic System with Sliding Context Windows},
   author={[Silver, Daniel; Fosse, Ethan; Griggs, Brandon; Coburn, Del]},
   year={2025},
-  url={https://github.com/yourusername/ddx-v6},
+  url={https://github.com/Baglecake/ddx-v6},
   note={A multi-agent AI system for medical differential diagnosis}
 }
 ```
