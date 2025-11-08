@@ -99,7 +99,7 @@
 
 --------------------------------------------------------------------------------------
 
-## 🚀 Key Innovations
+## Key Innovations
 
 ### **Dynamic Specialist Generation**
 - **Autonomous agent creation** tailored to each specific case
@@ -121,7 +121,7 @@
 
 --------------------------------------------------------------------------------------
 
-## 🏗️ Architecture
+## Architecture
 
 ```
 DDx System Architecture
@@ -147,7 +147,7 @@ DDx System Architecture
 
 --------------------------------------------------------------------------------------
 
-## 🔬 Research Significance
+## Research Significance
 
 This system proposes a multi-agent AI framework for healthcare:
 
@@ -158,7 +158,7 @@ This system proposes a multi-agent AI framework for healthcare:
 
 --------------------------------------------------------------------------------------
 
-## 📋 The 7-Round Diagnostic Process
+## The 7-Round Diagnostic Process
 
 | Round | Purpose | Collaboration Level |
 |-------|---------|-------------------|
@@ -172,7 +172,7 @@ This system proposes a multi-agent AI framework for healthcare:
 
 --------------------------------------------------------------------------------------
 
-## 🛠️ Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - Python 3.8+
@@ -215,7 +215,7 @@ innovative_model:
 
 --------------------------------------------------------------------------------------
 
-## 🚀 Usage
+## Usage
 
 ### Basic Case Analysis
 
@@ -316,7 +316,7 @@ if runner.is_initialized:
 
 --------------------------------------------------------------------------------------
 
-## 🔧 Core Modules
+## Core Modules
 
 ### `ddx_core_v6.py`
 - **ModelManager**: Dual-model orchestration with memory management
@@ -352,7 +352,7 @@ if runner.is_initialized:
 
 --------------------------------------------------------------------------------------
 
-## 🧪 Testing & Validation
+## Testing & Validation
 
 ```bash
 # Run system tests
@@ -367,7 +367,7 @@ python benchmark_system.py
 
 --------------------------------------------------------------------------------------
 
-## 📈 Research Applications
+## Research Applications
 
 ### Medical Education
 - **Case-based learning** with multi-perspective analysis
@@ -402,7 +402,7 @@ black ddx_*.py
 
 --------------------------------------------------------------------------------------
 
-## 📚 References
+## References
 Nori, H., Lee, Y. T., Zhang, S., Carignan, D., Edgar, R., Fusi, N., ... & Horvitz, E. (2023). Can generalist foundation models outcompete special-purpose tuning? A case study in medicine. arXiv. https://arxiv.org/abs/2311.16452
 
 Zhou, S., Lin, M., Ding, S., Zhang, Y., Chen, H., Wang, J., & Liu, Q. (2025). Explainable differential diagnosis with dual-inference large language models. npj Health Systems, 2(1), 12. https://doi.org/10.1038/s44401-025-00015-6
@@ -413,7 +413,7 @@ Zhao, Y., Liu, H., Yu, D., Kung, S. Y., Mi, H., & Yu, D. (2025). *One token to f
 
 --------------------------------------------------------------------------------------
 
-## 📚 Citation
+## Citation
 
 If you use LDDx in your research, please cite:
 
@@ -429,7 +429,7 @@ If you use LDDx in your research, please cite:
 
 --------------------------------------------------------------------------------------
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
