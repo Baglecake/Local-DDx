@@ -268,7 +268,7 @@ if runner.is_initialized:
     )
 ```
 
-## 📊 Output & Results
+## Output & Results
 
 ### JSON Export Structure
 
