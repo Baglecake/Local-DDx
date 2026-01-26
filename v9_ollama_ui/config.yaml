@@ -1,0 +1,43 @@
+# =============================================================================
+# Local-DDx Configuration - Ollama Edition
+# =============================================================================
+
+# Conservative Model: Lower temperature for systematic, evidence-based reasoning
+conservative_model:
+  name: "Conservative"
+  model_name: "llama3.1:8b"  # Options: llama3.1:8b, mistral-nemo:12b, phi3:mini
+  temperature: 0.3
+  top_p: 0.7
+  max_tokens: 1024
+  role: "conservative"
+
+# Innovative Model: Higher temperature for creative, exploratory thinking
+innovative_model:
+  name: "Innovative"
+  model_name: "llama3.1:8b"  # Can use same model with different params
+  temperature: 0.8
+  top_p: 0.95
+  max_tokens: 1024
+  role: "innovative"
+
+# =============================================================================
+# Model Recommendations for M4 MacBook (48GB)
+# =============================================================================
+#
+# Single Model (simpler):
+#   - llama3.1:8b (4.9 GB) - Good balance
+#   - mistral-nemo:12b (7.1 GB) - Better reasoning
+#
+# Dual Model (current config):
+#   - Both using llama3.1:8b with different temperatures
+#   - Total: ~10 GB with overhead, leaves 38GB free
+#
+# For hackathon demo, consider:
+#   - phi3:mini (2.2 GB) - Fast iteration, quick demos
+#   - llama3.1:8b - Production quality
+#
+# Medical-focused (if available):
+#   - meditron (if you pull it)
+#   - biomistral (if you pull it)
+#
+# =============================================================================

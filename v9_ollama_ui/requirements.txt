@@ -1,0 +1,13 @@
+# Local-DDx v9 Dependencies
+# For Ollama backend + Gradio UI
+
+# Core
+pyyaml>=6.0
+requests>=2.28.0
+
+# UI
+gradio>=4.0.0
+
+# Optional: for future MLX support
+# mlx>=0.0.10
+# mlx-lm>=0.0.10

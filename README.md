@@ -1,133 +1,51 @@
-# LDDx: Multi-Agent Collaborative Diagnostic System
+# Local-DDx: Multi-Agent Collaborative Diagnostic System
 
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![Research](https://img.shields.io/badge/Type-Research-brightgreen.svg)](https://github.com)
 
-**A multi-agent collaborative AI system for medical differential diagnosis featuring dynamic specialist generation, sliding context windows, and epistemic labor division using local LLMs.**
+## Abstract
 
-**v8:** This directory contains the latest version of the LDDx. Primary refactor advances from sequential model management, implementing simultaneous model loading for persistent dual instance architecture. Features include precise string matching and backwards compatability for agent enhanced evaluation, as well as enhanced interaction through sliding context. 
+Local-DDx is a multi-agent AI framework for medical differential diagnosis that addresses diagnostic isolation in resource-limited healthcare settings. The system dynamically generates case-specific specialist teams that collaborate through structured diagnostic rounds, employing sliding context windows to enable genuine epistemic labor division among AI agents.
 
-- In addition to the features above, Version 8 offers a standardized benchmark to test against the AI enhanced evaluation in the previous iterations using the OPEN-DDx Data set. While a rigorous diagnostic rubric captures the structure of an academic test, the LDDx demonstrates the social dynamics at play in real, complex situations. As a side by side experiment, the LDDx offers a glimpse into the benefits and risks of artificial social intelligence as they apply to the sensitive context of clinical reasoning and diagnostics.
-  
-- Development for this version was powered by synchronous Qwen2.5-7B-Instruct-GPTQ-Int4 models. This specific model was chosen for initial version deployment given its tendency towards strict instruction adherence and capacity to handle extended text. As version stability was achieved, a gemma-2-9b-it-AWQ-INT4 model was deployed as the conservative model to achieve genuine ensemble dynamics in production-ready iterations.
-
-- Notable version 8 feature: Emergent behaviour arising during debate and refinement rounds. Run individual cases multiple times to see the system find different paths to final diagnoses.
-
---------------------------------------------------------------------------------------
-
-**VERSION 8 HISTORY**
-
--> **Current v8_6:** Expanding on v8.5, this version introduces additional prompting to encourage interactivity amongst agents. Implements comorbidity considerations to encourage collaboration between specialists.
-
-```markdown
-🎯 ROUND 2: Devil's Advocate Assignment + Direct Challenges
-📊 Consensus detected: Hepatic Encephalopathy
-😈 Devil's Advocate assigned: Dr. Anya Sharma
-```
-```markdown
-📊 Interactive Debate Summary:
-   🎯 Direct challenges: 9
-   🔄 Position changes: 9
-   💬 Evidence citations: 95
-   📈 Interaction quality: 7.28
-   🔗 Comorbidity discoveries: 9
-   🤝 Comorbidity consensus: strong
-   📊 Multi-condition likelihood: HIGH - Multiple agents identify concurrent conditions
-```
----------------------
-
--> **v8_5:** Building on 8.4 architecture, this version introduces significantly enriched prompting to encourage interactivity amongst agents. Implementation of a "devil's advocate" mechanism acts as a stress test for diagnostic convergence. Additionally, discourse in the 'refinement and justification' and 'debate rounds' exhibits signs of emergent behaviour within a bounded environment, seen through small fluctuations in experimental outcomes over multiple runs of the same case.
-
--> **v8.4:** Synchronous gemma2-qwen2.5 architecture. Significant refactor of refinement and debate rounds to include direct challenges and responses between agents. Agents now change positions as a result of debate, which will directly inform the preferential voting round. These additions were reintroduced from earlier iterations in addition to robust evaluation and metrics traslation of v8. 
-
--> **v8.3:** Production version. This iteration is powered by Gemma2 and Qwen2.5 models. Primary refactor is the consolidation of the evaluator into a single module which works as a hybrid string matching and AI enhanced assessment equipped with safeguard mechanisms for master key vulnerabilities (See Zhao et al., 2025). 
-
--> **v8.2:** Building on v8.1, this version represents the first production ready iteration of v8. Additionally, version tests have been powered by Llama3 and Qwen2.5 models paired together synchronously.
-
--> **v8.1:** Implements master key vulnerability checks in line with methods detailed by Zhao et al. (2025). This version hardens AI enhanced evaluation to prevent "hacking" and lenient assessment. Maintains compatability with earlier configs and robust synchronous operation.
-
--> Included in this version is a ddx performance analysis script. The ddx_results_analyzer.py translates experiment results in direct relation to industry and academy metrics and benchmarks. This allows for direct comparison as the novel metrics of the ddx are compressed into standard assessment frameworks. See performance reports in the v8 "Reports" directory for early insights.
-
-**See the version 8 README for further details.** 
-
---------------------------------------------------------------------------------------
-
-**LEGACY VERSION OVERVIEW**
-
-> Each version directory contains version transcripts and modules. "Transcripts" and "Modules" directories in the main repo contain modules and transcripts from the initial conceptual design (v6.0) only.
-
-**v6:** Developmental Version - Eager: "true"; enforced stability for GPU development purposes. Initial dual model scaffolding with agent generation capabilities and early insights using dual NousResearch/Hermes-2-Pro-Mistral-7B models. Partially compatable with vllm library (missing quantized loading).
-
-**v7:** Fixed metrics and parsing. Multiple operational versions with a variety of configs:
-
--> **v7.1:** Developmental version - Eager: "true"; enforced stability for GPU development purposes. stable with Hugging Face FSmolLM3 and Microsoft Phi3mini, dual Mistral (v6 config). Partially compatable with vllm library (missing quantized loading).
-
--> **v7.2:** Production version - Eager: "false"; production ready platform for optimized Hugging Face FSmolLM3 and Microsoft Phi3mini experiments. Compatable with full vllm library.
-
--> **v7.3:** Production version - Eager: "false"; dual Lamma3 models loaded with v7.2 architecture. This version demonstrates functionality with quantized models. Compatable with full vllm library.
-
--> **v7.4:** Production version - Eager: "false"; v7.4 architecture with flexible parsing methods for various output formats. This version supports quantized models. Compatable with full vllm library.
-
--> **v7.5** Production version - Eager: "false"; NEW v7.5 architecture with enhanced parsing, prompt control, and "chattyness" reduction. Supports quantized models with full vllm compatability.
-
--> **v7.6** Production version - Eager "false"; loaded on v7.5 architecture. This version represents the first iteration mixing quantized and full precision models (Meta-Llama-3-8B-Instruct-GPTQ & Qwen/Qwen2-7B-Instruct). Full vllm compatability.
-
--> **v7.7** Production version - Eager "false"; NEW v7.7 architecture with a refined evaluation pipeline for precise ground truth matching. Tested on dual instance Qwen2.5-7B-Instruct-GPTQ-Int4. Maintains full vllm compatability.
-
-**VERSIONS 7.2 onwards support interchangeable models from the vllm libray which are loaded in the config.yaml.
-
---------------------------------------------------------------------------------------
-
-**TESTED COMPATABLE MODELS:**
-
-1. Hermes-2-Pro-Mistral-7B * 
-2. Nous-Hermes-2-Mistral-7B-DPO *
-3. Hugging Face SmolLM3-3B
-4. Microsoft Phi-3-mini-4k-instruct
-5. Microsoft Phi-4-mini-reasoning
-6. Meta-Llama-3-8B-Instruct-GPTQ **
-7. Meta-Llama-3.1-8B-Instruct-GPTQ-INT4 **
-8. Microsoft Diablo-GPT
-9. Qwen/Qwen2-7B-Instruct
-10. Qwen2.5-7B-Instruct-GPTQ-Int4 **
-11. Gemma-2-9b-it-AWQ-INT4 **
-
->*Testing on larger models limited to dual instance approach (v7.3-7.5).
-
->**Quantized model
-
---------------------------------------------------------------------------------------
+Unlike single-model approaches, Local-DDx models the collaborative reasoning process of a multidisciplinary medical team—specialists independently analyze cases, engage in evidence-based debate, challenge consensus through a Devil's Advocate mechanism, and synthesize diagnoses through preferential voting. All inference runs locally, ensuring patient data never leaves the clinical environment.
 
 ## Key Innovations
 
-### **Dynamic Specialist Generation**
-- **Autonomous agent creation** tailored to each specific case
-- **Unlimited specialty diversity** - not constrained by predefined lists
-- **AI-driven team composition** based on case complexity and requirements
-- **Dual model architecture** (conservative + innovative) for balanced perspectives
+### Dynamic Specialist Generation
+- **Autonomous agent creation** tailored to each clinical presentation
+- **Unlimited specialty diversity** unconstrained by predefined specialty lists
+- **Dual model architecture** (conservative + innovative) for balanced diagnostic reasoning
 
-### **Sliding Context Windows**
-- **True collaborative reasoning** - agents see and respond to each other's insights
-- **Context-aware discourse** - later rounds build upon previous team discussions
-- **Epistemic labor division** - specialists challenge, support, and synthesize across rounds
-- **Intelligent context filtering** - relevant information prioritized by round type and agent specialty
+### Sliding Context Windows
+- **True collaborative reasoning** where agents see and respond to each other's insights
+- **Context-aware discourse** with later rounds building upon team discussions
+- **Intelligent context filtering** prioritized by round type and agent specialty
 
-### **Diagnostic Pipeline**
-- **7-round diagnostic sequence** following evidence-based medical reasoning
+### Structured Diagnostic Pipeline
+- **7-round diagnostic sequence** following evidence-based medical reasoning patterns
+- **Devil's Advocate mechanism** for stress-testing diagnostic convergence
 - **Preferential voting with Borda counts** for consensus building
 - **TempoScore metrics** for round-by-round performance assessment
-- **AI-enhanced clinical evaluation** with equivalence agents
 
---------------------------------------------------------------------------------------
+## The 7-Round Diagnostic Process
+
+| Round | Purpose | Collaboration Level |
+|-------|---------|---------------------|
+| 1. Specialized Ranking | Rank specialist relevance to case | Individual |
+| 2. Symptom Management | Immediate triage interventions | Individual |
+| 3. Team Differentials | Independent diagnosis generation | Context-Aware |
+| 4. Master List | Synthesis of team diagnoses | Context-Aware |
+| 5. Refinement & Debate | Evidence-based collaborative discourse | Fully Collaborative |
+| 6. Preferential Voting | Consensus via Borda count | Fully Collaborative |
+| 7. Can't Miss | Critical diagnosis identification | Context-Aware |
 
 ## Architecture
 
 ```
-DDx System Architecture
+Local-DDx System Architecture
 
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   ddx_core_v6   │    │  ddx_rounds_v6  │    │ ddx_synthesis   │
+│    ddx_core     │    │   ddx_rounds    │    │  ddx_synthesis  │
 │                 │    │                 │    │                 │
 │ • ModelManager  │────│ • 7 Round Types │────│ • TempoScore    │
 │ • Agent Gen     │    │ • Sliding Ctx   │    │ • Credibility   │
@@ -137,90 +55,57 @@ DDx System Architecture
          └───────────────────────┼───────────────────────┘
                                  │
                     ┌─────────────────┐    ┌─────────────────┐
-                    │ ddx_evaluator   │    │   ddx_runner    │
+                    │  ddx_evaluator  │    │   ddx_runner    │
                     │                 │    │                 │
                     │ • AI Matching   │    │ • Pipeline Orch │
                     │ • Clinical Eval │    │ • JSON Export   │
-                    │ • v6 Metrics    │    │ • Full Results  │
+                    │ • Metrics       │    │ • Full Results  │
                     └─────────────────┘    └─────────────────┘
 ```
 
---------------------------------------------------------------------------------------
+## Installation
 
-## Research Significance
+### Option A: Full System (CUDA GPU)
 
-This system proposes a multi-agent AI framework for healthcare:
-
-- **First implementation** of sliding context windows in medical AI collaboration
-- **Novel approach** to dynamic specialist team generation without constraint to predefined specialties  
-- **Advanced consensus mechanisms** using preferential voting and credibility weighting
-- **Comprehensive evaluation framework** with AI-enhanced clinical assessment
-
---------------------------------------------------------------------------------------
-
-## The 7-Round Diagnostic Process
-
-| Round | Purpose | Collaboration Level |
-|-------|---------|-------------------|
-| **1. Specialized Ranking** | Rank specialist relevance | Individual |
-| **2. Symptom Management** | Immediate triage interventions | Individual |
-| **3. Team Differentials** | Independent diagnosis generation | **Context-Aware** |
-| **4. Master List** | Synthesis of all team diagnoses | **Context-Aware** |
-| **5. Refinement & Debate** | Evidence-based collaborative discourse | **Fully Collaborative** |
-| **6. Preferential Voting** | Consensus via Borda count voting | **Fully Collaborative** |
-| **7. Can't Miss** | Critical diagnosis identification | **Context-Aware** |
-
---------------------------------------------------------------------------------------
-
-## Installation & Setup
-
-### Prerequisites
-- Python 3.8+
-- CUDA-compatible GPU (recommended: A100, V100, or RTX 4090)
-- 40GB+ GPU memory for optimal performance
-
-### Quick Start
+For the complete 7-round pipeline with all features:
 
 ```bash
-# Clone repository
-git clone https://github.com/yourusername/ddx-v6.git
-cd ddx-v6
+git clone https://github.com/yourusername/Local-DDx.git
+cd Local-DDx
 
 # Install dependencies
 pip install vllm torch transformers pyyaml
 
-# Configure models in config.yaml
-# Run your first case
-python run_example.py
+# Configure models in v8/config.yaml
+cd v8
+python ddx_runner.py
 ```
 
-### Configuration (v6) - ***See module READMEs for version specs***
+**Requirements:** CUDA-compatible GPU with 40GB+ VRAM (A100, V100, RTX 4090)
 
-Create `config.yaml`:
+### Option B: Demonstration Version (Apple Silicon)
 
-```yaml
-conservative_model:
-  name: 'Conservative-Model'
-  model_path: 'NousResearch/Nous-Hermes-2-Mistral-7B-DPO'
-  memory_fraction: 0.4
-  temperature: 0.1
+For a lightweight proof-of-concept on M-series Macs:
 
-innovative_model:
-  name: 'Innovative-Model'  
-  model_path: 'NousResearch/Nous-Hermes-2-Mistral-7B-DPO'
-  memory_fraction: 0.4
-  temperature: 0.9
+```bash
+# Install Ollama from https://ollama.ai
+ollama pull llama3.1:8b
+
+cd v9_ollama_ui
+pip install -r requirements.txt
+python app.py
 ```
-*Adjust config parameters for different reasoning outcomes. Allows for direct insight into the effects of architectural parameter tuning.
 
---------------------------------------------------------------------------------------
+**Requirements:** macOS with Apple Silicon, 16GB+ unified memory
+
+See [v9_ollama_ui/README.md](v9_ollama_ui/README.md) for details.
 
 ## Usage
 
 ### Basic Case Analysis
 
 ```python
-from ddx_core_v6 import DDxSystem
+from ddx_core import DDxSystem
 
 # Initialize system
 ddx = DDxSystem()
@@ -228,209 +113,133 @@ ddx.initialize()
 
 # Define clinical case
 case = """
-Two weeks after undergoing an emergency cardiac catherization with stenting for unstable angina pectoris, a 61-year-old man has decreased urinary output and malaise. He has type 2 diabetes mellitus and osteoarthritis of the hips. Prior to admission, his medications were insulin and naproxen. He was also started on aspirin, clopidogrel, and metoprolol after the coronary intervention. His temperature is 38 °C (100.4 °F), pulse is 93/min, and blood pressure is 125/85 mm Hg. Examination shows mottled, reticulated purplish discoloration of the feet. Laboratory studies show: Hemoglobin count 14 g/dL Leukocyte count 16,400/mm3 Segmented neutrophils 56% Eosinophils 11% Lymphocytes 31% Monocytes 2% Platelet count 260,000/mm3 Erythrocyte sedimentation rate 68 mm/h Serum Urea nitrogen 25 mg/dL Creatinine 4.2 mg/dL Renal biopsy shows intravascular spindle-shaped vacuoles. What is the most likely cause of this patient's symptoms?
+A 61-year-old man presents two weeks after emergency cardiac
+catheterization with decreased urinary output and malaise.
+Examination shows mottled, reticulated purplish discoloration
+of the feet. Labs show elevated creatinine (4.2 mg/dL) and
+eosinophilia (11%). Renal biopsy shows intravascular
+spindle-shaped vacuoles.
 """
 
-# Generate dynamic specialist team
-result = ddx.analyze_case(case, "chest_pain_case")
-print(f"Generated {len(ddx.current_agents)} specialists")
-
-# Run collaborative diagnostic sequence
+# Generate specialist team and run diagnosis
+result = ddx.analyze_case(case, "renal_case")
 round_results = ddx.run_complete_diagnostic_sequence()
-print(f"Completed {len(round_results)} rounds with sliding context")
 ```
 
-### Complete Pipeline with Evaluation (Example, Case 1)
+### Complete Pipeline with Evaluation
 
 ```python
-from ddx_runner_v6 import DDxRunner
+from ddx_runner import DDxRunner
 
-# 1. Define your case name, description, and ground truth
-case_name = "Case 1"
-
-case_description = """
-Two weeks after undergoing an emergency cardiac catherization with stenting for unstable angina pectoris, a 61-year-old man has decreased urinary output and malaise. He has type 2 diabetes mellitus and osteoarthritis of the hips. Prior to admission, his medications were insulin and naproxen. He was also started on aspirin, clopidogrel, and metoprolol after the coronary intervention. His temperature is 38 °C (100.4 °F), pulse is 93/min, and blood pressure is 125/85 mm Hg. Examination shows mottled, reticulated purplish discoloration of the feet. Laboratory studies show: Hemoglobin count 14 g/dL Leukocyte count 16,400/mm3 Segmented neutrophils 56% Eosinophils 11% Lymphocytes 31% Monocytes 2% Platelet count 260,000/mm3 Erythrocyte sedimentation rate 68 mm/h Serum Urea nitrogen 25 mg/dL Creatinine 4.2 mg/dL Renal biopsy shows intravascular spindle-shaped vacuoles. What is the most likely cause of this patient's symptoms?
-"""
-
-ground_truth = {'acute kidney injury (AKI)': ['decreased urinary output', 'malaise', 'Serum Urea nitrogen 25 mg/dL', 'Creatinine 4.2 mg/dL'], 'contrast-induced nephropathy': ['Two weeks after undergoing an emergency cardiac catherization with stenting for unstable angina pectoris, a 61-year-old man has decreased urinary output and malaise', 'Serum Urea nitrogen 25 mg/dL', 'Creatinine 4.2 mg/dL'], 'drug-induced interstitial nephritis': ['decreased urinary output and malaise', 'eosinophils 11%', 'Serum Urea nitrogen 25 mg/dL', 'Creatinine 4.2 mg/dL', 'Renal biopsy shows intravascular spindle-shaped vacuoles'], 'cholesterol embolization': ['mottled, reticulated purplish discoloration of the feet', 'Serum Urea nitrogen 25 mg/dL', 'Creatinine 4.2 mg/dL', 'intravascular spindle-shaped vacuoles'], 'diabetic nephropathy': ['decreased urinary output', 'Serum Urea nitrogen 25 mg/dL', 'Creatinine 4.2 mg/dL']}
-
-
-# 2. Create an instance of the runner and initialize the system
 runner = DDxRunner()
 runner.initialize_system()
 
-# 3. Run the complete case with the new, single method
-if runner.is_initialized:
-    runner.run_case(
-        case_name=case_name,
-        case_description=case_description,
-        ground_truth=ground_truth
-    )
+runner.run_case(
+    case_name="Case 1",
+    case_description=case_description,
+    ground_truth=ground_truth_dict
+)
 ```
 
-## Output & Results
+## Evaluation Metrics
 
-### JSON Export Structure
-
-```json
-{
-  "case_metadata": {
-    "case_name": "acute_mi_case",
-    "timestamp": "2025-07-09T20:30:00Z",
-    "total_execution_time": 420.5
-  },
-  "team_composition": {
-    "total_agents": 10,
-    "dynamic_generation": true,
-    "specialties": ["Cardiology", "Emergency Medicine", ...]
-  },
-  "diagnostic_sequence": {
-    "rounds_completed": 7,
-    "sliding_context_enabled": true,
-    "collaboration_detected": true
-  },
-  "synthesis_results": {
-    "winner": "Acute myocardial infarction (STEMI)",
-    "tempo_scores": {...},
-    "credibility_weighting": {...}
-  },
-  "evaluation_metrics": {
-    "clinical_recall": 0.95,
-    "clinical_precision": 0.88,
-    "ai_enhanced_matching": true
-  },
-  "full_transcript": {
-    "rounds": {...},
-    "collaboration_evidence": [...]
-  }
-}
-```
-
-### Performance Metrics
-
-- **Clinical Recall**: Percentage of ground truth diagnoses identified
-- **Clinical Precision**: Accuracy of team diagnoses
-- **TempoScore**: Round-by-round performance assessment
-- **Collaboration Index**: Measure of inter-agent discourse quality
-- **Context Utilization**: Effectiveness of sliding context window usage
-
---------------------------------------------------------------------------------------
-
-## Core Modules
-
-### `ddx_core_v6.py`
-- **ModelManager**: Dual-model orchestration with memory management
-- **DynamicAgentGenerator**: AI-driven specialist team creation
-- **DDxAgent**: Individual agent with collaborative capabilities
-- **AgentConfig & AgentResponse**: Enhanced data structures
-
-### `ddx_rounds_v6.py`
-- **RoundOrchestrator**: Complete diagnostic sequence management
-- **BaseRound**: Abstract framework for all diagnostic rounds
-- **7 Specialized Rounds**: Each with unique collaborative requirements
-- **Sliding Context Integration**: Context passing and transcript management
-
-### `ddx_synthesis.py`
-- **TempoScoreCalculator**: Advanced round performance metrics
-- **CredibilityWeighting**: Evidence-based consensus scoring  
-- **DrReedAssessment**: Specialist performance evaluation
-- **PreferentialVoting**: Borda count consensus mechanism
-
-### `ddx_evaluator_v6.py`
-- **ClinicalEquivalenceAgent**: AI-powered diagnosis matching
-- **EnhancedEvaluator**: Comprehensive evaluation framework
-- **v6 Metrics**: Advanced performance assessment
-- **Context-Informed Analysis**: Transcript-aware evaluation
-
-### `ddx_sliding_context.py`
-- **SlidingContextManager**: Intelligent context filtering and delivery
-- **ContextEntry**: Structured discourse representation
-- **Collaboration Filters**: Specialty and round-aware context selection
-- **Attention Guidance**: Round-specific collaboration prompting
-
-**v7 repos are backwards compatable. v6 repos are outdated but functional.
-
---------------------------------------------------------------------------------------
-
-## Testing & Validation
-
-```bash
-# Run system tests
-python test_sliding_context.py
-
-# Validate complete pipeline
-python validate_pipeline.py
-
-# Performance benchmarking
-python benchmark_system.py
-```
-
---------------------------------------------------------------------------------------
+| Metric | Description |
+|--------|-------------|
+| Clinical Recall | Percentage of ground truth diagnoses identified |
+| Clinical Precision | Accuracy of team diagnoses |
+| TempoScore | Round-by-round performance assessment |
+| Collaboration Index | Measure of inter-agent discourse quality |
+| Context Utilization | Effectiveness of sliding context window usage |
 
 ## Research Applications
 
 ### Medical Education
-- **Case-based learning** with multi-perspective analysis
-- **Diagnostic reasoning training** through collaborative AI examples
-- **Specialty interaction modeling** for interdisciplinary education
+- Case-based learning with multi-perspective analysis
+- Diagnostic reasoning training through collaborative AI demonstration
+- Specialty interaction modeling for interdisciplinary education
 
 ### Clinical Decision Support
-- **Complex case consultation** with diverse specialist input
-- **Consensus building** for difficult diagnoses
-- **Evidence synthesis** across multiple clinical perspectives
+- Complex case consultation with diverse specialist perspectives
+- Consensus building for challenging diagnoses
+- Evidence synthesis across clinical viewpoints
 
 ### AI Research
-- **Multi-agent collaboration** in knowledge-intensive domains
-- **Context window optimization** for long-form reasoning
-- **Epistemic labor division** in AI systems
+- Multi-agent collaboration in knowledge-intensive domains
+- Context window optimization for long-form reasoning
+- Epistemic labor division in AI systems
 
+## Tested Models
 
-### Development Setup
+| Model | Type | Notes |
+|-------|------|-------|
+| Qwen2.5-7B-Instruct-GPTQ-Int4 | Quantized | Primary development model |
+| Gemma-2-9b-it-AWQ-INT4 | Quantized | Production conservative model |
+| Meta-Llama-3.1-8B-Instruct-GPTQ-INT4 | Quantized | Validated |
+| llama3.1:8b (Ollama) | Full | v9 demonstration |
 
-```bash
-# Development installation
-git clone https://github.com/baglecake/ddx-v6.git
-cd ddx-v6
-pip install -e .[dev]
+## Project Structure
 
-# Run tests
-pytest tests/
-
-# Code formatting
-black ddx_*.py
+```
+Local-DDx/
+├── v8/                    # Full production system (vLLM/CUDA)
+├── v9_ollama_ui/          # Demonstration version (Ollama/Apple Silicon)
+├── Modules/               # Core modules (v6 reference)
+├── Transcripts/           # Example diagnostic transcripts
+├── METRICS_GUIDE.md       # Detailed metrics documentation
+└── CHANGELOG.md           # Version history
 ```
 
---------------------------------------------------------------------------------------
-
 ## References
-Nori, H., Lee, Y. T., Zhang, S., Carignan, D., Edgar, R., Fusi, N., ... & Horvitz, E. (2023). Can generalist foundation models outcompete special-purpose tuning? A case study in medicine. arXiv. https://arxiv.org/abs/2311.16452
 
-Zhou, S., Lin, M., Ding, S., Zhang, Y., Chen, H., Wang, J., & Liu, Q. (2025). Explainable differential diagnosis with dual-inference large language models. npj Health Systems, 2(1), 12. https://doi.org/10.1038/s44401-025-00015-6
+Nori, H., Lee, Y. T., Zhang, S., et al. (2023). Can generalist foundation models outcompete special-purpose tuning? A case study in medicine. *arXiv*. https://arxiv.org/abs/2311.16452
 
-Santoro, A., Lampinen, A., Mathewson, K. W., Lillicrap, T., & Raposo, D. (2022). Symbolic behaviour in artificial intelligence (arXiv Version 2). arXiv. https://doi.org/10.48550/arXiv.2102.03406
+Zhou, S., Lin, M., Ding, S., et al. (2025). Explainable differential diagnosis with dual-inference large language models. *npj Health Systems*, 2(1), 12. https://doi.org/10.1038/s44401-025-00015-6
 
-Zhao, Y., Liu, H., Yu, D., Kung, S. Y., Mi, H., & Yu, D. (2025). *One token to fool LLM-as-a-judge*. arXiv. https://arxiv.org/abs/2507.08794
-
---------------------------------------------------------------------------------------
+Zhao, Y., Liu, H., Yu, D., et al. (2025). One token to fool LLM-as-a-judge. *arXiv*. https://arxiv.org/abs/2507.08794
 
 ## Citation
 
-If you use LDDx in your research, please cite:
-
 ```bibtex
-@software{ddx_v6_2025,
-  title={DDx v6: Multi-Agent Collaborative Diagnostic System with Sliding Context Windows},
-  author={[Silver, Daniel; Fosse, Ethan; Griggs, Brandon; Coburn, Del]},
+@software{local_ddx_2025,
+  title={Local-DDx: Multi-Agent Collaborative Diagnostic System
+         with Sliding Context Windows},
+  author={Silver, Daniel and Fosse, Ethan and Griggs, Brandon and Coburn, Del},
   year={2025},
-  url={https://github.com/Baglecake/ddx-v6},
-  note={A multi-agent AI system for medical differential diagnosis}
+  url={https://github.com/yourusername/Local-DDx}
 }
 ```
 
---------------------------------------------------------------------------------------
-
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+MIT License - See [LICENSE](LICENSE) for details.
 
+---
 
+## Appendix: Version History
+
+<details>
+<summary>Click to expand version history</summary>
+
+### v9 (Current)
+- Ollama backend for Apple Silicon compatibility
+- Gradio web interface for demonstrations
+- Streamlined 3-round POC implementation
+
+### v8
+- Production system with full 7-round pipeline
+- Sliding context windows for collaborative reasoning
+- Devil's Advocate mechanism for diagnostic stress-testing
+- TempoScore and credibility-weighted voting
+- Synchronous dual-model architecture (Gemma-2 + Qwen2.5)
+
+### v7
+- Multiple model configurations validated
+- Enhanced parsing and prompt control
+- Full vLLM compatibility with quantized models
+
+### v6
+- Initial dual-model scaffolding
+- Dynamic agent generation capabilities
+- Foundation architecture established
+
+</details>
