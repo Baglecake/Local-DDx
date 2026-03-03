@@ -26,6 +26,7 @@ PROJECT_ROOT = os.path.dirname(SCRIPT_DIR)
 V10_MODULES = os.path.join(PROJECT_ROOT, 'v10_full_pipeline', 'Modules')
 V9_MODULES = os.path.join(PROJECT_ROOT, 'v9_ollama_ui', 'Modules')
 
+sys.path.insert(0, PROJECT_ROOT)
 sys.path.insert(0, V10_MODULES)
 sys.path.insert(0, V9_MODULES)
 
