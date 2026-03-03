@@ -85,27 +85,36 @@ def load_system_config(config_path: str = "config.yaml") -> Dict[str, ModelConfi
 # =============================================================================
 
 class OllamaModelManager:
-    """Manages model configurations via Ollama"""
+    """Manages model configurations via configurable backend (Ollama, vLLM, etc.)"""
 
-    def __init__(self, configs: Dict[str, ModelConfig]):
+    def __init__(self, configs: Dict[str, ModelConfig],
+                 backend_type: str = "ollama", **backend_kwargs):
         self.configs = configs
-        self.backend = create_backend("ollama")
+        self.backend = create_backend(backend_type, **backend_kwargs)
+        self.backend_type = backend_type
         self.active_model_id: Optional[str] = None
         self.loaded_models: set = set()
 
     def initialize(self) -> bool:
-        """Initialize and verify Ollama"""
+        """Initialize and verify backend"""
         if not self.backend.is_available():
-            print("Ollama not running. Start with: ollama serve")
+            print(f"{self.backend_type} not available.")
+            if self.backend_type == "ollama":
+                print("Start with: ollama serve")
             return False
 
-        available = self.backend.get_available_models()
-        print(f"Ollama ready with {len(available)} models")
+        # get_available_models is Ollama-specific; check if method exists
+        if hasattr(self.backend, 'get_available_models'):
+            available = self.backend.get_available_models()
+            print(f"{self.backend_type} ready with {len(available)} models")
 
-        for config_id, config in self.configs.items():
-            if config.model_name not in available:
-                print(f"  Warning: {config.model_name} not found")
-                print(f"  Pull with: ollama pull {config.model_name}")
+            for config_id, config in self.configs.items():
+                if config.model_name not in available:
+                    print(f"  Warning: {config.model_name} not found")
+                    if self.backend_type == "ollama":
+                        print(f"  Pull with: ollama pull {config.model_name}")
+        else:
+            print(f"{self.backend_type} backend ready")
 
         return True
 

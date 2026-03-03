@@ -31,6 +31,15 @@ class SamplingConfig:
             "stop": self.stop_tokens
         }
 
+    def to_vllm_params(self) -> Dict[str, Any]:
+        """Convert to vLLM SamplingParams kwargs"""
+        return {
+            "temperature": self.temperature,
+            "top_p": self.top_p,
+            "max_tokens": self.max_tokens,
+            "stop": self.stop_tokens
+        }
+
 
 class InferenceBackend(ABC):
     """Abstract interface for LLM inference"""
@@ -243,6 +252,10 @@ def create_backend(backend_type: str = "ollama", **kwargs) -> InferenceBackend:
     if backend_type == "ollama":
         base_url = kwargs.get("base_url", "http://localhost:11434")
         return OllamaBackend(base_url=base_url)
+    elif backend_type == "vllm":
+        # Lazy import — vllm is only available on Colab/GPU systems
+        from benchmark.vllm_backend import VLLMBackend
+        return VLLMBackend(**kwargs)
     elif backend_type == "mlx":
         raise NotImplementedError("MLX backend coming soon")
     else:

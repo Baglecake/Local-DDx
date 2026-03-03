@@ -1,0 +1,36 @@
+# Benchmark Configuration for Colab A100
+# Runs v10 full pipeline against Open-XDDx dataset using vLLM
+
+# vLLM settings
+vllm:
+  model_name: "MaziyarPanahi/Meta-Llama-3-8B-Instruct-GPTQ"
+  gpu_memory_utilization: 0.90
+  max_model_len: 4096
+  quantization: "gptq"
+  dtype: "float16"
+
+# Model configs (same model, different temperatures — mirrors v7.4)
+conservative_model:
+  name: "Conservative"
+  model_name: "MaziyarPanahi/Meta-Llama-3-8B-Instruct-GPTQ"
+  temperature: 0.3
+  top_p: 0.7
+  max_tokens: 1024
+  role: "conservative"
+
+innovative_model:
+  name: "Innovative"
+  model_name: "MaziyarPanahi/Meta-Llama-3-8B-Instruct-GPTQ"
+  temperature: 0.8
+  top_p: 0.95
+  max_tokens: 1024
+  role: "innovative"
+
+# Benchmark settings
+benchmark:
+  dataset: "v10_full_pipeline/data/Open-XDDx.xlsx"
+  results_dir: "benchmark/results"
+  max_specialists: 5
+  pipeline_mode: "full"    # "full" or "quick"
+  pilot_count: 10          # 0 = all 570 cases
+  checkpoint_interval: 1   # save after every N cases
