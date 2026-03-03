@@ -6,7 +6,7 @@ vllm:
   model_name: "MaziyarPanahi/Meta-Llama-3-8B-Instruct-GPTQ"
   gpu_memory_utilization: 0.90
   max_model_len: 4096
-  quantization: "gptq"
+  quantization: "gptq_marlin"
   dtype: "float16"
 
 # Model configs (same model, different temperatures — mirrors v7.4)

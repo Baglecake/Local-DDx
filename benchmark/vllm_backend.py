@@ -26,7 +26,7 @@ class VLLMBackend(InferenceBackend):
     def __init__(self, model_name: str = "MaziyarPanahi/Meta-Llama-3-8B-Instruct-GPTQ",
                  gpu_memory_utilization: float = 0.90,
                  max_model_len: int = 4096,
-                 quantization: str = "gptq",
+                 quantization: str = "gptq_marlin",
                  dtype: str = "float16",
                  **kwargs):
         self.model_name = model_name
@@ -165,7 +165,7 @@ class VLLMBackend(InferenceBackend):
             if torch.cuda.is_available():
                 info["gpu"] = torch.cuda.get_device_name(0)
                 info["gpu_memory_total_gb"] = round(
-                    torch.cuda.get_device_properties(0).total_mem / 1e9, 1
+                    torch.cuda.get_device_properties(0).total_memory / 1e9, 1
                 )
         except Exception:
             pass
