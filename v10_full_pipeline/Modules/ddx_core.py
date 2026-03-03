@@ -596,13 +596,22 @@ Include at least one generalist (Internal Medicine or Emergency Medicine).
         try:
             response = self.model_manager.generate_chat("conservative_model", messages)
 
-            json_match = re.search(r'\[.*\]', response, re.DOTALL)
-            if json_match:
-                json_str = json_match.group(0)
+            # Find the JSON array — use raw_decode to handle trailing text
+            start = response.find('[')
+            if start != -1:
+                # Clean trailing commas before parsing
+                json_str = response[start:]
                 json_str = re.sub(r',\s*]', ']', json_str)
                 json_str = re.sub(r',\s*}', '}', json_str)
 
-                proposals = json.loads(json_str)
+                try:
+                    decoder = json.JSONDecoder()
+                    proposals, _ = decoder.raw_decode(json_str)
+                except json.JSONDecodeError:
+                    # Fallback: extract with regex
+                    json_match = re.search(r'\[.*?\]', json_str, re.DOTALL)
+                    proposals = json.loads(json_match.group(0)) if json_match else None
+
                 if isinstance(proposals, list) and len(proposals) >= 2:
                     print(f"  LLM proposed {len(proposals)} specialists")
                     return proposals
