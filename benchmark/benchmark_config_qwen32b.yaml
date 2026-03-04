@@ -1,0 +1,40 @@
+# Benchmark Configuration for Qwen2.5-32B on Colab A100
+# Same pipeline as Llama-3-8B config, different model
+#
+# If GPTQ produces garbled output (!!!), switch to AWQ:
+#   model_name: "Qwen/Qwen2.5-32B-Instruct-AWQ"
+#   quantization: "awq"
+
+# vLLM settings
+vllm:
+  model_name: "Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4"
+  gpu_memory_utilization: 0.90
+  max_model_len: 8192
+  quantization: "gptq_marlin"
+  dtype: "float16"
+
+# Model configs (same model, different temperatures — matches local qwen2.5:32b setup)
+conservative_model:
+  name: "Conservative"
+  model_name: "Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4"
+  temperature: 0.3
+  top_p: 0.7
+  max_tokens: 1536
+  role: "conservative"
+
+innovative_model:
+  name: "Innovative"
+  model_name: "Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4"
+  temperature: 0.8
+  top_p: 0.95
+  max_tokens: 1536
+  role: "innovative"
+
+# Benchmark settings
+benchmark:
+  dataset: "v10_full_pipeline/data/Open-XDDx.xlsx"
+  results_dir: "benchmark/results_qwen32b"
+  max_specialists: 5
+  pipeline_mode: "full"
+  pilot_count: 10
+  checkpoint_interval: 1
