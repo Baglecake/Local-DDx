@@ -470,8 +470,8 @@ For each, specify:
             vote_text = content
 
         # Extract rankings
-        for pattern in [r'(\d)(?:st|nd|rd|th)\s*[Cc]hoice:\s*([^-\n]+)',
-                        r'(\d)\.\s*([^-\n]+)']:
+        for pattern in [r'(\d)(?:st|nd|rd|th)\s*[Cc]hoice:\s*(.+?)(?:\s+-\s|\n|$)',
+                        r'(\d)\.\s*(.+?)(?:\s+-\s|\n|$)']:
             matches = re.findall(pattern, vote_text)
             if matches:
                 for pos, diagnosis in matches[:3]:

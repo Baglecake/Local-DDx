@@ -453,8 +453,8 @@ def extract_votes_from_responses(responses: List[Any]) -> Dict[str, List[str]]:
 
             # Try various patterns
             patterns = [
-                r'(\d)(?:st|nd|rd|th)\s*[Cc]hoice:\s*([^-\n]+)',
-                r'(\d)\.\s*([^-\n]+)',
+                r'(\d)(?:st|nd|rd|th)\s*[Cc]hoice:\s*(.+?)(?:\s+-\s|\n|$)',
+                r'(\d)\.\s*(.+?)(?:\s+-\s|\n|$)',
                 r'[Ff]irst[^:]*:\s*([^\n]+)',
             ]
 
