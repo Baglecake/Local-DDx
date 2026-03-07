@@ -10,7 +10,7 @@
 
 Local-DDx is a multi-agent AI framework for medical differential diagnosis designed for **diagnostic isolation in rural and northern healthcare settings**. The system dynamically generates case-specific specialist teams that collaborate through structured diagnostic rounds, employing sliding context windows to enable genuine epistemic labor division among AI agents. All inference runs locally, ensuring patient data never leaves the clinical environment.
 
-Unlike single-model approaches, Local-DDx models the collaborative reasoning process of a multidisciplinary medical team — specialists independently analyze cases, engage in evidence-based debate, challenge consensus through a Devil's Advocate mechanism, and synthesize diagnoses through credibility-weighted preferential voting.
+Unlike single-model approaches, Local-DDx models the collaborative reasoning process of a multidisciplinary medical team: specialists independently analyze cases, engage in evidence-based debate, challenge consensus through a Devil's Advocate mechanism, and synthesize diagnoses through credibility-weighted preferential voting.
 
 Developed for the **HSIL Hackathon 2026**: *Building High-Value Health Systems: Leveraging AI*.
 
