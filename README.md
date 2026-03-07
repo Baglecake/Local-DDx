@@ -53,6 +53,8 @@ Evaluated on the [Open-XDDx dataset](https://doi.org/10.1038/s44401-025-00015-6)
 
 Local-DDx v10 outperforms Zhou et al.'s GPT-4 system by **+4.3 percentage points** using a 32B open-weight model on a single A100 GPU. No proprietary APIs required.
 
+All evaluation uses deterministic clinical equivalence matching with no LLM-as-judge. See [architecture/metrics.md](architecture/metrics.md) for detailed scoring methodology and transparency on how matches are determined.
+
 ## Architecture
 
 ```
