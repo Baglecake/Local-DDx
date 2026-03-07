@@ -2,6 +2,29 @@
 
 All notable changes to Local-DDx are documented in this file.
 
+## [v10] - 2026-01
+
+### Added
+- Full 7-round pipeline ported to Ollama/Apple Silicon
+- Sliding context windows with 5 filter types and round-specific combinations
+- 3-subround refinement (Positions, Challenges, Final Positions)
+- Credibility-weighted Borda count voting (Dr. Reed assessment)
+- TempoScore collaboration quality metrics
+- Gradio web interface with model selection (port 7861)
+- Benchmark infrastructure: batch runner, deterministic evaluator, Colab notebook
+
+### Benchmark (399 cases, Qwen2.5-32B on A100)
+- 57.6% clinical recall on Open-XDDx dataset
+- +4.3 pp over Zhou et al. GPT-4 Dual-Inf (53.3%)
+- 49.2% precision, 67.5% diagnostic safety
+
+### Changed
+- Ollama backend replaces vLLM for local deployment
+- inference_backends.py shared between v9 and v10 via symlink
+- v9 preserved as independent lightweight demo
+
+---
+
 ## [v9] - 2025-01
 
 ### Added
