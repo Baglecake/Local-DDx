@@ -1,0 +1,27 @@
+# macOS
+.DS_Store
+
+# Python
+__pycache__/
+*.pyc
+venv/
+
+# Claude Code (local dev aid)
+CLAUDE.md
+
+# Presentation (private)
+presentation/
+
+# Exports / runtime outputs
+exports/
+lddx_*.json
+
+# Benchmark result data (large, regenerable)
+benchmark/results_qwen32b/
+benchmark/results_llama8b_full/
+benchmark/results/
+benchmark/pilot_llama8b/
+
+# Archives
+*.tar.gz
+*.zip
