@@ -45,6 +45,7 @@ Local-DDx draws on sociological theory to structure agent interaction. Goffman's
 ## Benchmark Results
 
 Evaluated on the [Open-XDDx dataset](https://doi.org/10.1038/s44401-025-00015-6) (570 clinical vignettes, 9 specialties). See [benchmark/README.md](benchmark/README.md) for methodology.
+> In progress (399/570)
 
 | System | Model | Cases | Clinical Recall |
 |--------|-------|-------|-----------------|
