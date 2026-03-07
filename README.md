@@ -18,8 +18,6 @@ Developed for the **HSIL Hackathon 2026**: *Building High-Value Health Systems: 
 
 Local-DDx draws on sociological theory to structure agent interaction. Goffman's (1956) distinction between *demeanor* and *deference* maps directly onto the system's architecture: agents demonstrate competence through reasoning quality (demeanor), which the credibility scoring module translates into weighted voting authority (deference). Sacks, Schegloff, and Jefferson's (1974) turn-taking organization structures the 7-round pipeline, ensuring each agent contributes within a defined sequential order. Wu et al. (2025) provide empirical grounding for multi-agent social capability in LLM systems, demonstrating that structured interaction protocols elicit collaborative behaviors absent in single-agent configurations.
 
-<img width="1691" height="949" alt="image" src="https://github.com/user-attachments/assets/2a6aecbb-580c-4351-9ac1-e480aff4015a" />
-
 ## Key Features
 
 - **Dynamic specialist generation** — autonomous agent creation tailored to each clinical presentation
@@ -29,6 +27,8 @@ Local-DDx draws on sociological theory to structure agent interaction. Goffman's
 - **Devil's Advocate mechanism** — stress-testing diagnostic convergence through systematic challenge
 - **Dual-model architecture** — conservative (low temp) + innovative (high temp) for balanced reasoning
 - **Fully local inference** — all patient data stays on-premises via Ollama
+
+<img width="1691" height="949" alt="image" src="https://github.com/user-attachments/assets/2a6aecbb-580c-4351-9ac1-e480aff4015a" />
 
 ## The 7-Round Diagnostic Process
 
