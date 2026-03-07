@@ -123,14 +123,6 @@ Local-DDx/
 └── METRICS_GUIDE.md       # Detailed metrics documentation
 ```
 
-## Team
-
-A multidisciplinary collaboration across sociology, biomedical engineering, and medicine.
-
-- **Del Coburn** — Systems design, theoretical framework (MA Sociology)
-- 2 biomedical engineers — Pipeline architecture, model integration
-- 3 medical students — Clinical validation, ground truth review
-
 ## References
 
 Goffman, E. (1956). The nature of deference and demeanor. *American Anthropologist*, 58(3), 473–502. https://doi.org/10.1525/aa.1956.58.3.02a00070
