@@ -130,13 +130,13 @@ A multidisciplinary collaboration across sociology, biomedical engineering, and 
 
 ## References
 
-Goffman, E. (1956). The nature of deference and demeanor. *American Anthropologist*, 58(3), 473–502.
+Goffman, E. (1956). The nature of deference and demeanor. *American Anthropologist*, 58(3), 473–502. https://doi.org/10.1525/aa.1956.58.3.02a00070
 
-Nori, H., Lee, Y. T., Zhang, S., et al. (2023). Can generalist foundation models outcompete special-purpose tuning? A case study in medicine. *arXiv*. https://arxiv.org/abs/2311.16452
+Nori, H., Lee, Y. T., Zhang, S., et al. (2023). Can generalist foundation models outcompete special-purpose tuning? A case study in medicine. *arXiv*. https://doi.org/10.48550/arXiv.2311.16452
 
-Sacks, H., Schegloff, E. A., & Jefferson, G. (1974). A simplest systematics for the organization of turn-taking for conversation. *Language*, 50(4), 696–735.
+Sacks, H., Schegloff, E. A., & Jefferson, G. (1974). A simplest systematics for the organization of turn-taking for conversation. *Language*, 50(4), 696–735. https://doi.org/10.2307/412243
 
-Wu, Y., Tang, Y., Cai, T., et al. (2025). How social can LLM agents get? Simulating social dynamics in multi-agent systems. *arXiv*.
+Wu, Y., Xiong, J., & Deng, X. (2025). How social is it? A benchmark for LLMs' capabilities in multi-user multi-turn social agent tasks. *arXiv*. https://doi.org/10.48550/arXiv.2505.04628
 
 Zhou, S., Lin, M., Ding, S., et al. (2025). Explainable differential diagnosis with dual-inference large language models. *npj Health Systems*, 2(1), 12. https://doi.org/10.1038/s44401-025-00015-6
 
