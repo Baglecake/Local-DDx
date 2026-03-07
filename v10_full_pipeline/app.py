@@ -231,6 +231,16 @@ def format_rounds(result: Dict[str, Any]) -> str:
     if not rounds:
         return md + "*No round data available*"
 
+    # Get agent count for sub-round grouping
+    agent_count = len(result.get('agents', []))
+    if agent_count == 0:
+        # Fallback: infer from first non-refinement round
+        for rn, rd in rounds.items():
+            if rn != 'refinement':
+                agent_count = len(rd.get('responses', []))
+                if agent_count > 0:
+                    break
+
     for round_name, round_data in rounds.items():
         responses = round_data.get('responses', [])
         duration = round_data.get('duration', 0)
@@ -238,18 +248,47 @@ def format_rounds(result: Dict[str, Any]) -> str:
         md += f"### {round_name.replace('_', ' ').title()}\n"
         md += f"*{len(responses)} responses, {duration:.1f}s*\n\n"
 
-        # Show abbreviated responses
-        for resp in responses[:3]:  # Limit to 3 per round
-            agent = resp.get('agent_name', 'Unknown')
-            specialty = resp.get('specialty', '')
-            conf = resp.get('confidence_score', 0)
-            content = resp.get('content', '')[:200]
+        if round_name == 'refinement' and agent_count > 0:
+            # Show debate with sub-round structure
+            sub_round_labels = [
+                "Sub-Round 1: Initial Positions",
+                "Sub-Round 2: Direct Challenges",
+                "Sub-Round 3: Final Positions",
+            ]
+            for sr_idx, label in enumerate(sub_round_labels):
+                start = sr_idx * agent_count
+                end = start + agent_count
+                sr_responses = responses[start:end]
+                if not sr_responses:
+                    continue
 
-            md += f"**{agent}** ({specialty}) - Confidence: {conf:.0%}\n"
-            md += f"> {content}...\n\n"
+                md += f"#### {label}\n\n"
+                for resp in sr_responses:
+                    agent = resp.get('agent_name', 'Unknown')
+                    specialty = resp.get('specialty', '')
+                    content = resp.get('content', '')[:800]
 
-        if len(responses) > 3:
-            md += f"*...and {len(responses) - 3} more responses*\n\n"
+                    md += f"**{agent}** ({specialty})\n"
+                    md += f"> {content}\n\n"
+
+            # Show any remaining responses beyond 3 sub-rounds
+            remaining = responses[3 * agent_count:]
+            for resp in remaining:
+                agent = resp.get('agent_name', 'Unknown')
+                specialty = resp.get('specialty', '')
+                content = resp.get('content', '')[:800]
+                md += f"**{agent}** ({specialty})\n"
+                md += f"> {content}\n\n"
+        else:
+            # Other rounds: show all responses
+            for resp in responses:
+                agent = resp.get('agent_name', 'Unknown')
+                specialty = resp.get('specialty', '')
+                conf = resp.get('confidence_score', 0)
+                content = resp.get('content', '')[:500]
+
+                md += f"**{agent}** ({specialty}) - Confidence: {conf:.0%}\n"
+                md += f"> {content}\n\n"
 
         md += "---\n\n"
 
