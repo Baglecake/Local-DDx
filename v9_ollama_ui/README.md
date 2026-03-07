@@ -12,7 +12,7 @@ v9_ollama_ui is a portable demonstration of Local-DDx's core architecture:
 - **Gradio web interface** - Interactive case submission and visualization
 - **Local inference** - All processing happens on-device via Ollama
 
-> **Note:** This is a demonstration version implementing a 3-round diagnostic workflow. For the full 7-round pipeline with sliding context windows, Devil's Advocate mechanisms, and TempoScore metrics, see the [v8 implementation](../v8/).
+> **Note:** This is a demonstration version implementing a 3-round diagnostic workflow. For the full 7-round pipeline with sliding context windows, Devil's Advocate mechanisms, and TempoScore metrics, see the [v10 implementation](../v10_full_pipeline/).
 
 ## Requirements
 
