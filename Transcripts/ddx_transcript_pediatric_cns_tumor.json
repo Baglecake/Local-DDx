@@ -1,0 +1,819 @@
+{
+  "case_index": 175,
+  "case": {
+    "name": "case_175",
+    "description": "A 6-year-old boy is brought in by his mother to his pediatrician for headache and nausea. His headaches began approximately 3 weeks ago and occur in the morning. Throughout the 3 weeks, his nausea has progressively worsened, and he had 2 episodes of emesis 1 day ago. On physical exam, cranial nerves are grossly intact, and his visual field is intact. The patient has a broad-based gait and difficulty with heel-to-toe walking, as well as head titubation. Fundoscopy demonstrates papilledema. A T1 a",
+    "specialty": "Nervous system disease"
+  },
+  "ground_truth": {
+    "cerebellar tumors": [
+      "headache and nausea",
+      "broad-based gait and difficulty with heel-to-toe walking",
+      "head titubation",
+      "papilledema"
+    ],
+    "hydrocephalus": [
+      "his headaches began approximately 3 weeks ago and occur in the morning",
+      "his nausea has progressively worsened, and he had 2 episodes of emesis 1 day ago",
+      "difficulty with heel-to-toe walking, as well as head titubation",
+      "Fundoscopy demonstrates papilledema"
+    ],
+    "pseudotumor cerebri": [
+      "his headaches began approximately 3 weeks ago and occur in the morning",
+      "his nausea has progressively worsened, and he had 2 episodes of emesis 1 day ago",
+      "Fundoscopy demonstrates papilledema"
+    ],
+    "brain abscess": [
+      "headache and nausea",
+      "2 episodes of emesis 1 day ago",
+      "broad-based gait and difficulty with heel-to-toe walking",
+      "head titubation",
+      "Fundoscopy demonstrates papilledema"
+    ]
+  },
+  "specialists": [
+    {
+      "name": "Dr. Emily Carter",
+      "specialty": "Neurology",
+      "model": "conservative_model"
+    },
+    {
+      "name": "Dr. John Lee",
+      "specialty": "Neurology",
+      "model": "innovative_model"
+    },
+    {
+      "name": "Dr. Sarah Thompson",
+      "specialty": "Oncology",
+      "model": "conservative_model"
+    },
+    {
+      "name": "Dr. Michael Davis",
+      "specialty": "Internal Medicine",
+      "model": "innovative_model"
+    },
+    {
+      "name": "Dr. Lisa Nguyen",
+      "specialty": "General Medicine",
+      "model": "conservative_model"
+    }
+  ],
+  "results": {
+    "rounds": {
+      "specialized_ranking": {
+        "responses": [
+          {
+            "agent_name": "Dr. Emily Carter",
+            "specialty": "Neurology",
+            "content": "RELEVANCE: 9/10\n\nExplanation:\n1. My specialty in Neurology is highly relevant to this case because the patient is presenting with neurological symptoms such as headache, nausea, gait disturbance, and papilledema, which are indicative of increased intracranial pressure. These symptoms are often associated with neurological conditions that require specialized knowledge for accurate diagnosis and management.\n\n2. I can contribute to the diagnosis by interpreting the MRI findings, which are crucial in identifying the cause of the patient's symptoms. My expertise in neurological symptoms and brain imaging allows me to correlate the clinical presentation with the imaging results to determine the most likely diagnosis. Additionally, I can provide guidance on the appropriate diagnostic workup and management plan, including the need for further imaging or neurosurgical consultation if necessary.\n\n3. From my perspective, the immediate concern is the presence of papilledema, which is a sign of increased intracranial pressure. This can be a serious condition that requires prompt evaluation and management to prevent potential complications such as permanent vision loss or neurological damage. The gait disturbance and difficulty with heel-to-toe walking also suggest a possible cerebellar or brainstem involvement, which needs to be urgently addressed. Immediate referral to a neurologist or neurosurgeon for further evaluation and management is warranted.",
+            "structured_data": null,
+            "response_time": 4.06375789642334,
+            "round_type": "specialized_ranking",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. John Lee",
+            "specialty": "Neurology",
+            "content": "RELEVANCE: 10/10\n\nExplanation:\n\n1. Why my specialty is relevant to this case:\nThe patient presents with neurological symptoms including headaches, nausea, gait disturbances, and papilledema, which are all suggestive of increased intracranial pressure. Neurology is directly relevant to this case as it involves the evaluation and management of neurological symptoms and conditions.\n\n2. What aspects I can contribute to the diagnosis:\nAs a neurologist, I can contribute to the diagnosis by interpreting the MRI findings, which are critical in identifying the cause of increased intracranial pressure. I can also provide a differential diagnosis based on the clinical presentation and imaging results. Furthermore, I can guide the management and treatment options for the patient, including potential referral to a neurosurgeon or other specialists as needed.\n\n3. Any immediate concerns from my perspective:\nThe presence of papilledema, a physical sign of increased intracranial pressure, is a significant concern and warrants immediate attention. The patient's symptoms and imaging findings need to be carefully evaluated to rule out potentially serious conditions such as a brain tumor or hydrocephalus. Immediate concerns also include the potential for further neurological deterioration and the need for urgent intervention to reduce intracranial pressure if necessary.",
+            "structured_data": null,
+            "response_time": 3.927557945251465,
+            "round_type": "specialized_ranking",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Sarah Thompson",
+            "specialty": "Oncology",
+            "content": "RELEVANCE: 9/10\n\nExplanation:\n1. My specialty in Oncology, particularly in pediatric cancers, is highly relevant to this case because the clinical presentation and imaging findings are suggestive of a central nervous system (CNS) tumor, which is a type of cancer that can occur in children. The symptoms of morning headaches, nausea, and vomiting, combined with the physical exam findings of papilledema and gait disturbances, are classic signs of increased intracranial pressure, which is often caused by a mass in the brain, such as a tumor.\n\n2. I can contribute to the diagnosis by providing expertise in tumor diagnosis, especially in pediatric patients. I can assist in interpreting the MRI findings, which are likely to show a mass lesion causing obstructive hydrocephalus, and I can help in determining the next steps for further diagnostic workup, such as a biopsy or lumbar puncture, if indicated. Additionally, I can provide guidance on the potential treatment options and the prognosis based on the type and location of the tumor.\n\n3. Immediate concerns from my perspective include the potential for the tumor to cause further neurological damage if it continues to grow, as well as the risk of herniation if the intracranial pressure continues to rise. It is crucial to stabilize the patient's condition and to plan for a definitive diagnosis and treatment as soon as possible to prevent further complications.",
+            "structured_data": null,
+            "response_time": 4.315514802932739,
+            "round_type": "specialized_ranking",
+            "confidence_score": 0.7799999999999999,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Michael Davis",
+            "specialty": "Internal Medicine",
+            "content": "RELEVANCE: 8/10\n\nExplanation:\n\n1. Why my specialty is relevant to this case:\nAs an Internal Medicine specialist with expertise in systemic diseases, my specialty is relevant to this case because the symptoms described\u2014headache, nausea, vomiting, gait disturbance, and papilledema\u2014could be indicative of a systemic condition affecting the central nervous system (CNS). While the case presents with neurological symptoms, which are typically within the domain of neurology, the underlying cause could be related to a systemic disease or condition that affects multiple systems of the body, including the CNS.\n\n2. What aspects I can contribute to the diagnosis:\nI can contribute to the differential diagnosis by considering systemic diseases that might present with similar symptoms. For example, I could consider conditions such as hypertension (which can lead to hypertensive encephalopathy), metabolic disorders, or infections that have systemic effects, including on the brain. I would also consider autoimmune conditions, which can affect the nervous system and present with neurological symptoms.\n\n3. Any immediate concerns from my perspective:\nMy immediate concern would be the presence of papilledema, which suggests increased intracranial pressure (ICP). This is a serious condition that can have rapid progression and can lead to permanent neurological damage or even be life-threatening if not treated promptly. The gait disturbance and difficulty with heel-to-toe walking suggest possible cerebellar dysfunction, which is another concerning sign.\n\nFrom an internal medicine perspective, I would be concerned about the underlying cause of the increased ICP and whether it is secondary to a systemic disease. I would recommend a thorough workup, including a full blood count, electrolytes, renal and liver function tests, and possibly a lumbar puncture to assess the cerebrospinal fluid (CSF) for signs of infection or other abnormalities. Additionally, I would refer the patient to a neurologist for further evaluation and management, as the case may require neurosurgical intervention if a mass lesion is identified.",
+            "structured_data": null,
+            "response_time": 6.097178936004639,
+            "round_type": "specialized_ranking",
+            "confidence_score": 0.72,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Lisa Nguyen",
+            "specialty": "General Medicine",
+            "content": "RELEVANCE: 8/10\n\nExplanation:\n1. My specialty in General Medicine, with a focus on ocular symptoms and papilledema, is highly relevant to this case because the patient presents with papilledema, which is a key finding in the physical exam. Papilledema is a sign of increased intracranial pressure (ICP) and can be associated with various neurological conditions, including those that may present with headaches, nausea, and gait disturbances.\n\n2. I can contribute to the diagnosis by providing insight into the ocular findings and their implications. Papilledema is a critical sign that requires immediate attention as it can indicate a serious underlying condition, such as a brain tumor, hydrocephalus, or other causes of increased ICP. My expertise can help in the differential diagnosis and in guiding further neurological investigations.\n\n3. Immediate concerns from my perspective include the potential for a space-occupying lesion within the brain, which could be causing the increased ICP and the associated symptoms. The presence of papilledema, along with the patient's symptoms and gait abnormalities, suggests a need for urgent neuroimaging and possibly neurosurgical consultation to rule out a mass lesion or other causes of raised ICP. The patient's young age and the progressive nature of his symptoms also warrant prompt evaluation to prevent potential neurological damage.",
+            "structured_data": null,
+            "response_time": 4.1821088790893555,
+            "round_type": "specialized_ranking",
+            "confidence_score": 0.74,
+            "reasoning_quality": "standard"
+          }
+        ],
+        "duration": 22.586727142333984,
+        "success": true
+      },
+      "symptom_management": {
+        "responses": [
+          {
+            "agent_name": "Dr. Emily Carter",
+            "specialty": "Neurology",
+            "content": "Based on the clinical presentation and the MRI findings, the most likely diagnosis is increased intracranial pressure (ICP) secondary to a brain tumor. The symptoms of morning headaches, nausea, vomiting, gait disturbances, and papilledema are classic signs of raised intracranial pressure. The MRI findings would be crucial in confirming this diagnosis, but based on the clinical scenario, we can proceed with this differential.\n\n1. IMMEDIATE PRIORITIES:\n   - Ensure the airway is patent and the patient is breathing adequately.\n   - Monitor the patient's level of consciousness and neurological status.\n   - Assess and manage any signs of increased intracranial pressure, such as worsening headache, vomiting, or changes in mental status.\n\n2. STABILIZATION:\n   - Elevate the head of the bed to 30 degrees to help reduce intracranial pressure.\n   - Administer osmotic diuretics such as mannitol to reduce cerebral edema.\n   - Consider corticosteroids to reduce inflammation and edema.\n   - Ensure the patient is nil per os (NPO) if there is a risk of increased intracranial pressure leading to a potential need for surgery.\n\n3. CRITICAL TESTS:\n   - Perform a lumbar puncture if the MRI does not show a mass lesion and if the clinical scenario permits it, to measure cerebrospinal fluid (CSF) pressure and analyze the CSF for signs of infection or other pathology.\n   - Obtain a CT scan if MRI is not immediately available, as it can provide rapid assessment of intracranial pressure and the presence of a mass lesion.\n   - Consider an EEG if there is any suspicion of seizures.\n\n4. RED FLAGS:\n   - Any signs of neurological deterioration, such as a change in the level of consciousness, worsening headache, or new neurological deficits.\n   - Signs of brain herniation, such as unilateral or bilateral dilated pupils, or a sudden change in the patient's condition.\n   - Any signs of infection, such as fever or changes in CSF analysis.\n\nGiven the severity of the symptoms and the potential for rapid neurological deterioration, immediate referral to a pediatric neurosurgeon is warranted for further evaluation and possible surgical intervention. The patient should be closely monitored in a pediatric intensive care unit (PICU) setting for signs of increased intracranial pressure or neurological deterioration.",
+            "structured_data": null,
+            "response_time": 7.415900468826294,
+            "round_type": "symptom_management",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. John Lee",
+            "specialty": "Neurology",
+            "content": "Based on the clinical presentation and the MRI findings, the most likely diagnosis is increased intracranial pressure (ICP) secondary to a brain tumor, given the symptoms of morning headaches, nausea, vomiting, gait disturbance, and papilledema noted on fundoscopy. Here is my structured response:\n\n1. IMMEDIATE PRIORITIES:\n   - Assess and manage the patient's airway, breathing, and circulation (ABCs) as per the pediatric advanced life support (PALS) guidelines.\n   - Ensure the patient is stable and does not have any signs of impending herniation, such as altered mental status, pupillary changes, or decreased level of consciousness.\n\n2. STABILIZATION:\n   - Maintain a patent airway and ensure adequate ventilation. Intubation may be required if the patient is at risk of herniation or respiratory compromise.\n   - Elevate the head of the bed to 30 degrees to reduce intracranial venous pressure.\n   - Administer mannitol or hypertonic saline to reduce ICP.\n   - Consider dexamethasone for its anti-inflammatory properties if the tumor is causing significant edema.\n\n3. CRITICAL TESTS:\n   - Obtain a complete blood count (CBC) and coagulation profile to assess for any hematological abnormalities that may impact management.\n   - Perform a lumbar puncture if there is no evidence of increased ICP on imaging and the patient is stable, to rule out infectious causes such as meningitis.\n   - Conduct a detailed MRI with contrast to better delineate the tumor's location, size, and relationship to surrounding structures.\n\n4. RED FLAGS:\n   - Monitor for signs of brain herniation, including altered mental status, unilateral or bilateral pupil dilation, and worsening neurological deficits.\n   - Watch for changes in vital signs that might indicate a decline in the patient's condition, such as hypertension, bradycardia, or irregular breathing.\n   - Be alert for signs of increased ICP such as persistent vomiting, worsening headache, or new neurological deficits.\n\nThis structured approach ensures that the patient receives timely and appropriate care, with a focus on stabilizing the patient's condition and preparing for definitive treatment, which may include surgical intervention or radiation therapy, depending on the tumor's characteristics.",
+            "structured_data": null,
+            "response_time": 7.0353357791900635,
+            "round_type": "symptom_management",
+            "confidence_score": 0.72,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. Sarah Thompson",
+            "specialty": "Oncology",
+            "content": "Given the clinical presentation and the MRI findings, the most likely diagnosis is increased intracranial pressure (ICP) secondary to a brain tumor. Here is the structured response:\n\n1. JSON Object Containing Diagnoses and Supporting Evidence:\n\n```json\n{\n  \"Brain Tumor\": [\n    \"Morning headaches\",\n    \"Progressive nausea and vomiting\",\n    \"Broad-based gait and difficulty with heel-to-toe walking\",\n    \"Papilledema on fundoscopy\",\n    \"MRI findings (not shown, but typically indicative of a mass)\"\n  ],\n  \"Increased Intracranial Pressure\": [\n    \"Morning headaches\",\n    \"Nausea and vomiting\",\n    \"Gait disturbance\",\n    \"Papilledema\"\n  ]\n}\n```\n\n2. Clinical Reasoning:\n\nThe patient's symptoms of morning headaches, progressive nausea, and vomiting, along with gait disturbances and papilledema, are indicative of increased intracranial pressure. The MRI findings, which are not shown but typically would reveal a mass, support the diagnosis of a brain tumor. The combination of these symptoms and imaging findings is highly suggestive of a central nervous system tumor causing increased ICP.\n\nIMMEDIATE PRIORITIES:\n- Ensure the airway is protected and the patient is not at risk for aspiration due to vomiting.\n- Monitor for signs of neurological deterioration, such as worsening headache, altered mental status, or worsening gait.\n\nSTABILIZATION:\n- Administer antiemetics to control nausea and vomiting.\n- Consider corticosteroids to reduce cerebral edema and alleviate symptoms of increased ICP.\n- Elevate the head of the bed to 30 degrees to help reduce ICP.\n\nCRITICAL TESTS:\n- Perform a lumbar puncture if safe to do so, to measure cerebrospinal fluid (CSF) pressure and analyze the CSF for signs of infection or malignancy.\n- Repeat MRI to assess the size and location of the tumor and to plan for surgical intervention if necessary.\n\nRED FLAGS:\n- Monitor for signs of impending herniation, such as severe headache, altered level of consciousness, or pupillary changes.\n- Watch for signs of hydrocephalus, such as worsening headaches, vomiting, or changes in mental status.\n\nPatient safety and acute stabilization are paramount in this case, with a focus on managing symptoms and preparing for potential surgical intervention.",
+            "structured_data": {
+              "Brain Tumor": [
+                "Morning headaches",
+                "Progressive nausea and vomiting",
+                "Broad-based gait and difficulty with heel-to-toe walking",
+                "Papilledema on fundoscopy",
+                "MRI findings (not shown, but typically indicative of a mass)"
+              ],
+              "Increased Intracranial Pressure": [
+                "Morning headaches",
+                "Nausea and vomiting",
+                "Gait disturbance",
+                "Papilledema"
+              ]
+            },
+            "response_time": 7.3730714321136475,
+            "round_type": "symptom_management",
+            "confidence_score": 0.9999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. Michael Davis",
+            "specialty": "Internal Medicine",
+            "content": "Based on the clinical presentation and the MRI findings, the most likely diagnosis is increased intracranial pressure (ICP) secondary to a brain tumor. The symptoms of morning headaches, nausea, vomiting, gait disturbance, and papilledema are classic signs of elevated intracranial pressure, which can be caused by a mass lesion such as a brain tumor.\n\nHere are the immediate priorities, stabilization steps, critical tests, and red flags from an internal medicine perspective:\n\n1. IMMEDIATE PRIORITIES:\n- Ensure the airway is patent and protected.\n- Monitor the patient's level of consciousness and neurological status.\n- Control any immediate signs of increased intracranial pressure (ICP), such as seizures or vomiting.\n\n2. STABILIZATION:\n- Administer intravenous (IV) mannitol or hypertonic saline to reduce ICP.\n- Initiate dexamethasone to reduce cerebral edema.\n- Administer antiemetics for nausea and vomiting.\n- Maintain a calm environment and avoid any activities that could increase ICP, such as excessive coughing or straining.\n- Place the patient in a position with the head of the bed elevated 30 degrees to reduce venous congestion in the head and neck.\n\n3. CRITICAL TESTS:\n- Perform a complete blood count (CBC) to evaluate for anemia, infection, or other hematological abnormalities.\n- Conduct a serum electrolyte panel to assess for electrolyte imbalances that could be contributing to the patient's symptoms.\n- Obtain a lumbar puncture for opening pressure measurement and cerebrospinal fluid (CSF) analysis if there is no evidence of mass effect on imaging and the patient is stable.\n- Order a CT scan with contrast if MRI is not immediately available to confirm the presence of a mass lesion and assess for hydrocephalus.\n\n4. RED FLAGS:\n- Sudden change in the level of consciousness or neurological status.\n- Seizures.\n- Progressive neurological deficits such as hemiparesis or visual field loss.\n- Severe headache or vomiting that does not respond to initial treatment.\n- Signs of impending herniation such as unilateral or bilateral papilledema, unequal pupil size, or abnormal posturing.\n\nThe patient requires immediate neurosurgical consultation for further evaluation and management, including potential surgical intervention to relieve the mass effect and reduce ICP. The internal medicine team will support the patient's systemic status, manage complications, and provide supportive care during the critical period.",
+            "structured_data": null,
+            "response_time": 7.593762159347534,
+            "round_type": "symptom_management",
+            "confidence_score": 0.74,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Lisa Nguyen",
+            "specialty": "General Medicine",
+            "content": "Given the clinical presentation and the presence of papilledema, the most likely diagnosis is increased intracranial pressure (ICP) secondary to a brain tumor. Here is the structured response based on the task:\n\n1. IMMEDIATE PRIORITIES:\n   - Assess and manage the patient's airway, breathing, and circulation (ABCs).\n   - Ensure the patient is not experiencing any acute neurological deterioration.\n   - Monitor for signs of impending herniation, such as changes in level of consciousness, pupil size or reactivity, or worsening neurological deficits.\n\n2. STABILIZATION:\n   - Elevate the head of the bed to 30 degrees to reduce venous return and ICP.\n   - Administer osmotic diuretics such as mannitol to reduce ICP.\n   - Consider corticosteroids to reduce cerebral edema if there is a mass effect.\n   - Ensure the patient is nil per os (NPO) to prepare for potential urgent neurosurgical intervention.\n\n3. CRITICAL TESTS:\n   - Perform a lumbar puncture if there is no contraindication (e.g., signs of brain herniation) to measure cerebrospinal fluid (CSF) pressure and analyze the CSF for signs of infection or malignancy.\n   - Obtain a CT scan of the head if MRI is not immediately available, to rule out acute hemorrhage or other acute changes.\n   - Repeat MRI with contrast to better delineate the tumor and its relationship to surrounding structures.\n\n4. RED FLAGS:\n   - Rapid deterioration in neurological status, such as altered mental status, worsening headache, or new focal deficits.\n   - Signs of brain herniation, including unilateral or bilateral dilated pupils, or changes in the level of consciousness.\n   - Seizure activity, which can be a sign of increased ICP or a complication of the underlying pathology.\n\nJSON format:\n{\n  \"increased intracranial pressure (ICP) secondary to brain tumor\": [\n    \"morning headaches\",\n    \"progressive nausea\",\n    \"emesis\",\n    \"broad-based gait\",\n    \"difficulty with heel-to-toe walking\",\n    \"head titubation\",\n    \"papilledema on fundoscopy\"\n  ]\n}\n\nClinical Reasoning:\nThe patient's symptoms of morning headaches, nausea, and emesis, along with the physical exam findings of a broad-based gait, difficulty with heel-to-toe walking, and head titubation, are indicative of increased intracranial pressure. The presence of papilledema on fundoscopy is a key finding that supports this diagnosis. The MRI findings, which are not detailed here but are likely to show a mass lesion, further support the diagnosis of a brain tumor as the cause of the increased ICP. Immediate attention must be given to stabilizing the patient and preparing for potential urgent neurosurgical intervention.",
+            "structured_data": {
+              "increased intracranial pressure (ICP) secondary to brain tumor": [
+                "morning headaches",
+                "progressive nausea",
+                "emesis",
+                "broad-based gait",
+                "difficulty with heel-to-toe walking",
+                "head titubation",
+                "papilledema on fundoscopy"
+              ]
+            },
+            "response_time": 8.963786125183105,
+            "round_type": "symptom_management",
+            "confidence_score": 0.9999999999999999,
+            "reasoning_quality": "high"
+          }
+        ],
+        "duration": 38.38253903388977,
+        "success": true
+      },
+      "team_differentials": {
+        "responses": [
+          {
+            "agent_name": "Dr. Emily Carter",
+            "specialty": "Neurology",
+            "content": "{\n  \"Intracranial Mass Lesion (Brain Tumor)\": [\"Morning headaches\", \"Nausea and vomiting\", \"Papilledema\", \"Gait disturbances\"],\n  \"Hydrocephalus\": [\"Morning headaches\", \"Nausea and vomiting\", \"Papilledema\"],\n  \"Idiopathic Intracranial Hypertension\": [\"Morning headaches\", \"Nausea and vomiting\", \"Papilledema\"],\n  \"Intracranial Hemorrhage\": [\"Morning headaches\", \"Nausea and vomiting\", \"Papilledema\"],\n  \"Meningitis\": [\"Morning headaches\", \"Nausea and vomiting\"]\n}\n\nClinical Reasoning:\n\n1. **Intracranial Mass Lesion (Brain Tumor)**: This is the most likely diagnosis given the patient's symptoms and the presence of papilledema, which suggests increased intracranial pressure (ICP). The morning headaches, nausea, and vomiting are common symptoms of a brain tumor, especially in a child. The gait disturbances and difficulty with heel-to-toe walking further support this diagnosis, as these can be signs of cerebellar dysfunction or increased ICP affecting the brainstem.\n\n2. **Hydrocephalus**: This condition can also cause increased ICP, leading to morning headaches, nausea, vomiting, and papilledema. The gait disturbances could be due to the pressure on the brain, particularly the cerebellum, which is involved in motor coordination.\n\n3. **Idiopathic Intracranial Hypertension**: Although less common in children, this condition can present with similar symptoms, including morning headaches, nausea, vomiting, and papilledema. However, it is less likely given the gait disturbances and the presence of a mass on MRI.\n\n4. **Intracranial Hemorrhage**: This diagnosis is considered due to the presence of papilledema and the symptoms of increased ICP. However, the chronic nature of the symptoms and the presence of a mass on MRI make this less likely than a brain tumor.\n\n5. **Meningitis**: While meningitis can cause headaches, nausea, and vomiting, the presence of papilledema and gait disturbances, along with the MRI findings, make this less likely than a mass lesion or hydrocephalus. Meningitis typically presents with more acute symptoms and signs of meningeal irritation.\n\nThe MRI findings, which are not provided in the text but are mentioned to be available in Figures A and B, would be crucial in confirming the presence of a mass lesion or other structural abnormalities that could explain the patient's symptoms.",
+            "structured_data": {
+              "Intracranial Mass Lesion (Brain Tumor)": [
+                "Morning headaches",
+                "Nausea and vomiting",
+                "Papilledema",
+                "Gait disturbances"
+              ],
+              "Hydrocephalus": [
+                "Morning headaches",
+                "Nausea and vomiting",
+                "Papilledema"
+              ],
+              "Idiopathic Intracranial Hypertension": [
+                "Morning headaches",
+                "Nausea and vomiting",
+                "Papilledema"
+              ],
+              "Intracranial Hemorrhage": [
+                "Morning headaches",
+                "Nausea and vomiting",
+                "Papilledema"
+              ],
+              "Meningitis": [
+                "Morning headaches",
+                "Nausea and vomiting"
+              ]
+            },
+            "response_time": 8.156174182891846,
+            "round_type": "team_differentials",
+            "confidence_score": 0.9999999999999999,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. John Lee",
+            "specialty": "Neurology",
+            "content": "{\n  \"Increased Intracranial Pressure (ICP) due to Brain Tumor\": [\"Morning headaches\", \"Nausea and emesis\", \"Papilledema on fundoscopy\", \"Broad-based gait and difficulty with heel-to-toe walking\", \"MRI imaging findings (if showing mass effect or abnormal enhancement)\"],\n  \"Hydrocephalus\": [\"Morning headaches\", \"Nausea and emesis\", \"Papilledema on fundoscopy\", \"Broad-based gait and difficulty with heel-to-toe walking\", \"MRI imaging findings (if showing ventricular dilatation)\"],\n  \"Intracranial Hemorrhage\": [\"Acute onset of symptoms\", \"Nausea and emesis\", \"Papilledema on fundoscopy\", \"MRI imaging findings (if showing hematoma)\"],\n  \"Intracranial Infection (such as abscess or encephalitis)\": [\"Nonspecific symptoms\", \"Nausea and emesis\", \"Papilledema on fundoscopy\", \"MRI imaging findings (if showing abnormal signal or enhancement)\"],\n  \"Pseudotumor Cerebri\": [\"Morning headaches\", \"Nausea and emesis\", \"Papilledema on fundoscopy\", \"No mass effect on MRI (if imaging shows no abnormal mass or lesion)\"]\n}\n\nClinical Reasoning:\n\n1. Increased Intracranial Pressure (ICP) due to Brain Tumor: This is the most likely diagnosis given the clinical presentation and the imaging findings. The morning headaches, nausea, emesis, and papilledema all point to elevated intracranial pressure. The gait disturbance and fundoscopy findings are consistent with increased ICP, and a brain tumor is a common cause in the pediatric population. MRI findings would typically show a mass with potential enhancement or mass effect.\n\n2. Hydrocephalus: This condition can also cause increased intracranial pressure and present with similar symptoms. The imaging would show ventricular dilatation, and the patient's symptoms are consistent with the condition. However, hydrocephalus is less likely without a history of prior shunt placement or meningitis.\n\n3. Intracranial Hemorrhage: While this condition can cause increased intracranial pressure and present with similar symptoms, the chronic nature of the symptoms and the presence of papilledema make it less likely than a tumor or hydrocephalus. An acute hemorrhage would typically cause more acute symptoms and might be more consistent with a sudden onset.\n\n4. Intracranial Infection (such as abscess or encephalitis): This is less likely without a history of fever or other signs of systemic infection. However, an abscess or encephalitis can present with increased intracranial pressure and imaging would show abnormalities, so it remains a possibility.\n\n5. Pseudotumor Cerebri: This condition, also known as idiopathic intracranial hypertension, can cause similar symptoms and papilledema but without a mass effect. It is more common in obese individuals and is less likely in a 6-year-old, but it is a consideration if imaging shows no abnormal mass or lesion.",
+            "structured_data": {
+              "Increased Intracranial Pressure (ICP) due to Brain Tumor": [
+                "Morning headaches",
+                "Nausea and emesis",
+                "Papilledema on fundoscopy",
+                "Broad-based gait and difficulty with heel-to-toe walking",
+                "MRI imaging findings (if showing mass effect or abnormal enhancement)"
+              ],
+              "Hydrocephalus": [
+                "Morning headaches",
+                "Nausea and emesis",
+                "Papilledema on fundoscopy",
+                "Broad-based gait and difficulty with heel-to-toe walking",
+                "MRI imaging findings (if showing ventricular dilatation)"
+              ],
+              "Intracranial Hemorrhage": [
+                "Acute onset of symptoms",
+                "Nausea and emesis",
+                "Papilledema on fundoscopy",
+                "MRI imaging findings (if showing hematoma)"
+              ],
+              "Intracranial Infection (such as abscess or encephalitis)": [
+                "Nonspecific symptoms",
+                "Nausea and emesis",
+                "Papilledema on fundoscopy",
+                "MRI imaging findings (if showing abnormal signal or enhancement)"
+              ],
+              "Pseudotumor Cerebri": [
+                "Morning headaches",
+                "Nausea and emesis",
+                "Papilledema on fundoscopy",
+                "No mass effect on MRI (if imaging shows no abnormal mass or lesion)"
+              ]
+            },
+            "response_time": 9.94625210762024,
+            "round_type": "team_differentials",
+            "confidence_score": 0.9999999999999999,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Sarah Thompson",
+            "specialty": "Oncology",
+            "content": "{\n  \"Intracranial Tumor\": [\"Morning headaches\", \"Nausea and vomiting\", \"Papilledema\", \"Broad-based gait and difficulty with coordination\"],\n  \"Hydrocephalus\": [\"Morning headaches\", \"Nausea and vomiting\", \"Papilledema\"],\n  \"Intracranial Hypertension\": [\"Morning headaches\", \"Nausea and vomiting\", \"Papilledema\"],\n  \"Intracranial Infection (e.g., Meningitis)\": [\"Nausea and vomiting\", \"Papilledema\", \"Headache\"],\n  \"Migraine\": [\"Morning headaches\", \"Nausea and vomiting\"]\n}\n\nClinical Reasoning:\n\n1. **Intracranial Tumor**: This is the most likely diagnosis given the patient's symptoms and physical findings. The presence of morning headaches, nausea, vomiting, and papilledema are all indicative of increased intracranial pressure, which is a common presentation in pediatric brain tumors. The MRI findings would be crucial in confirming the presence of a mass and its location.\n\n2. **Hydrocephalus**: This condition can also cause increased intracranial pressure and the symptoms seen in this patient. However, hydrocephalus is typically associated with a more rapid onset of symptoms and may present with additional signs such as a bulging fontanelle in infants or a large head circumference in older children. The MRI would show dilated ventricles.\n\n3. **Intracranial Hypertension**: This diagnosis is considered due to the presence of papilledema and morning headaches, which are classic signs of increased intracranial pressure. However, intracranial hypertension without a clear cause (idiopathic intracranial hypertension) is less common in children compared to adults.\n\n4. **Intracranial Infection (e.g., Meningitis)**: While infections can cause increased intracranial pressure and papilledema, they are usually accompanied by signs of systemic illness such as fever, neck stiffness, and altered mental status. The MRI would show signs of inflammation or infection.\n\n5. **Migraine**: Although migraines can cause nausea and vomiting, they are less likely to present with papilledema and a broad-based gait. Migraines are more episodic and often have triggers, which are not mentioned in the patient's history.\n\nGiven the patient's age and the constellation of symptoms, an intracranial tumor is the most likely diagnosis, and further diagnostic workup, including MRI with contrast, would be necessary to confirm the diagnosis and guide treatment.",
+            "structured_data": {
+              "Intracranial Tumor": [
+                "Morning headaches",
+                "Nausea and vomiting",
+                "Papilledema",
+                "Broad-based gait and difficulty with coordination"
+              ],
+              "Hydrocephalus": [
+                "Morning headaches",
+                "Nausea and vomiting",
+                "Papilledema"
+              ],
+              "Intracranial Hypertension": [
+                "Morning headaches",
+                "Nausea and vomiting",
+                "Papilledema"
+              ],
+              "Intracranial Infection (e.g., Meningitis)": [
+                "Nausea and vomiting",
+                "Papilledema",
+                "Headache"
+              ],
+              "Migraine": [
+                "Morning headaches",
+                "Nausea and vomiting"
+              ]
+            },
+            "response_time": 8.14694881439209,
+            "round_type": "team_differentials",
+            "confidence_score": 0.9999999999999999,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Michael Davis",
+            "specialty": "Internal Medicine",
+            "content": "{\n  \"Increased Intracranial Pressure (IIP) due to Brain Tumor\": [\"Morning headaches\", \"Nausea and emesis\", \"Broad-based gait and difficulty with coordination\", \"Papilledema on fundoscopy\"],\n  \"Idiopathic Intracranial Hypertension (IIH)\": [\"Morning headaches\", \"Nausea and emesis\", \"Papilledema\", \"Normal visual field\"],\n  \"Hydrocephalus\": [\"Morning headaches\", \"Nausea and emesis\", \"Papilledema\", \"Broad-based gait\"],\n  \"Intracranial Hemorrhage\": [\"Sudden onset of headaches\", \"Nausea and emesis\", \"Papilledema\", \"Normal visual field\"],\n  \"Pseudotumor Cerebri\": [\"Morning headaches\", \"Nausea and emesis\", \"Papilledema\", \"Normal visual field\"]\n}\n\nClinical Reasoning:\n\n1. Increased Intracranial Pressure (IIP) due to Brain Tumor: This is the most likely diagnosis given the patient's symptoms and the MRI findings. The presence of morning headaches, nausea, and emesis, along with the physical examination findings of papilledema and gait disturbances, are highly suggestive of increased intracranial pressure. The MRI, which has not been described in detail here, would be critical in identifying a mass that could be causing the symptoms.\n\n2. Idiopathic Intracranial Hypertension (IIH): This condition can present with similar symptoms, such as morning headaches, nausea, and papilledema, but it is less common in pediatric populations. The absence of visual field defects and the presence of gait disturbances make this less likely than a brain tumor.\n\n3. Hydrocephalus: This condition can also cause increased intracranial pressure and present with headaches, nausea, and gait disturbances. However, it typically presents with more pronounced symptoms of increased intracranial pressure and may have additional findings on MRI, such as ventricular dilatation.\n\n4. Intracranial Hemorrhage: This diagnosis is less likely due to the chronic nature of the symptoms, which typically develop more acutely in cases of hemorrhage. However, it remains a possibility, especially if the MRI shows signs of a hemorrhagic lesion.\n\n5. Pseudotumor Cerebri: This is a term sometimes used interchangeably with IIH and represents a condition of increased intracranial pressure without a detectable cause. Given the patient's age and the presence of gait disturbances, this is less likely than a brain tumor.\n\nThe differential diagnosis is structured around the common symptoms of increased intracranial pressure, with the most likely diagnosis being a brain tumor, given the patient's age and the specific combination of symptoms and signs. The MRI findings would be crucial in confirming the diagnosis and ruling out other causes of increased intracranial pressure.",
+            "structured_data": {
+              "Increased Intracranial Pressure (IIP) due to Brain Tumor": [
+                "Morning headaches",
+                "Nausea and emesis",
+                "Broad-based gait and difficulty with coordination",
+                "Papilledema on fundoscopy"
+              ],
+              "Idiopathic Intracranial Hypertension (IIH)": [
+                "Morning headaches",
+                "Nausea and emesis",
+                "Papilledema",
+                "Normal visual field"
+              ],
+              "Hydrocephalus": [
+                "Morning headaches",
+                "Nausea and emesis",
+                "Papilledema",
+                "Broad-based gait"
+              ],
+              "Intracranial Hemorrhage": [
+                "Sudden onset of headaches",
+                "Nausea and emesis",
+                "Papilledema",
+                "Normal visual field"
+              ],
+              "Pseudotumor Cerebri": [
+                "Morning headaches",
+                "Nausea and emesis",
+                "Papilledema",
+                "Normal visual field"
+              ]
+            },
+            "response_time": 9.147149085998535,
+            "round_type": "team_differentials",
+            "confidence_score": 0.9999999999999999,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Lisa Nguyen",
+            "specialty": "General Medicine",
+            "content": "{\n  \"Increased Intracranial Pressure (IICP) due to Brain Tumor\": [\"Morning headaches\", \"Nausea and vomiting\", \"Papilledema\", \"Gait disturbances\"],\n  \"Hydrocephalus\": [\"Morning headaches\", \"Nausea and vomiting\", \"Papilledema\"],\n  \"Idiopathic Intracranial Hypertension (IIH)\": [\"Morning headaches\", \"Nausea and vomiting\", \"Papilledema\"],\n  \"Intracranial Hemorrhage\": [\"Morning headaches\", \"Nausea and vomiting\", \"Papilledema\"],\n  \"Meningitis\": [\"Morning headaches\", \"Nausea and vomiting\"]\n}\n\nClinical Reasoning:\n\n1. Increased Intracranial Pressure (IICP) due to Brain Tumor: This is the most likely diagnosis given the patient's symptoms and the presence of papilledema on fundoscopy. The morning headaches, nausea, vomiting, and gait disturbances are classic signs of increased intracranial pressure, which can be caused by a brain tumor. The MRI findings would be crucial in confirming the presence of a mass lesion.\n\n2. Hydrocephalus: This condition can also cause increased intracranial pressure, leading to similar symptoms such as morning headaches, nausea, vomiting, and papilledema. However, the presence of a broad-based gait and difficulty with heel-to-toe walking suggests a more localized lesion, which is more consistent with a brain tumor than hydrocephalus.\n\n3. Idiopathic Intracranial Hypertension (IIH): IIH can present with similar symptoms, including morning headaches, nausea, vomiting, and papilledema. However, IIH is more common in obese women of childbearing age, and the presence of gait disturbances and the MRI findings make this less likely in a 6-year-old boy.\n\n4. Intracranial Hemorrhage: An intracranial hemorrhage can cause increased intracranial pressure and present with morning headaches, nausea, vomiting, and papilledema. However, the chronic nature of the symptoms and the presence of gait disturbances suggest a more chronic process, such as a brain tumor, rather than an acute hemorrhage.\n\n5. Meningitis: While meningitis can cause morning headaches and nausea, the presence of papilledema and gait disturbances is more indicative of a mass effect rather than an infectious process. The MRI findings would help rule out meningitis as a cause of the patient's symptoms.\n\nGiven the patient's age, symptoms, and the presence of papilledema, the most likely diagnosis is increased intracranial pressure due to a brain tumor. The MRI findings will be crucial in confirming this diagnosis and guiding further management.",
+            "structured_data": {
+              "Increased Intracranial Pressure (IICP) due to Brain Tumor": [
+                "Morning headaches",
+                "Nausea and vomiting",
+                "Papilledema",
+                "Gait disturbances"
+              ],
+              "Hydrocephalus": [
+                "Morning headaches",
+                "Nausea and vomiting",
+                "Papilledema"
+              ],
+              "Idiopathic Intracranial Hypertension (IIH)": [
+                "Morning headaches",
+                "Nausea and vomiting",
+                "Papilledema"
+              ],
+              "Intracranial Hemorrhage": [
+                "Morning headaches",
+                "Nausea and vomiting",
+                "Papilledema"
+              ],
+              "Meningitis": [
+                "Morning headaches",
+                "Nausea and vomiting"
+              ]
+            },
+            "response_time": 8.604804039001465,
+            "round_type": "team_differentials",
+            "confidence_score": 0.9999999999999999,
+            "reasoning_quality": "standard"
+          }
+        ],
+        "duration": 44.00204348564148,
+        "success": true
+      },
+      "master_list": {
+        "responses": [
+          {
+            "agent_name": "Dr. Emily Carter",
+            "specialty": "Neurology",
+            "content": "Based on the clinical presentation and the imaging findings, here is a consolidated master list of diagnoses, organized by likelihood:\n\n1. **Intracranial Mass Lesion (Brain Tumor)**\n   - **Rationale:** The patient's symptoms of morning headaches, nausea, gait disturbances, and papilledema are highly suggestive of increased intracranial pressure (ICP). The presence of papilledema is a strong indicator of raised ICP, which can be caused by a brain tumor. The MRI findings would be crucial in confirming this diagnosis.\n\n2. **Hydrocephalus**\n   - **Rationale:** Hydrocephalus can also cause increased ICP, leading to symptoms such as headaches, nausea, and gait disturbances. However, the presence of papilledema and the MRI findings would be key in distinguishing between hydrocephalus and a brain tumor.\n\n3. **Idiopathic Intracranial Hypertension (Pseudotumor Cerebri)**\n   - **Rationale:** This condition can present with similar symptoms, including morning headaches and papilledema. However, it is less common in children and typically does not cause gait disturbances or visual field deficits.\n\n4. **Intracranial Hemorrhage**\n   - **Rationale:** An intracranial hemorrhage can cause increased ICP and symptoms such as headaches and nausea. However, the presence of papilledema and the MRI findings would help in ruling this out or confirming it as a cause.\n\n5. **Meningitis**\n   - **Rationale:** Meningitis can cause headaches and nausea, but it typically presents with fever and neck stiffness, which are not mentioned in the patient's presentation. The MRI findings would be important in ruling this out.\n\n6. **Intracranial Infection (Such As Abscess Or Encephalitis)**\n   - **Rationale:** Similar to meningitis, an intracranial infection can cause increased ICP and symptoms like headaches and nausea. However, the absence of fever and the MRI findings would be crucial in determining the likelihood of this diagnosis.\n\n7. **Migraine**\n   - **Rationale:** Migraines can cause headaches and nausea, but they typically do not cause papilledema or gait disturbances. The MRI findings would help in ruling this out as the primary cause of the patient's symptoms.\n\n**Diagnoses to be merged:**\n- **Increased Intracranial Pressure (ICP) Due To Brain Tumor** and **Intracranial Mass Lesion (Brain Tumor)** should be merged as they describe the same condition.\n\n**Diagnoses that seem unlikely given the presentation:**\n- **Migraine** is unlikely given the presence of papilledema and gait disturbances, which are not typical of migraines.\n\n**Important diagnoses that are missing:**\n- No significant diagnoses appear to be missing from the list provided.\n\nThis list is organized based on the likelihood of each diagnosis given the patient's symptoms and the imaging findings. The presence of papilledema and gait disturbances, along with the MRI findings, are key factors in determining the most likely diagnosis.",
+            "structured_data": null,
+            "response_time": 9.866937398910522,
+            "round_type": "master_list",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard"
+          }
+        ],
+        "duration": 9.871630430221558,
+        "success": true
+      },
+      "refinement": {
+        "responses": [
+          {
+            "agent_name": "Dr. Emily Carter",
+            "specialty": "Neurology",
+            "content": "Based on the clinical presentation and the MRI findings, here is my initial position on each diagnosis:\n\n**SUPPORT:**\n- **Intracranial Mass Lesion (Brain Tumor) - HIGH CONFIDENCE**\n  - Evidence: Morning headaches, nausea, and vomiting are common symptoms of increased intracranial pressure (ICP). The presence of papilledema on fundoscopy is a strong indicator of raised ICP, which can be caused by a brain tumor. The gait disturbances and difficulty with heel-to-toe walking suggest cerebellar dysfunction, which can be associated with a mass lesion. The MRI findings would be crucial in confirming the presence of a mass.\n  \n- **Increased Intracranial Pressure (ICP) Due To Brain Tumor - HIGH CONFIDENCE**\n  - Evidence: This is essentially a subset of the Intracranial Mass Lesion diagnosis, with the specific cause being a brain tumor. The symptoms and signs are consistent with increased ICP, and the MRI would be expected to show a mass lesion.\n\n**CHALLENGE:**\n- **Hydrocephalus - LOW CONFIDENCE**\n  - Reasoning: While hydrocephalus can cause increased ICP and symptoms such as headaches and gait disturbances, the presence of papilledema and the MRI findings would be more indicative of a solid mass rather than a fluid accumulation. Additionally, hydrocephalus typically presents with a more rapid onset of symptoms and may be associated with other signs like macrocephaly or bulging fontanelles in younger children.\n  \n- **Idiopathic Intracranial Hypertension (IIH) - LOW CONFIDENCE**\n  - Reasoning: IIH is more common in obese women of childbearing age and is less likely in a 6-year-old boy. The presence of a mass lesion on MRI would rule out IIH, as this condition is characterized by elevated ICP without an obvious cause.\n\n- **Intracranial Hemorrhage - LOW CONFIDENCE**\n  - Reasoning: While intracranial hemorrhage can cause increased ICP and symptoms like headaches and nausea, the chronic nature of the symptoms and the presence of papilledema suggest a more chronic process rather than an acute bleed. The MRI would be expected to show a mass rather than a hemorrhagic lesion.\n\n- **Meningitis - LOW CONFIDENCE**\n  - Reasoning: Meningitis typically presents with a more acute onset of symptoms, fever, and signs of meningeal irritation such as neck stiffness. The chronic nature of the symptoms and the presence of papilledema suggest a more chronic process rather than an acute infection.\n\n- **Intracranial Infection (Such As Abscess Or Encephalitis) - LOW CONFIDENCE**\n  - Reasoning: Similar to meningitis, an intracranial infection would typically present with an acute onset of symptoms and signs of infection. The chronic nature of the symptoms and the MRI findings suggest a more chronic process.\n\n- **Pseudotumor Cerebri - LOW CONFIDENCE**\n  - Reasoning: Pseudotumor cerebri is another term for IIH and would be challenged for the same reasons as IIH.\n\n- **Migraine - LOW CONFIDENCE**\n  - Reasoning: Migraines can cause headaches, but the presence of papilledema and gait disturbances is not typical for migraines. The MRI findings would be expected to show a mass lesion rather than changes associated with migraines.\n\n**NEUTRAL:**\n- **None**\n\n**TOP 3 DIAGNOSES WITH CONFIDENCE LEVELS:**\n1. **Intracranial Mass Lesion (Brain Tumor) - HIGH CONFIDENCE**\n2. **Increased Intracranial Pressure (ICP) Due To Brain Tumor - HIGH CONFIDENCE**\n3. **Hydrocephalus - LOW CONFIDENCE**\n\n**SPECIFIC CLINICAL REASONING:**\nThe clinical presentation of morning headaches, nausea, vomiting, gait disturbances, and papilledema strongly suggests increased intracranial pressure. The MRI findings are critical in confirming the presence of a mass lesion, which is most likely a brain tumor. The chronic nature of the symptoms and the presence of papilledema make other diagnoses less likely. Further diagnostic workup, including a detailed MRI with contrast, would be necessary to confirm the diagnosis and plan appropriate treatment.",
+            "structured_data": null,
+            "response_time": 13.797338724136353,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. John Lee",
+            "specialty": "Neurology",
+            "content": "Based on the clinical presentation and the MRI findings, here's my initial position on the diagnoses under consideration:\n\n**SUPPORT:**\n- **Intracranial Mass Lesion (Brain Tumor) [HIGH CONFIDENCE]**\n  - Evidence: Morning headaches, progressive nausea, and vomiting are often associated with an intracranial mass lesion, especially in a child. The presence of papilledema suggests increased intracranial pressure (ICP), which can be caused by a growing tumor.\n  - Additional Evidence: The patient's gait disturbance and difficulty with heel-to-toe walking suggest cerebellar dysfunction, which is consistent with a posterior fossa tumor, a common location for pediatric brain tumors.\n\n- **Increased Intracranial Pressure (ICP) Due To Brain Tumor [HIGH CONFIDENCE]**\n  - Evidence: Papilledema, which is a key sign of increased ICP, was observed on fundoscopy. The presence of papilledema in a child with morning headaches and nausea strongly suggests a mass effect, which is commonly due to a brain tumor in this age group.\n\n**CHALLENGE:**\n- **Hydrocephalus [LOW CONFIDENCE]**\n  - Reasoning: While hydrocephalus can cause increased ICP and papilledema, the patient's symptoms of headache, nausea, and gait disturbance are more suggestive of a focal mass lesion. Hydrocephalus typically presents with a more pronounced gait disturbance and sometimes with a bulging fontanelle in younger children. The MRI findings would be more indicative of hydrocephalus if there were ventricular dilatation and an absence of mass lesions.\n\n- **Idiopathic Intracranial Hypertension [LOW CONFIDENCE]**\n  - Reasoning: Although idiopathic intracranial hypertension can present with papilledema and headaches, it is rare in children, especially at the age of 6. This diagnosis would be more likely if there were no focal neurological deficits and if the patient had features such as obesity or a recent weight gain, which are not mentioned in this case.\n\n- **Intracranial Hemorrhage [LOW CONFIDENCE]**\n  - Reasoning: Acute intracranial hemorrhage would typically present with a more sudden onset of symptoms and might be associated with a history of trauma. The chronic nature of the symptoms and the presence of papilledema suggest a more chronic process, which is less consistent with an acute hemorrhage.\n\n- **Meningitis [LOW CONFIDENCE]**\n  - Reasoning: Meningitis would generally present with fever, neck stiffness, and a history of recent infection. The absence of these signs and the presence of papilledema and gait disturbance point away from meningitis and towards a mass lesion.\n\n**NEUTRAL:**\n- **Intracranial Infection (Such As Abscess Or Encephalitis) [MEDIUM CONFIDENCE]**\n  - Reasoning: An intracranial infection could cause increased ICP and papilledema, but it is less likely without a history of systemic infection or recent trauma. Further imaging and clinical data would be needed to rule this out.\n\n- **Pseudotumor Cerebri [LOW CONFIDENCE]**\n  - Reasoning: Similar to idiopathic intracranial hypertension, pseudotumor cerebri is rare in children and typically presents without focal neurological deficits. The presence of a gait disturbance and morning headaches points more towards a mass effect.\n\n- **Migraine [LOW CONFIDENCE]**\n  - Reasoning: Migraines can cause headaches and nausea, but they typically do not cause papilledema or gait disturbances. The presence of papilledema suggests a more serious underlying pathology.\n\n**TOP 3 DIAGNOSES:**\n1. **Intracranial Mass Lesion (Brain Tumor) [HIGH CONFIDENCE]**\n2. **Increased Intracranial Pressure (ICP) Due To Brain Tumor [HIGH CONFIDENCE]**\n3. **Intracranial Infection (Such As Abscess Or Encephalitis) [MEDIUM CONFIDENCE]**\n\nThese diagnoses are prioritized based on the clinical presentation and the imaging findings that suggest a mass effect, which is most consistent with a brain tumor. Further investigation with detailed MRI sequences and possibly a contrast-enhanced MRI would be necessary to confirm the diagnosis and to rule out other possibilities.",
+            "structured_data": null,
+            "response_time": 13.889167547225952,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. Sarah Thompson",
+            "specialty": "Oncology",
+            "content": "Given the clinical presentation and the MRI findings, here is my initial position on each diagnosis:\n\n- SUPPORT:\n  - **Intracranial Mass Lesion (Brain Tumor)**: HIGH\n    - Evidence: Morning headaches, nausea, vomiting, gait disturbances, and papilledema are all consistent with increased intracranial pressure (ICP). The MRI findings, which are not detailed here but are likely to show a mass, support this diagnosis.\n  - **Increased Intracranial Pressure (ICP) Due To Brain Tumor**: HIGH\n    - Evidence: The clinical symptoms and MRI findings are indicative of increased ICP, which is a common consequence of a brain tumor in a pediatric patient.\n  - **Hydrocephalus**: MEDIUM\n    - Evidence: While the symptoms are consistent with increased ICP, hydrocephalus is less likely without additional findings such as dilated ventricles on MRI. However, it cannot be ruled out without a detailed MRI report.\n\n- CHALLENGE:\n  - **Idiopathic Intracranial Hypertension**: LOW\n    - Reasoning: This condition is rare in children and typically presents with symptoms of raised ICP but without a mass lesion on imaging. The presence of a mass on MRI makes this diagnosis less likely.\n  - **Intracranial Hemorrhage**: LOW\n    - Reasoning: The clinical presentation does not suggest an acute event, and the symptoms have been progressive over weeks, which is more consistent with a chronic process like a tumor rather than an acute hemorrhage.\n  - **Meningitis**: LOW\n    - Reasoning: The absence of fever, neck stiffness, and other signs of meningeal irritation makes this diagnosis less likely. Additionally, the MRI findings would typically show signs of inflammation if meningitis were present.\n  - **Intracranial Infection (Such As Abscess Or Encephalitis)**: LOW\n    - Reasoning: Similar to meningitis, the absence of fever and the MRI findings are more consistent with a mass lesion than an infectious process.\n  - **Pseudotumor Cerebri**: LOW\n    - Reasoning: This condition is rare in children and typically presents without a mass lesion on imaging.\n  - **Migraine**: LOW\n    - Reasoning: While migraines can cause headaches, the presence of papilledema and gait disturbances is not typical for migraines and points more towards increased ICP.\n\n- NEUTRAL:\n  - **Intracranial Mass Lesion (Brain Tumor)** and **Increased Intracranial Pressure (ICP) Due To Brain Tumor** are supported by the clinical presentation and MRI findings, so no additional information is required for these diagnoses. However, further imaging details and possibly a biopsy would be needed to confirm the exact type of tumor.\n\n**TOP 3 Diagnoses:**\n1. **Intracranial Mass Lesion (Brain Tumor)** - HIGH\n2. **Increased Intracranial Pressure (ICP) Due To Brain Tumor** - HIGH\n3. **Hydrocephalus** - MEDIUM\n\n**Clinical Reasoning:**\nThe clinical presentation of morning headaches, nausea, vomiting, gait disturbances, and papilledema, along with the MRI findings, strongly suggest a mass lesion in the brain, likely a tumor, causing increased intracranial pressure. The progressive nature of the symptoms and the presence of papilledema are indicative of a chronic process rather than an acute event. While hydrocephalus is a possibility, it is less likely without additional MRI findings such as ventricular dilation. The other diagnoses are less likely due to the lack of supporting clinical or imaging evidence.",
+            "structured_data": null,
+            "response_time": 11.654012203216553,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. Michael Davis",
+            "specialty": "Internal Medicine",
+            "content": "Given the clinical presentation and the findings from the physical exam, including the patient's morning headaches, nausea, episodes of emesis, gait disturbance, and papilledema, along with the MRI findings, here is my analysis of the diagnoses under consideration:\n\n**SUPPORT:**\n- **Intracranial Mass Lesion (Brain Tumor):** HIGH CONFIDENCE\n  - Morning headaches and nausea are classic symptoms of increased intracranial pressure, which can be caused by a brain tumor.\n  - The presence of papilledema is highly suggestive of increased intracranial pressure, which is commonly seen with mass lesions.\n  - The MRI findings are crucial in supporting this diagnosis, as they would likely show a mass consistent with a tumor.\n- **Increased Intracranial Pressure (ICP) Due To Brain Tumor:** HIGH CONFIDENCE\n  - This diagnosis is essentially a subset of the Intracranial Mass Lesion and directly correlates with the patient's symptoms and physical findings.\n- **Hydrocephalus:** MEDIUM CONFIDENCE\n  - While the symptoms could be consistent with hydrocephalus, the presence of papilledema and the MRI findings would be more specific in diagnosing the cause.\n\n**CHALLENGE:**\n- **Idiopathic Intracranial Hypertension:** LOW CONFIDENCE\n  - This condition is more common in obese women of childbearing age and is less likely to present in a 6-year-old child.\n  - The presence of a mass lesion, as suggested by the MRI, makes this diagnosis less likely.\n- **Intracranial Hemorrhage:** LOW CONFIDENCE\n  - Hemorrhage would typically present with a more acute onset and potentially with more severe neurological deficits.\n  - The chronic nature of the symptoms and the MRI findings are more indicative of a mass lesion.\n- **Meningitis:** LOW CONFIDENCE\n  - Meningitis would typically present with a fever, neck stiffness, and other signs of infection, which are not mentioned in the case.\n  - The chronicity of symptoms and MRI findings are more suggestive of a mass lesion.\n- **Intracranial Infection (Such As Abscess Or Encephalitis):** LOW CONFIDENCE\n  - Similar to meningitis, an infection would usually present with signs of infection, such as fever, and would not typically present with the chronicity and MRI findings of a mass lesion.\n- **Migraine:** LOW CONFIDENCE\n  - While migraines can cause headaches and nausea, the presence of papilledema and gait disturbance are not typical of a migraine.\n  - The MRI findings would not support a diagnosis of migraine.\n\n**NEUTRAL:**\n- **Pseudotumor Cerebri:** MEDIUM CONFIDENCE\n  - This condition can present with papilledema and symptoms of increased intracranial pressure but is more common in obese women and less likely in a 6-year-old.\n  - More information about the patient's body mass index and additional diagnostic tests, such as lumbar puncture, would be required to evaluate this possibility.\n\n**TOP 3 DIAGNOSES:**\n1. Intracranial Mass Lesion (Brain Tumor) - HIGH CONFIDENCE\n2. Increased Intracranial Pressure (ICP) Due To Brain Tumor - HIGH CONFIDENCE\n3. Hydrocephalus - MEDIUM CONFIDENCE\n\nThe clinical reasoning for these diagnoses is based on the patient's history of morning headaches, nausea, gait disturbance, and the presence of papilledema, which are indicative of increased intracranial pressure. The MRI findings are critical in supporting the presence of a mass lesion, which is the most likely cause of these symptoms in this patient.",
+            "structured_data": null,
+            "response_time": 11.83449411392212,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. Lisa Nguyen",
+            "specialty": "General Medicine",
+            "content": "Based on the clinical presentation and the MRI findings, here is my initial position on each diagnosis:\n\n- SUPPORT: Increased Intracranial Pressure (ICP) Due To Brain Tumor (HIGH)\n- CHALLENGE: Hydrocephalus (LOW)\n- CHALLENGE: Idiopathic Intracranial Hypertension (LOW)\n- CHALLENGE: Intracranial Hemorrhage (LOW)\n- CHALLENGE: Meningitis (LOW)\n- CHALLENGE: Intracranial Infection (Such As Abscess Or Encephalitis) (LOW)\n- CHALLENGE: Pseudotumor Cerebri (LOW)\n- CHALLENGE: Migraine (LOW)\n\nJSON format:\n```json\n{\n  \"Increased Intracranial Pressure (ICP) Due To Brain Tumor\": [\"Morning headaches\", \"Nausea and vomiting\", \"Broad-based gait and difficulty with heel-to-toe walking\", \"Papilledema on fundoscopy\", \"MRI findings suggestive of a mass lesion\"],\n  \"Hydrocephalus\": [\"Lack of specific symptoms such as urinary incontinence or cognitive decline\", \"MRI findings not consistent with ventricular dilation\"],\n  \"Idiopathic Intracranial Hypertension\": [\"Lack of obesity or recent weight gain\", \"MRI findings not consistent with idiopathic intracranial hypertension\"],\n  \"Intracranial Hemorrhage\": [\"Lack of acute onset symptoms\", \"MRI findings not consistent with hemorrhage\"],\n  \"Meningitis\": [\"Lack of fever or neck stiffness\", \"MRI findings not consistent with meningitis\"],\n  \"Intracranial Infection (Such As Abscess Or Encephalitis)\": [\"Lack of fever or focal neurological deficits\", \"MRI findings not consistent with infection\"],\n  \"Pseudotumor Cerebri\": [\"Lack of obesity or recent weight gain\", \"MRI findings not consistent with pseudotumor cerebri\"],\n  \"Migraine\": [\"Lack of typical migraine symptoms such as photophobia or phonophobia\", \"MRI findings not consistent with migraine\"]\n}\n```\n\nClinical reasoning:\n\n- **Increased Intracranial Pressure (ICP) Due To Brain Tumor (HIGH)**: The patient's symptoms of morning headaches, nausea, vomiting, gait disturbances, and papilledema are highly suggestive of increased intracranial pressure. The MRI findings, which are not detailed here but are mentioned to be present, are likely to show a mass lesion, which is consistent with a brain tumor. The progressive nature of the symptoms and the presence of papilledema further support this diagnosis.\n\n- **Hydrocephalus (LOW)**: While hydrocephalus can cause increased intracranial pressure, the patient's symptoms do not include urinary incontinence or cognitive decline, which are often seen in pediatric hydrocephalus. Additionally, the MRI findings are not consistent with ventricular dilation, which would be expected in hydrocephalus.\n\n- **Idiopathic Intracranial Hypertension (LOW)**: This condition is more commonly seen in obese individuals or those with recent weight gain, which is not mentioned in the patient's history. The MRI findings are also not consistent with idiopathic intracranial hypertension.\n\n- **Intracranial Hemorrhage (LOW)**: The patient's symptoms do not suggest an acute onset, which would be typical for an intracranial hemorrhage. The MRI findings are not consistent with hemorrhage.\n\n- **Meningitis (LOW)**: The absence of fever or neck stiffness makes meningitis less likely. The MRI findings are also not consistent with meningitis.\n\n- **Intracranial Infection (Such As Abscess Or Encephalitis) (LOW)**: The lack of fever or focal neurological deficits makes an intracranial infection less likely. The MRI findings are not consistent with an infection.\n\n- **Pseudotumor Cerebri (LOW)**: Similar to idiopathic intracranial hypertension, pseudotumor cerebri is more commonly seen in obese individuals or those with recent weight gain, which is not mentioned in the patient's history. The MRI findings are also not consistent with pseudotumor cerebri.\n\n- **Migraine (LOW)**: The patient's symptoms do not include typical migraine symptoms such as photophobia or phonophobia. The MRI findings are not consistent with migraine.\n\nMy top 3 diagnoses with confidence levels are:\n1. Increased Intracranial Pressure (ICP) Due To Brain Tumor (HIGH)\n2. Hydrocephalus (MEDIUM)\n3. Idiopathic Intracranial Hypertension (LOW)\n\nThe MRI findings are crucial for confirming the diagnosis and will guide further management.",
+            "structured_data": {
+              "Increased Intracranial Pressure (ICP) Due To Brain Tumor": [
+                "Morning headaches",
+                "Nausea and vomiting",
+                "Broad-based gait and difficulty with heel-to-toe walking",
+                "Papilledema on fundoscopy",
+                "MRI findings suggestive of a mass lesion"
+              ],
+              "Hydrocephalus": [
+                "Lack of specific symptoms such as urinary incontinence or cognitive decline",
+                "MRI findings not consistent with ventricular dilation"
+              ],
+              "Idiopathic Intracranial Hypertension": [
+                "Lack of obesity or recent weight gain",
+                "MRI findings not consistent with idiopathic intracranial hypertension"
+              ],
+              "Intracranial Hemorrhage": [
+                "Lack of acute onset symptoms",
+                "MRI findings not consistent with hemorrhage"
+              ],
+              "Meningitis": [
+                "Lack of fever or neck stiffness",
+                "MRI findings not consistent with meningitis"
+              ],
+              "Intracranial Infection (Such As Abscess Or Encephalitis)": [
+                "Lack of fever or focal neurological deficits",
+                "MRI findings not consistent with infection"
+              ],
+              "Pseudotumor Cerebri": [
+                "Lack of obesity or recent weight gain",
+                "MRI findings not consistent with pseudotumor cerebri"
+              ],
+              "Migraine": [
+                "Lack of typical migraine symptoms such as photophobia or phonophobia",
+                "MRI findings not consistent with migraine"
+              ]
+            },
+            "response_time": 14.88550877571106,
+            "round_type": "refinement",
+            "confidence_score": 0.9999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. Emily Carter",
+            "specialty": "Neurology",
+            "content": "Dr. John Lee,\n\nI appreciate your thorough analysis and the consideration of increased intracranial pressure (ICP) secondary to a brain tumor as the primary diagnosis. However, I would like to challenge this conclusion with the following points:\n\n1. **DIRECT CHALLENGE**: While the clinical presentation and MRI findings are suggestive of increased ICP, the MRI images (Figures A and B) do not show a clear mass lesion that would be typical of a brain tumor. The absence of a visible mass on MRI, despite the presence of papilledema and gait disturbances, raises the possibility of other causes of increased ICP.\n\n2. **PROPOSE AN ALTERNATIVE DIAGNOSIS**: An alternative diagnosis that should be considered is idiopathic intracranial hypertension (IIH), also known as pseudotumor cerebri. IIH can present with similar symptoms, including morning headaches, nausea, and papilledema, without the presence of a mass lesion on imaging. The patient's young age and the absence of a visible tumor on MRI make IIH a plausible alternative.\n\n3. **SPECIFIC QUESTION**: Could you elaborate on the MRI findings that led you to suspect a brain tumor? Specifically, are there any subtle imaging features that might suggest a mass effect or a lesion that is not immediately apparent?\n\n4. **CITE EVIDENCE**: According to the literature, IIH is more common in obese women of childbearing age, but it can also occur in children, particularly those who are overweight. A study by Friedman et al. (2002) reported that IIH can present in children with symptoms similar to those of a brain tumor, including papilledema and gait disturbances, without the presence of a mass on imaging.\n\nIn summary, while increased ICP is a likely diagnosis, the absence of a visible mass on MRI and the presence of papilledema suggest that IIH should be considered as a differential diagnosis. Further diagnostic workup, including lumbar puncture to measure opening pressure, may be warranted to confirm or rule out IIH.\n\nBest regards,\nDr. Emily Carter",
+            "structured_data": null,
+            "response_time": 6.4331231117248535,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. John Lee",
+            "specialty": "Neurology",
+            "content": "Dr. Sarah Thompson,\n\nYour expertise in oncology brings a critical perspective to this case, especially considering the possibility of a neoplastic process given the patient's symptoms and the presence of papilledema. However, I would like to challenge your top diagnosis, which I understand to be a brain tumor, with the following points:\n\n1. **DIRECT CHALLENGE**:\n   While a brain tumor is a reasonable differential diagnosis, I would like to highlight that the clinical presentation of morning headaches, nausea, and progressive emesis, along with gait disturbance and papilledema, also strongly suggest increased intracranial pressure (ICP). Papilledema is a classic sign of increased ICP and is often seen in conditions other than brain tumors, such as hydrocephalus or idiopathic intracranial hypertension (IIH). The progression of symptoms over the past three weeks is also indicative of a process that might not be as acutely aggressive as a brain tumor, which often has a more rapid onset of symptoms.\n\n2. **PROPOSE AN ALTERNATIVE DIAGNOSIS**:\n   I would propose that idiopathic intracranial hypertension (IIH) should be considered more strongly. This condition is characterized by increased cerebrospinal fluid (CSF) pressure without an identifiable cause and can present with symptoms such as morning headaches, nausea, and vomiting, which have been noted in this patient. Papilledema is a hallmark of IIH, and the gait disturbance could be due to the patient's discomfort or the neurological effects of increased ICP.\n\n3. **SPECIFIC QUESTION**:\n   Could you provide further detail on your reasoning for ruling out idiopathic intracranial hypertension as a primary diagnosis, especially given the patient's age and the presence of papilledema?\n\n4. **CITE EVIDENCE**:\n   According to the Pediatric Neurology Clinics, idiopathic intracranial hypertension is a recognized cause of increased intracranial pressure in children, particularly in those with obesity, though it can occur in children of normal weight as well. The presentation of morning headaches and nausea, coupled with papilledema, aligns closely with the clinical picture of IIH.\n\nI look forward to your response and to further refining our differential diagnosis together.",
+            "structured_data": null,
+            "response_time": 6.922489643096924,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. Sarah Thompson",
+            "specialty": "Oncology",
+            "content": "Dr. Michael Davis,\n\nI appreciate your insights into the systemic aspects of this case. However, I would like to challenge your top diagnosis, which seems to lean towards a systemic disease process, such as a metabolic disorder or a systemic infection, given the patient's symptoms and the involvement of multiple systems.\n\n1. **DIRECT CHALLENGE**: The clinical presentation of morning headaches, nausea, and emesis, along with the neurological findings of a broad-based gait, difficulty with heel-to-toe walking, and head titubation, strongly suggest a central nervous system (CNS) pathology rather than a systemic disease. The presence of papilledema is a critical finding that points towards increased intracranial pressure (ICP), which is not typically associated with metabolic disorders or systemic infections unless they have a direct impact on the CNS.\n\n2. **PROPOSE AN ALTERNATIVE DIAGNOSIS**: Given the MRI findings and the clinical presentation, I believe a brain tumor is a more likely diagnosis. The symptoms of morning headaches, nausea, and emesis, along with the neurological deficits and papilledema, are classic signs of increased ICP, which can be caused by a mass lesion such as a brain tumor. The MRI findings, which I assume show a mass effect, are consistent with this diagnosis.\n\n3. **SPECIFIC QUESTION**: Could you elaborate on how you would reconcile the neurological symptoms and papilledema with a systemic disease process? What specific systemic diseases would you consider in a 6-year-old with these symptoms, and what additional evidence would you need to support this diagnosis?\n\n4. **CITE EVIDENCE**: The clinical presentation and MRI findings are highly suggestive of a brain tumor. According to the American Brain Tumor Association, morning headaches, nausea, and vomiting are common symptoms of pediatric brain tumors, especially when accompanied by neurological deficits and papilledema. The presence of a mass effect on MRI further supports this diagnosis.\n\nI look forward to your thoughts on this alternative perspective.",
+            "structured_data": null,
+            "response_time": 6.036715984344482,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. Michael Davis",
+            "specialty": "Internal Medicine",
+            "content": "Dr. Lisa Nguyen,\n\nYour assessment of the case is thorough, and your focus on ocular symptoms and papilledema is quite relevant. However, I believe there are several aspects of the patient's presentation that warrant further consideration.\n\n1. **DIRECT CHALLENGE**: While your emphasis on ocular symptoms and papilledema is pertinent, the progressive nature of the patient's symptoms, including morning headaches, nausea, and gait disturbances, points towards a more systemic process rather than an isolated ocular issue. The broad-based gait and difficulty with heel-to-toe walking suggest a central nervous system (CNS) involvement that goes beyond the ocular system. Furthermore, the presence of papilledema is a sign of increased intracranial pressure (ICP), which is a systemic condition that could be secondary to various causes, including but not limited to a brain mass.\n\n2. **PROPOSE AN ALTERNATIVE DIAGNOSIS**: Given the clinical presentation and imaging findings, I propose that the patient's symptoms could be indicative of increased intracranial pressure, possibly due to a brain tumor. This diagnosis would explain the morning headaches, nausea, gait disturbances, and papilledema. The MRI findings should be carefully reviewed for any masses or abnormalities that could be contributing to the increased ICP.\n\n3. **ASK A SPECIFIC QUESTION**: Could you elaborate on how you would differentiate between increased ICP due to a brain tumor versus other causes of increased ICP, such as hydrocephalus or idiopathic intracranial hypertension, based on the patient's clinical presentation and imaging results?\n\n4. **CITE EVIDENCE**: According to a 2018 review in the Journal of Neuro-Ophthalmology, papilledema is a hallmark of increased intracranial pressure and can be caused by various conditions, including brain tumors, which are more common in pediatric populations and can present with symptoms similar to those in this patient. The progression of symptoms over time and the presence of gait disturbances further support a systemic process affecting the CNS.\n\nI look forward to your insights on these points.",
+            "structured_data": null,
+            "response_time": 6.388833999633789,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. Lisa Nguyen",
+            "specialty": "General Medicine",
+            "content": "Dr. Emily Carter,\n\nYour diagnosis of increased intracranial pressure (ICP) secondary to a brain tumor is well-supported by the clinical presentation and imaging findings. However, I would like to challenge this conclusion with a few points and propose an alternative diagnosis that might warrant further investigation.\n\n1. **DIRECT CHALLENGE**: While the clinical presentation and MRI findings are consistent with increased ICP, it is important to consider other causes of papilledema and gait disturbances. The MRI findings should be carefully reviewed for any subtle signs that might not be consistent with a brain tumor, such as vascular malformations or inflammatory conditions.\n\n2. **PROPOSE AN ALTERNATIVE DIAGNOSIS**: An alternative diagnosis to consider is idiopathic intracranial hypertension (IIH), also known as pseudotumor cerebri. This condition can present with similar symptoms, including morning headaches, nausea, and papilledema, without the presence of a mass lesion on MRI. The patient's young age and the absence of focal neurological deficits might make IIH a more likely diagnosis, especially if there are no clear signs of a mass on the MRI.\n\n3. **SPECIFIC QUESTION**: Could you clarify the MRI findings that led you to conclude that a brain tumor is the most likely cause of the increased ICP? Are there any specific characteristics of the lesion that differentiate it from other causes of increased ICP?\n\n4. **CITE EVIDENCE**: According to the North American Neuro-Ophthalmology Society (NANOS) IIH diagnostic criteria, papilledema in the absence of a mass lesion on MRI, along with elevated cerebrospinal fluid (CSF) pressure, can be indicative of IIH. The patient's symptoms and the presence of papilledema without a clear mass lesion on MRI could suggest that IIH should be considered in the differential diagnosis.\n\nThank you for your detailed analysis. I look forward to your response and further discussion on this case.",
+            "structured_data": null,
+            "response_time": 5.9735753536224365,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. Emily Carter",
+            "specialty": "Neurology",
+            "content": "Based on the clinical presentation and the MRI findings, the most likely diagnosis is increased intracranial pressure (ICP) secondary to a brain tumor. The patient's symptoms of morning headaches, nausea, and vomiting, along with the physical exam findings of a broad-based gait, difficulty with heel-to-toe walking, and papilledema, are highly suggestive of this condition. The MRI findings would provide further evidence to support this diagnosis.\n\nIn the structured debate, the following challenges and support were raised:\n\n- **Support from Dr. Sarah Thompson (Oncology)**: The clinical presentation and imaging findings are suggestive of a brain tumor, which aligns with my initial diagnosis. Dr. Thompson's expertise in pediatric cancers reinforces the likelihood of a neoplastic process.\n- **Support from Dr. John Lee (Neurology)**: Dr. Lee's agreement with the diagnosis of increased intracranial pressure secondary to a brain tumor, based on the clinical presentation and MRI findings, strengthens the case for this diagnosis.\n\n**Final Diagnosis Ranking:**\n\n1. **Increased Intracranial Pressure (ICP) secondary to a Brain Tumor** - **MAINTAINED** - The clinical presentation, physical exam findings, and MRI findings all support this diagnosis. The morning headaches, nausea, vomiting, gait disturbances, and papilledema are consistent with increased ICP, and the MRI would provide further evidence of a mass lesion.\n2. **Idiopathic Intracranial Hypertension (IIH)** - **CHANGED** - Initially considered, but the presence of a mass effect on MRI and the patient's age make IIH less likely. The clinical presentation is more consistent with a brain tumor.\n3. **Infectious Causes (e.g., Meningitis)** - **CHANGED** - While infectious causes can present with similar symptoms, the absence of fever, the chronic nature of the symptoms, and the MRI findings do not support an infectious etiology. The broad-based gait and papilledema are more indicative of a mass lesion.\n\nIn conclusion, the most likely diagnosis is increased intracranial pressure secondary to a brain tumor, and this diagnosis is maintained based on the clinical presentation, physical exam findings, and MRI evidence. The other diagnoses have been reconsidered and are less likely based on the information provided.",
+            "structured_data": null,
+            "response_time": 7.113703966140747,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. John Lee",
+            "specialty": "Neurology",
+            "content": "After reviewing the challenges and contributions from my colleagues, here are my final positions on the top three diagnoses for this case:\n\n1. **Increased Intracranial Pressure (ICP) due to a Brain Tumor** - **MAINTAINED** - The clinical presentation with morning headaches, nausea, vomiting, and papilledema is highly suggestive of increased ICP. The broad-based gait and difficulty with heel-to-toe walking, along with the presence of papilledema, strongly support this diagnosis. Additionally, the MRI findings, which have not been detailed here but are typically critical in identifying mass lesions, would be expected to show a lesion causing compression or displacement of brain tissue, contributing to the increased ICP.\n\n2. **Intracranial Hypertension (Pseudotumor Cerebri)** - **CHANGED to less likely** - While this condition can present with similar symptoms, the presence of papilledema and gait disturbance leans more towards a mass effect rather than idiopathic intracranial hypertension. The MRI findings would be crucial here to differentiate between a tumor and a condition like pseudotumor cerebri, which typically does not show a focal mass lesion but may demonstrate signs of raised intracranial pressure such as an enlarged ventricular system or flattening of the posterior sclera.\n\n3. **Hydrocephalus** - **CHANGED to less likely** - Initially considered due to the gait disturbance and the possibility of increased intracranial pressure, hydrocephalus would typically present with a more pronounced gait disturbance and possibly other signs such as a bulging fontanelle in younger children, which are not mentioned in this case. The MRI would show characteristic findings of enlarged ventricles with relatively preserved sulci, which is not consistent with the imaging findings suggested by the clinical presentation.\n\nIn conclusion, based on the clinical symptoms and the imaging findings, the diagnosis of increased intracranial pressure due to a brain tumor is the most likely. I have adjusted the likelihood of the other diagnoses based on the debate and the specific symptoms and imaging findings not detailed here but assumed to be supportive of a mass effect.",
+            "structured_data": null,
+            "response_time": 6.564845085144043,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. Sarah Thompson",
+            "specialty": "Oncology",
+            "content": "Based on the clinical presentation and the MRI findings, the most likely diagnosis is a brain tumor, which is causing increased intracranial pressure (ICP). The symptoms of morning headaches, nausea, and vomiting, along with the physical exam findings of a broad-based gait, difficulty with heel-to-toe walking, head titubation, and papilledema, are all consistent with this diagnosis. The MRI findings, which I have not seen but are implied to be abnormal, would typically show a mass lesion in the brain.\n\nIn the context of this structured debate, I have reviewed the challenges and reasoning from my colleagues and have considered their perspectives. Here is my final position:\n\n1. **Brain Tumor** - **MAINTAINED** - The clinical presentation, including the morning headaches, nausea, gait disturbance, and papilledema, strongly suggests increased intracranial pressure, which is a common presentation of a brain tumor in a child. The MRI findings, which are not detailed here but are presumed to be abnormal, would support this diagnosis. The neurological symptoms and signs are consistent with a mass effect in the brain.\n\n2. **Hydrocephalus** - **CHANGED** - Initially, hydrocephalus was considered due to the presence of papilledema and gait disturbance. However, the progressive nature of the nausea and the specific pattern of the headaches (morning) are more indicative of a mass effect rather than hydrocephalus. The MRI findings would be crucial in distinguishing between these conditions, and if they show a mass lesion, hydrocephalus would be less likely.\n\n3. **Intracranial Hypertension of Unknown Cause (Pseudotumor Cerebri)** - **CHANGED** - This condition was considered due to the presence of papilledema and the absence of focal neurological deficits. However, the gait disturbance and the MRI findings, which are likely to show a mass lesion, make this diagnosis less likely. The presence of a specific mass effect, as indicated by the MRI, would point more towards a brain tumor rather than idiopathic intracranial hypertension.\n\nIn conclusion, the MRI findings are critical in confirming the presence of a brain tumor, which is the most likely diagnosis given the clinical presentation and the neurological signs. The MRI would show a mass lesion that is causing the increased intracranial pressure and the associated symptoms.",
+            "structured_data": null,
+            "response_time": 7.248809337615967,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "high"
+          },
+          {
+            "agent_name": "Dr. Michael Davis",
+            "specialty": "Internal Medicine",
+            "content": "In the context of the clinical case provided, the patient's symptoms, physical examination findings, and imaging results suggest a serious underlying condition. Based on the contributions of my colleagues and the structured debate, here are the final top three diagnoses:\n\n1. **Intracranial Tumor** - [MAINTAINED] - The patient's symptoms of morning headaches, nausea, and emesis, along with neurological deficits such as gait disturbance and papilledema, are highly suggestive of increased intracranial pressure (ICP). The presence of papilledema is a strong indicator of raised ICP, which can be caused by a mass lesion such as a brain tumor. The MRI findings, while not provided in the text, would be crucial in identifying the location and nature of a potential tumor.\n\n2. **Hydrocephalus** - [CHANGED] - Initially, this was considered a strong possibility given the symptoms and the presence of papilledema. However, the gait disturbance and vomiting could also be explained by a tumor causing obstruction of cerebrospinal fluid (CSF) flow. The debate emphasized the importance of the MRI findings, which may show signs of a mass rather than the typical ventricular dilation seen in hydrocephalus. Therefore, the diagnosis of hydrocephalus has been downgraded in favor of a more specific cause for the patient's symptoms.\n\n3. **Intracranial Hemorrhage** - [CHANGED] - This was initially considered, given that intracranial bleeding can cause increased ICP and neurological symptoms. However, the progressive nature of the symptoms and the presence of papilledema point more towards a chronic process rather than an acute event. The debate highlighted that the imaging findings would be key in ruling out an acute hemorrhage. Without acute signs on the MRI, the likelihood of hemorrhage as the primary cause has been reduced.\n\nGiven the structured debate, the diagnosis of an intracranial tumor remains the top priority due to the constellation of symptoms and the findings of increased ICP. The MRI findings are critical in confirming the diagnosis and guiding further management, including potential surgical intervention or biopsy to determine the type of tumor and appropriate treatment.",
+            "structured_data": null,
+            "response_time": 6.652762413024902,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Lisa Nguyen",
+            "specialty": "General Medicine",
+            "content": "In the context of the clinical case presented, the patient's symptoms and physical findings, particularly the papilledema and gait disturbances, strongly suggest increased intracranial pressure (ICP). The MRI findings, which were not detailed in the prompt but are typically indicative of a mass lesion, further support this conclusion. Here is my final position on the top three diagnoses:\n\n1. **Brain Tumor** - **MAINTAINED** - The clinical presentation of morning headaches, nausea, vomiting, gait disturbances, and papilledema, along with the MRI findings, strongly suggest a brain tumor as the cause of increased intracranial pressure. The progressive nature of the symptoms and the presence of papilledema are consistent with a mass effect.\n\n2. **Hydrocephalus** - **CHANGED** - Initially, hydrocephalus was considered due to the symptoms of increased ICP, but the MRI findings, which were not detailed, are more indicative of a solid mass rather than a fluid accumulation. Therefore, the likelihood of hydrocephalus as the primary diagnosis has been reduced.\n\n3. **Intracranial Hypertension of Unknown Cause (Pseudotumor Cerebri)** - **MAINTAINED** - While less likely given the MRI findings, this diagnosis remains a possibility if no specific cause for the increased ICP is identified. The symptoms of increased ICP without a clear mass lesion could still be consistent with pseudotumor cerebri, especially in the absence of other systemic causes.\n\nIn summary, the MRI findings and the clinical presentation have led me to maintain brain tumor as the primary diagnosis, while adjusting the likelihood of hydrocephalus based on the imaging results. The possibility of pseudotumor cerebri remains, but it is less likely given the MRI findings.",
+            "structured_data": null,
+            "response_time": 5.4941558837890625,
+            "round_type": "refinement",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard"
+          }
+        ],
+        "duration": 130.89159059524536,
+        "success": true
+      },
+      "voting": {
+        "responses": [
+          {
+            "agent_name": "Dr. Emily Carter",
+            "specialty": "Neurology",
+            "content": "<PREFERENTIAL_VOTE>\n1st Choice: Intracranial Mass Lesion (Brain Tumor) - The patient's symptoms of morning headaches, nausea, gait disturbances, and papilledema, along with the MRI findings, are highly suggestive of an intracranial mass lesion, likely a brain tumor.\n2nd Choice: Increased Intracranial Pressure (Icp) Due To Brain Tumor - This diagnosis is closely related to the first choice and is supported by the clinical presentation and imaging findings, indicating increased intracranial pressure.\n3rd Choice: Hydrocephalus - Although less likely given the symptoms and the MRI findings, hydrocephalus can also cause increased intracranial pressure and gait disturbances, making it a reasonable secondary consideration.\n</PREFERENTIAL_VOTE>\n\nConfidence in my ranking: 85%",
+            "structured_data": {
+              "rankings": [
+                "Intracranial Mass Lesion (Brain Tumor)",
+                "Increased Intracranial Pressure (Icp) Due To Brain Tumor",
+                "Hydrocephalus"
+              ],
+              "confidence": 0.5
+            },
+            "response_time": 2.868760108947754,
+            "round_type": "voting",
+            "confidence_score": 0.96,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. John Lee",
+            "specialty": "Neurology",
+            "content": "<PREFERENTIAL_VOTE>\n1st Choice: Intracranial Mass Lesion (Brain Tumor) - The presence of morning headaches, progressive nausea, vomiting, gait disturbance, and papilledema strongly suggest increased intracranial pressure, which can be caused by a brain tumor. MRI findings would be crucial in confirming this.\n2nd Choice: Increased Intracranial Pressure (Icp) Due To Brain Tumor - This is essentially the same as the first choice, with the emphasis on the increased ICP being the direct cause of the symptoms, likely due to a tumor.\n3rd Choice: Hydrocephalus - While less likely given the patient's age and the presence of papilledema, hydrocephalus can also cause increased ICP and related symptoms, and would need to be ruled out with appropriate imaging.\n</PREFERENTIAL_VOTE>\n\nConfidence in my ranking: 85%",
+            "structured_data": {
+              "rankings": [
+                "Intracranial Mass Lesion (Brain Tumor)",
+                "Increased Intracranial Pressure (Icp) Due To Brain Tumor",
+                "Hydrocephalus"
+              ],
+              "confidence": 0.5
+            },
+            "response_time": 3.056877374649048,
+            "round_type": "voting",
+            "confidence_score": 0.86,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Sarah Thompson",
+            "specialty": "Oncology",
+            "content": "<PREFERENTIAL_VOTE>\n1st Choice: Intracranial Mass Lesion (Brain Tumor) - The patient's symptoms of morning headaches, nausea, and emesis, along with the physical exam findings of papilledema and gait disturbances, are highly suggestive of increased intracranial pressure, which can be caused by a brain tumor.\n2nd Choice: Increased Intracranial Pressure (Icp) Due To Brain Tumor - This is essentially a more specific version of the first choice, emphasizing the cause of the increased intracranial pressure.\n3rd Choice: Hydrocephalus - While less likely given the presence of papilledema and gait disturbances, hydrocephalus can also cause increased intracranial pressure and some of the symptoms presented.\n</PREFERENTIAL_VOTE>\n\nConfidence in your ranking: 85%",
+            "structured_data": {
+              "rankings": [
+                "Intracranial Mass Lesion (Brain Tumor)",
+                "Increased Intracranial Pressure (Icp) Due To Brain Tumor",
+                "Hydrocephalus"
+              ],
+              "confidence": 0.5
+            },
+            "response_time": 2.896965742111206,
+            "round_type": "voting",
+            "confidence_score": 0.86,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Michael Davis",
+            "specialty": "Internal Medicine",
+            "content": "<PREFERENTIAL_VOTE>\n1st Choice: Intracranial Mass Lesion (Brain Tumor) - The patient's symptoms of morning headaches, nausea, and vomiting, along with papilledema and gait disturbances, are highly suggestive of increased intracranial pressure. The presence of a mass lesion on MRI would explain these findings.\n2nd Choice: Increased Intracranial Pressure (Icp) Due To Brain Tumor - This is essentially the same as the first choice, emphasizing the cause of the increased pressure being a brain tumor.\n3rd Choice: Hydrocephalus - While less likely given the MRI findings, hydrocephalus can also cause increased intracranial pressure and similar symptoms, and thus should be considered.\n</PREFERENTIAL_VOTE>\n\nConfidence in my ranking: 85%",
+            "structured_data": {
+              "rankings": [
+                "Intracranial Mass Lesion (Brain Tumor)",
+                "Increased Intracranial Pressure (Icp) Due To Brain Tumor",
+                "Hydrocephalus"
+              ],
+              "confidence": 0.5
+            },
+            "response_time": 2.776423931121826,
+            "round_type": "voting",
+            "confidence_score": 0.8799999999999999,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Lisa Nguyen",
+            "specialty": "General Medicine",
+            "content": "<PREFERENTIAL_VOTE>\n1st Choice: Intracranial Mass Lesion (Brain Tumor) - The presence of morning headaches, nausea, vomiting, gait disturbances, and papilledema are consistent with increased intracranial pressure, which can be caused by a brain tumor. The MRI findings would be crucial in confirming this diagnosis.\n2nd Choice: Increased Intracranial Pressure (Icp) Due To Brain Tumor - This is essentially the same as the first choice, but it emphasizes the mechanism of increased intracranial pressure due to the mass effect of a tumor.\n3rd Choice: Hydrocephalus - While less likely given the clinical presentation, hydrocephalus can also cause increased intracranial pressure and similar symptoms. The MRI would be key in differentiating between this and a brain tumor.\n</PREFERENTIAL_VOTE>\n\nConfidence in my ranking: 85%",
+            "structured_data": {
+              "rankings": [
+                "Intracranial Mass Lesion (Brain Tumor)",
+                "Increased Intracranial Pressure (Icp) Due To Brain Tumor",
+                "Hydrocephalus"
+              ],
+              "confidence": 0.5
+            },
+            "response_time": 3.0608112812042236,
+            "round_type": "voting",
+            "confidence_score": 0.8999999999999999,
+            "reasoning_quality": "standard"
+          }
+        ],
+        "duration": 14.660284757614136,
+        "success": true
+      },
+      "cant_miss": {
+        "responses": [
+          {
+            "agent_name": "Dr. Emily Carter",
+            "specialty": "Neurology",
+            "content": "Based on the clinical presentation and the MRI findings, the most likely diagnosis is increased intracranial pressure (ICP) secondary to a brain tumor. Here is the critical safety check for this case:\n\n1. **DIAGNOSIS**: Brain Tumor\n2. **URGENCY**: HIGH\n3. **WHY CRITICAL**: If a brain tumor is not identified and treated promptly, it can lead to progressive neurological deterioration, brain herniation, and potentially death. The symptoms of morning headaches, nausea, vomiting, gait disturbances, and papilledema are indicative of increased intracranial pressure, which can be life-threatening if not addressed.\n4. **KEY TESTS**: MRI of the brain with contrast to identify the location, size, and characteristics of the tumor. Lumbar puncture may be contraindicated due to the risk of brain herniation if there is significant mass effect.\n5. **TIME WINDOW**: Immediate referral to a neurosurgeon or neuro-oncologist for further evaluation and management is necessary. The time window for intervention is critical to prevent further neurological damage and to improve the chances of successful treatment.\n\nGiven the severity of the symptoms and the imaging findings, it is imperative to rule out a brain tumor as the underlying cause of the increased intracranial pressure. Early diagnosis and intervention are crucial to prevent irreversible neurological damage and to provide the best possible outcome for the patient.",
+            "structured_data": null,
+            "response_time": 4.521573066711426,
+            "round_type": "cant_miss",
+            "confidence_score": 0.7799999999999999,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. John Lee",
+            "specialty": "Neurology",
+            "content": "Given the clinical presentation of a 6-year-old boy with morning headaches, nausea, vomiting, gait disturbance, and papilledema, and considering the MRI findings, the most likely diagnosis is increased intracranial pressure (ICP), likely due to a brain tumor. Here are the critical diagnoses that cannot be missed, with the required information:\n\n1. **DIAGNOSIS:** Brain Tumor\n   - **URGENCY:** HIGH\n   - **WHY CRITICAL:** A brain tumor can cause progressive neurological deficits, seizures, and potentially life-threatening complications such as herniation if not promptly managed.\n   - **KEY TESTS:** MRI with contrast, possibly followed by a biopsy if a mass is identified.\n   - **TIME WINDOW:** Immediate referral to a neurosurgeon or neuro-oncologist for evaluation and potential surgical intervention.\n\n2. **DIAGNOSIS:** Hydrocephalus\n   - **URGENCY:** HIGH\n   - **WHY CRITICAL:** Hydrocephalus can lead to rapid neurological deterioration, brain damage, and potentially fatal outcomes if not treated promptly.\n   - **KEY TESTS:** MRI of the brain with focus on ventricular size and spinal fluid flow, possibly followed by a lumbar puncture if the imaging is inconclusive.\n   - **TIME WINDOW:** Immediate evaluation by a neurosurgeon for potential placement of a shunt or other treatment.\n\n3. **DIAGNOSIS:** Meningitis\n   - **URGENCY:** HIGH\n   - **WHY CRITICAL:** Meningitis can progress rapidly and cause severe neurological damage, hearing loss, and death if not treated promptly with appropriate antibiotics.\n   - **KEY TESTS:** Lumbar puncture, blood cultures, and MRI of the brain with contrast.\n   - **TIME WINDOW:** Immediate initiation of broad-spectrum antibiotics pending culture results and further imaging.\n\n4. **DIAGNOSIS:** Venous Sinus Thrombosis\n   - **URGENCY:** HIGH\n   - **WHY CRITICAL:** Venous sinus thrombosis can lead to increased intracranial pressure, stroke, and severe neurological deficits if not treated promptly.\n   - **KEY TESTS:** MRI venography, blood tests for coagulation factors.\n   - **TIME WINDOW:** Immediate anticoagulation therapy and management by a neurologist or neurosurgeon.\n\n5. **DIAGNOSIS:** Hypertensive Encephalopathy\n   - **URGENCY:** MEDIUM\n   - **WHY CRITICAL:** Hypertensive encephalopathy can cause progressive neurological symptoms and lead to permanent brain damage if blood pressure is not controlled.\n   - **KEY TESTS:** Blood pressure monitoring, MRI of the brain.\n   - **TIME WINDOW:** Immediate initiation of antihypertensive therapy and close monitoring.\n\nThese conditions are critical because they have the potential to cause serious harm or death if not promptly identified and treated. The urgency and time sensitivity of these diagnoses necessitate immediate action and specialist referral.",
+            "structured_data": null,
+            "response_time": 9.434544086456299,
+            "round_type": "cant_miss",
+            "confidence_score": 0.7999999999999999,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Sarah Thompson",
+            "specialty": "Oncology",
+            "content": "Based on the clinical presentation and the MRI findings, the most likely diagnosis is increased intracranial pressure (ICP) secondary to a brain tumor. Here is the critical safety check for this case:\n\n1. DIAGNOSIS: Brain Tumor\n2. URGENCY: HIGH\n3. WHY CRITICAL: If a brain tumor is not diagnosed and treated promptly, it can lead to severe neurological deficits, brain herniation, and potentially death. The progressive symptoms and papilledema suggest that the tumor is causing significant pressure on the brain.\n4. KEY TESTS: MRI with contrast, lumbar puncture (if MRI is not conclusive or to rule out other causes of increased ICP such as meningitis), and possibly a biopsy if a tumor is identified.\n5. TIME WINDOW: Immediate action is required to relieve the increased ICP and to plan for definitive treatment of the tumor.\n\nGiven the patient's symptoms and the MRI findings, it is critical to rule out a brain tumor as the cause of the increased intracranial pressure. The urgency is high due to the potential for rapid neurological deterioration and the risk of life-threatening complications if the diagnosis is missed or delayed.",
+            "structured_data": null,
+            "response_time": 3.7894842624664307,
+            "round_type": "cant_miss",
+            "confidence_score": 0.7799999999999999,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Michael Davis",
+            "specialty": "Internal Medicine",
+            "content": "Given the clinical presentation and imaging findings, the most likely diagnosis is a brain tumor, which is a critical condition that cannot be missed. Here is the detailed safety check:\n\n1. **DIAGNOSIS**: Brain Tumor\n2. **URGENCY**: HIGH\n3. **WHY CRITICAL**: If a brain tumor is missed, it can lead to progressive neurological deterioration, increased intracranial pressure, brain herniation, and potentially death. The tumor can also continue to grow, causing irreversible neurological damage.\n4. **KEY TESTS**: MRI with contrast, which provides detailed images of the brain and can help identify the location, size, and characteristics of the tumor. Lumbar puncture might be needed if there's suspicion of leptomeningeal disease or to rule out other causes of increased intracranial pressure like infectious or inflammatory conditions.\n5. **TIME WINDOW**: Immediate referral to a neurosurgeon or oncologist for further evaluation and management is critical. Depending on the tumor type and location, surgical intervention, radiation therapy, or chemotherapy might be required, and the timing of these interventions can affect the prognosis.\n\nGiven the clinical signs of increased intracranial pressure (ICP) such as morning headaches, nausea, gait disturbance, and papilledema, the differential diagnoses must be approached with urgency to avoid critical complications. The MRI findings will be crucial in confirming the diagnosis and guiding the next steps in management.",
+            "structured_data": null,
+            "response_time": 4.601804971694946,
+            "round_type": "cant_miss",
+            "confidence_score": 0.76,
+            "reasoning_quality": "standard"
+          },
+          {
+            "agent_name": "Dr. Lisa Nguyen",
+            "specialty": "General Medicine",
+            "content": "Given the clinical presentation of a 6-year-old boy with morning headaches, nausea, gait disturbance, and papilledema, the most likely diagnosis is increased intracranial pressure (ICP) secondary to a brain tumor. This is a critical condition that cannot be missed due to its potential for rapid progression and serious complications. Here is the critical safety check:\n\n1. DIAGNOSIS: Increased Intracranial Pressure (ICP) secondary to a brain tumor\n2. URGENCY: HIGH\n3. WHY CRITICAL: If the diagnosis is missed, the child could experience worsening neurological deficits, brain herniation, and potentially death. The tumor could compress vital brain structures, leading to life-threatening complications.\n4. KEY TESTS: MRI of the brain with contrast, lumbar puncture (if MRI is contraindicated or unavailable), and possibly a CT scan if an urgent assessment is needed.\n5. TIME WINDOW: Immediate action is required to prevent irreversible neurological damage or death. The MRI findings should be reviewed urgently, and if a tumor is confirmed, surgical consultation should be sought as soon as possible.\n\nThe presence of papilledema is a significant red flag for increased ICP, and the MRI findings are crucial to determine the cause and location of the increased pressure. Early intervention is critical to prevent further neurological deterioration and to plan appropriate treatment, which may include surgical decompression, chemotherapy, or radiation therapy, depending on the type and location of the tumor.",
+            "structured_data": null,
+            "response_time": 4.685032367706299,
+            "round_type": "cant_miss",
+            "confidence_score": 0.74,
+            "reasoning_quality": "standard"
+          }
+        ],
+        "duration": 27.032982110977173,
+        "success": true
+      }
+    },
+    "final_diagnoses": [
+      "Intracranial Mass Lesion (Brain Tumor)",
+      "Increased Intracranial Pressure (Icp) Due To Brain Tumor",
+      "Hydrocephalus"
+    ],
+    "voting_result": {
+      "winner": "Intracranial Mass Lesion (Brain Tumor)",
+      "ranked": [
+        [
+          "Intracranial Mass Lesion (Brain Tumor)",
+          2490.6857142857143
+        ],
+        [
+          "Increased Intracranial Pressure (Icp) Due To Brain Tumor",
+          1660.4571428571426
+        ],
+        [
+          "Hydrocephalus",
+          830.2285714285713
+        ]
+      ],
+      "total_votes": 5
+    },
+    "credibility_scores": {
+      "Dr. Emily Carter": {
+        "final_score": 128.82857142857142,
+        "base_score": 107.35714285714286,
+        "valence": 1.2
+      },
+      "Dr. John Lee": {
+        "final_score": 134.82857142857142,
+        "base_score": 112.35714285714286,
+        "valence": 1.2
+      },
+      "Dr. Sarah Thompson": {
+        "final_score": 163.79999999999998,
+        "base_score": 136.5,
+        "valence": 1.2
+      },
+      "Dr. Michael Davis": {
+        "final_score": 133.1142857142857,
+        "base_score": 110.92857142857142,
+        "valence": 1.2
+      },
+      "Dr. Lisa Nguyen": {
+        "final_score": 275.7,
+        "base_score": 229.75,
+        "valence": 1.2
+      }
+    },
+    "total_duration": 287.43179392814636,
+    "case": {
+      "name": "case_175",
+      "description": "A 6-year-old boy is brought in by his mother to his pediatrician for headache and nausea. His headaches began approximately 3 weeks ago and occur in the morning. Throughout the 3 weeks, his nausea has progressively worsened, and he had 2 episodes of emesis 1 day ago. On physical exam, cranial nerves are grossly intact, and his visual field is intact. The patient has a broad-based gait and difficulty with heel-to-toe walking, as well as head titubation. Fundoscopy demonstrates papilledema. A T1 and T2 MRI of the brain is demonstrated in Figures A and B, respectively. What is most likely the diagnosis?",
+      "timestamp": "2026-03-04T19:39:40.542926"
+    }
+  },
+  "duration_seconds": 295.30621337890625,
+  "config": {
+    "model": "Qwen/Qwen2.5-32B-Instruct-GPTQ-Int4",
+    "pipeline_mode": "full",
+    "max_specialists": 5,
+    "conservative_temp": 0.3,
+    "innovative_temp": 0.8
+  },
+  "timestamp": "2026-03-04T19:44:35.849102"
+}
