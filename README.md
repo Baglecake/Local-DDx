@@ -5,29 +5,27 @@
 
 ## Abstract
 
-Local-DDx is a multi-agent AI framework for medical differential diagnosis that addresses diagnostic isolation in resource-limited healthcare settings. The system dynamically generates case-specific specialist teams that collaborate through structured diagnostic rounds, employing sliding context windows to enable genuine epistemic labor division among AI agents.
+Local-DDx is a multi-agent AI framework for medical differential diagnosis designed for **diagnostic isolation in rural and northern healthcare settings**. The system dynamically generates case-specific specialist teams that collaborate through structured diagnostic rounds, employing sliding context windows to enable genuine epistemic labor division among AI agents. All inference runs locally, ensuring patient data never leaves the clinical environment.
 
-Unlike single-model approaches, Local-DDx models the collaborative reasoning process of a multidisciplinary medical team—specialists independently analyze cases, engage in evidence-based debate, challenge consensus through a Devil's Advocate mechanism, and synthesize diagnoses through preferential voting. All inference runs locally, ensuring patient data never leaves the clinical environment.
+Unlike single-model approaches, Local-DDx models the collaborative reasoning process of a multidisciplinary medical team — specialists independently analyze cases, engage in evidence-based debate, challenge consensus through a Devil's Advocate mechanism, and synthesize diagnoses through credibility-weighted preferential voting.
+
+Developed for the **HSIL Hackathon 2026**: *Building High-Value Health Systems: Leveraging AI*.
+
+## Theoretical Grounding
+
+Local-DDx draws on sociological theory to structure agent interaction. Goffman's (1956) distinction between *demeanor* and *deference* maps directly onto the system's architecture: agents demonstrate competence through reasoning quality (demeanor), which the credibility scoring module translates into weighted voting authority (deference). Sacks, Schegloff, and Jefferson's (1974) turn-taking organization structures the 7-round pipeline, ensuring each agent contributes within a defined sequential order. Wu et al. (2025) provide empirical grounding for multi-agent social capability in LLM systems, demonstrating that structured interaction protocols elicit collaborative behaviors absent in single-agent configurations.
 
 <img width="1691" height="949" alt="image" src="https://github.com/user-attachments/assets/2a6aecbb-580c-4351-9ac1-e480aff4015a" />
 
-## Key Innovations
+## Key Features
 
-### Dynamic Specialist Generation
-- **Autonomous agent creation** tailored to each clinical presentation
-- **Unlimited specialty diversity** unconstrained by predefined specialty lists
-- **Dual model architecture** (conservative + innovative) for balanced diagnostic reasoning
-
-### Sliding Context Windows
-- **True collaborative reasoning** where agents see and respond to each other's insights
-- **Context-aware discourse** with later rounds building upon team discussions
-- **Intelligent context filtering** prioritized by round type and agent specialty
-
-### Structured Diagnostic Pipeline
-- **7-round diagnostic sequence** following evidence-based medical reasoning patterns
-- **Devil's Advocate mechanism** for stress-testing diagnostic convergence
-- **Preferential voting with Borda counts** for consensus building
-- **TempoScore metrics** for round-by-round performance assessment
+- **Dynamic specialist generation** — autonomous agent creation tailored to each clinical presentation
+- **7-round diagnostic pipeline** — structured sequence following evidence-based medical reasoning patterns
+- **Sliding context windows** — 5 filter types enabling true collaborative reasoning across rounds
+- **Credibility-weighted Borda count voting** — Dr. Reed assessment of specialist credibility informs consensus
+- **Devil's Advocate mechanism** — stress-testing diagnostic convergence through systematic challenge
+- **Dual-model architecture** — conservative (low temp) + innovative (high temp) for balanced reasoning
+- **Fully local inference** — all patient data stays on-premises via Ollama
 
 ## The 7-Round Diagnostic Process
 
@@ -37,9 +35,20 @@ Unlike single-model approaches, Local-DDx models the collaborative reasoning pro
 | 2. Symptom Management | Immediate triage interventions | Individual |
 | 3. Team Differentials | Independent diagnosis generation | Context-Aware |
 | 4. Master List | Synthesis of team diagnoses | Context-Aware |
-| 5. Refinement & Debate | Evidence-based collaborative discourse | Fully Collaborative |
-| 6. Preferential Voting | Consensus via Borda count | Fully Collaborative |
+| 5. Refinement & Debate | Evidence-based collaborative discourse (3 sub-rounds) | Fully Collaborative |
+| 6. Preferential Voting | Consensus via credibility-weighted Borda count | Fully Collaborative |
 | 7. Can't Miss | Critical diagnosis identification | Context-Aware |
+
+## Benchmark Results
+
+Evaluated on the [Open-XDDx dataset](https://doi.org/10.1038/s44401-025-00015-6) (570 clinical vignettes, 9 specialties). See [benchmark/README.md](benchmark/README.md) for methodology.
+
+| System | Model | Cases | Clinical Recall |
+|--------|-------|-------|-----------------|
+| **Local-DDx v10** | Qwen2.5-32B-GPTQ | 399 | **57.6%** |
+| Zhou Dual-Inf | GPT-4 | 570 | 53.3% |
+
+Local-DDx v10 outperforms Zhou et al.'s GPT-4 system by **+4.3 percentage points** using a 32B open-weight model on a single A100 GPU. No proprietary APIs required.
 
 ## Architecture
 
@@ -47,7 +56,7 @@ Unlike single-model approaches, Local-DDx models the collaborative reasoning pro
 Local-DDx System Architecture
 
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│    ddx_core     │    │   ddx_rounds    │    │  ddx_synthesis  │
+│    ddx_core      │    │   ddx_rounds    │    │  ddx_synthesis  │
 │                 │    │                 │    │                 │
 │ • ModelManager  │────│ • 7 Round Types │────│ • TempoScore    │
 │ • Agent Gen     │    │ • Sliding Ctx   │    │ • Credibility   │
@@ -65,183 +74,84 @@ Local-DDx System Architecture
                     └─────────────────┘    └─────────────────┘
 ```
 
-## Installation
+## Quick Start
 
-### Option A: Full System (CUDA GPU)
+### v10 Full Pipeline (recommended)
 
-For the complete 7-round pipeline with all features:
-
-```bash
-git clone https://github.com/yourusername/Local-DDx.git
-cd Local-DDx
-
-# Install dependencies
-pip install vllm torch transformers pyyaml
-
-# Configure models in v8/config.yaml
-cd v8
-python ddx_runner.py
-```
-
-**Requirements:** CUDA-compatible GPU with 40GB+ VRAM (A100, V100, RTX 4090)
-
-### Option B: Demonstration Version (Apple Silicon)
-
-For a lightweight proof-of-concept on M-series Macs:
+Requires macOS with Apple Silicon and 48GB+ unified memory, or equivalent GPU system.
 
 ```bash
 # Install Ollama from https://ollama.ai
+ollama pull qwen2.5:32b-instruct-q8_0
+
+cd v10_full_pipeline
+source venv/bin/activate
+python3 app.py
+# → http://localhost:7861
+```
+
+### v9 Lightweight Demo
+
+Runs on any Apple Silicon Mac with 16GB+ unified memory.
+
+```bash
 ollama pull llama3.1:8b
 
 cd v9_ollama_ui
 pip install -r requirements.txt
-python app.py
+python3 app.py
+# → http://localhost:7860
 ```
-
-**Requirements:** macOS with Apple Silicon, 16GB+ unified memory
 
 See [v9_ollama_ui/README.md](v9_ollama_ui/README.md) for details.
-
-## Usage
-
-### Basic Case Analysis
-
-```python
-from ddx_core import DDxSystem
-
-# Initialize system
-ddx = DDxSystem()
-ddx.initialize()
-
-# Define clinical case
-case = """
-A 61-year-old man presents two weeks after emergency cardiac
-catheterization with decreased urinary output and malaise.
-Examination shows mottled, reticulated purplish discoloration
-of the feet. Labs show elevated creatinine (4.2 mg/dL) and
-eosinophilia (11%). Renal biopsy shows intravascular
-spindle-shaped vacuoles.
-"""
-
-# Generate specialist team and run diagnosis
-result = ddx.analyze_case(case, "renal_case")
-round_results = ddx.run_complete_diagnostic_sequence()
-```
-
-### Complete Pipeline with Evaluation
-
-```python
-from ddx_runner import DDxRunner
-
-runner = DDxRunner()
-runner.initialize_system()
-
-runner.run_case(
-    case_name="Case 1",
-    case_description=case_description,
-    ground_truth=ground_truth_dict
-)
-```
-
-## Evaluation Metrics
-
-| Metric | Description |
-|--------|-------------|
-| Clinical Recall | Percentage of ground truth diagnoses identified |
-| Clinical Precision | Accuracy of team diagnoses |
-| TempoScore | Round-by-round performance assessment |
-| Collaboration Index | Measure of inter-agent discourse quality |
-| Context Utilization | Effectiveness of sliding context window usage |
-
-## Research Applications
-
-### Medical Education
-- Case-based learning with multi-perspective analysis
-- Diagnostic reasoning training through collaborative AI demonstration
-- Specialty interaction modeling for interdisciplinary education
-
-### Clinical Decision Support
-- Complex case consultation with diverse specialist perspectives
-- Consensus building for challenging diagnoses
-- Evidence synthesis across clinical viewpoints
-
-### AI Research
-- Multi-agent collaboration in knowledge-intensive domains
-- Context window optimization for long-form reasoning
-- Epistemic labor division in AI systems
-
-## Tested Models
-
-| Model | Type | Notes |
-|-------|------|-------|
-| Qwen2.5-7B-Instruct-GPTQ-Int4 | Quantized | Primary development model |
-| Gemma-2-9b-it-AWQ-INT4 | Quantized | Production conservative model |
-| Meta-Llama-3.1-8B-Instruct-GPTQ-INT4 | Quantized | Validated |
-| llama3.1:8b (Ollama) | Full | v9 demonstration |
 
 ## Project Structure
 
 ```
 Local-DDx/
-├── v8/                    # Full production system (vLLM/CUDA)
-├── v9_ollama_ui/          # Demonstration version (Ollama/Apple Silicon)
-├── Modules/               # Core modules (v6 reference)
+├── v10_full_pipeline/     # Full 7-round pipeline (Ollama/Apple Silicon)
+├── v9_ollama_ui/          # Lightweight 3-round demo
+├── v8/                    # Original vLLM/CUDA reference implementation
+├── benchmark/             # Evaluation infrastructure (Colab A100)
+├── archive/               # Historical versions (v6–v7)
 ├── Transcripts/           # Example diagnostic transcripts
-├── METRICS_GUIDE.md       # Detailed metrics documentation
-└── CHANGELOG.md           # Version history
+├── docs/                  # GitHub Pages project site
+├── CHANGELOG.md           # Version history
+└── METRICS_GUIDE.md       # Detailed metrics documentation
 ```
+
+## Team
+
+A multidisciplinary collaboration across sociology, biomedical engineering, and medicine.
+
+- **Del Coburn** — Systems design, theoretical framework (MA Sociology)
+- 2 biomedical engineers — Pipeline architecture, model integration
+- 3 medical students — Clinical validation, ground truth review
 
 ## References
 
+Goffman, E. (1956). The nature of deference and demeanor. *American Anthropologist*, 58(3), 473–502.
+
 Nori, H., Lee, Y. T., Zhang, S., et al. (2023). Can generalist foundation models outcompete special-purpose tuning? A case study in medicine. *arXiv*. https://arxiv.org/abs/2311.16452
 
-Zhou, S., Lin, M., Ding, S., et al. (2025). Explainable differential diagnosis with dual-inference large language models. *npj Health Systems*, 2(1), 12. https://doi.org/10.1038/s44401-025-00015-6
+Sacks, H., Schegloff, E. A., & Jefferson, G. (1974). A simplest systematics for the organization of turn-taking for conversation. *Language*, 50(4), 696–735.
 
-Zhao, Y., Liu, H., Yu, D., et al. (2025). One token to fool LLM-as-a-judge. *arXiv*. https://arxiv.org/abs/2507.08794
+Wu, Y., Tang, Y., Cai, T., et al. (2025). How social can LLM agents get? Simulating social dynamics in multi-agent systems. *arXiv*.
+
+Zhou, S., Lin, M., Ding, S., et al. (2025). Explainable differential diagnosis with dual-inference large language models. *npj Health Systems*, 2(1), 12. https://doi.org/10.1038/s44401-025-00015-6
 
 ## Citation
 
 ```bibtex
-@software{local_ddx_2025,
+@software{local_ddx_2026,
   title={Local-DDx: Multi-Agent Collaborative Diagnostic System
          with Sliding Context Windows},
-  author={Silver, Daniel and Fosse, Ethan and Griggs, Brandon and Coburn, Del},
-  year={2025},
-  url={https://github.com/yourusername/Local-DDx}
+  author={Coburn, Del and Silver, Daniel and Fosse, Ethan and Griggs, Brandon},
+  year={2026},
+  url={https://github.com/Baglecake/Local-DDx}
 }
 ```
 
 ## License
 
-MIT License - See [LICENSE](LICENSE) for details.
-
----
-
-## Appendix: Version History
-
-<details>
-<summary>Click to expand version history</summary>
-
-### v9 (Current)
-- Ollama backend for Apple Silicon compatibility
-- Gradio web interface for demonstrations
-- Streamlined 3-round POC implementation
-
-### v8
-- Production system with full 7-round pipeline
-- Sliding context windows for collaborative reasoning
-- Devil's Advocate mechanism for diagnostic stress-testing
-- TempoScore and credibility-weighted voting
-- Synchronous dual-model architecture (Gemma-2 + Qwen2.5)
-
-### v7
-- Multiple model configurations validated
-- Enhanced parsing and prompt control
-- Full vLLM compatibility with quantized models
-
-### v6
-- Initial dual-model scaffolding
-- Dynamic agent generation capabilities
-- Foundation architecture established
-
-</details>
+MIT License — See [LICENSE](LICENSE) for details.
