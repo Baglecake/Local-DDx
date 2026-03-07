@@ -20,13 +20,13 @@ Local-DDx draws on sociological theory to structure agent interaction. Goffman's
 
 ## Key Features
 
-- **Dynamic specialist generation** — autonomous agent creation tailored to each clinical presentation
-- **7-round diagnostic pipeline** — structured sequence following evidence-based medical reasoning patterns
-- **Sliding context windows** — 5 filter types enabling true collaborative reasoning across rounds
-- **Credibility-weighted Borda count voting** — Dr. Reed assessment of specialist credibility informs consensus
-- **Devil's Advocate mechanism** — stress-testing diagnostic convergence through systematic challenge
-- **Dual-model architecture** — conservative (low temp) + innovative (high temp) for balanced reasoning
-- **Fully local inference** — all patient data stays on-premises via Ollama
+- **Dynamic specialist generation:** autonomous agent creation tailored to each clinical presentation
+- **7-round diagnostic pipeline:** structured sequence following evidence-based medical reasoning patterns
+- **Sliding context windows:** 5 filter types enabling true collaborative reasoning across rounds
+- **Credibility-weighted Borda count voting:** Dr. Reed assessment of specialist credibility informs consensus
+- **Devil's Advocate mechanism:** stress-testing diagnostic convergence through systematic challenge
+- **Dual-model architecture:** conservative (low temp) + innovative (high temp) for balanced reasoning
+- **Fully local inference:** all patient data stays on-premises via Ollama
 
 <img width="1691" height="949" alt="image" src="https://github.com/user-attachments/assets/2a6aecbb-580c-4351-9ac1-e480aff4015a" />
 
