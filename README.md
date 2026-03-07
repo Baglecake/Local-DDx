@@ -57,7 +57,7 @@ Local-DDx v10 outperforms Zhou et al.'s GPT-4 system by **+4.3 percentage points
 
 ```
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│    ddx_core      │    │   ddx_rounds    │    │  ddx_synthesis  │
+│    ddx_core     │    │   ddx_rounds    │    │  ddx_synthesis  │
 │                 │    │                 │    │                 │
 │ • ModelManager  │────│ • 7 Round Types │────│ • TempoScore    │
 │ • Agent Gen     │    │ • Sliding Ctx   │    │ • Credibility   │
