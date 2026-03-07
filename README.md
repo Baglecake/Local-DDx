@@ -55,13 +55,25 @@ Local-DDx v10 outperforms Zhou et al.'s GPT-4 system by **+4.3 percentage points
 
 ## Architecture
 
-| Module | Purpose |
-|--------|---------|
-| `ddx_core.py` | Agent framework, model management, dynamic specialist generation |
-| `ddx_rounds.py` | 7-round pipeline execution with round-specific prompts |
-| `ddx_sliding_context.py` | Transcript management, 5 context filter types, high-value detection |
-| `ddx_synthesis.py` | Dr. Reed credibility scoring, Borda voting, TempoScore, diagnosis normalization |
-| `ddx_runner.py` | System orchestrator, CLI interface, JSON export |
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│    ddx_core      │    │   ddx_rounds    │    │  ddx_synthesis  │
+│                 │    │                 │    │                 │
+│ • ModelManager  │────│ • 7 Round Types │────│ • TempoScore    │
+│ • Agent Gen     │    │ • Sliding Ctx   │    │ • Credibility   │
+│ • Dynamic Team  │    │ • Collaboration │    │ • Dr. Reed      │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         └───────────────────────┼───────────────────────┘
+                                 │
+                    ┌─────────────────┐    ┌─────────────────┐
+                    │  ddx_evaluator  │    │   ddx_runner    │
+                    │                 │    │                 │
+                    │ • Clinical Eval │    │ • Pipeline Orch │
+                    │ • 4-Tier Match  │    │ • JSON Export   │
+                    │ • Metrics       │    │ • Full Results  │
+                    └─────────────────┘    └─────────────────┘
+```
 
 See [architecture/](architecture/overview.md) for detailed documentation on the sliding context windows, credibility scoring, voting system, dual-model approach, and metrics.
 
