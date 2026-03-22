@@ -121,6 +121,9 @@ class RoundExecutor:
 
         responses = handler(callback)
 
+        if callback:
+            callback(f"ROUND_COMPLETE:{round_type.value}", None)
+
         result = RoundResult(
             round_type=round_type,
             responses=responses,
@@ -150,6 +153,8 @@ Then explain:
 
             response = agent.generate_response(prompt, "specialized_ranking", use_context=False)
             responses.append(response)
+            if callback:
+                callback(f"Agent {agent.name} complete", response)
             print(f"  {agent.name} ({agent.specialty.value}): {response.confidence_score:.2f}")
 
         return responses
@@ -174,6 +179,8 @@ Focus on patient safety and acute stabilization."""
 
             response = agent.generate_response(prompt, "symptom_management", use_context=True)
             responses.append(response)
+            if callback:
+                callback(f"Agent {agent.name} complete", response)
             print(f"  {agent.name}: Triage assessment complete")
 
         return responses
@@ -199,6 +206,8 @@ List 3-5 diagnoses ranked by likelihood from your specialty's perspective."""
             # Use context to see colleague rankings but generate independently
             response = agent.generate_response(prompt, "team_differentials", use_context=True)
             responses.append(response)
+            if callback:
+                callback(f"Agent {agent.name} complete", response)
 
             # Count diagnoses
             dx_count = len(response.structured_data) if response.structured_data else 0
@@ -244,6 +253,8 @@ Provide a consolidated master list with brief rationale for each."""
 
             response = synthesizer.generate_response(prompt, "master_list", use_context=True)
             responses.append(response)
+            if callback:
+                callback(f"Agent {synthesizer.name} complete", response)
             print(f"  Master list created with {len(self.master_diagnosis_list)} unique diagnoses")
 
         return responses
@@ -286,6 +297,8 @@ Provide specific clinical reasoning for each position."""
 
             response = agent.generate_response(prompt_sr1, "refinement", use_context=True)
             all_responses.append(response)
+            if callback:
+                callback(f"Agent {agent.name} complete", response)
             print(f"    {agent.name}: Position established")
 
         # =====================================================================
@@ -321,6 +334,8 @@ Be respectful but rigorous. The goal is diagnostic accuracy through adversarial 
 
             response = agent.generate_response(prompt_sr2, "refinement", use_context=True)
             all_responses.append(response)
+            if callback:
+                callback(f"Agent {agent.name} complete", response)
             print(f"    {agent.name} challenged {target_agent.name}")
 
         # =====================================================================
@@ -350,6 +365,8 @@ Your final TOP 3 diagnoses (may differ from initial):
 
             response = agent.generate_response(prompt_sr3, "refinement", use_context=True)
             all_responses.append(response)
+            if callback:
+                callback(f"Agent {agent.name} complete", response)
             print(f"    {agent.name}: Final position stated")
 
         return all_responses
@@ -396,6 +413,8 @@ Confidence in your ranking: [XX%]"""
 
             response = agent.generate_response(prompt, "voting", use_context=True)
             responses.append(response)
+            if callback:
+                callback(f"Agent {agent.name} complete", response)
 
             # Extract vote for display
             vote_data = response.structured_data
@@ -434,6 +453,8 @@ Focus on:
 
             response = agent.generate_response(prompt, "cant_miss", use_context=True)
             responses.append(response)
+            if callback:
+                callback(f"Agent {agent.name} complete", response)
             print(f"  {agent.name}: Safety assessment complete")
 
         return responses

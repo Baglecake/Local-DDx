@@ -18,6 +18,8 @@ Features:
 import os
 import sys
 import requests
+import threading
+import queue
 from datetime import datetime
 from typing import Dict, Any, Optional, List, Generator
 
@@ -42,10 +44,10 @@ current_models: Dict[str, str] = {}
 # Ollama Model Discovery
 # =============================================================================
 
-def get_available_ollama_models() -> List[str]:
+def get_available_ollama_models(base_url: str = "http://localhost:11434") -> List[str]:
     """Get list of models available in Ollama"""
     try:
-        response = requests.get("http://localhost:11434/api/tags", timeout=5)
+        response = requests.get(f"{base_url.rstrip('/')}/api/tags", timeout=5)
         if response.status_code == 200:
             data = response.json()
             models = [m['name'] for m in data.get('models', [])]
@@ -79,14 +81,16 @@ def get_model_choices() -> List[str]:
 # System Initialization
 # =============================================================================
 
-def initialize_system(conservative_model: str, innovative_model: str) -> str:
+def initialize_system(conservative_model: str, innovative_model: str,
+                      ollama_url: str = "http://localhost:11434") -> str:
     """Initialize the DDx system with selected models"""
     global ddx_system, current_models
 
     # Check if we need to reinitialize
     if ddx_system is not None:
         if (current_models.get('conservative') == conservative_model and
-            current_models.get('innovative') == innovative_model):
+            current_models.get('innovative') == innovative_model and
+            current_models.get('url') == ollama_url):
             return "System ready (already initialized with these models)"
 
     # Create new system
@@ -119,7 +123,9 @@ def initialize_system(conservative_model: str, innovative_model: str) -> str:
     from ddx_sliding_context import TranscriptManager
     from ddx_core import DynamicAgentGenerator
 
-    ddx_system.model_manager = OllamaModelManager(custom_configs)
+    ddx_system.model_manager = OllamaModelManager(
+        custom_configs, backend_type="ollama", base_url=ollama_url
+    )
 
     if not ddx_system.model_manager.initialize():
         ddx_system = None
@@ -136,7 +142,8 @@ def initialize_system(conservative_model: str, innovative_model: str) -> str:
 
     current_models = {
         'conservative': conservative_model,
-        'innovative': innovative_model
+        'innovative': innovative_model,
+        'url': ollama_url
     }
 
     return f"System initialized with:\n- Conservative: {conservative_model}\n- Innovative: {innovative_model}"
@@ -147,28 +154,29 @@ def initialize_system(conservative_model: str, innovative_model: str) -> str:
 # =============================================================================
 
 def run_diagnosis(case_text: str, mode: str,
-                  conservative_model: str, innovative_model: str) -> Generator:
-    """Run diagnosis with progress updates"""
+                  conservative_model: str, innovative_model: str,
+                  ollama_url: str = "http://localhost:11434") -> Generator:
+    """Run diagnosis with agent-level streaming updates"""
     global ddx_system, last_result
 
     if not case_text.strip():
-        yield "Please enter a clinical case.", "", "", "", ""
+        yield "Please enter a clinical case.", "", "", "", "", ""
         return
 
     # Initialize with selected models
-    yield "Initializing system...", "", "", "", ""
-    init_result = initialize_system(conservative_model, innovative_model)
+    yield "Initializing system...", "", "", "", "", ""
+    init_result = initialize_system(conservative_model, innovative_model, ollama_url)
     if "ERROR" in init_result:
-        yield init_result, "", "", "", ""
+        yield init_result, "", "", "", "", ""
         return
 
     # Analyze case
-    yield f"Generating specialist team using {conservative_model}...", "", "", "", ""
+    yield f"Generating specialist team using {conservative_model}...", "", "", "", "", ""
 
     analysis = ddx_system.analyze_case(case_text, "gradio_case", max_specialists=5)
 
     if not analysis['success']:
-        yield f"Error: {analysis.get('error', 'Unknown error')}", "", "", "", ""
+        yield f"Error: {analysis.get('error', 'Unknown error')}", "", "", "", "", ""
         return
 
     # Format team info
@@ -176,27 +184,68 @@ def run_diagnosis(case_text: str, mode: str,
     for spec in analysis['specialists']:
         model_badge = "🔵" if "conservative" in spec['model'] else "🟠"
         team_md += f"- **{spec['name']}** - {spec['specialty']} {model_badge}\n"
-
     team_md += f"\n**Models:** {conservative_model} / {innovative_model}"
 
-    yield "Running diagnosis...", team_md, "", "", ""
+    yield "Running diagnosis...", team_md, "", "", "", "### Live Feed\n\nWaiting for first agent...\n\n"
 
-    # Run diagnosis based on mode
-    if mode == "Full (7 rounds)":
-        result = ddx_system.run_full_diagnosis()
-    else:
-        result = ddx_system.run_quick_diagnosis()
+    # Run pipeline in background thread with queue-based streaming
+    progress_queue = queue.Queue()
+    result_container = [None]
 
+    def progress_callback(msg, response=None):
+        progress_queue.put((msg, response))
+
+    def run_pipeline():
+        try:
+            if mode == "Full (7 rounds)":
+                result_container[0] = ddx_system.run_full_diagnosis(callback=progress_callback)
+            else:
+                result_container[0] = ddx_system.run_quick_diagnosis(callback=progress_callback)
+        except Exception as e:
+            result_container[0] = {'error': str(e)}
+        finally:
+            progress_queue.put(("PIPELINE_DONE", None))
+
+    thread = threading.Thread(target=run_pipeline, daemon=True)
+    thread.start()
+
+    # Stream updates as they arrive
+    live_feed = "### Live Feed\n\n"
+    agent_count = 0
+
+    while True:
+        try:
+            msg, response = progress_queue.get(timeout=0.5)
+        except queue.Empty:
+            continue
+
+        if msg == "PIPELINE_DONE":
+            break
+
+        update = format_live_update(msg, response)
+        if update:
+            live_feed += update
+            if response:
+                agent_count += 1
+
+            status = f"Running... ({agent_count} agent responses)"
+            yield status, team_md, "", "", "", live_feed
+
+    # Pipeline complete — format final results
+    thread.join(timeout=5)
+    result = result_container[0]
     last_result = result
 
-    # Format results
-    diagnoses_md = format_diagnoses(result)
-    rounds_md = format_rounds(result)
-    credibility_md = format_credibility(result)
-
-    status = f"Diagnosis complete in {result.get('total_duration', 0):.1f}s"
-
-    yield status, team_md, diagnoses_md, rounds_md, credibility_md
+    if result and 'error' not in result:
+        diagnoses_md = format_diagnoses(result)
+        rounds_md = format_rounds(result)
+        credibility_md = format_credibility(result)
+        status = f"Diagnosis complete in {result.get('total_duration', 0):.1f}s — {agent_count} agent responses"
+        live_feed += f"\n---\n**Pipeline complete in {result.get('total_duration', 0):.1f}s**\n"
+        yield status, team_md, diagnoses_md, rounds_md, credibility_md, live_feed
+    else:
+        error_msg = result.get('error', 'Unknown error') if result else 'Pipeline failed'
+        yield f"Error: {error_msg}", team_md, "", "", "", live_feed
 
 
 def format_diagnoses(result: Dict[str, Any]) -> str:
@@ -318,6 +367,26 @@ def format_credibility(result: Dict[str, Any]) -> str:
     return md
 
 
+def format_live_update(msg: str, response=None) -> str:
+    """Format a single agent response for the live feed"""
+    if response is None:
+        if msg.startswith("ROUND_COMPLETE:"):
+            round_name = msg.split(":")[1].replace("_", " ").title()
+            return f"\n---\n### ✓ {round_name} Complete\n\n"
+        return ""
+
+    agent = response.agent_name
+    specialty = response.specialty
+    conf = response.confidence_score
+    time_s = response.response_time
+    content_preview = response.content
+
+    return (
+        f"**{agent}** ({specialty}) — {conf:.0%} confidence, {time_s:.1f}s\n"
+        f"> {content_preview}\n\n"
+    )
+
+
 # =============================================================================
 # Export Function
 # =============================================================================
@@ -437,6 +506,16 @@ def create_interface():
                         info="Higher temperature, creative"
                     )
 
+                gr.Markdown("### Backend")
+                with gr.Row():
+                    ollama_url_input = gr.Textbox(
+                        value="http://localhost:11434",
+                        label="Ollama URL",
+                        info="Local or remote (RunPod) Ollama endpoint",
+                        scale=3
+                    )
+                    refresh_models_btn = gr.Button("↻ Refresh Models", scale=1)
+
                 with gr.Row():
                     mode_select = gr.Radio(
                         choices=["Quick (3 rounds)", "Full (7 rounds)"],
@@ -458,6 +537,9 @@ def create_interface():
 
             # Right column - Results
             with gr.Column(scale=1):
+                with gr.Tab("Live Feed"):
+                    live_feed_output = gr.Markdown()
+
                 with gr.Tab("Diagnoses"):
                     diagnoses_output = gr.Markdown()
 
@@ -471,10 +553,28 @@ def create_interface():
                     credibility_output = gr.Markdown()
 
         # Event handlers
+        def refresh_models(url):
+            models = get_available_ollama_models(url)
+            choices = []
+            priority = ["qwen2.5:32b-instruct-q8_0", "mistral-nemo:12b", "llama3.1:8b"]
+            for p in priority:
+                if p in models:
+                    choices.append(p)
+                    models.remove(p)
+            choices.extend(models)
+            default = choices[0] if choices else ""
+            return gr.update(choices=choices, value=default), gr.update(choices=choices, value=default)
+
+        refresh_models_btn.click(
+            fn=refresh_models,
+            inputs=[ollama_url_input],
+            outputs=[conservative_dropdown, innovative_dropdown]
+        )
+
         run_btn.click(
             fn=run_diagnosis,
-            inputs=[case_input, mode_select, conservative_dropdown, innovative_dropdown],
-            outputs=[status_box, team_output, diagnoses_output, rounds_output, credibility_output]
+            inputs=[case_input, mode_select, conservative_dropdown, innovative_dropdown, ollama_url_input],
+            outputs=[status_box, team_output, diagnoses_output, rounds_output, credibility_output, live_feed_output]
         )
 
         export_btn.click(
@@ -486,8 +586,7 @@ def create_interface():
         # Footer
         gr.Markdown("""
         ---
-        **Local-DDx v10** - All processing runs locally via Ollama.
-        Patient data never leaves your machine.
+        **Local-DDx v10** - Runs via Ollama (local or remote GPU).
 
         🔵 = Conservative model | 🟠 = Innovative model
         """)
