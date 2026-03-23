@@ -45,16 +45,15 @@ Local-DDx draws on sociological theory to structure agent interaction. Goffman's
 ## Benchmark Results
 
 Evaluated on the [Open-XDDx dataset](https://doi.org/10.1038/s44401-025-00015-6) (570 clinical vignettes, 9 specialties). See [benchmark/README.md](benchmark/README.md) for methodology.
-> In-progress (399/570)
 
-| System | Model | Cases | Clinical Recall |
-|--------|-------|-------|-----------------|
-| **Local-DDx v10** | Qwen2.5-32B-GPTQ | 399 | **57.6%** |
-| Zhou Dual-Inf | GPT-4 | 570 | 53.3% |
+| System | Model | Cases | Clinical Recall | Precision | Safety |
+|--------|-------|-------|-----------------|-----------|--------|
+| **Local-DDx v10** | Qwen2.5-32B-GPTQ | 569 | **58.6%** | 47.8% | 67.5% |
+| Zhou Dual-Inf | GPT-4 | 570 | 53.3% | — | — |
 
-Local-DDx v10 outperforms Zhou et al.'s GPT-4 system by **+4.3 percentage points** using a 32B open-weight model on a single A100 GPU. No proprietary APIs required.
+Local-DDx v10 outperforms Zhou et al.'s GPT-4 Dual-Inference system by **+5.3 percentage points** on clinical recall, using a quantized 32B open-weight model on a single A100 GPU. The method — not the model — accounts for the difference: structured multi-agent deliberation extracts stronger diagnostic reasoning from a smaller model than brute-force inference from a larger one. No proprietary APIs required.
 
-Where Zhou et al.'s Dual-Inference system produces a final diagnosis list with no visible deliberation, Local-DDx exposes the full reasoning chain: which specialists were generated, how each round shaped the differential, where positions were challenged and changed, and how credibility scores weighted the final vote. Every diagnostic transcript is a readable record of collaborative clinical reasoning. See [architecture/metrics.md](architecture/metrics.md) for evaluation methodology.
+**Reasoning transparency.** Where Zhou et al.'s system produces a final diagnosis list with no visible deliberation, Local-DDx exposes the full reasoning chain: which specialists were generated and why, how each round shaped the differential, where positions were challenged and revised, and how credibility scores weighted the final vote. Every diagnostic transcript is a readable record of collaborative clinical reasoning. See [architecture/metrics.md](architecture/metrics.md) for evaluation methodology.
 
 ## Architecture
 

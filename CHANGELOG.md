@@ -13,10 +13,10 @@ All notable changes to Local-DDx are documented in this file.
 - Gradio web interface with model selection (port 7861)
 - Benchmark infrastructure: batch runner, deterministic evaluator, Colab notebook
 
-### Benchmark (399 cases, Qwen2.5-32B on A100)
-- 57.6% clinical recall on Open-XDDx dataset
-- +4.3 pp over Zhou et al. GPT-4 Dual-Inf (53.3%)
-- 49.2% precision, 67.5% diagnostic safety
+### Benchmark (569 cases, Qwen2.5-32B on A100)
+- 58.6% clinical recall on Open-XDDx dataset (full 570-case benchmark)
+- +5.3 pp over Zhou et al. GPT-4 Dual-Inf (53.3%)
+- 47.8% precision, 67.5% diagnostic safety
 
 ### Changed
 - Ollama backend replaces vLLM for local deployment

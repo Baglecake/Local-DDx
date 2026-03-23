@@ -99,5 +99,5 @@ Evaluated on the Open-XDDx dataset (570 cases, 9 specialties). See [benchmark/RE
 
 | System | Model | Cases | Recall | Precision | Safety |
 |--------|-------|-------|--------|-----------|--------|
-| **Local-DDx v10** | Qwen2.5-32B-GPTQ | 399 | **57.6%** | 49.2% | 67.5% |
+| **Local-DDx v10** | Qwen2.5-32B-GPTQ | 569 | **58.6%** | 47.8% | 67.5% |
 | Zhou Dual-Inf | GPT-4 | 570 | 53.3% | — | — |

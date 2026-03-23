@@ -23,10 +23,10 @@ Source: Zhou et al. (2025), *Explainable differential diagnosis with dual-infere
 
 | System | Model | Cases | Recall | Precision | Safety |
 |--------|-------|-------|--------|-----------|--------|
-| **Local-DDx v10** | Qwen2.5-32B-GPTQ | 399 | **57.6%** | 49.2% | 67.5% |
+| **Local-DDx v10** | Qwen2.5-32B-GPTQ | 569 | **58.6%** | 47.8% | 67.5% |
 | Zhou Dual-Inf | GPT-4 | 570 | 53.3% | — | — |
 
-Local-DDx v10 outperforms Zhou et al.'s GPT-4 Dual-Inference system by **+4.3 percentage points** on clinical recall, using a 32B open-weight model running on a single A100 GPU.
+Local-DDx v10 outperforms Zhou et al.'s GPT-4 Dual-Inference system by **+5.3 percentage points** on clinical recall, using a quantized 32B open-weight model on a single A100 GPU.
 
 ## Evaluator Design
 

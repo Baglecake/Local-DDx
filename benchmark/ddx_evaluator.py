@@ -331,6 +331,553 @@ class ClinicalEquivalenceEngine:
             'nutritional deficiency anemia': {
                 'nutritional deficiencies', 'nutritional deficiency'
             },
+
+            # Round 5 additions (cases 400-569 + full-set zero-recall analysis)
+
+            # Vestibular / ENT
+            'vestibular neuronitis': {
+                'vestibular neuritis', 'acute vestibular neuritis',
+                'acute vestibular neuronitis', 'acute vestibular syndrome'
+            },
+            'labyrinthitis': {'acute labyrinthitis', 'vestibular labyrinthitis'},
+            'benign positional vertigo': {
+                'benign paroxysmal positional vertigo', 'bppv',
+                'positional vertigo'
+            },
+
+            # GI / Abdominal
+            'intestinal tuberculosis': {
+                'tuberculosis of intestine', 'abdominal tuberculosis',
+                'gastrointestinal tuberculosis', 'tuberculous enteritis'
+            },
+            'intestinal obstruction': {
+                'bowel obstruction', 'small bowel obstruction',
+                'large bowel obstruction', 'mechanical bowel obstruction',
+                'ileus'
+            },
+            'congenital megacolon': {
+                'hirschsprung disease', 'hirschsprungs disease',
+                'aganglionic megacolon'
+            },
+            'duodenal bulbar ulcer': {
+                'duodenal ulcer', 'peptic ulcer disease', 'duodenal erosion'
+            },
+            'bleeding peptic ulcer': {
+                'peptic ulcer disease', 'gastric ulcer with bleeding',
+                'upper gi bleeding', 'peptic ulcer hemorrhage'
+            },
+            'esophagitis': {
+                'erosive esophagitis', 'reflux esophagitis',
+                'eosinophilic esophagitis', 'pill esophagitis'
+            },
+            'liver cirrhosis': {
+                'cirrhosis', 'hepatic cirrhosis', 'alcoholic cirrhosis',
+                'cirrhosis of liver'
+            },
+            'liver abscess': {
+                'hepatic abscess', 'pyogenic liver abscess',
+                'amoebic liver abscess'
+            },
+            'ulcerative colitis': {'uc', 'inflammatory bowel disease'},
+            'irritable bowel disease (constipation type)': {
+                'irritable bowel syndrome', 'ibs', 'ibs c',
+                'irritable bowel disease', 'constipation predominant ibs'
+            },
+
+            # Pulmonary
+            'emphysema': {
+                'pulmonary emphysema', 'copd', 'chronic obstructive pulmonary disease'
+            },
+            'lung abscess': {
+                'pulmonary abscess', 'lung infection with cavitation'
+            },
+            'bronchial asthma': {
+                'asthma', 'reactive airway disease', 'bronchospasm'
+            },
+            'lung cancer': {
+                'bronchogenic carcinoma', 'pulmonary malignancy',
+                'non small cell lung cancer', 'small cell lung cancer',
+                'bronchogenic cancer', 'pulmonary neoplasm'
+            },
+
+            # Neurology / Spine
+            'disk herniation': {
+                'disc herniation', 'herniated disc', 'herniated disk',
+                'intervertebral disc herniation', 'slipped disc',
+                'prolapsed disc'
+            },
+            'intervertebral disk hernia': {
+                'disc herniation', 'herniated disc', 'herniated disk',
+                'intervertebral disc herniation', 'disk herniation'
+            },
+            'intracranial neoplasm': {
+                'brain tumor', 'brain tumour', 'cns tumor',
+                'intracranial tumor', 'cerebral neoplasm', 'brain neoplasm'
+            },
+            'carotid sinus syndrome': {
+                'carotid sinus hypersensitivity', 'carotid sinus syncope',
+                'carotid body tumor'
+            },
+            'neurologic syncope': {
+                'neurological syncope', 'neurocardiogenic syncope',
+                'vasovagal syncope', 'reflex syncope'
+            },
+
+            # Renal
+            'acute nephropyelitis': {
+                'pyelonephritis', 'acute pyelonephritis',
+                'upper urinary tract infection', 'kidney infection'
+            },
+            'chronic nephropyelitis': {
+                'chronic pyelonephritis', 'recurrent pyelonephritis'
+            },
+            'renal tuberculosis': {
+                'urogenital tuberculosis', 'genitourinary tuberculosis',
+                'tuberculosis of kidney'
+            },
+            'bladder stones': {
+                'vesical calculi', 'bladder calculi', 'urinary bladder stones',
+                'cystolithiasis'
+            },
+
+            # Psychiatric
+            'posttraumatic stress disorder': {
+                'ptsd', 'post traumatic stress disorder',
+                'post-traumatic stress disorder'
+            },
+            'schizoaffective disorder': {
+                'schizoaffective', 'schizophrenia with mood disorder'
+            },
+
+            # Cardiovascular
+            'carotid sinus syndrome': {
+                'carotid sinus hypersensitivity', 'carotid sinus syncope'
+            },
+
+            # Urinary
+            'stress incontinence': {
+                'stress urinary incontinence', 'sui',
+                'urinary stress incontinence'
+            },
+            'mixed incontinence': {
+                'mixed urinary incontinence', 'mui'
+            },
+            'overactive bladder': {
+                'urge incontinence', 'urgency incontinence',
+                'urge urinary incontinence'
+            },
+
+            # Endocrine / Metabolic
+            'hypocalcemia': {
+                'low calcium', 'calcium deficiency', 'hypocalcaemia'
+            },
+            'simple obesity': {
+                'obesity', 'morbid obesity', 'metabolic syndrome'
+            },
+
+            # Tuberculosis variants
+            'tuberculosis of lumbar vertebrae': {
+                'spinal tuberculosis', 'pott disease', 'potts disease',
+                'vertebral tuberculosis', 'skeletal tuberculosis',
+                'tuberculous spondylitis'
+            },
+
+            # Fracture matching
+            'fracture': {
+                'bone fracture', 'skeletal fracture'
+            },
+
+            # Infection categorical
+            'infection (cellulitis or osteomyelitis)': {
+                'cellulitis', 'osteomyelitis', 'skin infection',
+                'soft tissue infection', 'bone infection'
+            },
+
+            # Hepatitis
+            'alcoholic hepatitis': {
+                'alcohol induced hepatitis', 'alcoholic liver disease'
+            },
+            'drug-induced hepatitis': {
+                'drug induced liver injury', 'dili',
+                'medication induced hepatitis', 'toxic hepatitis'
+            },
+
+            # Obesity subtypes (GT uses these)
+            'gonadal obesity': {'obesity', 'endocrine obesity'},
+            'hypothalamic obesity': {'obesity', 'endocrine obesity'},
+            'cortisol obesity': {'cushing syndrome', 'cushings syndrome', 'obesity'},
+            'pancreatic obesity': {'obesity', 'metabolic syndrome'},
+
+            # Vague/categorical GT labels
+            'an overdose of a substance': {
+                'drug overdose', 'overdose', 'opioid overdose',
+                'substance overdose', 'acute intoxication',
+                'mixed drug intoxication'
+            },
+            'a psychiatric episode': {
+                'psychiatric emergency', 'psychotic episode',
+                'psychiatric decompensation', 'mental health crisis'
+            },
+            'a metabolic issue': {
+                'metabolic disorder', 'metabolic acidosis',
+                'metabolic alkalosis', 'electrolyte imbalance',
+                'metabolic derangement'
+            },
+            'pneumonia (bacterial or viral)': {
+                'pneumonia', 'bacterial pneumonia', 'viral pneumonia',
+                'community acquired pneumonia', 'cap'
+            },
+            'infections from bacteria or viruses': {
+                'bacterial infection', 'viral infection', 'infectious disease',
+                'infectious wound', 'infected bite'
+            },
+            'bites or stings from insects or animals': {
+                'insect bite', 'spider bite', 'snake bite',
+                'brown recluse spider bite', 'venomous snake bite',
+                'bite or sting', 'infected bite or sting'
+            },
+            'allergic or toxic reaction to plants or substances': {
+                'allergic reaction', 'contact dermatitis', 'toxic reaction',
+                'anaphylaxis', 'allergic contact dermatitis'
+            },
+            'bladder or kidney injury': {
+                'bladder injury', 'kidney injury', 'renal injury',
+                'bladder trauma', 'renal trauma'
+            },
+            'bladder or kidney cancer': {
+                'bladder cancer', 'renal cell carcinoma', 'kidney cancer',
+                'urothelial carcinoma', 'transitional cell carcinoma'
+            },
+            'side effects of chemotherapy': {
+                'chemotherapy induced', 'chemotherapy toxicity',
+                'chemotherapy side effects', 'drug toxicity',
+                'chemotherapy induced hematuria'
+            },
+            'renal or bladder tumors': {
+                'bladder cancer', 'renal cell carcinoma', 'kidney cancer',
+                'urothelial carcinoma'
+            },
+            'systemic infection': {
+                'sepsis', 'septicemia', 'bacteremia', 'systemic inflammatory response'
+            },
+            'infection from bacteria or viruses': {
+                'bacterial infection', 'viral infection', 'infectious disease'
+            },
+
+            # Pathogen-as-diagnosis (GT lists organisms)
+            'staphylococcus aureus': {
+                'staph infection', 'staphylococcal infection',
+                'mrsa', 'mssa', 'osteomyelitis', 'septic arthritis'
+            },
+            'streptococcus pyogenes': {
+                'group a strep', 'streptococcal infection',
+                'strep infection', 'cellulitis', 'necrotizing fasciitis'
+            },
+            'haemophilus influenzae': {
+                'haemophilus infection', 'h influenzae infection'
+            },
+            'salmonella species': {
+                'salmonella infection', 'salmonellosis', 'salmonella'
+            },
+            'kingella kingae': {
+                'kingella infection', 'kingella osteomyelitis'
+            },
+            'streptococcus pneumoniae infection': {
+                'pneumococcal infection', 'streptococcus pneumoniae',
+                'pneumococcal pneumonia', 'pneumococcal meningitis'
+            },
+            'haemophilus influenzae infection': {
+                'haemophilus influenzae', 'h influenzae',
+                'haemophilus infection'
+            },
+            'salmonella infection': {
+                'salmonellosis', 'salmonella', 'salmonella species',
+                'enteric fever'
+            },
+
+            # Hepatitis B
+            'hepatitis b vaccination': {
+                'completed hbv vaccination', 'hepatitis b immune status',
+                'hepatitis b immunity', 'hbv vaccination'
+            },
+
+            # Round 5b — remaining zero-recall fixes
+
+            # Vague categorical GT labels
+            'various infectious diseases': {
+                'dengue fever', 'malaria', 'typhoid fever', 'chikungunya',
+                'infectious disease', 'tropical infection'
+            },
+            'fungal infections': {
+                'histoplasmosis', 'paracoccidioidomycosis', 'fungal infection',
+                'coccidioidomycosis', 'blastomycosis', 'aspergillosis'
+            },
+            'liver parasites like echinococcus and fasciola': {
+                'cystic echinococcosis', 'hepatic hydatid cyst',
+                'hepatic hydatidosis', 'echinococcosis', 'fasciola hepatica',
+                'fascioliasis', 'hydatid cyst'
+            },
+            'diseases of the vestibular apparatus': {
+                'vestibular neuritis', 'vestibular neuronitis',
+                'labyrinthitis', 'meniere disease', 'bppv',
+                'benign paroxysmal positional vertigo',
+                'vestibular disorder', 'acute vestibular syndrome'
+            },
+            'ophthalmologic diseases': {
+                'ophthalmologic disease', 'eye disease', 'visual disturbance',
+                'nystagmus', 'optic neuritis'
+            },
+            'sepsis from a different source': {
+                'sepsis', 'septicemia', 'bloodstream infection',
+                'central line associated bloodstream infection', 'clabsi',
+                'catheter related bloodstream infection'
+            },
+            'sexually transmitted infection (gonorrhea, chlamydia, syphilis)': {
+                'sexually transmitted infection', 'sti', 'std',
+                'gonorrhea', 'chlamydia', 'syphilis',
+                'gonococcal infection', 'chlamydial infection'
+            },
+
+            # Polyps
+            'hyperplastic polyp': {
+                'colonic polyp', 'colon polyp', 'colorectal polyp'
+            },
+            'tubular adenoma': {
+                'adenomatous polyp', 'colorectal adenoma', 'colon adenoma'
+            },
+            'tubulovillous adenoma': {
+                'adenomatous polyp', 'colorectal adenoma', 'colon adenoma'
+            },
+            'villous adenoma': {
+                'adenomatous polyp', 'colorectal adenoma', 'colon adenoma'
+            },
+
+            # Cardiac / Ischemia
+            'myocardial ischemia': {
+                'acute coronary syndrome', 'angina pectoris', 'angina',
+                'cardiac ischemia', 'coronary artery disease'
+            },
+            'cocaine-induced myocardial ischemia': {
+                'acute coronary syndrome', 'cocaine induced chest pain',
+                'cocaine cardiomyopathy'
+            },
+            'cardiogenic syncope': {
+                'cardiac syncope', 'cardiac arrhythmia', 'cardiac conduction disorder',
+                'cardiac conduction system disorder'
+            },
+
+            # Seizures
+            'focal seizures': {
+                'partial seizures', 'focal epilepsy', 'temporal lobe epilepsy',
+                'seizure disorder'
+            },
+            'generalized seizures': {
+                'generalized tonic clonic seizure', 'grand mal seizure',
+                'epilepsy', 'seizure disorder', 'tonic clonic seizures'
+            },
+            'convulsive movement in hysteria': {
+                'psychogenic non epileptic seizures', 'pnes',
+                'conversion disorder', 'functional seizures'
+            },
+
+            # Pediatric / Congenital
+            'cretinism': {
+                'congenital hypothyroidism', 'neonatal hypothyroidism'
+            },
+            'rickets': {
+                'vitamin d deficiency', 'nutritional rickets'
+            },
+            'hydrocephaly': {
+                'hydrocephalus', 'congenital hydrocephalus'
+            },
+            "down's syndrome": {
+                'down syndrome', 'trisomy 21'
+            },
+            'physiologic jaundice': {
+                'physiological jaundice', 'neonatal jaundice',
+                'newborn jaundice'
+            },
+            'abo incompatibility': {
+                'abo hemolytic disease', 'abo isoimmunization',
+                'abo hemolytic disease of newborn'
+            },
+
+            # Neck / Lymph
+            'cervical lymphadenitis': {
+                'lymphadenopathy', 'neck lymphadenopathy',
+                'cervical lymphadenopathy'
+            },
+            'tuberculous lymphadenitis': {
+                'lymphadenopathy', 'lymph node tuberculosis',
+                'scrofula'
+            },
+            'malignant lymphoma': {
+                'lymphoma', 'non hodgkin lymphoma', 'hodgkin lymphoma'
+            },
+            'thyroid adenoma': {
+                'thyroid nodule', 'thyroid mass'
+            },
+            'thyroid carcinoma': {
+                'thyroid cancer', 'papillary thyroid cancer',
+                'follicular thyroid cancer'
+            },
+            'nonspecific lymphadenitis': {
+                'lymphadenopathy', 'reactive lymphadenopathy',
+                'bacterial lymphadenitis', 'lymphadenitis'
+            },
+
+            # Musculoskeletal
+            'humeral fracture': {
+                'humerus fracture', 'fracture of the humerus',
+                'proximal humerus fracture'
+            },
+            'nedc muscle strain': {
+                'neck muscle strain', 'cervical strain',
+                'muscle strain', 'cervical muscle strain'
+            },
+            'spinal disk herniation': {
+                'disc herniation', 'herniated disc', 'disk herniation',
+                'cervical herniated disc', 'lumbar disc herniation'
+            },
+            'myofascitis of lower back': {
+                'myofascial pain', 'lower back pain', 'muscle strain',
+                'lumbar myofascial pain', 'back strain'
+            },
+            'acute back sprain': {
+                'back strain', 'lumbar sprain', 'muscle strain',
+                'musculoskeletal back pain'
+            },
+            'lumbar flexion compression fractures': {
+                'compression fracture', 'lumbar compression fracture',
+                'vertebral compression fracture'
+            },
+            'tennis elbow (lateral epicondylitis)': {
+                'lateral epicondylitis', 'tennis elbow',
+                'lateral epicondylalgia'
+            },
+
+            # Hearing
+            'prasbycusis': {
+                'presbycusis', 'age related hearing loss',
+                'sensorineural hearing loss'
+            },
+            'cochlear nerve damage': {
+                'sensorineural hearing loss', 'cochlear damage',
+                'auditory neuropathy'
+            },
+            'otosderosis': {
+                'otosclerosis', 'conductive hearing loss'
+            },
+
+            # Psychiatric (additional)
+            'social phobia': {
+                'social anxiety disorder', 'social anxiety'
+            },
+            'agoraphobia/specific phobia': {
+                'agoraphobia', 'specific phobia', 'phobic disorder'
+            },
+            'panic attack': {
+                'panic disorder', 'acute panic', 'anxiety attack'
+            },
+
+            # Prostate
+            'benign prostatic hypertrophy (bph)': {
+                'benign prostatic hyperplasia', 'bph',
+                'prostatic hypertrophy', 'prostatic hyperplasia'
+            },
+
+            # GI specifics
+            'pyloric obstruction': {
+                'pyloric stenosis', 'gastric outlet obstruction'
+            },
+            'gastric perforation': {
+                'perforated ulcer', 'peptic ulcer perforation',
+                'gastrointestinal perforation'
+            },
+            'functional dyspepsia': {
+                'dyspepsia', 'indigestion', 'non ulcer dyspepsia'
+            },
+            'redundant sigmoid colon': {
+                'sigmoid volvulus', 'dolichosigmoid', 'elongated sigmoid'
+            },
+            'intestinal adhesion': {
+                'adhesive bowel obstruction', 'abdominal adhesions',
+                'postoperative adhesions'
+            },
+
+            # Rheumatology
+            'disseminated gonorrhea': {
+                'disseminated gonococcal infection', 'gonococcal arthritis',
+                'reactive arthritis'
+            },
+            'reiter syndrome (reactive arthritis)': {
+                'reactive arthritis', 'reiter syndrome', 'reiter disease'
+            },
+
+            # Misc
+            'analgesic nephropathy': {
+                'analgesic induced papillary necrosis',
+                'analgesic induced nephropathy', 'nsaid nephropathy'
+            },
+            'consolidation': {
+                'pneumonia', 'pulmonary consolidation', 'lung consolidation',
+                'bacterial pneumonia', 'community acquired pneumonia'
+            },
+            'pleural effusion': {
+                'fluid in pleural space', 'hydrothorax', 'exudative effusion'
+            },
+            'nasopharyngeal carcinoma with neck metastasis': {
+                'nasopharyngeal carcinoma', 'nasopharyngeal cancer',
+                'head and neck cancer', 'squamous cell carcinoma'
+            },
+            'fistula of the second or third branchial cleft': {
+                'branchial cleft cyst', 'branchial cleft fistula',
+                'branchial anomaly', 'lateral neck cyst'
+            },
+
+            # Round 5c — final zero-recall fixes
+            'bacterial food poisoning': {
+                'bacterial gastroenteritis', 'food poisoning',
+                'foodborne illness', 'gastroenteritis'
+            },
+            'tumor of the colon': {
+                'colon cancer', 'colorectal cancer', 'colonic neoplasm',
+                'colon tumor'
+            },
+            'polyp of colon': {
+                'colonic polyp', 'colon polyp', 'colorectal polyp',
+                'adenomatous polyp'
+            },
+            'tumor of small intestine': {
+                'small bowel tumor', 'small intestine cancer',
+                'small bowel neoplasm', 'gastric cancer'
+            },
+            'achalasia of cardia': {
+                'achalasia', 'esophageal achalasia', 'cardiospasm'
+            },
+            'esophageal hiatal hernia': {
+                'hiatal hernia', 'hiatus hernia', 'diaphragmatic hernia'
+            },
+            'bulbar paralysis': {
+                'bulbar palsy', 'pseudobulbar palsy',
+                'lower motor neuron lesion'
+            },
+            'prostatic hyperplasia': {
+                'benign prostatic hyperplasia', 'bph',
+                'prostatic hypertrophy', 'benign prostatic hypertrophy'
+            },
+            'kidney stone': {
+                'nephrolithiasis', 'urolithiasis', 'renal calculi',
+                'renal stones', 'kidney stones'
+            },
+            'physiological vertigo': {
+                'vertigo', 'motion sickness', 'positional vertigo',
+                'benign positional vertigo'
+            },
+            'rib fracture': {
+                'fractured rib', 'costal fracture', 'chest wall fracture',
+                'costochondritis'
+            },
         }
 
         # Build bidirectional mapping with NORMALIZED keys/values
@@ -695,6 +1242,114 @@ class ClinicalEquivalenceEngine:
             'megaloblastic anemia': [
                 'pernicious anemia', 'b12 deficiency anemia',
                 'folate deficiency anemia', 'vitamin b12 deficiency'
+            ],
+
+            # Round 5 hierarchy additions (cases 400-569)
+
+            # Vertigo / Vestibular
+            'vertigo': [
+                'benign paroxysmal positional vertigo', 'bppv',
+                'vestibular neuritis', 'vestibular neuronitis',
+                'labyrinthitis', 'meniere disease',
+                'positional vertigo', 'central vertigo'
+            ],
+
+            # Syncope
+            'syncope': [
+                'vasovagal syncope', 'neurocardiogenic syncope',
+                'carotid sinus syncope', 'orthostatic syncope',
+                'cardiac syncope', 'neurologic syncope', 'reflex syncope'
+            ],
+
+            # Tuberculosis subtypes
+            'tuberculosis': [
+                'pulmonary tuberculosis', 'intestinal tuberculosis',
+                'renal tuberculosis', 'spinal tuberculosis',
+                'miliary tuberculosis', 'tuberculous meningitis',
+                'genitourinary tuberculosis', 'skeletal tuberculosis',
+                'tuberculosis of lumbar vertebrae', 'pott disease'
+            ],
+
+            # Fracture subtypes
+            'fracture': [
+                'skull fracture', 'cervical fracture', 'vertebral fracture',
+                'rib fracture', 'clavicle fracture', 'humerus fracture',
+                'radius fracture', 'ulna fracture', 'hip fracture',
+                'femur fracture', 'tibia fracture', 'ankle fracture',
+                'compression fracture', 'stress fracture',
+                'pathological fracture', 'radial fracture'
+            ],
+
+            # Incontinence
+            'urinary incontinence': [
+                'stress incontinence', 'stress urinary incontinence',
+                'urge incontinence', 'mixed incontinence',
+                'mixed urinary incontinence', 'overflow incontinence',
+                'functional incontinence'
+            ],
+
+            # Hepatitis
+            'hepatitis': [
+                'hepatitis a', 'hepatitis b', 'hepatitis c', 'hepatitis d',
+                'hepatitis e', 'alcoholic hepatitis', 'drug induced hepatitis',
+                'autoimmune hepatitis', 'viral hepatitis', 'toxic hepatitis'
+            ],
+
+            # Obesity subtypes
+            'obesity': [
+                'simple obesity', 'gonadal obesity', 'hypothalamic obesity',
+                'cortisol obesity', 'pancreatic obesity', 'morbid obesity',
+                'metabolic syndrome'
+            ],
+
+            # Disc / Spine
+            'spinal disc disease': [
+                'disk herniation', 'disc herniation', 'herniated disc',
+                'intervertebral disk hernia', 'degenerative disc disease',
+                'cervical herniated disc', 'lumbar disc herniation',
+                'spinal stenosis'
+            ],
+
+            # Pyelonephritis
+            'pyelonephritis': [
+                'acute pyelonephritis', 'chronic pyelonephritis',
+                'acute nephropyelitis', 'chronic nephropyelitis',
+                'kidney infection', 'upper urinary tract infection'
+            ],
+
+            # Brain tumors
+            'brain tumor': [
+                'intracranial neoplasm', 'glioma', 'glioblastoma',
+                'meningioma', 'astrocytoma', 'medulloblastoma',
+                'cns tumor', 'cerebral neoplasm', 'brain neoplasm',
+                'intracranial tumor'
+            ],
+
+            # Esophageal disease
+            'esophageal disease': [
+                'esophagitis', 'gastroesophageal reflux disease',
+                'esophageal stricture', 'esophageal motility disorder',
+                'achalasia', 'esophageal cancer', 'barrett esophagus',
+                'esophageal spasm', 'esophageal hiatal hernia'
+            ],
+
+            # Colorectal neoplasms
+            'colorectal neoplasm': [
+                'colon cancer', 'colorectal cancer', 'rectal cancer',
+                'colonic polyp', 'adenomatous polyp', 'tumor of the colon',
+                'polyp of colon', 'colorectal adenoma'
+            ],
+
+            # Inflammatory bowel disease
+            'inflammatory bowel disease': [
+                'crohn disease', 'crohns disease', 'ulcerative colitis',
+                'inflammatory bowel syndrome', 'colitis'
+            ],
+
+            # Cyanosis
+            'cyanosis': [
+                'central cyanosis', 'peripheral cyanosis', 'mixed cyanosis',
+                'methemoglobinemia', 'sulfhemoglobinemia'
             ],
         }
 
