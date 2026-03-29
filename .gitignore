@@ -18,6 +18,7 @@ lddx_*.json
 
 # Benchmark result data (large, regenerable)
 benchmark/results_qwen32b/
+benchmark/results_qwen32b_full/
 benchmark/results_llama8b_full/
 benchmark/results/
 benchmark/pilot_llama8b/
